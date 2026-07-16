@@ -93,7 +93,7 @@ export default function AboutPage() {
         {/* ── HERO ───────────────────────────────────────────── */}
         <section className="relative h-screen min-h-[600px] flex flex-col justify-end overflow-hidden">
           <Image
-            src="/Photos/DSCF0278.JPG"
+            src="/img/DSCF0278.JPG"
             alt="The Green Branch team"
             fill
             className="object-cover object-top"
@@ -152,7 +152,7 @@ export default function AboutPage() {
             {/* Photo */}
             <div className="relative h-[480px] rounded-2xl overflow-hidden">
               <Image
-                src="/Photos/DSCF9864.JPG"
+                src="/img/DSCF9864.JPG"
                 alt="Field monitoring in project area"
                 fill
                 className="object-cover"
@@ -193,7 +193,7 @@ export default function AboutPage() {
             {/* Photo first on mobile, second on desktop */}
             <div className="relative h-[420px] rounded-2xl overflow-hidden lg:order-first order-last">
               <Image
-                src="/Photos/DSCF9807.JPG"
+                src="/img/DSCF9807.JPG"
                 alt="Team walking through restoration site at golden hour"
                 fill
                 className="object-cover"
@@ -306,7 +306,7 @@ export default function AboutPage() {
         {/* ── CTA ───────────────────────────────────────────── */}
         <section className="relative overflow-hidden py-28">
           <Image
-            src="/Photos/DSCF9876.JPG"
+            src="/img/DSCF9876.JPG"
             alt="Forest landscape"
             fill
             className="object-cover"

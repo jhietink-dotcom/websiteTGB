@@ -40,19 +40,19 @@ const references = [
     name: "Sapucaia Sustainable Forests",
     location: "Bahia",
     detail: "VCS and CCB certified, VM0047, ABACUS validated. Sylvera Estimated Rating BBB–AA. Developed with Futuro Florestal.",
-    photo: "/Photos/DSCF9854.JPG",
+    photo: "/img/DSCF9854.JPG",
   },
   {
     name: "Trees for Farmers",
     location: "Mato Grosso",
     detail: "Developed with Rabobank, implemented by Implantar. Selected by the Amazon Green Pledge RfP for a 10,000-hectare offtake agreement.",
-    photo: "/Photos/DSCF9864.JPG",
+    photo: "/img/DSCF9864.JPG",
   },
   {
     name: "Samauma",
     location: "Pará",
     detail: "Concept stage; minimum 5,000 hectares with a conservative modelled issuance of over 255 VCUs per hectare across the project lifetime.",
-    photo: "/Photos/DSCF9797.JPG",
+    photo: "/img/DSCF9797.JPG",
   },
 ];
 
@@ -63,7 +63,7 @@ export default function ArrPage() {
       <main className="flex-1 pt-16">
         {/* Hero */}
         <section className="relative bg-forest-deeper py-28 overflow-hidden">
-          <Image src="/Photos/DSCF9818.JPG" alt="" fill priority className="object-cover opacity-25" />
+          <Image src="/img/DSCF9818.JPG" alt="" fill priority className="object-cover opacity-25" />
           <div className="absolute inset-0 bg-forest-deeper/60" />
           <div className="relative max-w-7xl mx-auto px-6">
             <div className="max-w-3xl">

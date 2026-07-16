@@ -41,7 +41,7 @@ export default function AdvisoryPage() {
       <main className="flex-1 pt-16">
         {/* Hero */}
         <section className="relative bg-forest-deeper py-28 overflow-hidden">
-          <Image src="/Photos/DSCF9797.JPG" alt="" fill priority className="object-cover opacity-25" />
+          <Image src="/img/DSCF9797.JPG" alt="" fill priority className="object-cover opacity-25" />
           <div className="absolute inset-0 bg-forest-deeper/60" />
           <div className="relative max-w-7xl mx-auto px-6">
             <div className="max-w-3xl">

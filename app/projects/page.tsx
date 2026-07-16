@@ -23,7 +23,7 @@ const projects = [
     ha: <Tbc>project area</Tbc>,
     tCO2: <Tbc>removal estimate</Tbc>,
     status: "Certified",
-    photo: "/Photos/DSCF9854.JPG",
+    photo: "/img/DSCF9854.JPG",
     description:
       "A large-scale reforestation programme developed with Futuro Florestal, certified to VCS and CCB under methodology VM0047 and ABACUS validated. The project carries a Sylvera Estimated Rating of BBB–AA, restoring degraded land while generating high-integrity emission removals for local communities.",
     partners: ["Futuro Florestal", "Verra (VCS + CCB)"],
@@ -40,7 +40,7 @@ const projects = [
     ha: <Tbc>project area</Tbc>,
     tCO2: <Tbc>removal estimate</Tbc>,
     status: "Development",
-    photo: "/Photos/DSCF9807.JPG",
+    photo: "/img/DSCF9807.JPG",
     description:
       "Native reforestation of degraded pasture in the Amazon biome, developed with Rabobank and implemented by Implantar alongside smallholder farmers. The project has been selected by the Amazon Green Pledge RfP for a 10,000-hectare offtake, restoring biodiverse and climate-resilient ecosystems.",
     partners: ["Rabobank", "Implantar", "Amazon Green Pledge"],
@@ -57,7 +57,7 @@ const projects = [
     ha: "5,000+ ha",
     tCO2: <Tbc>removal estimate</Tbc>,
     status: "Concept",
-    photo: "/Photos/DSCF9805.JPG",
+    photo: "/img/DSCF9805.JPG",
     description:
       "An early-stage restoration concept covering a minimum of 5,000 hectares in the Amazon biome. Conservative modelling indicates issuance of over 255 emission removal units per hectare across the project lifetime, providing a durable foundation for high-integrity supply.",
     partners: [],
@@ -74,7 +74,7 @@ const projects = [
     ha: <Tbc>project area</Tbc>,
     tCO2: <Tbc>removal estimate</Tbc>,
     status: "Development",
-    photo: "/Photos/DSCF9831.JPG",
+    photo: "/img/DSCF9831.JPG",
     description:
       "Restoration of riparian forests and erosion-prone areas in the transition zone between the Atlantic Forest and Pampa biome, respecting natural grasslands while delivering measurable emission removals.",
     partners: ["Local landowners", "Municipal partners"],
@@ -91,7 +91,7 @@ const projects = [
     ha: <Tbc>project area</Tbc>,
     tCO2: <Tbc>removal estimate</Tbc>,
     status: "Active",
-    photo: "/Photos/DSCF0493.JPG",
+    photo: "/img/DSCF0493.JPG",
     description:
       "A large-scale community agroforestry programme restoring degraded savannah with more than 35,000 smallholder farmers across Northern Ghana, delivering emission removals alongside food security and rural livelihoods.",
     partners: ["Local farming cooperatives"],
@@ -108,7 +108,7 @@ const projects = [
     ha: <Tbc>project area</Tbc>,
     tCO2: <Tbc>removal estimate</Tbc>,
     status: "Development",
-    photo: "/Photos/DSCF9797.JPG",
+    photo: "/img/DSCF9797.JPG",
     description:
       "Miombo forest restoration co-designed with local Maasai communities and delivered with the Nature Restoration Company (NRC). Alley cropping supports local income while the project restores woodland and generates durable emission removals.",
     partners: ["Nature Restoration Company (NRC)", "Local communities"],
@@ -132,7 +132,7 @@ export default function ProjectsPage() {
         {/* ── HERO ───────────────────────────────────────────── */}
         <section className="relative h-screen min-h-[600px] flex flex-col justify-end overflow-hidden">
           <Image
-            src="/Photos/DSCF9818.JPG"
+            src="/img/DSCF9818.JPG"
             alt="Field team at a reforestation site"
             fill
             className="object-cover"

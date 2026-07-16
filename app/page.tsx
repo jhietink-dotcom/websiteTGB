@@ -6,22 +6,22 @@ import { DashboardMockup } from "@/components/OSTGBMockup";
 import { ArrowRight, ArrowUpRight, CheckCircle2 } from "lucide-react";
 
 const photoStrip = [
-  "/Photos/DSCF0095.JPG",
-  "/Photos/DSCF9818.JPG",
-  "/Photos/DSCF9797.JPG",
-  "/Photos/DSCF9873.JPG",
-  "/Photos/DSCF0278.JPG",
-  "/Photos/DSCF9647.JPG",
-  "/Photos/DSCF0493.JPG",
-  "/Photos/DSCF9742.JPG",
-  "/Photos/DSCF0095.JPG",
-  "/Photos/DSCF9818.JPG",
-  "/Photos/DSCF9797.JPG",
-  "/Photos/DSCF9873.JPG",
-  "/Photos/DSCF0278.JPG",
-  "/Photos/DSCF9647.JPG",
-  "/Photos/DSCF0493.JPG",
-  "/Photos/DSCF9742.JPG",
+  "/img/DSCF0095.JPG",
+  "/img/DSCF9818.JPG",
+  "/img/DSCF9797.JPG",
+  "/img/DSCF9873.JPG",
+  "/img/DSCF0278.JPG",
+  "/img/DSCF9647.JPG",
+  "/img/DSCF0493.JPG",
+  "/img/DSCF9742.JPG",
+  "/img/DSCF0095.JPG",
+  "/img/DSCF9818.JPG",
+  "/img/DSCF9797.JPG",
+  "/img/DSCF9873.JPG",
+  "/img/DSCF0278.JPG",
+  "/img/DSCF9647.JPG",
+  "/img/DSCF0493.JPG",
+  "/img/DSCF9742.JPG",
 ];
 
 // "What we do" — three lines of activity, one development capability
@@ -30,21 +30,21 @@ const services = [
     title: "Develop",
     desc: "We originate and develop reforestation and biochar projects through a disciplined stage-gate process, certified to the highest carbon and forestry standards.",
     href: "/develop/arr",
-    photo: "/Photos/DSCF9818.JPG",
+    photo: "/img/DSCF9818.JPG",
     tag: "Reforestation & biochar",
   },
   {
     title: "Transact",
     desc: "We supply emission removals to corporate buyers — spot, forward, and long-term offtake — from our own portfolio and selected third-party projects in our origination pipeline.",
     href: "/buy-removals",
-    photo: "/Photos/DSCF9797.JPG",
+    photo: "/img/DSCF9797.JPG",
     tag: "For buyers",
   },
   {
     title: "Invest",
     desc: "We structure investment opportunities in land acquisition for reforestation and in industrial biochar, bridging the early-stage financing gap that holds high-quality projects back.",
     href: "/invest",
-    photo: "/Photos/DSCF9873.JPG",
+    photo: "/img/DSCF9873.JPG",
     tag: "For investors",
   },
 ];
@@ -55,7 +55,7 @@ const projects = [
     country: "Brazil · Bahia",
     ha: "VCS + CCB · Sylvera BBB–AA",
     status: "Certified",
-    photo: "/Photos/DSCF9854.JPG",
+    photo: "/img/DSCF9854.JPG",
     tag: "Large-scale reforestation",
     featured: true,
   },
@@ -64,7 +64,7 @@ const projects = [
     country: "Brazil · Mato Grosso",
     ha: "10,000 ha offtake",
     status: "Development",
-    photo: "/Photos/DSCF9864.JPG",
+    photo: "/img/DSCF9864.JPG",
     tag: "With Rabobank",
   },
   {
@@ -72,7 +72,7 @@ const projects = [
     country: "Brazil · Pará",
     ha: "5,000+ ha",
     status: "Concept",
-    photo: "/Photos/DSCF9831.JPG",
+    photo: "/img/DSCF9831.JPG",
     tag: "ARR",
   },
   {
@@ -80,7 +80,7 @@ const projects = [
     country: "Ghana",
     ha: "35,000+ farmers",
     status: "Active",
-    photo: "/Photos/DSCF0493.JPG",
+    photo: "/img/DSCF0493.JPG",
     tag: "Community",
   },
   {
@@ -88,7 +88,7 @@ const projects = [
     country: "Tanzania",
     ha: "Miombo restoration",
     status: "Development",
-    photo: "/Photos/DSCF9807.JPG",
+    photo: "/img/DSCF9807.JPG",
     tag: "ARR",
   },
 ];
@@ -104,7 +104,7 @@ export default function Home() {
         {/* ── Hero ── */}
         <section className="relative h-screen min-h-[700px] flex flex-col justify-end overflow-hidden">
           <Image
-            src="/Photos/DSCF0095.JPG"
+            src="/img/DSCF0095.JPG"
             alt="Forest interior — The Green Branch"
             fill
             className="object-cover object-center"
@@ -268,7 +268,7 @@ export default function Home() {
             <div className="relative">
               <div className="relative h-64 rounded-2xl overflow-hidden mb-4">
                 <Image
-                  src="/Photos/DSCF9647.JPG"
+                  src="/img/DSCF9647.JPG"
                   alt="Team reviewing biodiversity monitoring data"
                   fill
                   className="object-cover"
@@ -366,7 +366,7 @@ export default function Home() {
         {/* ── Impact stats — full photo bg ── */}
         <section className="relative py-32 overflow-hidden">
           <Image
-            src="/Photos/DSCF9797.JPG"
+            src="/img/DSCF9797.JPG"
             alt="Restored landscape"
             fill
             className="object-cover object-center"
@@ -397,7 +397,7 @@ export default function Home() {
         {/* ── Field team photo ── */}
         <section className="relative h-[500px] overflow-hidden">
           <Image
-            src="/Photos/DSCF9818.JPG"
+            src="/img/DSCF9818.JPG"
             alt="The Green Branch team in the field"
             fill
             className="object-cover object-center"

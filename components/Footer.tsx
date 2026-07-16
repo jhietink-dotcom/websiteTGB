@@ -3,21 +3,22 @@ import Image from "next/image";
 import { Mail, MapPin } from "lucide-react";
 
 const links = {
-  Solutions: [
-    { label: "Develop a project", href: "/develop" },
-    { label: "Invest in nature", href: "/invest" },
-    { label: "Secure credits", href: "/secure-credits" },
+  Develop: [
+    { label: "Reforestation (ARR)", href: "/develop/arr" },
+    { label: "Biochar", href: "/develop/biochar" },
+    { label: "Advisory", href: "/advisory" },
   ],
   Company: [
-    { label: "What we do", href: "/what-we-do" },
-    { label: "OS TGB", href: "/os-tgb" },
+    { label: "Buy Removals", href: "/buy-removals" },
+    { label: "Invest", href: "/invest" },
     { label: "Projects", href: "/projects" },
-    { label: "About us", href: "/about" },
+    { label: "Our Tech", href: "/terrahub" },
+    { label: "About", href: "/about" },
   ],
   Legal: [
     { label: "Contact", href: "/contact" },
-    { label: "Privacy policy", href: "#" },
-    { label: "Grievance forms", href: "#" },
+    { label: "Privacy policy", href: "/privacy" },
+    { label: "Grievance forms", href: "/grievance" },
   ],
 };
 
@@ -32,7 +33,7 @@ export default function Footer() {
               <Image src="/logo-white.png" alt="The Green Branch" width={2895} height={640} className="h-8 w-auto" />
             </Link>
             <p className="text-sm text-white/60 leading-relaxed mb-6 max-w-xs">
-              Bridging the gap between nature restoration and private capital to create measurable environmental and social impact.
+              A project developer of certified nature-based removal projects in Brazil — restoring forests, producing durable removals, and structuring the capital that makes both possible.
             </p>
             <div className="space-y-2 text-sm text-white/60">
               <div className="flex items-start gap-2">
@@ -73,7 +74,7 @@ export default function Footer() {
 
         <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-xs text-white/40">© The Green Branch 2026. All Rights Reserved.</p>
-          <p className="text-xs text-white/40">Amsterdam · Brazil · Africa · Tanzania</p>
+          <p className="text-xs text-white/40">Amsterdam · Brazil · Tanzania · Ghana</p>
         </div>
       </div>
     </footer>

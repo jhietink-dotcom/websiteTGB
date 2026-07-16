@@ -6,17 +6,18 @@ import Image from "next/image";
 import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const solutions = [
-  { label: "Develop a project", href: "/develop", desc: "End-to-end project development" },
-  { label: "Invest in nature", href: "/invest", desc: "Connect capital with impact" },
-  { label: "Secure credits", href: "/secure-credits", desc: "Dev contributions, spot & ERPAs" },
+const develop = [
+  { label: "Reforestation (ARR)", href: "/develop/arr", desc: "From degraded pasture to certified forest" },
+  { label: "Biochar", href: "/develop/biochar", desc: "Durable removal, measured in centuries" },
 ];
 
 const nav = [
-  { label: "What we do", href: "/what-we-do" },
-  { label: "Solutions", children: solutions },
-  { label: "OS TGB", href: "/os-tgb" },
+  { label: "Develop", children: develop },
+  { label: "Buy Removals", href: "/buy-removals" },
+  { label: "Invest", href: "/invest" },
   { label: "Projects", href: "/projects" },
+  { label: "Our Tech", href: "/terrahub" },
+  { label: "Advisory", href: "/advisory" },
   { label: "About", href: "/about" },
 ];
 
@@ -96,7 +97,7 @@ export default function Navbar() {
         {/* CTA */}
         <div className="hidden lg:flex items-center gap-3">
           <Link href="/contact" className={cn("text-sm font-medium transition-colors", mutedClass)}>Contact</Link>
-          <Link href="/secure-credits"
+          <Link href="/buy-removals"
             className="flex items-center gap-1.5 px-4 py-2 bg-accent text-forest-deeper text-sm font-bold rounded-xl hover:bg-accent-dark transition-colors">
             Get started <ArrowRight className="w-3.5 h-3.5" />
           </Link>
@@ -133,7 +134,7 @@ export default function Navbar() {
           )}
           <div className="pt-4 border-t border-black/5 flex flex-col gap-2">
             <Link href="/contact" onClick={() => setOpen(false)} className="px-3 py-2 text-sm font-medium text-ink/60 text-center">Contact</Link>
-            <Link href="/secure-credits" onClick={() => setOpen(false)}
+            <Link href="/buy-removals" onClick={() => setOpen(false)}
               className="px-4 py-3 bg-forest text-white text-sm font-bold rounded-xl text-center">
               Get started
             </Link>

@@ -24,55 +24,56 @@ const photoStrip = [
   "/Photos/DSCF9742.JPG",
 ];
 
+// "What we do" — three lines of activity, one development capability
 const services = [
   {
-    title: "Develop a project",
-    desc: "Full lifecycle support for landowners and project developers — from initial screening through certification and beyond.",
-    href: "/develop",
+    title: "Develop",
+    desc: "We originate and develop reforestation and biochar projects through a disciplined stage-gate process, certified to the highest carbon and forestry standards.",
+    href: "/develop/arr",
     photo: "/Photos/DSCF9818.JPG",
-    tag: "For developers",
+    tag: "Reforestation & biochar",
   },
   {
-    title: "Invest in nature",
-    desc: "Tailored opportunities connecting institutional capital with verified, high-integrity restoration projects worldwide.",
-    href: "/invest",
+    title: "Transact",
+    desc: "We supply emission removals to corporate buyers — spot, forward, and long-term offtake — from our own portfolio and selected third-party projects in our origination pipeline.",
+    href: "/buy-removals",
     photo: "/Photos/DSCF9797.JPG",
-    tag: "For investors",
+    tag: "For buyers",
   },
   {
-    title: "Secure credits",
-    desc: "Three distinct pathways for buyers: development contributions, spot credits, or long-term ERPAs with price certainty.",
-    href: "/secure-credits",
+    title: "Invest",
+    desc: "We structure investment opportunities in land acquisition for reforestation and in industrial biochar, bridging the early-stage financing gap that holds high-quality projects back.",
+    href: "/invest",
     photo: "/Photos/DSCF9873.JPG",
-    tag: "For buyers",
+    tag: "For investors",
   },
 ];
 
 const projects = [
   {
     name: "Sapucaia Sustainable Forests",
-    country: "Brazil",
-    ha: "4,800 ha",
-    status: "Active",
+    country: "Brazil · Bahia",
+    ha: "VCS + CCB · Sylvera BBB–AA",
+    status: "Certified",
     photo: "/Photos/DSCF9854.JPG",
     tag: "Large-scale reforestation",
     featured: true,
   },
   {
-    name: "Serra do Sudeste",
-    country: "Brazil",
-    ha: "2,200 ha",
-    status: "Certified",
-    photo: "/Photos/DSCF9831.JPG",
-    tag: "Landscape restoration",
-  },
-  {
     name: "Trees for Farmers",
-    country: "Brazil",
-    ha: "8,500 ha",
+    country: "Brazil · Mato Grosso",
+    ha: "10,000 ha offtake",
     status: "Development",
     photo: "/Photos/DSCF9864.JPG",
-    tag: "Agroforestry",
+    tag: "With Rabobank",
+  },
+  {
+    name: "Samauma",
+    country: "Brazil · Pará",
+    ha: "5,000+ ha",
+    status: "Concept",
+    photo: "/Photos/DSCF9831.JPG",
+    tag: "ARR",
   },
   {
     name: "Great Agroforestry Initiative",
@@ -85,14 +86,14 @@ const projects = [
   {
     name: "Suledo Forest ARR",
     country: "Tanzania",
-    ha: "6,100 ha",
+    ha: "Miombo restoration",
     status: "Development",
     photo: "/Photos/DSCF9807.JPG",
     tag: "ARR",
   },
 ];
 
-const clients = ["Rabobank", "Zoo", "Futuro", "Van Drunen", "Sommalife", "Bio-Brasil", "Hummingbirds", "NRC"];
+const partners = ["Rabobank", "Futuro Florestal", "Florestas Engenharia", "Implantar", "Sylvera", "Verra", "NRC"];
 
 export default function Home() {
   return (
@@ -110,38 +111,35 @@ export default function Home() {
             priority
             sizes="100vw"
           />
-          {/* Multi-layer overlay for depth */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-black/80" />
           <div className="absolute inset-0 bg-forest-deeper/30" />
 
-          {/* Content */}
           <div className="relative z-10 max-w-7xl mx-auto px-6 pb-20 w-full">
             <div className="max-w-4xl">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-xs font-semibold mb-6">
                 <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-                Operating across Brazil · Tanzania · Ghana
+                Nature-based removal developer · Brazil, and beyond
               </div>
-              <h1 className="text-6xl lg:text-8xl font-extrabold text-white leading-[0.95] tracking-tight mb-6">
-                Invest in nature.<br />
-                <span className="text-accent">Restore the planet.</span>
+              <h1 className="text-5xl lg:text-7xl font-extrabold text-white leading-[0.98] tracking-tight mb-6">
+                Activating nature<br />
+                for a <span className="text-accent">liveable future.</span>
               </h1>
-              <p className="text-lg lg:text-xl text-white/70 leading-relaxed max-w-xl mb-10">
-                We develop high-integrity forest restoration projects — and built the technology to make every tonne traceable.
+              <p className="text-lg lg:text-xl text-white/70 leading-relaxed max-w-2xl mb-10">
+                The Green Branch develops certified nature-based removal projects in Brazil. We restore forests, produce durable removals, and structure the capital that makes both possible.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link href="/secure-credits"
-                  className="inline-flex items-center gap-2 px-6 py-3.5 bg-accent text-forest-deeper text-sm font-bold rounded-xl hover:bg-accent-dark transition-all hover:scale-[1.02]">
-                  Secure credits <ArrowRight className="w-4 h-4" />
-                </Link>
                 <Link href="/projects"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 bg-accent text-forest-deeper text-sm font-bold rounded-xl hover:bg-accent-dark transition-all hover:scale-[1.02]">
+                  Explore our projects <ArrowRight className="w-4 h-4" />
+                </Link>
+                <Link href="/contact"
                   className="inline-flex items-center gap-2 px-6 py-3.5 bg-white/10 backdrop-blur-sm text-white text-sm font-semibold rounded-xl hover:bg-white/20 transition-all border border-white/20">
-                  Explore projects
+                  Talk to our team
                 </Link>
               </div>
             </div>
           </div>
 
-          {/* Scroll hint */}
           <div className="absolute bottom-8 right-8 z-10 flex items-center gap-2 text-white/40 text-xs font-medium">
             <div className="w-px h-8 bg-white/20" />
             <span className="rotate-90 origin-center">scroll</span>
@@ -165,27 +163,28 @@ export default function Home() {
           `}</style>
         </section>
 
-        {/* ── Logos + mission statement ── */}
+        {/* ── Partners + proof points ── */}
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
-                <p className="text-sm font-semibold text-ink/30 uppercase tracking-widest mb-6">Trusted by</p>
+                <p className="text-sm font-semibold text-ink/30 uppercase tracking-widest mb-6">Working with</p>
                 <div className="flex flex-wrap gap-x-8 gap-y-4">
-                  {clients.map((c) => (
+                  {partners.map((c) => (
                     <span key={c} className="text-sm font-bold text-ink/25 hover:text-ink/50 transition-colors cursor-default">{c}</span>
                   ))}
                 </div>
+                <p className="mt-6 text-xs text-ink/40">VCS &amp; CCB certified · VM0047 · ABACUS validated · independently rated by Sylvera · B Corp certified</p>
               </div>
               <div className="lg:pl-12 lg:border-l border-border">
-                <p className="text-2xl lg:text-3xl font-bold text-ink leading-tight mb-6">
-                  "Bridging the gap between nature restoration and private capital to create measurable impact."
+                <p className="text-2xl lg:text-3xl font-bold text-navy leading-tight mb-6">
+                  Bridging the gap between nature restoration and the private capital that makes it real.
                 </p>
                 <div className="flex gap-10">
                   {[
-                    { v: "10+", l: "certified projects" },
-                    { v: "€500M+", l: "capital mobilised" },
-                    { v: "40M t", l: "CO₂ by 2030" },
+                    { v: "4", l: "projects developed" },
+                    { v: "~15", l: "in origination pipeline" },
+                    { v: ">40M t", l: "CO₂ removals targeted" },
                   ].map((s) => (
                     <div key={s.l}>
                       <div className="text-2xl font-extrabold text-forest">{s.v}</div>
@@ -198,9 +197,13 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── Services — 3 photo cards ── */}
-        <section className="py-4 px-4 lg:px-6 bg-muted">
+        {/* ── What we do — 3 photo cards ── */}
+        <section className="pt-6 pb-4 px-4 lg:px-6 bg-muted">
           <div className="max-w-7xl mx-auto">
+            <div className="mb-6 px-1">
+              <p className="text-xs font-bold text-forest uppercase tracking-widest mb-2">What we do</p>
+              <h2 className="text-3xl lg:text-4xl font-extrabold text-navy leading-tight">Three lines of activity, one development capability.</h2>
+            </div>
             <div className="grid lg:grid-cols-3 gap-4">
               {services.map((s) => (
                 <Link key={s.title} href={s.href} className="group relative h-[540px] rounded-2xl overflow-hidden block">
@@ -212,16 +215,12 @@ export default function Home() {
                     sizes="(max-width: 1024px) 100vw, 33vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
-
-                  {/* Top badge */}
                   <div className="absolute top-5 left-5 px-2.5 py-1 rounded-full bg-white/15 backdrop-blur-sm border border-white/20 text-white text-[10px] font-semibold uppercase tracking-widest">
                     {s.tag}
                   </div>
-
-                  {/* Bottom content */}
                   <div className="absolute bottom-0 left-0 right-0 p-7">
                     <h3 className="text-2xl font-bold text-white mb-2">{s.title}</h3>
-                    <p className="text-sm text-white/60 leading-relaxed mb-4 max-h-0 overflow-hidden group-hover:max-h-20 transition-all duration-500">
+                    <p className="text-sm text-white/70 leading-relaxed mb-4 max-h-0 overflow-hidden group-hover:max-h-40 transition-all duration-500">
                       {s.desc}
                     </p>
                     <div className="flex items-center gap-1.5 text-accent text-sm font-semibold">
@@ -235,25 +234,24 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── OS TGB feature ── */}
+        {/* ── TerraHub feature ── */}
         <section className="py-24 bg-forest-deeper overflow-hidden">
           <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
-            {/* Left: text */}
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-accent text-xs font-semibold mb-6">
                 Built in-house · proprietary
               </div>
               <h2 className="text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-5">
-                Powered by <span className="text-accent">OS TGB</span>
+                Powered by <span className="text-accent">TerraHub</span>
               </h2>
               <p className="text-white/60 leading-relaxed mb-8 text-lg">
-                We didn&apos;t buy a platform. We built one. OS TGB manages every stage of carbon project development — making our work traceable, auditable, and investable.
+                One platform from origination to issuance. TerraHub unifies project development, MRV, and commercialisation in a single environment — how we develop faster, monitor deeper, and give buyers and investors direct sight of the work.
               </p>
               <div className="space-y-3 mb-10">
                 {[
-                  "Structured phase-gated development workflow",
-                  "Digital MRV combining satellite + field data",
-                  "Live investor dashboard with real-time project data",
+                  "Structured stage-gate development with 14-criteria quality scoring",
+                  "Digital MRV combining satellite and field data",
+                  "Live investor and buyer dashboard — a standing data room",
                 ].map((f, i) => (
                   <div key={i} className="flex items-center gap-3 text-sm text-white/70">
                     <CheckCircle2 className="w-4 h-4 text-accent shrink-0" />
@@ -261,15 +259,13 @@ export default function Home() {
                   </div>
                 ))}
               </div>
-              <Link href="/os-tgb"
+              <Link href="/terrahub"
                 className="inline-flex items-center gap-2 px-5 py-3 bg-accent text-forest-deeper text-sm font-bold rounded-xl hover:bg-accent-dark transition-colors">
-                Explore OS TGB <ArrowRight className="w-4 h-4" />
+                Explore TerraHub <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
 
-            {/* Right: photo + UI overlay */}
             <div className="relative">
-              {/* Field photo */}
               <div className="relative h-64 rounded-2xl overflow-hidden mb-4">
                 <Image
                   src="/Photos/DSCF9647.JPG"
@@ -283,7 +279,6 @@ export default function Home() {
                   Biodiversity monitoring — Sapucaia, Brazil
                 </div>
               </div>
-              {/* Dashboard mockup */}
               <DashboardMockup />
             </div>
           </div>
@@ -295,8 +290,8 @@ export default function Home() {
             <div className="flex items-end justify-between mb-10">
               <div>
                 <p className="text-xs font-bold text-forest uppercase tracking-widest mb-2">Our portfolio</p>
-                <h2 className="text-4xl lg:text-5xl font-extrabold text-ink leading-tight">
-                  Projects across<br />the globe
+                <h2 className="text-4xl lg:text-5xl font-extrabold text-navy leading-tight">
+                  Brazil-led,<br />globally connected
                 </h2>
               </div>
               <Link href="/projects"
@@ -305,9 +300,7 @@ export default function Home() {
               </Link>
             </div>
 
-            {/* Bento grid */}
             <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
-              {/* Featured large */}
               <Link href="/projects" className="group col-span-2 relative h-[480px] rounded-2xl overflow-hidden">
                 <Image
                   src={projects[0].photo}
@@ -328,7 +321,6 @@ export default function Home() {
                 </div>
               </Link>
 
-              {/* Right column — 2 stacked */}
               <div className="flex flex-col gap-4">
                 {projects.slice(1, 3).map((p) => (
                   <Link key={p.name} href="/projects" className="group relative rounded-2xl overflow-hidden" style={{ height: "232px" }}>
@@ -348,7 +340,6 @@ export default function Home() {
                 ))}
               </div>
 
-              {/* Bottom row — 3 equal */}
               {projects.slice(2, 5).map((p) => (
                 <Link key={`bottom-${p.name}`} href="/projects" className="group relative h-56 rounded-2xl overflow-hidden">
                   <Image src={p.photo} alt={p.name} fill
@@ -389,9 +380,9 @@ export default function Home() {
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-12">
               {[
-                { v: "10+", l: "Certified projects", s: "across multiple continents" },
-                { v: "€500M+", l: "Capital mobilised", s: "into nature-based solutions" },
-                { v: "40M t", l: "CO₂ by 2030", s: "removal target across portfolio" },
+                { v: "4M ha", l: "Forest conservation goal", s: "our vision, before 2040" },
+                { v: ">40M t", l: "CO₂ removals targeted", s: "across the portfolio" },
+                { v: "~15", l: "Projects in pipeline", s: "each screened and de-risked" },
               ].map((s) => (
                 <div key={s.l}>
                   <div className="text-6xl lg:text-7xl font-extrabold text-white mb-2 tracking-tight">{s.v}</div>
@@ -421,7 +412,7 @@ export default function Home() {
                   Science, finance,<br />and fieldwork.
                 </h2>
                 <p className="text-white/70 mb-6 leading-relaxed">
-                  Our team operates at the intersection of ecology, carbon markets, and finance — spending as much time in the field as in the boardroom.
+                  We operate at the intersection of technical development, financial structuring, and commercial strategy — working with local operational partners to originate and scale high-quality projects.
                 </p>
                 <Link href="/about"
                   className="inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-accent transition-colors">
@@ -438,13 +429,13 @@ export default function Home() {
             <div className="grid lg:grid-cols-3 gap-5 mb-12">
               <div className="lg:col-span-1">
                 <p className="text-xs font-bold text-forest uppercase tracking-widest mb-3">For buyers</p>
-                <h2 className="text-4xl font-extrabold text-ink leading-tight">
-                  Three ways to access credits
+                <h2 className="text-4xl font-extrabold text-navy leading-tight">
+                  Three ways to buy removals
                 </h2>
               </div>
               <div className="lg:col-span-2 flex flex-col justify-center">
                 <p className="text-ink/60 leading-relaxed text-lg">
-                  Whether you need credits now, want to lock in future supply, or want to co-fund the next generation of projects — we have a structured pathway for you.
+                  Every tonne is traceable to a specific project, methodology, and verification. Buy what is issued today, contract future vintages, or take a long-term stake in supply.
                 </p>
               </div>
             </div>
@@ -453,27 +444,27 @@ export default function Home() {
               {[
                 {
                   num: "01",
-                  title: "Development Contributions",
-                  sub: "Fund early. Secure first-offer rights.",
-                  desc: "Co-finance a project during development before credits exist. In return, receive first-offer rights at pre-agreed pricing.",
-                  tag: "High impact · Early access",
-                },
-                {
-                  num: "02",
-                  title: "Spot Credits",
-                  sub: "Verified. Available now.",
-                  desc: "Purchase certified nature-based removal credits from operating projects. Immediate delivery, full documentation.",
+                  title: "Spot",
+                  sub: "Issued removals, available now.",
+                  desc: "Issued removals available for immediate retirement or transfer. Suited to buyers meeting near-term claims.",
                   tag: "Immediate delivery",
                 },
                 {
+                  num: "02",
+                  title: "Forward",
+                  sub: "Future vintages, price certainty.",
+                  desc: "Contracted future vintages at agreed pricing, secured against projects already in development. For buyers building multi-year removal portfolios.",
+                  tag: "Price certainty",
+                },
+                {
                   num: "03",
-                  title: "ERPAs — Future Offtakes",
-                  sub: "Long-term supply. Price certainty.",
-                  desc: "Contract future delivery from projects in development. Multi-year price visibility and guaranteed access.",
-                  tag: "Long-term supply",
+                  title: "Offtake",
+                  sub: "Long-term supply, priority access.",
+                  desc: "Long-term ERPAs across one or more projects, optionally combined with equity participation. For buyers who want scale and a direct stake in supply.",
+                  tag: "Scale & priority",
                 },
               ].map((p) => (
-                <Link key={p.num} href="/secure-credits"
+                <Link key={p.num} href="/buy-removals"
                   className="group flex items-center gap-6 p-6 bg-white rounded-2xl border border-border hover:border-forest/30 hover:shadow-md transition-all">
                   <div className="text-3xl font-extrabold text-forest/15 w-12 shrink-0">{p.num}</div>
                   <div className="flex-1 min-w-0">
@@ -502,14 +493,14 @@ export default function Home() {
               Ready to act<br />on climate?
             </h2>
             <p className="text-white/50 text-lg mb-10 max-w-xl mx-auto">
-              Whether you&apos;re developing a project, sourcing credits, or deploying capital — let&apos;s talk.
+              Whether you are developing a project, sourcing removals, or deploying capital — let us talk.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Link href="/secure-credits"
+              <Link href="/buy-removals"
                 className="px-7 py-4 bg-accent text-forest-deeper text-sm font-bold rounded-xl hover:bg-accent-dark transition-all hover:scale-[1.02]">
-                Secure credits
+                Buy removals
               </Link>
-              <Link href="/develop"
+              <Link href="/develop/arr"
                 className="px-7 py-4 bg-white/10 text-white text-sm font-semibold rounded-xl hover:bg-white/15 transition-all border border-white/15">
                 Develop a project
               </Link>

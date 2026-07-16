@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -45,17 +46,15 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2.5 shrink-0">
-          <div className={cn("w-7 h-7 rounded-full flex items-center justify-center transition-colors", scrolled ? "bg-forest" : "bg-white/20 backdrop-blur-sm border border-white/30")}>
-            <svg viewBox="0 0 24 24" fill="none" className={cn("w-4 h-4", scrolled ? "text-white" : "text-white")} stroke="currentColor" strokeWidth="2.5">
-              <path d="M12 2C7 2 3 7 3 12s4 9 9 9c1.5 0 3-.4 4.2-1" strokeLinecap="round"/>
-              <path d="M12 2c2.5 2.5 4 6 4 10" strokeLinecap="round"/>
-              <path d="M12 22V12M12 12l-4-4M12 12l4-4" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </div>
-          <span className={cn("font-semibold text-sm tracking-tight transition-colors", textClass)}>
-            The Green Branch
-          </span>
+        <Link href="/" className="flex items-center shrink-0" aria-label="The Green Branch — home">
+          <Image
+            src={scrolled ? "/logo-green.png" : "/logo-white.png"}
+            alt="The Green Branch"
+            width={2895}
+            height={640}
+            priority
+            className="h-7 w-auto"
+          />
         </Link>
 
         {/* Desktop nav */}

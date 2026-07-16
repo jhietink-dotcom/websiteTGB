@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Mail, MapPin } from "lucide-react";
 
 const links = {
@@ -27,15 +28,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center gap-2.5 mb-4">
-              <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center">
-                <svg viewBox="0 0 24 24" fill="none" className="w-4.5 h-4.5 text-forest-deeper" stroke="currentColor" strokeWidth="2.5">
-                  <path d="M12 2C7 2 3 7 3 12s4 9 9 9c1.5 0 3-.4 4.2-1" strokeLinecap="round"/>
-                  <path d="M12 2c2.5 2.5 4 6 4 10" strokeLinecap="round"/>
-                  <path d="M12 22V12M12 12l-4-4M12 12l4-4" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-              <span className="font-semibold text-white">The Green Branch</span>
+            <Link href="/" className="inline-flex items-center mb-4" aria-label="The Green Branch — home">
+              <Image src="/logo-white.png" alt="The Green Branch" width={2895} height={640} className="h-8 w-auto" />
             </Link>
             <p className="text-sm text-white/60 leading-relaxed mb-6 max-w-xs">
               Bridging the gap between nature restoration and private capital to create measurable environmental and social impact.
@@ -43,7 +37,7 @@ export default function Footer() {
             <div className="space-y-2 text-sm text-white/60">
               <div className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 mt-0.5 shrink-0 text-accent" />
-                <span>Weesperstraat 111, 1018 VN Amsterdam</span>
+                <span>Plantage Middenlaan 2c, 1018 DD Amsterdam</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 shrink-0 text-accent" />
@@ -78,7 +72,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-white/40">© The Green Branch 2025. All Rights Reserved.</p>
+          <p className="text-xs text-white/40">© The Green Branch 2026. All Rights Reserved.</p>
           <p className="text-xs text-white/40">Amsterdam · Brazil · Africa · Tanzania</p>
         </div>
       </div>

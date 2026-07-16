@@ -30,7 +30,7 @@ export function DashboardMockup() {
               key={`dev-${item.label}`}
               className={`flex items-center gap-2 px-2 py-1.5 rounded text-[10px] ${
                 item.active
-                  ? "bg-[#206042] text-white font-semibold"
+                  ? "bg-[#00965D] text-white font-semibold"
                   : "text-white/40 hover:text-white/70"
               }`}
             >
@@ -52,7 +52,7 @@ export function DashboardMockup() {
               <div className="text-[9px] text-white/40">Sapucaia Sustainable Forests · Feasibility Phase</div>
             </div>
             <div className="flex gap-1.5">
-              <div className="px-2 py-0.5 bg-[#206042]/30 border border-[#206042]/40 rounded text-[9px] text-[#4caf80]">Active</div>
+              <div className="px-2 py-0.5 bg-[#00965D]/30 border border-[#00965D]/40 rounded text-[9px] text-[#4caf80]">Active</div>
               <div className="px-2 py-0.5 bg-[#FFB84D]/20 border border-[#FFB84D]/30 rounded text-[9px] text-[#FFB84D]">Phase 3/5</div>
             </div>
           </div>
@@ -63,13 +63,13 @@ export function DashboardMockup() {
               <div key={p} className="flex items-center">
                 <div className={`flex flex-col items-center gap-0.5 ${i < 3 ? "text-[#4caf80]" : i === 3 ? "text-[#FFB84D]" : "text-white/20"}`}>
                   <div className={`w-4 h-4 rounded-full flex items-center justify-center border ${
-                    i < 3 ? "bg-[#206042] border-[#206042]" : i === 3 ? "bg-[#FFB84D]/20 border-[#FFB84D]" : "border-white/10"
+                    i < 3 ? "bg-[#00965D] border-[#00965D]" : i === 3 ? "bg-[#FFB84D]/20 border-[#FFB84D]" : "border-white/10"
                   }`}>
                     {i < 3 ? "✓" : i === 3 ? "●" : "○"}
                   </div>
                   <span className={`${i > 2 ? "hidden" : ""}`}>{p.split("-")[0]}</span>
                 </div>
-                {i < 4 && <div className={`w-8 h-px mx-1 ${i < 2 ? "bg-[#206042]" : "bg-white/10"}`} />}
+                {i < 4 && <div className={`w-8 h-px mx-1 ${i < 2 ? "bg-[#00965D]" : "bg-white/10"}`} />}
               </div>
             ))}
           </div>
@@ -86,7 +86,7 @@ export function DashboardMockup() {
                 <div key={d.label} className="flex items-center justify-between py-1 border-b border-white/5 last:border-0">
                   <span className="text-[9px] text-white/50 truncate mr-2">{d.label}</span>
                   <span className={`text-[8px] px-1.5 py-0.5 rounded-full shrink-0 ${
-                    d.status === "approved" ? "bg-[#206042]/30 text-[#4caf80]" :
+                    d.status === "approved" ? "bg-[#00965D]/30 text-[#4caf80]" :
                     d.status === "in_progress" ? "bg-[#FFB84D]/20 text-[#FFB84D]" :
                     "bg-white/5 text-white/30"
                   }`}>
@@ -141,7 +141,7 @@ export function MRVMockup() {
             { icon: "◎", label: "MRV", active: true },
             { icon: "⊕", label: "Expansion", active: false },
           ].map((item) => (
-            <div key={`mrv-${item.label}`} className={`flex items-center gap-2 px-2 py-1.5 rounded text-[10px] ${item.active ? "bg-[#206042] text-white font-semibold" : "text-white/40"}`}>
+            <div key={`mrv-${item.label}`} className={`flex items-center gap-2 px-2 py-1.5 rounded text-[10px] ${item.active ? "bg-[#00965D] text-white font-semibold" : "text-white/40"}`}>
               <span className="text-[11px]">{item.icon}</span>
               {item.label}
             </div>
@@ -173,7 +173,7 @@ export function MRVMockup() {
                 <div className={`w-2 h-2 rounded-full shrink-0 ${p.health === "green" ? "bg-[#4caf80]" : "bg-[#FFB84D]"}`} />
                 <span className="text-[9px] text-white/70 flex-1">{p.name}</span>
                 <div className="w-16 bg-white/10 rounded-full h-1">
-                  <div className={`h-1 rounded-full ${p.health === "green" ? "bg-[#206042]" : "bg-[#FFB84D]"}`} style={{ width: `${p.pct}%` }} />
+                  <div className={`h-1 rounded-full ${p.health === "green" ? "bg-[#00965D]" : "bg-[#FFB84D]"}`} style={{ width: `${p.pct}%` }} />
                 </div>
                 <span className="text-[8px] text-white/40">{p.ha}</span>
               </div>

@@ -1,16 +1,27 @@
 @import "tailwindcss";
 
 @theme {
-  --color-forest: #206042;
-  --color-forest-dark: #0F2D1E;
-  --color-forest-deeper: #0A1F15;
-  --color-forest-light: #2E7D52;
-  --color-forest-muted: #E8F2EC;
+  /* Greens — Brand Book (2026) primary system */
+  --color-forest: #00965D;         /* Primary Green — brand, headings, CTAs */
+  --color-forest-dark: #047740;    /* Dark Green — titles on white */
+  --color-forest-deeper: #0A1F15;  /* Near-black green — dark sections */
+  --color-forest-light: #0ACC88;   /* Light Green — highlights */
+  --color-forest-muted: #EAF2E4;   /* Sage — soft green backgrounds */
+
+  /* Accent — kept warm amber from previous site (nicer than Brand Book #FF6B00) */
   --color-accent: #FFB84D;
   --color-accent-dark: #E8A030;
-  --color-accent-light: #FFF3DC;
-  --color-ink: #0F1F16;
-  --color-ink-soft: #3D5047;
+  --color-accent-light: #FEF7E1;   /* Warm — soft amber backgrounds */
+
+  /* Support neutrals */
+  --color-cream: #FEFFF7;          /* Cream — optional page background */
+  --color-mint: #D8ECCA;           /* Mint — soft support tint */
+
+  /* Text — Brand Book */
+  --color-ink: #222222;            /* Body text */
+  --color-ink-soft: #555555;       /* Secondary text */
+  --color-navy: #031737;           /* Title navy on light backgrounds */
+
   --color-muted: #F4F7F5;
   --color-border: #D8E5DC;
 
@@ -19,7 +30,7 @@
 
 body {
   font-family: var(--font-poppins), system-ui, sans-serif;
-  color: #0F1F16;
+  color: #222222;
   background: #ffffff;
   -webkit-font-smoothing: antialiased;
 }
@@ -31,4 +42,4 @@ html {
 /* Custom scrollbar */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: #f1f1f1; }
-::-webkit-scrollbar-thumb { background: #206042; border-radius: 3px; }
+::-webkit-scrollbar-thumb { background: #00965D; border-radius: 3px; }

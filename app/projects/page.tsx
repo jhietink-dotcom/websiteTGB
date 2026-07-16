@@ -3,92 +3,116 @@ import Footer from "@/components/Footer";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, MapPin } from "lucide-react";
+import { Tbc } from "@/components/Tbc";
+
+export const metadata = {
+  title: "Projects",
+  description:
+    "The Green Branch portfolio of high-integrity, nature-based emission removal projects — Brazil-led reforestation and restoration, with selected projects across Africa.",
+};
 
 const projects = [
   {
     num: "01",
     name: "Sapucaia Sustainable Forests",
-    tagline: "Large-scale Cerrado reforestation",
+    tagline: "Large-scale reforestation",
     country: "Brazil",
     flag: "🇧🇷",
-    region: "Minas Gerais · Cerrado",
+    region: "Bahia · Brazil",
     type: "Reforestation",
-    ha: "4,800",
-    tCO2: "320K",
-    status: "Active",
+    ha: <Tbc>project area</Tbc>,
+    tCO2: <Tbc>removal estimate</Tbc>,
+    status: "Certified",
     photo: "/Photos/DSCF9854.JPG",
     description:
-      "A large-scale reforestation effort restoring degraded Cerrado lands while providing economic opportunities for local communities through high-integrity carbon credit development.",
-    partners: ["Local landowners", "Certification bodies"],
+      "A large-scale reforestation programme developed with Futuro Florestal, certified to VCS and CCB under methodology VM0047 and ABACUS validated. The project carries a Sylvera Estimated Rating of BBB–AA, restoring degraded land while generating high-integrity emission removals for local communities.",
+    partners: ["Futuro Florestal", "Verra (VCS + CCB)"],
     align: "left",
   },
   {
     num: "02",
+    name: "Trees for Farmers",
+    tagline: "Native reforestation on degraded pasture",
+    country: "Brazil",
+    flag: "🇧🇷",
+    region: "Mato Grosso · Amazon biome",
+    type: "Reforestation",
+    ha: <Tbc>project area</Tbc>,
+    tCO2: <Tbc>removal estimate</Tbc>,
+    status: "Development",
+    photo: "/Photos/DSCF9807.JPG",
+    description:
+      "Native reforestation of degraded pasture in the Amazon biome, developed with Rabobank and implemented by Implantar alongside smallholder farmers. The project has been selected by the Amazon Green Pledge RfP for a 10,000-hectare offtake, restoring biodiverse and climate-resilient ecosystems.",
+    partners: ["Rabobank", "Implantar", "Amazon Green Pledge"],
+    align: "right",
+  },
+  {
+    num: "03",
+    name: "Samauma",
+    tagline: "Amazon restoration at concept stage",
+    country: "Brazil",
+    flag: "🇧🇷",
+    region: "Pará · Amazon biome",
+    type: "Restoration",
+    ha: "5,000+ ha",
+    tCO2: <Tbc>removal estimate</Tbc>,
+    status: "Concept",
+    photo: "/Photos/DSCF9805.JPG",
+    description:
+      "An early-stage restoration concept covering a minimum of 5,000 hectares in the Amazon biome. Conservative modelling indicates issuance of over 255 emission removal units per hectare across the project lifetime, providing a durable foundation for high-integrity supply.",
+    partners: [],
+    align: "left",
+  },
+  {
+    num: "04",
     name: "Serra do Sudeste Landscape Restoration",
     tagline: "Riparian & Atlantic Forest recovery",
     country: "Brazil",
     flag: "🇧🇷",
     region: "Rio Grande do Sul · Atlantic Forest / Pampa",
     type: "Riparian Restoration",
-    ha: "2,200",
-    tCO2: "120K",
-    status: "Certified",
+    ha: <Tbc>project area</Tbc>,
+    tCO2: <Tbc>removal estimate</Tbc>,
+    status: "Development",
     photo: "/Photos/DSCF9831.JPG",
     description:
-      "Restores riparian forests and erosion-prone areas in the transition zone between the Atlantic Forest and Pampa biome, respecting natural grasslands while creating measurable carbon outcomes.",
+      "Restoration of riparian forests and erosion-prone areas in the transition zone between the Atlantic Forest and Pampa biome, respecting natural grasslands while delivering measurable emission removals.",
     partners: ["Local landowners", "Municipal partners"],
     align: "right",
   },
   {
-    num: "03",
-    name: "Trees for Farmers Brazil",
-    tagline: "Amazon agroforestry with smallholders",
-    country: "Brazil",
-    flag: "🇧🇷",
-    region: "Pará · Amazon",
-    type: "Agroforestry",
-    ha: "8,500",
-    tCO2: "400K",
-    status: "Development",
-    photo: "/Photos/DSCF9807.JPG",
-    description:
-      "A scalable native reforestation initiative co-developed with Rabobank to transform degraded pasturelands into biodiverse, productive, and climate-resilient ecosystems alongside smallholder farmers.",
-    partners: ["Rabobank"],
-    align: "left",
-  },
-  {
-    num: "04",
-    name: "Great Agroforestry Initiative Africa",
+    num: "05",
+    name: "Great Agroforestry Initiative",
     tagline: "Community-driven savannah restoration",
     country: "Ghana",
     flag: "🇬🇭",
     region: "Northern Ghana · Savannah",
     type: "Community Agroforestry",
-    ha: "200,000+",
-    tCO2: "2M+",
+    ha: <Tbc>project area</Tbc>,
+    tCO2: <Tbc>removal estimate</Tbc>,
     status: "Active",
     photo: "/Photos/DSCF0493.JPG",
     description:
-      "A large-scale community initiative restoring degraded savannahs through agroforestry with over 35,000 smallholder farmers across Northern Ghana, delivering both carbon outcomes and food security.",
-    partners: ["Sommalife", "Local farming cooperatives"],
-    align: "right",
+      "A large-scale community agroforestry programme restoring degraded savannah with more than 35,000 smallholder farmers across Northern Ghana, delivering emission removals alongside food security and rural livelihoods.",
+    partners: ["Local farming cooperatives"],
+    align: "left",
   },
   {
-    num: "05",
+    num: "06",
     name: "Suledo Forest ARR",
-    tagline: "Miombo woodland restoration with Maasai communities",
+    tagline: "Miombo woodland restoration with local communities",
     country: "Tanzania",
     flag: "🇹🇿",
     region: "Simanjiro District · Miombo Forest",
     type: "ARR",
-    ha: "6,100",
-    tCO2: "280K",
+    ha: <Tbc>project area</Tbc>,
+    tCO2: <Tbc>removal estimate</Tbc>,
     status: "Development",
     photo: "/Photos/DSCF9797.JPG",
     description:
-      "A collaboration with the Suledo Forest Community Trust and NRC restoring miombo forest and enabling sustainable income for Maasai communities through alley cropping and carbon credit generation.",
-    partners: ["NRC", "Suledo Forest Community Trust"],
-    align: "left",
+      "Miombo forest restoration co-designed with local Maasai communities and delivered with the Nature Restoration Company (NRC). Alley cropping supports local income while the project restores woodland and generates durable emission removals.",
+    partners: ["Nature Restoration Company (NRC)", "Local communities"],
+    align: "right",
   },
 ];
 
@@ -96,6 +120,7 @@ const statusStyle: Record<string, string> = {
   Active: "bg-emerald-500/20 text-emerald-300 border-emerald-500/30",
   Certified: "bg-sky-500/20 text-sky-300 border-sky-500/30",
   Development: "bg-amber-400/20 text-amber-300 border-amber-400/30",
+  Concept: "bg-white/10 text-white/70 border-white/20",
 };
 
 export default function ProjectsPage() {
@@ -108,7 +133,7 @@ export default function ProjectsPage() {
         <section className="relative h-screen min-h-[600px] flex flex-col justify-end overflow-hidden">
           <Image
             src="/Photos/DSCF9818.JPG"
-            alt="Field team at plantation"
+            alt="Field team at a reforestation site"
             fill
             className="object-cover"
             sizes="100vw"
@@ -128,16 +153,16 @@ export default function ProjectsPage() {
               <span className="text-accent">meets capital.</span>
             </h1>
             <p className="text-lg text-white/70 max-w-xl leading-relaxed mb-10">
-              Five high-integrity nature-based projects across Brazil, Tanzania and Ghana — verified, traceable, and built to last.
+              A Brazil-led portfolio of high-integrity, nature-based emission removal projects, with selected projects across Africa — verified, traceable, and built to last.
             </p>
 
             {/* Stats row */}
             <div className="flex flex-wrap gap-x-10 gap-y-4">
               {[
-                { value: "5", label: "Projects" },
+                { value: "6", label: "Projects" },
                 { value: "3", label: "Countries" },
-                { value: "221,600+", label: "Hectares" },
-                { value: "40M t", label: "CO₂ by 2030" },
+                { value: <Tbc>total area</Tbc>, label: "Hectares under restoration" },
+                { value: <Tbc>removal potential</Tbc>, label: "Emission removals" },
               ].map((s) => (
                 <div key={s.label}>
                   <div className="text-2xl font-bold text-white">{s.value}</div>
@@ -231,26 +256,28 @@ export default function ProjectsPage() {
                     {/* Key figures */}
                     <div className="flex gap-6 mb-6">
                       <div>
-                        <div className="text-xl font-bold text-white">{p.ha} ha</div>
+                        <div className="text-xl font-bold text-white">{p.ha}</div>
                         <div className="text-[10px] text-white/40 mt-0.5">Project area</div>
                       </div>
                       <div>
                         <div className="text-xl font-bold text-accent">{p.tCO2}</div>
-                        <div className="text-[10px] text-white/40 mt-0.5">tCO₂ potential</div>
+                        <div className="text-[10px] text-white/40 mt-0.5">Emission removals</div>
                       </div>
                     </div>
 
                     {/* Partners */}
-                    <div className="flex flex-wrap gap-1.5 mb-6">
-                      {p.partners.map((partner) => (
-                        <span
-                          key={partner}
-                          className="text-[10px] px-2.5 py-0.5 rounded-full bg-white/5 border border-white/10 text-white/50"
-                        >
-                          {partner}
-                        </span>
-                      ))}
-                    </div>
+                    {p.partners.length > 0 && (
+                      <div className="flex flex-wrap gap-1.5 mb-6">
+                        {p.partners.map((partner) => (
+                          <span
+                            key={partner}
+                            className="text-[10px] px-2.5 py-0.5 rounded-full bg-white/5 border border-white/10 text-white/50"
+                          >
+                            {partner}
+                          </span>
+                        ))}
+                      </div>
+                    )}
 
                     {/* CTA */}
                     <Link
@@ -286,11 +313,11 @@ export default function ProjectsPage() {
               Have land with restoration potential?
             </h2>
             <p className="text-lg text-white/60 mb-10 max-w-2xl mx-auto leading-relaxed">
-              We partner with landowners, communities and organisations to develop the next generation of high-integrity nature-based projects.
+              We partner with landowners, communities and organisations to develop the next generation of high-integrity, nature-based emission removal projects.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href="/develop"
+                href="/develop/arr"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-accent text-forest-deeper text-sm font-bold rounded-xl hover:bg-accent-dark transition-colors"
               >
                 Start development <ArrowRight className="w-4 h-4" />

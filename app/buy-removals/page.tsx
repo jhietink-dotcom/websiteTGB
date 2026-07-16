@@ -1,91 +1,107 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { InvestorDashboardMockup } from "@/components/OSTGBMockup";
-import { ArrowRight, CheckCircle2, Clock, Zap, Lock, FileText, Users, TrendingUp } from "lucide-react";
+import { Tbc } from "@/components/Tbc";
+import { ArrowRight, CheckCircle2, Clock, Zap, Lock, FileText, Users, TrendingUp, BadgeCheck, ShieldCheck, Eye, Leaf } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Buy Removals",
+  description:
+    "Certified emission removals from projects we develop and manage ourselves, and from selected projects in our origination pipeline. Every tonne is traceable.",
+};
 
 const pathways = [
   {
-    id: "contributions",
-    number: "01",
-    title: "Development Contributions",
-    subtitle: "Fund early. Secure first access.",
-    badge: "Best for: Early movers & impact-first buyers",
-    color: "border-forest bg-forest-muted/50",
-    headerColor: "bg-forest text-white",
-    icon: Users,
-    pitch: "A Development Contribution means you co-finance a project during its development phase — before a single carbon credit has been issued. In return, you get first-offer rights on future credits at pre-agreed pricing, locking in supply and price before the open market.",
-    howItWorks: [
-      "You contribute capital during the project development phase (feasibility through certification)",
-      "TGB manages the entire development process via OS TGB, with full transparency",
-      "You receive quarterly updates with verified milestones via the Investor Dashboard",
-      "Once credits are issued, you hold first-offer rights at the contracted price",
-      "Surplus credits are offered on the market — you always have priority",
-    ],
-    benefits: [
-      { icon: Lock, label: "Price certainty", desc: "Pre-agreed $/tCO₂ before market pricing is set" },
-      { icon: TrendingUp, label: "First-offer rights", desc: "Priority access to all issued credits" },
-      { icon: Users, label: "Named contributor", desc: "Recognised as a founding project partner" },
-      { icon: FileText, label: "Full transparency", desc: "Access to OS TGB Investor Dashboard throughout" },
-    ],
-    cta: "Apply for a contribution",
-    ctaHref: "/contact",
-  },
-  {
     id: "spot",
-    number: "02",
-    title: "Spot Credits",
-    subtitle: "Verified. Available now.",
-    badge: "Best for: Immediate retirement & compliance",
-    color: "border-border bg-white",
-    headerColor: "bg-ink text-white",
+    number: "01",
+    title: "Spot",
+    subtitle: "Issued removals, available now.",
+    badge: "Best for: near-term claims",
     icon: Zap,
-    pitch: "Spot credits are verified, available nature-based removal credits from TGB's operating portfolio. Fully certified under internationally recognised standards, these credits are available for immediate purchase and retirement — the most direct path to premium carbon removal.",
+    pitch: "Issued removals, available for immediate retirement or transfer. Suited to buyers meeting near-term claims with certified, traceable supply from our operating portfolio.",
     howItWorks: [
-      "Browse available credit volumes from our live project portfolio",
-      "Select project, vintage, and volume that suits your procurement needs",
-      "Complete purchase and receive full documentation package",
-      "Credits are retired in your name in the relevant registry",
-      "Access project performance data via the Investor Dashboard",
+      "Review available volumes and vintages from our issued portfolio",
+      "Select project, vintage, and volume to suit your procurement needs",
+      "Complete the purchase and receive the full documentation package",
+      "Removals are retired in your name in the relevant registry",
+      "Access project performance data via TerraHub",
     ],
     benefits: [
-      { icon: Zap, label: "Immediate delivery", desc: "Credits delivered and retired same week" },
-      { icon: CheckCircle2, label: "Fully certified", desc: "Verra, Gold Standard, or equivalent" },
-      { icon: FileText, label: "Complete documentation", desc: "PDD, MRV reports, audit records" },
-      { icon: TrendingUp, label: "Project traceability", desc: "Link each tonne to a specific field location" },
+      { icon: Zap, label: "Immediate delivery", desc: "Issued removals ready to retire or transfer" },
+      { icon: BadgeCheck, label: "Certified", desc: "VCS + CCB, VM0047 for ARR" },
+      { icon: FileText, label: "Full documentation", desc: "PDD, MRV reports, audit records" },
+      { icon: TrendingUp, label: "Traceable", desc: "Each tonne linked to a specific project" },
     ],
     cta: "Enquire about spot availability",
     ctaHref: "/contact",
   },
   {
-    id: "erpa",
-    number: "03",
-    title: "ERPAs — Future Offtakes",
-    subtitle: "Long-term supply. Price certainty.",
-    badge: "Best for: Corporate net-zero strategies",
-    color: "border-forest/30 bg-forest-deeper/5",
-    headerColor: "bg-forest-dark text-white",
+    id: "forward",
+    number: "02",
+    title: "Forward",
+    subtitle: "Future vintages, price certainty.",
+    badge: "Best for: multi-year portfolios",
     icon: Clock,
-    pitch: "An Emission Removal Purchase Agreement (ERPA) is a contract to purchase carbon credits from a project that is still in development, for delivery in future years. ERPAs give you multi-year price visibility, guaranteed supply, and a direct link to a named project — essential for long-term net-zero procurement.",
+    pitch: "Contracted future vintages at agreed pricing, secured against projects already in development. Suited to buyers building multi-year removal portfolios with price certainty.",
     howItWorks: [
-      "TGB presents a pipeline of projects entering development with confirmed credit volumes",
-      "You agree on a delivery schedule, price per tonne, and contract terms",
-      "The ERPA is executed and linked to your OS TGB buyer account",
-      "As the project develops, you receive verified milestone updates",
-      "Credits are delivered and retired per the agreed schedule upon issuance",
+      "We present projects already in development with modelled future volumes",
+      "You agree a delivery schedule and price per tonne for future vintages",
+      "The forward contract is secured against a named project in development",
+      "You receive verified milestone updates as the project progresses",
+      "Vintages are delivered and retired on the agreed schedule upon issuance",
     ],
     benefits: [
-      { icon: Clock, label: "Multi-year contracts", desc: "2–10 year delivery schedules available" },
-      { icon: Lock, label: "Fixed pricing", desc: "Long-term price certainty for budget planning" },
-      { icon: CheckCircle2, label: "Guaranteed supply", desc: "Contractually secured credit volumes" },
-      { icon: FileText, label: "Full traceability", desc: "Named project, GPS boundaries, field data" },
+      { icon: Lock, label: "Price certainty", desc: "Agreed pricing for future vintages" },
+      { icon: Clock, label: "Multi-year", desc: "Build a portfolio across vintages" },
+      { icon: CheckCircle2, label: "Secured supply", desc: "Contracted against projects in development" },
+      { icon: FileText, label: "Full traceability", desc: "Named project, boundaries, field data" },
     ],
-    cta: "Discuss an ERPA",
+    cta: "Discuss a forward contract",
+    ctaHref: "/contact",
+  },
+  {
+    id: "offtake",
+    number: "03",
+    title: "Offtake",
+    subtitle: "Long-term supply, priority access.",
+    badge: "Best for: scale & a stake in supply",
+    icon: Users,
+    pitch: "Long-term Emission Removal Purchase Agreements (ERPAs) across one or more projects, optionally combined with equity participation. Suited to buyers who want scale, priority access, and a direct stake in supply.",
+    howItWorks: [
+      "We present a pipeline of projects entering development with confirmed volumes",
+      "You agree a long-term delivery schedule, pricing, and contract terms",
+      "The ERPA is executed — optionally with equity participation",
+      "As projects develop, you receive verified milestone updates via TerraHub",
+      "Removals are delivered and retired per the agreed schedule upon issuance",
+    ],
+    benefits: [
+      { icon: TrendingUp, label: "Scale", desc: "Volume across one or more projects" },
+      { icon: Lock, label: "Fixed pricing", desc: "Long-term certainty for budget planning" },
+      { icon: Users, label: "Priority access", desc: "First claim on contracted supply" },
+      { icon: ShieldCheck, label: "Direct stake", desc: "Optional equity participation" },
+    ],
+    cta: "Discuss an offtake",
     ctaHref: "/contact",
   },
 ];
 
-export default function SecureCreditsPage() {
+const buying = [
+  { icon: BadgeCheck, label: "Certification", desc: "Verified Carbon Standard (VCS) and Climate, Community and Biodiversity (CCB) Standards of Verra; VM0047 for ARR." },
+  { icon: ShieldCheck, label: "Integrity", desc: "Alignment with the Core Carbon Principles; independent ratings from Sylvera." },
+  { icon: Eye, label: "Transparency", desc: "Project-level access to monitoring data via TerraHub." },
+  { icon: Leaf, label: "Impact", desc: "Biodiverse forests with more than 40 native tree species, structured benefit sharing with local communities." },
+];
+
+const featured = [
+  { project: "Sapucaia Sustainable Forests", location: "Bahia", standard: "VCS + CCB, VM0047", status: "Certified; Sylvera BBB–AA (Estimated)" },
+  { project: "Trees for Farmers", location: "Mato Grosso", standard: "VCS + CCB, VM0047", status: "In development with Rabobank" },
+  { project: "Samauma", location: "Pará", standard: "VCS + CCB (planned)", status: "Concept stage" },
+  { project: "Industrial Biochar", location: "Brazil", standard: "methodology TBC", status: "Origination" },
+];
+
+export default function BuyRemovalsPage() {
   return (
     <>
       <Navbar />
@@ -97,15 +113,15 @@ export default function SecureCreditsPage() {
             <div className="max-w-3xl">
               <div className="text-xs font-semibold text-accent uppercase tracking-widest mb-4">For buyers</div>
               <h1 className="text-5xl font-bold text-white mb-6 leading-tight">
-                Lift up your climate strategy with high-quality removal credits.
+                Removals you can stand behind.
               </h1>
               <p className="text-lg text-white/60 leading-relaxed mb-8">
-                The Green Branch develops forest restoration projects from feasibility through verification, remaining involved for over 40 years. We offer three distinct pathways for buyers — each designed for a different procurement strategy.
+                We supply certified emission removals from projects we develop and manage ourselves, and from selected projects in our origination pipeline. Every tonne is traceable to a specific project, methodology, and verification.
               </p>
               <div className="flex flex-wrap gap-4">
-                <a href="#contributions" className="px-5 py-2.5 bg-forest text-white text-sm font-semibold rounded-lg hover:bg-forest-light transition-colors">Development Contributions</a>
-                <a href="#spot" className="px-5 py-2.5 bg-white/10 text-white text-sm font-semibold rounded-lg hover:bg-white/15 transition-colors border border-white/10">Spot Credits</a>
-                <a href="#erpa" className="px-5 py-2.5 bg-white/10 text-white text-sm font-semibold rounded-lg hover:bg-white/15 transition-colors border border-white/10">ERPAs</a>
+                <a href="#spot" className="px-5 py-2.5 bg-forest text-white text-sm font-semibold rounded-lg hover:bg-forest-light transition-colors">Spot</a>
+                <a href="#forward" className="px-5 py-2.5 bg-white/10 text-white text-sm font-semibold rounded-lg hover:bg-white/15 transition-colors border border-white/10">Forward</a>
+                <a href="#offtake" className="px-5 py-2.5 bg-white/10 text-white text-sm font-semibold rounded-lg hover:bg-white/15 transition-colors border border-white/10">Offtake</a>
               </div>
             </div>
           </div>
@@ -116,9 +132,9 @@ export default function SecureCreditsPage() {
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid md:grid-cols-3 gap-4 text-sm">
               {[
-                { label: "Development Contributions", when: "Project in development", delivery: "Future (first-offer rights)", pricing: "Pre-agreed / fixed", risk: "Higher impact, early-mover advantage" },
-                { label: "Spot Credits", when: "Project operating", delivery: "Immediate", pricing: "Market price", risk: "Low — verified & available now" },
-                { label: "ERPAs", when: "Project in development", delivery: "Future (contracted)", pricing: "Fixed multi-year", risk: "Guaranteed future supply" },
+                { label: "Spot", when: "Project operating", delivery: "Immediate", pricing: "Market price", risk: "Certified & available now" },
+                { label: "Forward", when: "Project in development", delivery: "Future (contracted)", pricing: "Agreed, per vintage", risk: "Price certainty for portfolios" },
+                { label: "Offtake", when: "One or more projects", delivery: "Future (long-term)", pricing: "Fixed, multi-year", risk: "Scale, priority & optional equity" },
               ].map((row) => (
                 <div key={row.label} className="bg-white rounded-xl border border-border p-5">
                   <div className="font-bold text-ink mb-3">{row.label}</div>
@@ -136,7 +152,7 @@ export default function SecureCreditsPage() {
 
         {/* Pathway deep-dives */}
         {pathways.map((p) => (
-          <section key={p.id} id={p.id} className="py-20 border-b border-border last:border-0">
+          <section key={p.id} id={p.id} className="py-20 border-b border-border last:border-0 scroll-mt-20">
             <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-start">
               <div>
                 <div className="flex items-center gap-3 mb-5">
@@ -144,7 +160,7 @@ export default function SecureCreditsPage() {
                   <div className="w-px h-8 bg-border" />
                   <span className="text-xs font-semibold text-forest uppercase tracking-widest">{p.badge}</span>
                 </div>
-                <h2 className="text-3xl font-bold text-ink mb-1">{p.title}</h2>
+                <h2 className="text-3xl font-bold text-navy mb-1">{p.title}</h2>
                 <p className="text-base font-semibold text-forest mb-5">{p.subtitle}</p>
                 <p className="text-ink-soft leading-relaxed mb-8">{p.pitch}</p>
 
@@ -183,25 +199,87 @@ export default function SecureCreditsPage() {
           </section>
         ))}
 
+        {/* What you are buying */}
+        <section className="py-20 bg-muted">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="text-xs font-semibold text-forest uppercase tracking-widest mb-3">What you are buying</div>
+            <h2 className="text-3xl font-bold text-navy mb-12">Certified, high-integrity, and transparent.</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+              {buying.map((b) => (
+                <div key={b.label} className="p-6 rounded-2xl border border-border bg-white">
+                  <div className="w-11 h-11 rounded-xl bg-forest-muted flex items-center justify-center mb-4">
+                    <b.icon className="w-5 h-5 text-forest" />
+                  </div>
+                  <h3 className="text-base font-bold text-ink mb-2">{b.label}</h3>
+                  <p className="text-sm text-ink-soft leading-relaxed">{b.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Own portfolio and pipeline access */}
+        <section className="py-20 bg-white">
+          <div className="max-w-3xl mx-auto px-6">
+            <div className="text-xs font-semibold text-forest uppercase tracking-widest mb-3">Own portfolio and pipeline access</div>
+            <h2 className="text-3xl font-bold text-navy mb-6">The developer and quality gatekeeper — not a marketplace.</h2>
+            <p className="text-ink-soft leading-relaxed">
+              Beyond our own projects, buyers can access removals from third-party projects advancing through our origination pipeline — each screened, scored, and developed under the same quality framework. We are the developer and quality gatekeeper, not a marketplace.
+            </p>
+          </div>
+        </section>
+
+        {/* Featured projects table */}
+        <section className="py-20 bg-muted">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="text-xs font-semibold text-forest uppercase tracking-widest mb-3">Featured projects</div>
+            <h2 className="text-3xl font-bold text-navy mb-8">Removals sourced from projects we know intimately.</h2>
+            <div className="overflow-x-auto rounded-2xl border border-border bg-white">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-border text-left">
+                    <th className="px-5 py-4 font-semibold text-ink">Project</th>
+                    <th className="px-5 py-4 font-semibold text-ink">Location</th>
+                    <th className="px-5 py-4 font-semibold text-ink">Standard</th>
+                    <th className="px-5 py-4 font-semibold text-ink">Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {featured.map((r) => (
+                    <tr key={r.project} className="border-b border-border last:border-0">
+                      <td className="px-5 py-4 font-medium text-ink">{r.project}</td>
+                      <td className="px-5 py-4 text-ink-soft">{r.location}</td>
+                      <td className="px-5 py-4 text-ink-soft">
+                        {r.standard === "methodology TBC" ? <Tbc>biochar methodology</Tbc> : r.standard}
+                      </td>
+                      <td className="px-5 py-4 text-ink-soft">{r.status}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
         {/* Buyer dashboard section */}
         <section className="py-24 bg-forest-deeper">
           <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <div className="text-xs font-semibold text-accent uppercase tracking-widest mb-4">Enabled by technology</div>
-              <h2 className="text-3xl font-bold text-white mb-4">Your credits. Full transparency.</h2>
+              <h2 className="text-3xl font-bold text-white mb-4">Your removals. Standing access.</h2>
               <p className="text-white/60 leading-relaxed mb-6">
-                Every purchase is managed through OS TGB — our proprietary operating system. Buyers get access to a dedicated dashboard showing their portfolio, delivery schedules, project performance data, and all supporting documentation.
+                Every purchase is managed through TerraHub — our proprietary platform. Buyers get a dedicated dashboard showing their portfolio, delivery schedules, project performance data, and all supporting documentation. Transparency is not a report we send once a year; it is standing access.
               </p>
               <ul className="space-y-2 mb-8">
-                {["Real-time project health data", "Full documentation library (PDD, MRV, audits)", "Delivery schedule & credit retirement records", "Direct communication with the TGB team"].map((f) => (
+                {["Real-time project health data", "Full documentation library (PDD, MRV, audits)", "Delivery schedule and retirement records", "Direct communication with the TGB team"].map((f) => (
                   <li key={f} className="flex items-center gap-2 text-sm text-white/70">
                     <CheckCircle2 className="w-4 h-4 text-accent shrink-0" />
                     {f}
                   </li>
                 ))}
               </ul>
-              <Link href="/os-tgb" className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:text-accent-dark transition-colors">
-                Learn about OS TGB <ArrowRight className="w-4 h-4" />
+              <Link href="/terrahub" className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:text-accent-dark transition-colors">
+                Learn about TerraHub <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
             <div className="hidden lg:block">
@@ -213,10 +291,10 @@ export default function SecureCreditsPage() {
         {/* CTA */}
         <section className="py-20 bg-white text-center">
           <div className="max-w-2xl mx-auto px-6">
-            <h2 className="text-3xl font-bold text-ink mb-4">Ready to secure your credits?</h2>
-            <p className="text-ink-soft mb-8">Get in touch with our team to discuss which pathway fits your procurement strategy.</p>
+            <h2 className="text-3xl font-bold text-navy mb-4">Request available volumes and pricing.</h2>
+            <p className="text-ink-soft mb-8">Tell us about your removal needs and we will match you to the right supply and pathway.</p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Link href="/contact" className="px-6 py-3.5 bg-forest text-white text-sm font-bold rounded-xl hover:bg-forest-light transition-colors">Get in touch</Link>
+              <Link href="/contact" className="px-6 py-3.5 bg-forest text-white text-sm font-bold rounded-xl hover:bg-forest-light transition-colors">Request volumes &amp; pricing</Link>
               <Link href="/contact" className="px-6 py-3.5 border border-border text-ink text-sm font-semibold rounded-xl hover:border-forest hover:text-forest transition-colors">Schedule a call</Link>
             </div>
           </div>

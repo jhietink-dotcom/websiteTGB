@@ -24,7 +24,38 @@ export default function ContactPage() {
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-xs font-semibold text-accent uppercase tracking-widest mb-4">Contact</div>
             <h1 className="text-4xl font-bold text-white mb-4">Get in touch with The Green Branch</h1>
-            <p className="text-white/60 max-w-xl">Our team is happy to discuss project development, investment opportunities, or carbon credit procurement.</p>
+            <p className="text-white/60 max-w-xl">Tell us who you are and what you are working on &mdash; we will route you to the right person.</p>
+          </div>
+        </section>
+
+        {/* Audience routes */}
+        <section className="py-16 bg-muted border-b border-border">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="text-xs font-semibold text-forest uppercase tracking-widest mb-3">Who are you?</div>
+            <h2 className="text-2xl font-bold text-navy mb-8 max-w-xl">Three ways we can help, depending on what you are working on.</h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="p-6 rounded-2xl bg-white border border-border flex flex-col">
+                <div className="text-sm font-bold text-navy mb-2">For buyers</div>
+                <p className="text-sm text-ink-soft mb-4 flex-1">Enquire about available emission removal volumes and pricing.</p>
+                <a href="/buy-removals" className="inline-flex items-center gap-1 text-xs font-semibold text-forest hover:text-forest-light transition-colors">
+                  Explore removals <ArrowRight className="w-3 h-3" />
+                </a>
+              </div>
+              <div className="p-6 rounded-2xl bg-white border border-border flex flex-col">
+                <div className="text-sm font-bold text-navy mb-2">For investors</div>
+                <p className="text-sm text-ink-soft mb-4 flex-1">Request our fund documentation. Available to qualified and professional investors only.</p>
+                <a href="mailto:hello@thegreenbranch.nl?subject=Fund%20documentation%20request" className="inline-flex items-center gap-1 text-xs font-semibold text-forest hover:text-forest-light transition-colors">
+                  Request documentation <ArrowRight className="w-3 h-3" />
+                </a>
+              </div>
+              <div className="p-6 rounded-2xl bg-white border border-border flex flex-col">
+                <div className="text-sm font-bold text-navy mb-2">For project developers</div>
+                <p className="text-sm text-ink-soft mb-4 flex-1">Submit your project for screening via TerraHub, our project intake and diligence platform.</p>
+                <a href="/terrahub" className="inline-flex items-center gap-1 text-xs font-semibold text-forest hover:text-forest-light transition-colors">
+                  Go to TerraHub <ArrowRight className="w-3 h-3" />
+                </a>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -38,11 +69,15 @@ export default function ContactPage() {
                 <div className="space-y-4">
                   <div className="flex items-start gap-3 text-sm text-ink-soft">
                     <MapPin className="w-4 h-4 text-forest shrink-0 mt-0.5" />
-                    <div>Weesperstraat 111<br />1018 VN Amsterdam<br />The Netherlands</div>
+                    <div>Plantage Middenlaan 2c<br />1018 DD Amsterdam<br />The Netherlands</div>
                   </div>
                   <div className="flex items-center gap-3 text-sm text-ink-soft">
                     <Mail className="w-4 h-4 text-forest shrink-0" />
                     <a href="mailto:hello@thegreenbranch.nl" className="hover:text-forest transition-colors">hello@thegreenbranch.nl</a>
+                  </div>
+                  <div className="flex items-center gap-3 text-sm text-ink-soft">
+                    <ArrowRight className="w-4 h-4 text-forest shrink-0" />
+                    <a href="https://www.thegreenbranch.nl" className="hover:text-forest transition-colors">www.thegreenbranch.nl</a>
                   </div>
                 </div>
               </div>
@@ -56,7 +91,7 @@ export default function ContactPage() {
               </div>
               <div className="space-y-3">
                 <div className="text-xs font-semibold text-ink uppercase tracking-wider">How can we help?</div>
-                {["Project development", "Investment opportunities", "Carbon credit purchases", "Advisory services"].map((t) => (
+                {["Buyers: volumes and pricing", "Investors: fund documentation", "Developers: project screening via TerraHub"].map((t) => (
                   <div key={t} className="text-sm text-ink-soft flex items-center gap-2">
                     <div className="w-1 h-1 rounded-full bg-forest" />
                     {t}
@@ -111,10 +146,9 @@ export default function ContactPage() {
                       className="w-full px-4 py-2.5 rounded-lg border border-border text-sm focus:outline-none focus:border-forest transition-colors bg-white"
                     >
                       <option value="">Select a topic</option>
-                      <option>Project development</option>
-                      <option>Investment opportunities</option>
-                      <option>Carbon credit purchases</option>
-                      <option>Advisory services</option>
+                      <option>Buyer: emission removal volumes and pricing</option>
+                      <option>Investor: fund documentation (qualified/professional only)</option>
+                      <option>Project developer: submit a project via TerraHub</option>
                       <option>Other</option>
                     </select>
                   </div>
@@ -126,7 +160,7 @@ export default function ContactPage() {
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       className="w-full px-4 py-2.5 rounded-lg border border-border text-sm focus:outline-none focus:border-forest transition-colors resize-none"
-                      placeholder="Tell us about your project, investment interest, or question..."
+                      placeholder="Tell us about your project, investment interest, or the emission removals you are looking for..."
                     />
                   </div>
                   <button

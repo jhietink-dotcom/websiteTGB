@@ -1,23 +1,31 @@
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Tbc } from "@/components/Tbc";
 import { DashboardMockup, MRVMockup, InvestorDashboardMockup } from "@/components/OSTGBMockup";
 import { ArrowRight, CheckCircle2, Shield, Globe, BarChart3, Database, Layers, Lock } from "lucide-react";
+
+export const metadata = {
+  title: "Our Tech",
+  description:
+    "TerraHub is The Green Branch's proprietary platform, unifying project development, MRV, and commercialisation from origination to issuance in a single environment.",
+};
 
 const modules = [
   {
     id: "development",
     number: "01",
-    title: "Development Platform",
-    tagline: "From idea to bankability.",
-    description: "A structured, phase-gated workflow that takes a project from initial screening through pre-feasibility, feasibility, development and into the MRV phase. Every deliverable, decision, and document is tracked and stored in one place — accessible to TGB teams and project partners at all times.",
+    title: "Development",
+    tagline: "From first screening to bankable project.",
+    description:
+      "Every project moves through TerraHub from first screening onward. Developers submit projects through a structured questionnaire, receive a quality score across 14 criteria, and — once accepted — are guided through our stage-gate process with standardised templates and legally reviewed contract frameworks. One environment, full audit trail, no information lost between phases.",
     features: [
-      "Structured 5-phase project lifecycle (Screening → MRV)",
-      "Partner & TGB deliverable tracking with revision guidance",
-      "Carbon methodology, additionality & baseline documentation",
-      "Automated decision gate system with approval workflows",
-      "Template library for all certification documents",
-      "Investor-ready document publishing with visibility controls",
+      "Structured submission questionnaire for every incoming project",
+      "Quality score assessed across 14 criteria",
+      "Guided stage-gate process from screening to MRV",
+      "Standardised templates for each phase and deliverable",
+      "Legally reviewed contract frameworks",
+      "Full audit trail with no information lost between phases",
     ],
     MockupComponent: DashboardMockup,
     accent: "border-forest/20",
@@ -25,16 +33,17 @@ const modules = [
   {
     id: "mrv",
     number: "02",
-    title: "Digital MRV",
+    title: "MRV",
     tagline: "Continuous monitoring. Verifiable results.",
-    description: "Our Digital Monitoring, Reporting and Verification module combines satellite remote sensing, GIS analysis, and structured field data collection to produce a continuous, auditable record of project performance. Every tree, every hectare, every season — tracked.",
+    description:
+      "We apply GIS, remote sensing, field measurements, and AI-supported analysis to track key project indicators — combining satellite data with on-the-ground assessments for continuous monitoring, reliable verification, and transparent reporting. This is what converts forest growth into issued removals that stand up to audit.",
     features: [
-      "Satellite + ground-truth biomass measurement",
-      "Project instance management by planting season & area",
-      "Field data submission (biomass plots, survival counts)",
-      "Project health dashboard with RAG status indicators",
-      "Audit package builder for certification submission",
-      "AI-assisted analysis for anomaly detection",
+      "GIS and remote sensing across the project area",
+      "Field measurements combined with satellite data",
+      "AI-supported analysis of key project indicators",
+      "Continuous monitoring throughout the project lifecycle",
+      "Reliable verification and transparent reporting",
+      "Forest growth converted into issued emission removals",
     ],
     MockupComponent: MRVMockup,
     accent: "border-forest/20",
@@ -42,23 +51,24 @@ const modules = [
   {
     id: "dashboard",
     number: "03",
-    title: "Investor Dashboard",
+    title: "Investor & buyer dashboard",
     tagline: "A live data room for every buyer.",
-    description: "Every credit buyer gets access to a personalised Investor Dashboard — a real-time window into their portfolio. View delivery schedules, project performance metrics, documentation, and credit retirement records. No PDFs on request; everything live, always.",
+    description:
+      "An interactive dashboard functions as a real-time data room: structured access to documentation, performance metrics, and monitoring data for each project, with the ability to request further information within the platform. Transparency is not a report we send once a year — it is standing access.",
     features: [
-      "Portfolio overview with purchase history & delivery schedule",
-      "Per-project performance data and field monitoring reports",
-      "Document library (PDD, audit reports, registry records)",
-      "Credit retirement certificates and registry links",
-      "Direct messaging with TGB project team",
-      "Multiple purchase types: Dev. Contributions, Spot, ERPA",
+      "Real-time data room for each project",
+      "Structured access to project documentation",
+      "Performance metrics and monitoring data",
+      "Requests for further information handled within the platform",
+      "Standing access rather than a once-a-year report",
+      "A single environment for buyers and investors",
     ],
     MockupComponent: InvestorDashboardMockup,
     accent: "border-forest/20",
   },
 ];
 
-export default function OSTGBPage() {
+export default function TerraHubPage() {
   return (
     <>
       <Navbar />
@@ -68,21 +78,21 @@ export default function OSTGBPage() {
         <section className="bg-forest-deeper py-24 overflow-hidden">
           <div className="max-w-7xl mx-auto px-6">
             <div className="max-w-3xl">
-              <div className="text-xs font-semibold text-accent uppercase tracking-widest mb-4">Technology</div>
+              <div className="text-xs font-semibold text-accent uppercase tracking-widest mb-4">Our Tech</div>
               <h1 className="text-5xl font-bold text-white mb-6 leading-tight">
-                OS TGB — our operating system for nature.
+                One platform from origination to issuance.
               </h1>
               <p className="text-lg text-white/60 leading-relaxed mb-6">
-                We didn&apos;t buy a platform. We built one. OS TGB is The Green Branch&apos;s proprietary operating system — a fully integrated suite of tools that manages every stage of carbon project development, from first screening to final credit delivery.
+                TerraHub is our proprietary platform unifying project development, MRV, and commercialisation in a single environment. It is how we develop faster, monitor deeper, and give buyers and investors direct sight of the work.
               </p>
               <p className="text-white/40 text-sm leading-relaxed mb-8">
-                Most carbon project developers use a patchwork of spreadsheets, shared drives, and third-party tools. We built OS TGB because we needed something better: a single system of record that makes our projects traceable, auditable, and investable.
+                Most carbon project developers rely on a patchwork of spreadsheets, shared drives, and third-party tools. We built TerraHub because we needed a single system of record that makes our projects traceable, auditable, and investable from first screening to final delivery.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 bg-accent text-forest-deeper text-sm font-bold rounded-xl hover:bg-accent-dark transition-colors">
-                  Request a demo <ArrowRight className="w-4 h-4" />
+                  Request platform access <ArrowRight className="w-4 h-4" />
                 </Link>
-                <Link href="/secure-credits" className="inline-flex items-center gap-2 px-6 py-3.5 bg-white/10 text-white text-sm font-semibold rounded-xl hover:bg-white/15 transition-colors border border-white/10">
+                <Link href="/buy-removals" className="inline-flex items-center gap-2 px-6 py-3.5 bg-white/10 text-white text-sm font-semibold rounded-xl hover:bg-white/15 transition-colors border border-white/10">
                   Access as a buyer
                 </Link>
               </div>
@@ -95,10 +105,10 @@ export default function OSTGBPage() {
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
-                { icon: Layers, label: "3 integrated modules", desc: "Development, MRV, Investor Dashboard" },
-                { icon: Database, label: "Single source of truth", desc: "All project data in one system" },
-                { icon: Globe, label: "Multi-project", desc: "Manage entire portfolio simultaneously" },
-                { icon: Lock, label: "Role-based access", desc: "Admins, partners, and buyers" },
+                { icon: Layers, label: "3 integrated modules", desc: "Development, MRV, and Investor & buyer dashboard" },
+                { icon: Database, label: "Single source of truth", desc: "All project data in one environment" },
+                { icon: Globe, label: "Origination to issuance", desc: "One workflow across the full lifecycle" },
+                { icon: Lock, label: "Role-based access", desc: "Teams, partners, and buyers" },
               ].map((f) => (
                 <div key={f.label} className="bg-white rounded-xl border border-border p-5 text-center">
                   <div className="w-10 h-10 bg-forest-muted rounded-xl flex items-center justify-center mx-auto mb-3">
@@ -121,7 +131,7 @@ export default function OSTGBPage() {
                 <div className="flex items-center gap-3 mb-5">
                   <div className="text-3xl font-extrabold text-forest/20">{m.number}</div>
                   <div className="w-px h-8 bg-border" />
-                  <div className="text-xs font-semibold text-forest uppercase tracking-widest">OS TGB Module</div>
+                  <div className="text-xs font-semibold text-forest uppercase tracking-widest">TerraHub Module</div>
                 </div>
                 <h2 className="text-3xl font-bold text-ink mb-1">{m.title}</h2>
                 <p className="text-base font-semibold text-forest mb-5">{m.tagline}</p>
@@ -149,17 +159,17 @@ export default function OSTGBPage() {
               <div className="text-xs font-semibold text-accent uppercase tracking-widest mb-4">Why we built it</div>
               <h2 className="text-3xl font-bold text-white mb-4">Integrity at every layer</h2>
               <p className="text-white/60 leading-relaxed mb-6">
-                The carbon market&apos;s credibility problem stems from opacity. Projects make claims; verification is expensive and infrequent; buyers can&apos;t see what they&apos;re buying. OS TGB is our answer to that.
+                The credibility problem in the carbon market stems from opacity. Projects make claims; verification is expensive and infrequent; buyers cannot see what they are buying. TerraHub is our answer to that.
               </p>
               <p className="text-white/60 leading-relaxed">
-                By managing the entire development lifecycle — and giving partners and buyers real-time access to the data — we create a level of traceability that simply doesn&apos;t exist elsewhere.
+                By managing the entire development lifecycle — and giving partners, buyers, and investors standing access to the data — we create a level of traceability that does not exist elsewhere. Across a portfolio of <Tbc>number of active projects</Tbc> projects, every action is logged, timestamped, and open to audit.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4">
               {[
                 { icon: Shield, label: "Auditable by design", desc: "Every action logged and timestamped" },
-                { icon: BarChart3, label: "Data-driven decisions", desc: "Phase gates backed by verified data" },
-                { icon: Globe, label: "Scalable infrastructure", desc: "Built to manage dozens of projects" },
+                { icon: BarChart3, label: "Data-driven decisions", desc: "Stage gates backed by verified data" },
+                { icon: Globe, label: "Scalable infrastructure", desc: "Built to manage a growing portfolio" },
                 { icon: Lock, label: "Investor grade", desc: "Documentation ready for institutional buyers" },
               ].map((f) => (
                 <div key={f.label} className="p-4 rounded-xl bg-white/5">
@@ -175,11 +185,11 @@ export default function OSTGBPage() {
         {/* CTA */}
         <section className="py-20 bg-white text-center">
           <div className="max-w-2xl mx-auto px-6">
-            <h2 className="text-3xl font-bold text-ink mb-4">See OS TGB in action</h2>
-            <p className="text-ink-soft mb-8">We&apos;re happy to walk you through the platform — whether you&apos;re a project developer, investor, or credit buyer.</p>
+            <h2 className="text-3xl font-bold text-ink mb-4">See TerraHub in action</h2>
+            <p className="text-ink-soft mb-8">We would be glad to walk you through the platform — whether you are a project developer, an investor, or a buyer of emission removals.</p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Link href="/contact" className="px-6 py-3.5 bg-forest text-white text-sm font-bold rounded-xl hover:bg-forest-light transition-colors">Request a demo</Link>
-              <Link href="/secure-credits" className="px-6 py-3.5 border border-border text-ink text-sm font-semibold rounded-xl hover:border-forest hover:text-forest transition-colors">Access as a buyer</Link>
+              <Link href="/contact" className="px-6 py-3.5 bg-forest text-white text-sm font-bold rounded-xl hover:bg-forest-light transition-colors">Request platform access</Link>
+              <Link href="/buy-removals" className="px-6 py-3.5 border border-border text-ink text-sm font-semibold rounded-xl hover:border-forest hover:text-forest transition-colors">Access as a buyer</Link>
             </div>
           </div>
         </section>

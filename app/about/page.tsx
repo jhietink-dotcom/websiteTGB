@@ -3,29 +3,85 @@ import Footer from "@/components/Footer";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { Tbc } from "@/components/Tbc";
+
+export const metadata = {
+  title: "About",
+  description:
+    "The Green Branch is a social impact (B Corp) company and an impact-first carbon asset developer and manager, building high-quality nature-based projects, primarily in Brazil.",
+};
 
 const team = [
-  { name: "Jacob Hietink", role: "Co-founder", bio: "Carbon finance, project structuring, and institutional investor relations." },
-  { name: "Kasper Kupperman", role: "Co-founder", bio: "Operations, project development, and on-the-ground delivery across project geographies." },
-  { name: "Miriam Bellink", role: "Head of Carbon Development", bio: "Carbon methodology, certification standards, and technical project development." },
-  { name: "Rafael Frade", role: "Investor Relations Officer", bio: "Capital markets, buyer engagement, and portfolio management." },
+  { name: "Jacob Hietink", role: "Co-Founder" },
+  { name: "Kasper Kupperman", role: "Co-Founder" },
+  { name: "Miriam Bellink", role: "Co-Founder" },
+  { name: "Rafael Frade", credential: "CFA", role: "Head of Finance" },
+  { name: "Stijn Ticheloven", role: "Origination Lead" },
+  { name: "Alex Sousa", credential: "PhD", role: "GIS Manager" },
+  { name: "Tom Nijman", credential: "PhD", role: "Operations Manager" },
+  { name: "João Diniz", role: "Operations Manager" },
+  { name: "Cristina Marini", role: "NBS Analyst" },
+  { name: "Bruna Franchi", role: "GIS Analyst" },
+  { name: "Alexandre Kampel", role: "Investment Analyst" },
+];
+
+const partners = [
+  "Futuro Florestal",
+  "Rabobank",
+  "Florestas Engenharia",
+  "Implantar",
 ];
 
 const timeline = [
-  { year: "2019", event: "Founded with a focus on Nature-Based Solutions" },
-  { year: "2020", event: "Launched first project — Serra do Sudeste, Brazil" },
-  { year: "2021", event: "Expanded into carbon advisory; first ERPA transactions" },
-  { year: "2022", event: "Partnered with NRC and FW Forestry for East African projects" },
-  { year: "2023", event: "Developed and launched OS TGB — proprietary monitoring platform" },
-  { year: "2024", event: "Recognised as a leading carbon asset development firm in NBS" },
-  { year: "2025", event: "€500M+ capital mobilised; 10+ certified projects across 3 continents" },
+  {
+    year: "2019",
+    event: (
+      <>Founded to close the financing gap for nature-based climate solutions.</>
+    ),
+  },
+  {
+    year: "2023",
+    event: (
+      <>Built TerraHub, our proprietary development and MRV platform.</>
+    ),
+  },
+  {
+    year: "2024",
+    event: (
+      <>
+        Sapucaia certified to VCS and CCB, with a Sylvera rating.{" "}
+        <Tbc>confirm certification year (2024 or 2025)</Tbc>
+      </>
+    ),
+  },
+  {
+    year: "2025",
+    event: (
+      <>
+        Trees for Farmers developed in partnership with Rabobank.{" "}
+        <Tbc>confirm year</Tbc>
+      </>
+    ),
+  },
 ];
 
 const values = [
-  { title: "Integrity first", desc: "We only work with projects that meet the highest ecological and social standards — no shortcuts on science or safeguards." },
-  { title: "Long-term thinking", desc: "Carbon projects last 30–40 years. We build relationships and infrastructure to match that horizon." },
-  { title: "Local partnerships", desc: "Every project is grounded in genuine community partnerships and benefits — not just on paper." },
-  { title: "Radical transparency", desc: "OS TGB gives buyers and partners live visibility into every project. We have nothing to hide." },
+  {
+    title: "Quality and credibility",
+    desc: "We develop to the highest standards, including VCS and CCB. Technical rigour is our competitive advantage.",
+  },
+  {
+    title: "Long-term value",
+    desc: "We think in decades, not quarters, and build relationships and infrastructure to match that horizon.",
+  },
+  {
+    title: "Transparency",
+    desc: "We communicate openly about risks and trade-offs. No greenwashing, no empty promises.",
+  },
+  {
+    title: "Partnership",
+    desc: "Local operational partners, investors, and buyers are true collaborators, not counterparties.",
+  },
 ];
 
 export default function AboutPage() {
@@ -54,14 +110,14 @@ export default function AboutPage() {
               <span className="text-accent">Built to last.</span>
             </h1>
             <p className="text-lg text-white/70 max-w-xl leading-relaxed mb-10">
-              The Green Branch is an impact-first carbon asset developer and manager. We find, develop, and operate the highest-quality nature-based removal projects worldwide.
+              The Green Branch is a social impact (B Corp) company and an impact-first carbon asset developer and manager, building high-quality nature-based projects, primarily in Brazil.
             </p>
             <div className="flex flex-wrap gap-x-10 gap-y-4">
               {[
                 { value: "2019", label: "Founded" },
-                { value: "10+", label: "Certified projects" },
-                { value: "3", label: "Continents" },
-                { value: "40+", label: "Years per project" },
+                { value: "B Corp", label: "Social impact company" },
+                { value: "4M ha", label: "Conservation goal by 2040" },
+                { value: "Brazil", label: "Primary focus" },
               ].map((s) => (
                 <div key={s.label}>
                   <div className="text-2xl font-bold text-white">{s.value}</div>
@@ -72,23 +128,23 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* ── MISSION SPLIT ─────────────────────────────────── */}
+        {/* ── WHO WE ARE ────────────────────────────────────── */}
         <section className="py-24 bg-white">
           <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <div className="text-xs font-semibold text-forest uppercase tracking-widest mb-4">Our mission</div>
-              <h2 className="text-4xl font-extrabold text-ink mb-6 leading-tight">
-                Support, scale, and operate nature restoration at the pace the planet needs.
+              <div className="text-xs font-semibold text-forest uppercase tracking-widest mb-4">Who we are</div>
+              <h2 className="text-4xl font-extrabold text-navy mb-6 leading-tight">
+                Founded to close the financing gap for nature-based climate solutions.
               </h2>
               <div className="space-y-4 text-ink-soft leading-relaxed">
                 <p>
-                  We were founded to address a stubborn problem: hundreds of ecologically credible restoration projects never reach scale because they can&apos;t access early-stage finance and technical support.
+                  The Green Branch was founded in 2019 to close the financing gap for nature-based climate solutions. Restoration and conservation projects too often fail to reach maturity because they remain underfunded and lack technical capacity. We exist to change that.
                 </p>
                 <p>
-                  The Green Branch identifies these projects, prepares them for carbon market readiness, and manages them as long-term assets — providing early-stage funding, technical assistance, and the infrastructure to make the work transparent and investable.
+                  Today, The Green Branch is a social impact (B Corp) company and an impact-first carbon asset developer and manager. We operate at the intersection of technical development, financial structuring, and commercial strategy, working with local operational partners to originate and scale high-quality projects, primarily in Brazil.
                 </p>
                 <p>
-                  Forests are not just carbon sinks. They&apos;re living systems worthy of protection, investment, and care. That belief shapes everything we do.
+                  Our vision is to increase biodiverse forest cover worldwide, conserving 4 million hectares of forest before 2040.
                 </p>
               </div>
             </div>
@@ -114,8 +170,8 @@ export default function AboutPage() {
         <section className="py-24 bg-forest-muted">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-xs font-semibold text-forest uppercase tracking-widest mb-3">What we stand for</div>
-            <h2 className="text-3xl font-extrabold text-ink mb-12 max-w-xl">
-              Principles that guide every project we develop.
+            <h2 className="text-3xl font-extrabold text-navy mb-12 max-w-xl">
+              Values that guide every project we develop.
             </h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {values.map((v, i) => (
@@ -147,15 +203,15 @@ export default function AboutPage() {
             </div>
             <div>
               <div className="text-xs font-semibold text-forest uppercase tracking-widest mb-4">Our approach</div>
-              <h2 className="text-3xl font-extrabold text-ink mb-8 leading-tight">
-                From degraded land to verified carbon asset.
+              <h2 className="text-3xl font-extrabold text-navy mb-8 leading-tight">
+                How we work, from origination to scale.
               </h2>
               <div className="space-y-6">
                 {[
-                  { num: "01", title: "Identify", desc: "Ecologically sound projects with credible local partners in regions with high climate and biodiversity potential." },
-                  { num: "02", title: "Develop", desc: "Prepare projects for carbon market readiness through early-stage funding, technical assistance, and certification support." },
-                  { num: "03", title: "Manage", desc: "Long-term asset management — MRV, compliance, revenue optimisation — for the full project lifetime." },
-                  { num: "04", title: "Scale", desc: "Replicate successful models across geographies using standardised contracts and modular certification systems." },
+                  { num: "01", title: "Originate", desc: "With local operational partners, we identify restoration and conservation projects with strong ecological and social foundations, primarily in Brazil." },
+                  { num: "02", title: "Develop", desc: "We provide the technical development and financial structuring needed to bring projects to certification readiness under standards such as VCS and CCB." },
+                  { num: "03", title: "Manage", desc: "We manage each project as a long-term asset — MRV, compliance, and reporting — across its full lifetime." },
+                  { num: "04", title: "Scale", desc: "We replicate proven models to grow biodiverse forest cover, working towards our goal of conserving 4 million hectares before 2040." },
                 ].map((s) => (
                   <div key={s.num} className="flex gap-5 items-start">
                     <div className="text-2xl font-extrabold text-forest/20 shrink-0 w-8 leading-none">{s.num}</div>
@@ -170,6 +226,30 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {/* ── PARTNERS ──────────────────────────────────────── */}
+        <section className="py-24 bg-muted">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="text-xs font-semibold text-forest uppercase tracking-widest mb-3">Our partners</div>
+            <h2 className="text-3xl font-extrabold text-navy mb-4 max-w-xl">
+              We build with trusted partners.
+            </h2>
+            <p className="text-ink-soft mb-12 max-w-2xl leading-relaxed">
+              Our local operational partners, investors, and buyers are true collaborators in developing high-quality projects on the ground.
+            </p>
+            <div className="flex flex-wrap items-center gap-4">
+              {partners.map((p) => (
+                <div
+                  key={p}
+                  className="rounded-xl border border-border bg-white px-6 py-4 text-sm font-bold text-ink"
+                >
+                  {p}
+                </div>
+              ))}
+              <Tbc>additional partners to confirm</Tbc>
+            </div>
+          </div>
+        </section>
+
         {/* ── TEAM ──────────────────────────────────────────── */}
         <section className="py-24 bg-forest-deeper">
           <div className="max-w-7xl mx-auto px-6">
@@ -178,7 +258,7 @@ export default function AboutPage() {
               Practitioners at the intersection of<br className="hidden sm:block" /> science, finance, and fieldwork.
             </h2>
             <p className="text-white/60 mb-12 max-w-2xl">
-              A small, focused team with deep expertise across carbon markets, ecology, and international finance.
+              A team spanning carbon development, GIS, finance, and field operations, working closely with our local partners in Brazil.
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {team.map((t) => (
@@ -186,9 +266,10 @@ export default function AboutPage() {
                   <div className="w-12 h-12 rounded-full bg-forest/50 flex items-center justify-center mb-4 text-sm font-extrabold text-white">
                     {t.name.split(" ").map((n) => n[0]).join("")}
                   </div>
-                  <div className="font-bold text-white mb-0.5">{t.name}</div>
-                  <div className="text-xs font-semibold text-accent mb-3">{t.role}</div>
-                  <div className="text-sm text-white/50 leading-relaxed">{t.bio}</div>
+                  <div className="font-bold text-white mb-0.5">
+                    {t.name}{t.credential ? `, ${t.credential}` : ""}
+                  </div>
+                  <div className="text-xs font-semibold text-accent">{t.role}</div>
                 </div>
               ))}
             </div>
@@ -199,7 +280,7 @@ export default function AboutPage() {
         <section className="py-24 bg-muted">
           <div className="max-w-4xl mx-auto px-6">
             <div className="text-xs font-semibold text-forest uppercase tracking-widest mb-3">Our story</div>
-            <h2 className="text-3xl font-extrabold text-ink mb-14">Six years of building.</h2>
+            <h2 className="text-3xl font-extrabold text-navy mb-14">Building since 2019.</h2>
             <div className="space-y-0">
               {timeline.map((t, i) => (
                 <div key={t.year} className="flex gap-8 items-start group">
@@ -235,7 +316,7 @@ export default function AboutPage() {
           <div className="relative z-10 max-w-2xl mx-auto px-6 text-center">
             <h2 className="text-4xl font-extrabold text-white mb-4">Work with us</h2>
             <p className="text-white/60 mb-10 leading-relaxed">
-              Whether you&apos;re a landowner, investor, or company looking to act on climate — we&apos;d love to hear from you.
+              Whether you are a landowner, an investor, or a company looking to act on climate, we would be glad to hear from you.
             </p>
             <Link
               href="/contact"

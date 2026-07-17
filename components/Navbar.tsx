@@ -11,6 +11,12 @@ const develop = [
   { label: "Biochar", href: "/develop/biochar", desc: "Durable removal, measured in centuries" },
 ];
 
+const about = [
+  { label: "Our story", href: "/about#story", desc: "Who we are, our approach and milestones" },
+  { label: "Team", href: "/about#team", desc: "The people behind The Green Branch" },
+  { label: "Resources", href: "/about#resources", desc: "Information decks and guides" },
+];
+
 const nav = [
   { label: "Develop", children: develop },
   { label: "Buy Removals", href: "/buy-removals" },
@@ -18,7 +24,7 @@ const nav = [
   { label: "Projects", href: "/projects" },
   { label: "Our Tech", href: "/terrahub" },
   { label: "Advisory", href: "/advisory" },
-  { label: "About", href: "/about" },
+  { label: "About", children: about },
 ];
 
 export default function Navbar() {
@@ -71,7 +77,7 @@ export default function Navbar() {
                   <ChevronDown className={cn("w-3.5 h-3.5 transition-transform", dropdown === item.label && "rotate-180")} />
                 </button>
                 {dropdown === item.label && (
-                  <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-2xl shadow-2xl border border-black/5 p-2 overflow-hidden">
+                  <div className={cn("absolute top-full mt-2 w-64 bg-white rounded-2xl shadow-2xl border border-black/5 p-2 overflow-hidden", item.label === "About" ? "right-0" : "left-0")}>
                     {item.children.map((child) => (
                       <Link key={child.href} href={child.href} onClick={() => setDropdown(null)}
                         className="flex items-start gap-3 px-3 py-2.5 rounded-xl hover:bg-forest-muted group transition-colors">

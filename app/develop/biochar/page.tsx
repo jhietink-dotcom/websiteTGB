@@ -4,13 +4,36 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Tbc } from "@/components/Tbc";
-import { ArrowRight, Timer, Handshake, Factory, Recycle, Sprout, Droplets, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Timer, Handshake, Factory, Recycle, Sprout, Search, PencilRuler, Gauge, ChevronDown, CheckCircle2 } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Biochar",
   description:
     "We co-develop industrial biochar projects with agribusinesses and industrial partners who hold substantial biomass residues — turning that residue into durable carbon removal.",
 };
+
+const steps = [
+  {
+    icon: Search,
+    name: "Feasibility",
+    desc: "We confirm feedstock supply, facility economics, carbon modelling, and offtake demand before capital is committed.",
+  },
+  {
+    icon: PencilRuler,
+    name: "Design",
+    desc: "We design the facility, supply chain, and certification pathway around buyer, investor, and diligence requirements.",
+  },
+  {
+    icon: Factory,
+    name: "Deliver",
+    desc: "We finance, build or retrofit, register, validate, commission, and reach first production — then commercialise the removals.",
+  },
+  {
+    icon: Gauge,
+    name: "Monitor",
+    desc: "Continuous production and chain-of-custody monitoring via TerraHub, through verification and issuance.",
+  },
+];
 
 const bring = {
   partner: [
@@ -27,34 +50,59 @@ const bring = {
   ],
 };
 
-const phases = [
+const faqs: { q: string; a: React.ReactNode }[] = [
   {
-    num: "01",
-    name: "Feasibility",
-    desc: "We confirm the fundamentals before capital is committed: feedstock availability and sustainability, facility economics, carbon modelling under the applicable methodology, and offtake demand. The same quality scoring that governs our forestry portfolio applies here, adapted to engineered removals.",
+    q: "What are your feedstock specifications and moisture requirements?",
+    a: (
+      <>
+        <p className="mb-3">
+          Minimum volume: <strong className="text-ink"><Tbc>confirm minimum, e.g. 1,000</Tbc> tonnes per year</strong>. Moisture thresholds vary by feedstock:
+        </p>
+        <ul className="space-y-2 mb-3">
+          {[
+            ["Palm kernel shells", "moisture below 15%"],
+            ["Cashew nut shells", "moisture below 15%"],
+            ["Sawdust", "moisture below 20%"],
+          ].map(([name, t]) => (
+            <li key={name} className="flex items-start gap-2.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-forest mt-2 shrink-0" />
+              <span><strong className="text-ink">{name}</strong> — {t}</span>
+            </li>
+          ))}
+        </ul>
+        <p>If your material runs wetter than this, we can usually accommodate it with a short pre-drying step — talk to us.</p>
+        <p className="mt-3 text-xs text-ink/50"><Tbc>confirm accepted feedstock list &amp; thresholds for Brazil operations</Tbc></p>
+      </>
+    ),
   },
   {
-    num: "02",
-    name: "Design",
-    desc: "Facility, supply chain, and certification pathway are designed around buyer and investor requirements: proven technology, credible production monitoring, chain-of-custody from feedstock to application, and a commercial structure with offtake secured early.",
+    q: "How does the co-development partnership work?",
+    a: (
+      <>
+        <p className="mb-2">
+          We co-develop the project with you. You provide the biomass residue and a site; we bring development capital, proven technology, certification, MRV via TerraHub, and commercialisation to our buyer network. We invest alongside you and share the upside — a partnership, not a franchise.
+        </p>
+        <p className="text-xs text-ink/50"><Tbc>commercial terms and revenue share are structured per project — confirm the model to describe here</Tbc></p>
+      </>
+    ),
   },
   {
-    num: "03",
-    name: "Deliver",
-    desc: "Construction or retrofit, registration and validation, commissioning, and first production — with removals commercialised through spot, forward and offtake agreements.",
+    q: "Do you partner with every applicant?",
+    a: <p>No. We partner selectively, based on feedstock type, annual volume, and carbon economics — the same way an investor backs a project. Feasibility comes first, and projects advance only when the case is proven.</p>,
   },
   {
-    num: "04",
-    name: "Monitor",
-    desc: "Continuous production monitoring and chain-of-custody tracking, through verification and issuance. Durable removals demand durable evidence.",
+    q: "What technology do you use?",
+    a: <p>Continuous-feed industrial pyrolysers operating at 450–600°C in a low-oxygen environment — no open flame and no smoke. The process converts biomass residue into a stable carbon that remains locked away for centuries.</p>,
   },
-];
-
-const feedstocks = [
-  { name: "Sugarcane bagasse", threshold: "moisture below 20%" },
-  { name: "Rice husk", threshold: "moisture below 15%" },
-  { name: "Sawdust & wood residue", threshold: "moisture below 20%" },
-  { name: "Nut shells & husks", threshold: "moisture below 15%" },
+  {
+    q: "What space and utilities do you need on site?",
+    a: (
+      <>
+        <p className="mb-2">Approximately 10m × 10m of covered space near your processing line, plus access to three-phase power (roughly 5–7 kW).</p>
+        <p className="text-xs text-ink/50"><Tbc>confirm footprint &amp; utility requirements for TGB equipment</Tbc></p>
+      </>
+    ),
+  },
 ];
 
 export default function BiocharPage() {
@@ -71,7 +119,7 @@ export default function BiocharPage() {
               <div className="text-xs font-semibold text-accent uppercase tracking-widest mb-4">Co-developing industrial biochar</div>
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">Turn your biomass into durable carbon removal.</h1>
               <p className="text-lg text-white/70 leading-relaxed mb-8">
-                We co-develop industrial biochar projects in Brazil with agribusinesses and industrial partners who already hold substantial biomass residues. You bring the feedstock; we bring the development, financing, certification, and buyers.
+                Biochar locks biomass carbon into a stable form with permanence measured in centuries. We co-develop industrial biochar projects in Brazil with agribusinesses and industrial partners who already hold substantial biomass residues — you bring the feedstock; we bring the development, financing, certification, and buyers.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 bg-accent text-forest-deeper text-sm font-bold rounded-xl hover:bg-accent-dark transition-colors">
@@ -88,18 +136,32 @@ export default function BiocharPage() {
           </div>
         </section>
 
-        {/* Why biochar */}
-        <section className="py-20 bg-white">
-          <div className="max-w-3xl mx-auto px-6">
-            <div className="text-xs font-semibold text-forest uppercase tracking-widest mb-3">Why biochar</div>
-            <h2 className="text-3xl font-bold text-navy mb-6">Durable removal, measured in centuries.</h2>
-            <p className="text-ink-soft leading-relaxed">
-              Biochar locks biomass carbon into a stable form with permanence of hundreds to thousands of years. It complements reforestation in a removals portfolio: industrial in character, rapid to first issuance, and highly durable. Produced from sustainable biomass residues, it also improves soil health and supports agricultural productivity where applied.
-            </p>
+        {/* Process — visual stepper */}
+        <section className="py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="max-w-3xl mb-16">
+              <div className="text-xs font-semibold text-forest uppercase tracking-widest mb-3">Our process</div>
+              <h2 className="text-3xl md:text-4xl font-bold text-navy leading-tight">From feedstock to issued removals — the same discipline as our forestry portfolio.</h2>
+            </div>
+
+            <div className="relative grid gap-10 md:grid-cols-4">
+              {/* connecting line (desktop) */}
+              <div className="hidden md:block absolute top-8 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-forest/20 via-forest/40 to-forest/20" />
+              {steps.map((s, i) => (
+                <div key={s.name} className="relative flex flex-col items-center text-center md:items-start md:text-left">
+                  <div className="relative z-10 w-16 h-16 rounded-2xl bg-forest text-white flex items-center justify-center shadow-sm">
+                    <s.icon className="w-7 h-7" />
+                  </div>
+                  <div className="mt-5 text-xs font-bold text-accent-dark tracking-widest">STEP 0{i + 1}</div>
+                  <h3 className="mt-1 text-lg font-bold text-ink">{s.name}</h3>
+                  <p className="mt-2 text-sm text-ink-soft leading-relaxed">{s.desc}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
-        {/* Who we co-develop with */}
+        {/* What you bring / What we bring */}
         <section className="py-20 bg-muted">
           <div className="max-w-7xl mx-auto px-6">
             <div className="flex items-center gap-2 text-xs font-semibold text-forest uppercase tracking-widest mb-3">
@@ -158,58 +220,30 @@ export default function BiocharPage() {
           </div>
         </section>
 
-        {/* Feedstock specifications */}
+        {/* FAQ */}
         <section className="py-20 bg-white">
           <div className="max-w-3xl mx-auto px-6">
-            <div className="flex items-center gap-2 text-xs font-semibold text-forest uppercase tracking-widest mb-3">
-              <Droplets className="w-4 h-4" /> Feedstock specifications
-            </div>
-            <h2 className="text-3xl font-bold text-navy mb-6">What makes a good feedstock partner.</h2>
-            <div className="rounded-2xl border border-border bg-muted/40 p-7">
-              <p className="text-ink-soft leading-relaxed mb-5">
-                Minimum volume: <strong className="text-ink"><Tbc>confirm minimum, e.g. 1,000</Tbc> tonnes per year</strong>. Moisture thresholds vary by feedstock:
-              </p>
-              <ul className="space-y-3 mb-5">
-                {feedstocks.map((f) => (
-                  <li key={f.name} className="flex items-start gap-3 text-sm">
-                    <span className="w-1.5 h-1.5 rounded-full bg-forest mt-2 shrink-0" />
-                    <span className="text-ink-soft">
-                      <strong className="text-ink">{f.name}</strong> — {f.threshold}
+            <div className="text-xs font-semibold text-forest uppercase tracking-widest mb-3">Frequently asked</div>
+            <h2 className="text-3xl font-bold text-navy mb-10">What a feedstock partner needs to know.</h2>
+            <div className="space-y-3">
+              {faqs.map((f) => (
+                <details key={f.q} className="group rounded-2xl border border-border bg-white overflow-hidden">
+                  <summary className="flex items-center justify-between gap-4 cursor-pointer p-6 font-bold text-navy list-none [&::-webkit-details-marker]:hidden">
+                    <span>{f.q}</span>
+                    <span className="faq-chevron inline-flex shrink-0 text-forest">
+                      <ChevronDown className="w-5 h-5" />
                     </span>
-                  </li>
-                ))}
-              </ul>
-              <p className="text-sm text-ink-soft leading-relaxed">
-                If your material runs wetter than this, we can usually accommodate it with a short pre-drying step — talk to us.
-              </p>
-              <p className="mt-4 text-xs text-ink/50">
-                <Tbc>confirm accepted feedstock list and exact moisture thresholds for Brazil operations</Tbc>
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Four phases */}
-        <section className="py-20 bg-muted">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="text-xs font-semibold text-forest uppercase tracking-widest mb-3">How we develop</div>
-            <h2 className="text-3xl font-bold text-navy mb-12">The same discipline, adapted to engineered removals.</h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              {phases.map((p) => (
-                <div key={p.num} className="p-7 rounded-2xl border border-border bg-white hover:border-forest/30 transition-all">
-                  <div className="flex items-baseline gap-3 mb-3">
-                    <span className="text-2xl font-extrabold text-forest/25">{p.num}</span>
-                    <h3 className="text-xl font-bold text-ink">{p.name}</h3>
-                  </div>
-                  <p className="text-sm text-ink-soft leading-relaxed">{p.desc}</p>
-                </div>
+                  </summary>
+                  <div className="px-6 pb-6 -mt-1 text-sm text-ink-soft leading-relaxed">{f.a}</div>
+                </details>
               ))}
             </div>
           </div>
+          <style>{`.faq-chevron { transition: rotate 300ms; } details[open] .faq-chevron { rotate: 180deg; }`}</style>
         </section>
 
         {/* Current activity */}
-        <section className="py-20 bg-white">
+        <section className="py-20 bg-muted">
           <div className="max-w-3xl mx-auto px-6">
             <div className="flex items-center gap-2 text-xs font-semibold text-forest uppercase tracking-widest mb-3">
               <Timer className="w-4 h-4" /> Current activity

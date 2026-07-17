@@ -423,67 +423,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── Buyer pathways ── */}
-        <section className="py-24 bg-muted">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="grid lg:grid-cols-3 gap-5 mb-12">
-              <div className="lg:col-span-1">
-                <p className="text-xs font-bold text-forest uppercase tracking-widest mb-3">For buyers</p>
-                <h2 className="text-4xl font-extrabold text-navy leading-tight">
-                  Three ways to buy removals
-                </h2>
-              </div>
-              <div className="lg:col-span-2 flex flex-col justify-center">
-                <p className="text-ink/60 leading-relaxed text-lg">
-                  Every tonne is traceable to a specific project, methodology, and verification. Buy what is issued today, contract future vintages, or take a long-term stake in supply.
-                </p>
-              </div>
-            </div>
-
-            <div className="space-y-3">
-              {[
-                {
-                  num: "01",
-                  title: "Spot",
-                  sub: "Issued removals, available now.",
-                  desc: "Issued removals available for immediate retirement or transfer. Suited to buyers meeting near-term claims.",
-                  tag: "Immediate delivery",
-                },
-                {
-                  num: "02",
-                  title: "Forward",
-                  sub: "Future vintages, price certainty.",
-                  desc: "Contracted future vintages at agreed pricing, secured against projects already in development. For buyers building multi-year removal portfolios.",
-                  tag: "Price certainty",
-                },
-                {
-                  num: "03",
-                  title: "Offtake",
-                  sub: "Long-term supply, priority access.",
-                  desc: "Long-term ERPAs across one or more projects, optionally combined with equity participation. For buyers who want scale and a direct stake in supply.",
-                  tag: "Scale & priority",
-                },
-              ].map((p) => (
-                <Link key={p.num} href="/buy-removals"
-                  className="group flex items-center gap-6 p-6 bg-white rounded-2xl border border-border hover:border-forest/30 hover:shadow-md transition-all">
-                  <div className="text-3xl font-extrabold text-forest/15 w-12 shrink-0">{p.num}</div>
-                  <div className="flex-1 min-w-0">
-                    <div className="flex flex-wrap items-center gap-3 mb-1">
-                      <h3 className="font-bold text-ink text-lg">{p.title}</h3>
-                      <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-forest/10 text-forest">{p.tag}</span>
-                    </div>
-                    <p className="text-sm font-medium text-forest mb-1">{p.sub}</p>
-                    <p className="text-sm text-ink/50 hidden sm:block">{p.desc}</p>
-                  </div>
-                  <div className="shrink-0 w-8 h-8 rounded-full bg-forest-muted flex items-center justify-center group-hover:bg-forest group-hover:text-white transition-all">
-                    <ArrowRight className="w-4 h-4 text-forest group-hover:text-white transition-colors" />
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* ── Final CTA ── */}
         <section className="py-24 bg-forest-deeper relative overflow-hidden">
           <div className="absolute inset-0 opacity-[0.03]"

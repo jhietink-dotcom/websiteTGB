@@ -158,53 +158,98 @@ export default function BuyCarbonCreditsPage() {
           </div>
         </section>
 
-        {/* How we supply — products + canopy photo */}
+        {/* How we supply — two products with characteristics */}
         <section className="py-24 bg-white">
-          <div className="max-w-7xl mx-auto px-6">
+          <div className="max-w-6xl mx-auto px-6">
             <div className="text-xs font-semibold text-forest uppercase tracking-[0.2em] mb-3">How we supply</div>
             <h2 className="text-4xl md:text-5xl font-extrabold text-navy mb-12 leading-[1.05]">Two ways to buy.</h2>
 
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="divide-y divide-border">
-                <div className="pb-8">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-11 h-11 rounded-xl bg-accent/15 flex items-center justify-center shrink-0">
-                      <Zap className="w-5 h-5 text-forest" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-ink">Spot</h3>
+            <div className="grid md:grid-cols-2 gap-10 lg:gap-16">
+              {/* Spot */}
+              <div>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center shrink-0">
+                    <Zap className="w-6 h-6 text-forest" />
                   </div>
-                  <p className="text-ink-soft leading-relaxed">
-                    Issued credits, available for immediate retirement. Full documentation package included.
-                  </p>
+                  <h3 className="text-2xl font-bold text-ink">Spot</h3>
                 </div>
-                <div className="pt-8">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-11 h-11 rounded-xl bg-accent/15 flex items-center justify-center shrink-0">
-                      <Clock className="w-5 h-5 text-forest" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-ink">Future Supply</h3>
-                  </div>
-                  <p className="text-ink-soft leading-relaxed">
-                    Forward delivery at a locked price. For larger volumes, this can be structured as a multi-year offtake agreement (ERPA — an Emission Removal Purchase Agreement, a long-term contract to buy future credits).
-                  </p>
-                </div>
+                <p className="text-ink-soft leading-relaxed mb-6">
+                  Issued credits you can buy and retire today. The simplest way to meet a near-term claim.
+                </p>
+                <ul className="space-y-3">
+                  {[
+                    "Delivered and retired in your name, typically within days",
+                    "Certified to VCS + CCB and independently rated",
+                    "Full documentation package — project docs, verification, retirement records",
+                    "Best for current-year targets and near-term claims",
+                  ].map((b) => (
+                    <li key={b} className="flex gap-3 text-sm text-ink-soft leading-relaxed">
+                      <CheckCircle2 className="w-4 h-4 text-forest shrink-0 mt-0.5" />
+                      {b}
+                    </li>
+                  ))}
+                </ul>
               </div>
 
-              {/* Canopy-arched photo */}
-              <div className="relative h-[440px] rounded-t-[7rem] rounded-b-3xl overflow-hidden">
-                <Image src="/img/DSCF9864.JPG" alt="Reforestation project in Brazil" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-forest-deeper/55 via-transparent to-transparent" />
+              {/* Future Supply */}
+              <div>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center shrink-0">
+                    <Clock className="w-6 h-6 text-forest" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-ink">Future Supply</h3>
+                </div>
+                <p className="text-ink-soft leading-relaxed mb-6">
+                  Forward delivery at a price locked in today, secured against projects already in development.
+                </p>
+                <ul className="space-y-3">
+                  {[
+                    "Price fixed now for future vintages — budget certainty",
+                    "Volume secured against a named project",
+                    "Verified milestone updates as the project progresses, via TerraHub",
+                    "Can be structured as a multi-year offtake agreement (ERPA — an Emission Removal Purchase Agreement, a long-term contract to buy future credits)",
+                    "Best for multi-year removal portfolios",
+                  ].map((b) => (
+                    <li key={b} className="flex gap-3 text-sm text-ink-soft leading-relaxed">
+                      <CheckCircle2 className="w-4 h-4 text-forest shrink-0 mt-0.5" />
+                      {b}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
 
             <p className="mt-14 text-sm text-ink-soft leading-relaxed max-w-4xl">
               All credits are certified to VCS (the Verified Carbon Standard, the world&apos;s most widely used carbon crediting programme) and CCB (the Climate, Community &amp; Biodiversity Standards, which certify social and biodiversity co-benefits), and independently rated by Sylvera (a carbon-credit ratings agency).
             </p>
+          </div>
+        </section>
 
-            <div className="mt-6 rounded-3xl bg-forest-muted/60 p-8 max-w-4xl">
-              <p className="text-ink-soft leading-relaxed">
-                Our projects span three methodologies: <strong className="text-forest-dark">ARR</strong> (afforestation, reforestation and revegetation), <strong className="text-forest-dark">REDD+</strong> (protection of standing forests from deforestation), and <strong className="text-forest-dark">biochar</strong> (durable carbon stored in stable organic material). Buyers can access a single methodology or draw across all three.
-              </p>
+        {/* Methodologies — photo-led */}
+        <section className="py-24 bg-cream">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="text-xs font-semibold text-forest uppercase tracking-[0.2em] mb-3">Three methodologies</div>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-navy mb-4 leading-[1.05] max-w-2xl">One methodology, or a blend across all three.</h2>
+            <p className="text-ink-soft leading-relaxed mb-12 max-w-2xl">
+              Buyers can access a single methodology or draw across our full portfolio.
+            </p>
+            <div className="grid md:grid-cols-3 gap-6">
+              {[
+                { tag: "Removal", title: "ARR", sub: "Afforestation, reforestation & revegetation", desc: "Growing new, biodiverse forest on degraded land — taking carbon out of the atmosphere.", photo: "/img/DSCF9864.JPG" },
+                { tag: "Avoidance", title: "REDD+", sub: "Avoided deforestation", desc: "Protecting standing forests from being cleared — keeping stored carbon in the ground.", photo: "/img/DSCF0095.JPG" },
+                { tag: "Removal", title: "Biochar", sub: "Durable carbon", desc: "Biomass converted into a stable carbon that stays locked away for centuries.", photo: "/img/DSCF0278.JPG" },
+              ].map((m) => (
+                <div key={m.title} className="group relative h-96 rounded-3xl overflow-hidden">
+                  <Image src={m.photo} alt={m.sub} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-forest-deeper/95 via-forest-deeper/35 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <div className="text-[10px] font-bold text-accent uppercase tracking-widest mb-2">{m.tag}</div>
+                    <h3 className="text-2xl font-extrabold text-white mb-1">{m.title}</h3>
+                    <div className="text-sm font-semibold text-white/80 mb-2">{m.sub}</div>
+                    <p className="text-sm text-white/65 leading-relaxed">{m.desc}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>

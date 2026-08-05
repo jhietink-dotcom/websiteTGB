@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
+import type { ComponentType } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { LogoBar } from "@/components/LogoBar";
-import { DashboardMockup, MRVMockup, InvestorDashboardMockup } from "@/components/OSTGBMockup";
+import { MRVMockup } from "@/components/OSTGBMockup";
 import { Tbc } from "@/components/Tbc";
 import { ArrowRight, CheckCircle2, Zap, Clock, Users, Target, Leaf, ChevronDown } from "lucide-react";
 
@@ -104,7 +105,19 @@ const platformCallouts = [
   "Impact over time — cumulative CO₂, tracked across vintages",
 ];
 
-const platformRows = [
+type PlatformRow = {
+  num: string;
+  kicker: string;
+  title: string;
+  desc: string;
+  bullets: string[];
+  image?: string;
+  w?: number;
+  h?: number;
+  Mockup?: ComponentType;
+};
+
+const platformRows: PlatformRow[] = [
   {
     num: "01",
     kicker: "Portfolio",
@@ -115,7 +128,9 @@ const platformRows = [
       "Cumulative CO₂ financed and retired, tracked over time",
       "One login for procurement, finance and sustainability",
     ],
-    Mockup: InvestorDashboardMockup,
+    image: "/img/terrahub-portfolio.png",
+    w: 1600,
+    h: 592,
   },
   {
     num: "02",
@@ -127,7 +142,9 @@ const platformRows = [
       "Full documentation for every project behind your credits",
       "The quality framework and certification behind each one",
     ],
-    Mockup: DashboardMockup,
+    image: "/img/terrahub-certificates.png",
+    w: 1532,
+    h: 763,
   },
   {
     num: "03",
@@ -396,7 +413,13 @@ export default function BuyCarbonCreditsPage() {
                 </ul>
               </div>
               <div className={idx % 2 === 1 ? "lg:order-1" : ""}>
-                <r.Mockup />
+                {r.image ? (
+                  <div className="rounded-2xl border border-border shadow-xl overflow-hidden bg-white">
+                    <Image src={r.image} alt={r.title} width={r.w} height={r.h} className="w-full h-auto" />
+                  </div>
+                ) : r.Mockup ? (
+                  <r.Mockup />
+                ) : null}
               </div>
             </div>
           </section>

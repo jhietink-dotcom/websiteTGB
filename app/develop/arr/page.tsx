@@ -157,33 +157,8 @@ export default function ArrPage() {
           </div>
         </section>
 
-        {/* Reference projects */}
-        <section className="py-24 bg-white">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="text-xs font-semibold text-forest uppercase tracking-[0.2em] mb-3">Reference projects</div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-navy mb-12 leading-[1.05]">Projects developed to the highest standards.</h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              {references.map((r) => (
-                <div key={r.name} className="group rounded-3xl overflow-hidden border border-border bg-white">
-                  <div className="relative h-48 overflow-hidden">
-                    <Image src={r.photo} alt={r.name} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover transition-transform duration-700 group-hover:scale-105" />
-                  </div>
-                  <div className="p-6">
-                    <div className="text-xs font-semibold text-forest uppercase tracking-widest mb-1">{r.location}</div>
-                    <h3 className="text-lg font-bold text-ink mb-2">{r.name}</h3>
-                    <p className="text-sm text-ink-soft leading-relaxed">{r.detail}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <p className="mt-6 text-sm text-ink-soft">
-              Figures such as the Sapucaia rating range and Samauma issuance modelling are indicative. <Tbc>confirm final project metrics before launch</Tbc>
-            </p>
-          </div>
-        </section>
-
         {/* What we offer — text + photo */}
-        <section className="py-24 bg-cream">
+        <section className="py-24 bg-white">
           <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-14 items-center">
             <div>
               <h2 className="text-4xl md:text-5xl font-extrabold text-navy mb-6 leading-[1.05]">What we offer.</h2>
@@ -205,7 +180,7 @@ export default function ArrPage() {
         </section>
 
         {/* What we look for — photo + text */}
-        <section className="py-24 bg-white">
+        <section className="py-24 bg-cream">
           <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-14 items-center">
             <div className="relative h-[440px] rounded-3xl overflow-hidden lg:order-first order-last">
               <Image src="/img/DSCF9647.JPG" alt="Field monitoring on a restoration project" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
@@ -238,6 +213,31 @@ export default function ArrPage() {
                 Explore biochar
               </Link>
             </div>
+          </div>
+        </section>
+
+        {/* Reference projects — final section */}
+        <section className="py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="text-xs font-semibold text-forest uppercase tracking-[0.2em] mb-3">Reference projects</div>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-navy mb-12 leading-[1.05]">Projects developed to the highest standards.</h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              {references.map((r) => (
+                <div key={r.name} className="group rounded-3xl overflow-hidden border border-border bg-white">
+                  <div className="relative h-48 overflow-hidden">
+                    <Image src={r.photo} alt={r.name} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover transition-transform duration-700 group-hover:scale-105" />
+                  </div>
+                  <div className="p-6">
+                    <div className="text-xs font-semibold text-forest uppercase tracking-widest mb-1">{r.location}</div>
+                    <h3 className="text-lg font-bold text-ink mb-2">{r.name}</h3>
+                    <p className="text-sm text-ink-soft leading-relaxed">{r.detail}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <p className="mt-6 text-sm text-ink-soft">
+              Figures such as the Sapucaia rating range and Samauma issuance modelling are indicative. <Tbc>confirm final project metrics before launch</Tbc>
+            </p>
           </div>
         </section>
       </main>

@@ -314,14 +314,18 @@ export default function BuyCarbonCreditsPage() {
           <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <div className="text-xs font-semibold text-accent uppercase tracking-widest mb-4">Enabled by technology</div>
-              <h2 className="text-3xl font-bold text-white mb-4">Your removals. Standing access.</h2>
-              <p className="text-white/60 leading-relaxed mb-6">
-                Every purchase is managed through TerraHub — our proprietary platform. Buyers get a dedicated dashboard showing their portfolio, delivery schedules, project performance data, and all supporting documentation. Transparency is not a report we send once a year; it is standing access.
+              <h2 className="text-3xl font-bold text-white mb-4">Your credits, all in one place.</h2>
+              <p className="text-white/60 leading-relaxed mb-8">
+                Every purchase comes with access to TerraHub, our platform — a single, simple home for everything behind your credits.
               </p>
-              <ul className="space-y-2 mb-8">
-                {["Real-time project health data", "Full documentation library (PDD, MRV, audits)", "Delivery schedule and retirement records", "Direct communication with the TGB team"].map((f) => (
-                  <li key={f} className="flex items-center gap-2 text-sm text-white/70">
-                    <CheckCircle2 className="w-4 h-4 text-accent shrink-0" />
+              <ul className="space-y-4 mb-8">
+                {[
+                  "One place to find information on every project behind your credits",
+                  "All your certificates in one place, for seamless audits",
+                  "Impact reporting that builds over time",
+                ].map((f) => (
+                  <li key={f} className="flex items-start gap-3 text-base text-white/80">
+                    <CheckCircle2 className="w-5 h-5 text-accent shrink-0 mt-0.5" />
                     {f}
                   </li>
                 ))}

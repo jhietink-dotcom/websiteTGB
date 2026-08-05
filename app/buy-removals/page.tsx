@@ -282,7 +282,7 @@ export default function BuyCarbonCreditsPage() {
               {[
                 { tag: "Removal", title: "ARR", sub: "Afforestation, reforestation & revegetation", desc: "Growing new, biodiverse forest on degraded land — taking carbon out of the atmosphere.", photo: "/img/DSCF9864.JPG" },
                 { tag: "Avoidance", title: "REDD+", sub: "Avoided deforestation", desc: "Protecting standing forests from being cleared — keeping stored carbon in the ground.", photo: "/img/DSCF0095.JPG" },
-                { tag: "Removal", title: "Biochar", sub: "Durable carbon", desc: "Biomass converted into a stable carbon that stays locked away for centuries.", photo: "/img/DSCF0278.JPG" },
+                { tag: "Removal", title: "Biochar", sub: "Durable carbon", desc: "Biomass converted into a stable carbon that stays locked away for centuries.", photo: "/img/biochar.jpg" },
               ].map((m) => (
                 <div key={m.title} className="group relative h-96 rounded-3xl overflow-hidden">
                   <Image src={m.photo} alt={m.sub} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover transition-transform duration-700 group-hover:scale-105" />

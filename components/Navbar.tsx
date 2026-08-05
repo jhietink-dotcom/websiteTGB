@@ -19,7 +19,7 @@ const about = [
 
 const nav = [
   { label: "Develop", children: develop },
-  { label: "Buy Removals", href: "/buy-removals" },
+  { label: "Buy Carbon Credits", href: "/buy-removals" },
   { label: "Invest", href: "/invest" },
   { label: "Projects", href: "/projects" },
   { label: "Our Tech", href: "/terrahub" },

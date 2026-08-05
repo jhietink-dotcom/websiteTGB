@@ -4,7 +4,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Tbc } from "@/components/Tbc";
-import { ArrowRight, ShieldCheck, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Reforestation (ARR)",
@@ -147,13 +147,6 @@ export default function ArrPage() {
               ))}
             </div>
 
-            <div className="mt-10 flex items-start gap-3 rounded-2xl bg-white border border-forest/10 p-5 max-w-3xl">
-              <ShieldCheck className="w-5 h-5 text-forest shrink-0 mt-0.5" />
-              <p className="text-sm text-ink-soft leading-relaxed">
-                Behind these stages sits a formal stage-gate process with independent quality scoring across 14 criteria, inspired by the IFC Operating Principles for Impact Management.{" "}
-                <Link href="/terrahub" className="font-semibold text-forest hover:text-forest-dark">Our origination process →</Link>
-              </p>
-            </div>
           </div>
         </section>
 

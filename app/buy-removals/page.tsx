@@ -4,7 +4,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { LogoBar } from "@/components/LogoBar";
-import { InvestorDashboardMockup } from "@/components/OSTGBMockup";
+import { DashboardMockup, MRVMockup, InvestorDashboardMockup } from "@/components/OSTGBMockup";
 import { Tbc } from "@/components/Tbc";
 import { ArrowRight, CheckCircle2, Zap, Clock, Users, Target, Leaf, ChevronDown } from "lucide-react";
 
@@ -97,6 +97,51 @@ const faqSchema = {
     acceptedAnswer: { "@type": "Answer", text: f.a },
   })),
 };
+
+const platformCallouts = [
+  "Track your projects — every credit by project, volume and status",
+  "Certificates & audit exports — retirement records ready to hand over",
+  "Impact over time — cumulative CO₂, tracked across vintages",
+];
+
+const platformRows = [
+  {
+    num: "01",
+    kicker: "Portfolio",
+    title: "Every credit you hold, in one place",
+    desc: "See your whole position on one screen — grouped by project, volume, and status. No spreadsheets to reconcile, no email threads to search.",
+    bullets: [
+      "Every credit you hold, by project, volume and status",
+      "Cumulative CO₂ financed and retired, tracked over time",
+      "One login for procurement, finance and sustainability",
+    ],
+    Mockup: InvestorDashboardMockup,
+  },
+  {
+    num: "02",
+    kicker: "Proof",
+    title: "All your certificates in one place",
+    desc: "Proof that each credit was retired in your name, on the registry, where it cannot be double-counted or resold — ready before an auditor asks.",
+    bullets: [
+      "Registry retirement records in your company's name",
+      "Full documentation for every project behind your credits",
+      "The quality framework and certification behind each one",
+    ],
+    Mockup: DashboardMockup,
+  },
+  {
+    num: "03",
+    kicker: "Reporting",
+    title: "Impact reporting that builds over time",
+    desc: "Turn verified impact into stakeholder-ready materials, and watch your cumulative impact grow across vintages.",
+    bullets: [
+      "One-click, audit-ready data exports",
+      "Approved claim language that avoids overstatement",
+      "Off-the-shelf reporting and communication templates",
+    ],
+    Mockup: MRVMockup,
+  },
+];
 
 export default function BuyCarbonCreditsPage() {
   return (
@@ -309,34 +354,61 @@ export default function BuyCarbonCreditsPage() {
           </div>
         </section>
 
-        {/* Buyer dashboard section — TerraHub (unchanged) */}
-        <section className="py-24 bg-forest-deeper">
-          <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <div className="text-xs font-semibold text-accent uppercase tracking-widest mb-4">Enabled by technology</div>
-              <h2 className="text-3xl font-bold text-white mb-4">Your credits, all in one place.</h2>
-              <p className="text-white/60 leading-relaxed mb-8">
-                Every purchase comes with access to TerraHub, our platform — a single, simple home for everything behind your credits.
+        {/* Platform showcase — TerraHub (audit/proof framing) */}
+        <section className="bg-forest-deeper py-24">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="max-w-3xl">
+              <div className="text-xs font-semibold text-accent uppercase tracking-[0.2em] mb-4">Enabled by TerraHub</div>
+              <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-5 leading-[1.05]">Your audit trail, ready before anyone asks.</h2>
+              <p className="text-lg text-white/65 leading-relaxed">
+                Every credit you buy lands in one account — what you funded, which projects, how much CO₂, and the retirement records that prove it. When finance, an auditor, or the board asks, the evidence is already there.
               </p>
-              <ul className="space-y-4 mb-8">
-                {[
-                  "One place to find information on every project behind your credits",
-                  "All your certificates in one place, for seamless audits",
-                  "Impact reporting that builds over time",
-                ].map((f) => (
-                  <li key={f} className="flex items-start gap-3 text-base text-white/80">
-                    <CheckCircle2 className="w-5 h-5 text-accent shrink-0 mt-0.5" />
-                    {f}
-                  </li>
-                ))}
-              </ul>
-              <Link href="/terrahub" className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:text-accent-dark transition-colors">
-                Learn about TerraHub <ArrowRight className="w-4 h-4" />
-              </Link>
             </div>
-            <div className="hidden lg:block">
-              <InvestorDashboardMockup />
+            <div className="grid sm:grid-cols-3 gap-4 mt-10">
+              {platformCallouts.map((c) => (
+                <div key={c} className="flex items-start gap-3 rounded-2xl bg-white/5 border border-white/10 p-5 text-sm text-white/75 leading-relaxed">
+                  <CheckCircle2 className="w-5 h-5 text-accent shrink-0 mt-0.5" />
+                  {c}
+                </div>
+              ))}
             </div>
+          </div>
+        </section>
+
+        {/* Feature rows */}
+        {platformRows.map((r, idx) => (
+          <section key={r.num} className={idx % 2 === 1 ? "py-20 bg-cream" : "py-20 bg-white"}>
+            <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-14 items-center">
+              <div className={idx % 2 === 1 ? "lg:order-2" : ""}>
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="text-2xl font-extrabold text-forest/25">{r.num}</span>
+                  <span className="text-xs font-semibold text-forest uppercase tracking-[0.2em]">{r.kicker}</span>
+                </div>
+                <h3 className="text-2xl md:text-3xl font-bold text-navy mb-4 leading-tight">{r.title}</h3>
+                <p className="text-ink-soft leading-relaxed mb-6">{r.desc}</p>
+                <ul className="space-y-3">
+                  {r.bullets.map((b) => (
+                    <li key={b} className="flex items-start gap-3 text-sm text-ink-soft leading-relaxed">
+                      <CheckCircle2 className="w-4 h-4 text-forest shrink-0 mt-0.5" />
+                      {b}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className={idx % 2 === 1 ? "lg:order-1" : ""}>
+                <r.Mockup />
+              </div>
+            </div>
+          </section>
+        ))}
+
+        {/* Platform CTA link */}
+        <section className="py-12 bg-cream border-t border-border/60">
+          <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-ink-soft">Every purchase comes with TerraHub access, included.</p>
+            <Link href="/terrahub" className="inline-flex items-center gap-2 text-sm font-bold text-forest hover:text-forest-dark transition-colors">
+              Learn more about TerraHub <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </section>
 

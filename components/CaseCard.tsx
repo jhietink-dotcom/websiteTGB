@@ -11,7 +11,7 @@ export type CaseItem = {
  */
 export function CaseCard({ situation, did, outcome, partner }: CaseItem) {
   return (
-    <div className="flex flex-col rounded-2xl border border-border bg-white p-6 h-full">
+    <div className="flex flex-col rounded-2xl border border-border bg-white p-6 h-full transition-shadow hover:shadow-md">
       {partner && (
         <div className="text-[10px] font-bold text-forest uppercase tracking-widest mb-3">{partner}</div>
       )}

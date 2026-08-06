@@ -106,19 +106,23 @@ export default function AdvisoryPage() {
   return (
     <>
       <Navbar />
-      <main className="flex-1 pt-16">
-        {/* Hero */}
-        <section className="relative bg-forest-deeper py-28 overflow-hidden">
-          <Image src="/img/DSCF9797.JPG" alt="" fill priority className="object-cover opacity-25" />
-          <div className="absolute inset-0 bg-forest-deeper/60" />
-          <div className="relative max-w-7xl mx-auto px-6">
+      <main className="flex-1">
+        {/* Hero — full-bleed photo */}
+        <section className="relative min-h-[82vh] flex items-end overflow-hidden">
+          <Image src="/img/DSCF9818.JPG" alt="The Green Branch team in the field" fill priority sizes="100vw" className="object-cover object-center" />
+          <div className="absolute inset-0 bg-gradient-to-t from-forest-deeper via-forest-deeper/75 to-forest-deeper/40" />
+          <div className="absolute inset-0 bg-forest-deeper/20" />
+          <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pb-20 pt-32">
             <div className="max-w-3xl">
-              <div className="text-xs font-semibold text-accent uppercase tracking-[0.2em] mb-4">Carbon advisory</div>
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">The expertise behind our projects — available for yours.</h1>
-              <p className="text-lg text-white/70 leading-relaxed mb-8">
+              <div className="text-xs font-semibold text-accent uppercase tracking-[0.2em] mb-5">Carbon advisory</div>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-[1.02] tracking-tight">
+                The expertise behind our projects — available for yours.
+              </h1>
+              <div className="h-1 w-20 bg-accent rounded-full mb-6" />
+              <p className="text-lg md:text-xl text-white/75 leading-relaxed max-w-2xl mb-9">
                 We work with corporates building carbon strategies, landowners and developers structuring projects, financial institutions entering the carbon market, and agribusinesses assessing what their supply chains can do.
               </p>
-              <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 bg-accent text-forest-deeper text-sm font-bold rounded-xl hover:bg-accent-dark transition-colors">
+              <Link href="/contact" className="inline-flex items-center gap-2 px-7 py-4 bg-accent text-forest-deeper text-sm font-bold rounded-xl hover:bg-accent-dark transition-all hover:scale-[1.02]">
                 Book a scoping call <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
@@ -154,9 +158,9 @@ export default function AdvisoryPage() {
             <h2 className="text-4xl md:text-5xl font-extrabold text-navy mb-14 leading-[1.05]">How we help.</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {services.map((s) => (
-                <div key={s.title} className="rounded-2xl border border-border bg-white p-7">
-                  <div className="w-11 h-11 rounded-xl bg-forest-muted flex items-center justify-center mb-4">
-                    <s.icon className="w-5 h-5 text-forest" />
+                <div key={s.title} className="group rounded-2xl border border-border bg-white p-7 transition-all hover:border-forest/40 hover:shadow-lg hover:-translate-y-0.5">
+                  <div className="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center mb-5">
+                    <s.icon className="w-6 h-6 text-forest" />
                   </div>
                   <h3 className="text-lg font-bold text-ink mb-2">{s.title}</h3>
                   <p className="text-sm text-ink-soft leading-relaxed">{s.desc}</p>
@@ -166,11 +170,14 @@ export default function AdvisoryPage() {
           </div>
         </section>
 
-        {/* Why us — pull-quote band */}
-        <section className="py-24 bg-forest-deeper">
-          <div className="max-w-4xl mx-auto px-6">
+        {/* Why us — photo-backed pull-quote band */}
+        <section className="relative py-28 overflow-hidden bg-forest-deeper">
+          <Image src="/img/DSCF9647.JPG" alt="" fill sizes="100vw" className="object-cover opacity-20" />
+          <div className="absolute inset-0 bg-forest-deeper/80" />
+          <div className="relative z-10 max-w-4xl mx-auto px-6">
             <div className="text-xs font-semibold text-accent uppercase tracking-[0.2em] mb-4">Why us</div>
-            <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-8 leading-[1.05]">Practitioners, not generalists.</h2>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6 leading-[1.05]">Practitioners, not generalists.</h2>
+            <div className="h-1 w-20 bg-accent rounded-full mb-8" />
             <div className="space-y-5 text-lg text-white/70 leading-relaxed">
               <p>
                 Most carbon advisors work from frameworks. We work from experience. Every engagement draws on what we have learned building, certifying, and selling our own projects — from the forests of Bahia to buyer negotiations in Amsterdam.
@@ -214,12 +221,14 @@ export default function AdvisoryPage() {
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="py-24 bg-forest text-center">
-          <div className="max-w-2xl mx-auto px-6">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4 leading-[1.1]">Not sure if we&apos;re the right fit?</h2>
-            <p className="text-white/80 mb-8 leading-relaxed">Start with a 30-minute scoping call. We will tell you honestly whether we can help and what that would look like.</p>
-            <Link href="/contact" className="inline-flex items-center gap-2 px-7 py-4 bg-accent text-forest-deeper text-sm font-bold rounded-xl hover:bg-accent-dark transition-colors">
+        {/* CTA — full-bleed photo */}
+        <section className="relative py-32 overflow-hidden text-center">
+          <Image src="/img/DSCF0278.JPG" alt="" fill sizes="100vw" className="object-cover object-center" />
+          <div className="absolute inset-0 bg-forest-deeper/85" />
+          <div className="relative z-10 max-w-2xl mx-auto px-6">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-5 leading-[1.05]">Not sure if we&apos;re the right fit?</h2>
+            <p className="text-white/75 text-lg mb-9 leading-relaxed">Start with a 30-minute scoping call. We will tell you honestly whether we can help and what that would look like.</p>
+            <Link href="/contact" className="inline-flex items-center gap-2 px-7 py-4 bg-accent text-forest-deeper text-sm font-bold rounded-xl hover:bg-accent-dark transition-all hover:scale-[1.02]">
               Book a scoping call <ArrowRight className="w-4 h-4" />
             </Link>
           </div>

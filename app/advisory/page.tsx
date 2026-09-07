@@ -118,7 +118,7 @@ export default function AdvisoryPage() {
         </section>
 
         {/* Who we work with — indexed ledger rows */}
-        <section className="pt-24 bg-cream">
+        <section className="py-24 bg-cream">
           <div className="max-w-6xl mx-auto px-6">
             <div className="text-xs font-semibold text-forest uppercase tracking-[0.2em] mb-3">Who we work with</div>
             <h2 className="text-4xl md:text-5xl font-extrabold text-navy mb-2 leading-[1.05] max-w-2xl">
@@ -174,25 +174,6 @@ export default function AdvisoryPage() {
                 </div>
               </div>
             ))}
-          </div>
-
-          {/* photo band closing the section */}
-          <div className="relative h-[280px] mt-18 overflow-hidden">
-            <Image
-              src="/img/DSCF0493.JPG"
-              alt="Field team in a restoration site"
-              fill
-              sizes="100vw"
-              className="object-cover object-center"
-            />
-            <div className="absolute inset-0 bg-[#206042]/45" />
-            <div className="absolute inset-0 flex items-end">
-              <div className="max-w-6xl w-full mx-auto px-6 pb-8">
-                <span className="inline-flex items-center rounded-full bg-[#206042] px-4.5 py-2 text-[13px] font-semibold text-white">
-                  Advisory work runs on the same field and MRV system as our own projects
-                </span>
-              </div>
-            </div>
           </div>
         </section>
 

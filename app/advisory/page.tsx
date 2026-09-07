@@ -76,30 +76,24 @@ const steps = [
 
 const cases: CaseItem[] = [
   {
-    situation: "European consumer brand, first carbon procurement.",
-    did: "Designed a procurement framework and shortlisted three verified removal projects aligned to their SBTi roadmap.",
-    outcome: "Board-approved carbon strategy delivered in six weeks.",
-  },
-  {
-    situation: "Brazilian landowner, 4,000 hectares of degraded pasture.",
-    did: "Feasibility assessment, carbon modelling, and methodology recommendation for ARR certification.",
+    situation: "NGO operating in Africa wanting to develop a carbon project with local smallholders.",
+    did: "Feasibility assessment (including top-down selection of eligible land), preliminary carbon modelling, support with methodology compliance for ARR certification.",
     outcome: "Project entered the development pipeline with a clear path to VCS certification.",
   },
   {
-    situation: "European asset manager, first carbon removal allocation.",
-    did: "Market assessment, project due-diligence support, and ERPA review across three candidate projects.",
-    outcome: "First allocation completed with a full documentation package.",
+    situation: "Brazilian company developing a biochar project involving artisanal production from agricultural waste and redistribution to local farmers.",
+    did: "Eligibility assessment, methodology fit assessment, preliminary carbon modelling, connection with buyers.",
+    outcome: "Project under certification.",
   },
   {
-    partner: "Rabobank",
-    situation: "Agricultural bank, farming client base in Brazil.",
-    did: "Assessed biochar adoption feasibility across the client portfolio — modelling carbon potential, agronomic fit, certification pathway, and commercial structure for a farmer-facing programme.",
-    outcome: "Feasibility confirmed across two regions; project development initiated.",
+    situation: "Cooperatieve Rabobank U.A. wanted to develop an ARR project with their client network of large farmers in Brazil.",
+    did: "Carbon certification support, carbon modeling, certification documentation (PDD, Monitoring Plans, Stakeholder consultation process, etc.)",
+    outcome: "Project under validation and starting expansion; TGB became the new Project Proponent.",
   },
   {
-    situation: "Conservation NGO, existing forest project seeking carbon revenue.",
-    did: "REDD+ feasibility review and MRV design scoped for CCB co-certification.",
-    outcome: "Certification pathway confirmed; monitoring plan drafted.",
+    situation: "Company in Africa wanting to develop an ARR project including native restoration and regenerative agriculture with Indigenous communities.",
+    did: "Feasibility assessment (including top-down selection of eligible land), preliminary carbon modelling, support with methodology compliance for ARR certification, full FPIC and stakeholder consultation support and review.",
+    outcome: "Project under development in the Verra Registry.",
   },
 ];
 
@@ -203,7 +197,7 @@ export default function AdvisoryPage() {
             <div className="text-xs font-semibold text-forest uppercase tracking-[0.2em] mb-3">Recent engagements</div>
             <h2 className="text-4xl md:text-5xl font-extrabold text-navy mb-2 leading-[1.05]">Selected work.</h2>
             <p className="text-sm text-ink/50 mb-12">Details anonymised where requested.</p>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid sm:grid-cols-2 gap-6 max-w-5xl">
               {cases.map((c, i) => (
                 <CaseCard key={i} {...c} />
               ))}

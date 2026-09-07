@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     template: "%s | The Green Branch",
   },
   description:
-    "The Green Branch develops certified nature-based removal projects in Brazil — reforestation and biochar. We restore forests, produce durable removals, and structure the capital that makes both possible.",
+    "The Green Branch develops certified nature-based removal projects — reforestation and biochar. We restore forests, produce durable removals, and structure the capital that makes both possible.",
   icons: {
     icon: "/icon.png",
     shortcut: "/icon.png",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "The Green Branch | Activating nature for a liveable future",
     description:
-      "Certified nature-based removal projects in Brazil. We restore forests, produce durable removals, and structure the capital that makes both possible.",
+      "Certified nature-based removal projects. We restore forests, produce durable removals, and structure the capital that makes both possible.",
     url: "https://www.thegreenbranch.nl",
     siteName: "The Green Branch",
     locale: "en_GB",

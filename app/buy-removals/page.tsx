@@ -12,7 +12,7 @@ import { ArrowRight, CheckCircle2, Zap, Clock, Users, Target, Leaf, ChevronDown 
 export const metadata: Metadata = {
   title: { absolute: "Buy Carbon Credits | Verified Nature-Based Removals | The Green Branch" },
   description:
-    "Buy verified nature-based carbon credits from certified reforestation, REDD+, and biochar projects in Brazil. Built for SBTi targets, net zero commitments, and climate programs. VCS + CCB certified.",
+    "Buy verified nature-based carbon credits from certified reforestation, REDD+, and biochar projects. Built for SBTi targets, net zero commitments, and climate programs. VCS + CCB certified.",
 };
 
 const partnerLogos = [
@@ -169,7 +169,7 @@ export default function BuyCarbonCreditsPage() {
 
         {/* Hero — full-bleed photo with dark-green overlay */}
         <section className="relative min-h-[88vh] flex items-end overflow-hidden">
-          <Image src="/img/DSCF9797.JPG" alt="Restored forest landscape in Brazil" fill priority sizes="100vw" className="object-cover object-center" />
+          <Image src="/img/DSCF9797.JPG" alt="Restored forest landscape" fill priority sizes="100vw" className="object-cover object-center" />
           <div className="absolute inset-0 bg-gradient-to-t from-forest-deeper via-forest-deeper/75 to-forest-deeper/40" />
           <div className="absolute inset-0 bg-forest-deeper/20" />
           <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pb-20 pt-32">

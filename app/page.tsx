@@ -118,7 +118,7 @@ export default function Home() {
             <div className="max-w-4xl">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-xs font-semibold mb-6">
                 <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-                Nature-based removal developer · Brazil, and beyond
+                Nature-based removal developer
               </div>
               <h1 className="text-5xl lg:text-7xl font-extrabold text-white leading-[0.98] tracking-tight mb-6">
                 Activating nature<br />
@@ -291,7 +291,7 @@ export default function Home() {
               <div>
                 <p className="text-xs font-bold text-forest uppercase tracking-widest mb-2">Our portfolio</p>
                 <h2 className="text-4xl lg:text-5xl font-extrabold text-navy leading-tight">
-                  Brazil-led,<br />globally connected
+                  Locally rooted,<br />globally connected
                 </h2>
               </div>
               <Link href="/projects"

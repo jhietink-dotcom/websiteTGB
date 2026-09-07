@@ -9,7 +9,7 @@ import { SectionNav } from "@/components/SectionNav";
 export const metadata = {
   title: "About",
   description:
-    "The Green Branch is a social impact (B Corp) company and an impact-first carbon asset developer and manager, building high-quality nature-based projects, primarily in Brazil.",
+    "The Green Branch is a social impact (B Corp) company and an impact-first carbon asset developer and manager, building high-quality nature-based projects.",
 };
 
 const team = [
@@ -58,7 +58,7 @@ const values = [
 
 const resources = [
   { icon: BookOpen, tag: "Overview", title: "Company introduction", desc: "Who we are, what we develop, and how we work — a short overview of The Green Branch." },
-  { icon: TreePine, tag: "Deck", title: "Reforestation (ARR) in Brazil", desc: "Our approach to afforestation, reforestation and revegetation, with certification standards and reference projects." },
+  { icon: TreePine, tag: "Deck", title: "Reforestation (ARR)", desc: "Our approach to afforestation, reforestation and revegetation, with certification standards and reference projects." },
   { icon: Factory, tag: "Deck", title: "Biochar co-development", desc: "For agribusinesses and industrial partners with biomass — how we co-develop industrial biochar projects." },
   { icon: Package, tag: "Guide", title: "Buyer's guide to emission removals", desc: "Spot, forward and offtake explained, with what to look for in high-integrity removals." },
   { icon: Landmark, tag: "Investors", title: "Investor overview", desc: "The Land Fund and Biochar Fund at a glance. Full documentation is shared with qualified investors on request." },
@@ -89,14 +89,14 @@ export default function AboutPage() {
               <span className="text-accent">Built to last.</span>
             </h1>
             <p className="text-lg text-white/70 max-w-xl leading-relaxed mb-10">
-              The Green Branch is a social impact (B Corp) company and an impact-first carbon asset developer and manager, building high-quality nature-based projects, primarily in Brazil.
+              The Green Branch is a social impact (B Corp) company and an impact-first carbon asset developer and manager, building high-quality nature-based projects.
             </p>
             <div className="flex flex-wrap gap-x-10 gap-y-4">
               {[
                 { value: "2019", label: "Founded" },
                 { value: "B Corp", label: "Social impact company" },
                 { value: "4M ha", label: "Conservation goal by 2040" },
-                { value: "Brazil", label: "Primary focus" },
+                { value: "VCS + CCB", label: "Certified to" },
               ].map((s) => (
                 <div key={s.label}>
                   <div className="text-2xl font-bold text-white">{s.value}</div>
@@ -122,7 +122,7 @@ export default function AboutPage() {
                 </h2>
                 <div className="space-y-4 text-ink-soft leading-relaxed">
                   <p>The Green Branch was founded in 2019 to close the financing gap for nature-based climate solutions. Restoration and conservation projects too often fail to reach maturity because they remain underfunded and lack technical capacity. We exist to change that.</p>
-                  <p>Today, The Green Branch is a social impact (B Corp) company and an impact-first carbon asset developer and manager. We operate at the intersection of technical development, financial structuring, and commercial strategy, working with local operational partners to originate and scale high-quality projects, primarily in Brazil.</p>
+                  <p>Today, The Green Branch is a social impact (B Corp) company and an impact-first carbon asset developer and manager. We operate at the intersection of technical development, financial structuring, and commercial strategy, working with local operational partners to originate and scale high-quality projects.</p>
                   <p>Our vision is to increase biodiverse forest cover worldwide, conserving 4 million hectares of forest before 2040.</p>
                 </div>
               </div>
@@ -165,7 +165,7 @@ export default function AboutPage() {
                 <h2 className="text-3xl font-extrabold text-navy mb-8 leading-tight">How we work, from origination to scale.</h2>
                 <div className="space-y-6">
                   {[
-                    { num: "01", title: "Originate", desc: "With local operational partners, we identify restoration and conservation projects with strong ecological and social foundations, primarily in Brazil." },
+                    { num: "01", title: "Originate", desc: "With local operational partners, we identify restoration and conservation projects with strong ecological and social foundations." },
                     { num: "02", title: "Develop", desc: "We provide the technical development and financial structuring needed to bring projects to certification readiness under standards such as VCS and CCB." },
                     { num: "03", title: "Manage", desc: "We manage each project as a long-term asset — MRV, compliance, and reporting — across its full lifetime." },
                     { num: "04", title: "Scale", desc: "We replicate proven models to grow biodiverse forest cover, working towards our goal of conserving 4 million hectares before 2040." },
@@ -229,7 +229,7 @@ export default function AboutPage() {
               Practitioners at the intersection of<br className="hidden sm:block" /> science, finance, and fieldwork.
             </h2>
             <p className="text-white/60 mb-12 max-w-2xl">
-              A team spanning carbon development, GIS, finance, and field operations, working closely with our local partners in Brazil.
+              A team spanning carbon development, GIS, finance, and field operations, working closely with our local operational partners.
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {team.map((t) => (

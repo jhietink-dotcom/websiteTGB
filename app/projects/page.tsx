@@ -8,7 +8,7 @@ import { Tbc } from "@/components/Tbc";
 export const metadata = {
   title: "Projects",
   description:
-    "The Green Branch portfolio of high-integrity, nature-based emission removal projects — Brazil-led reforestation and restoration, with selected projects across Africa.",
+    "The Green Branch portfolio of high-integrity, nature-based emission removal projects — reforestation, restoration and biochar across multiple regions.",
 };
 
 const projects = [
@@ -153,7 +153,7 @@ export default function ProjectsPage() {
               <span className="text-accent">meets capital.</span>
             </h1>
             <p className="text-lg text-white/70 max-w-xl leading-relaxed mb-10">
-              A Brazil-led portfolio of high-integrity, nature-based emission removal projects, with selected projects across Africa — verified, traceable, and built to last.
+              A portfolio of high-integrity, nature-based emission removal projects across multiple regions — verified, traceable, and built to last.
             </p>
 
             {/* Stats row */}

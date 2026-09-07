@@ -119,7 +119,7 @@ export default function BiocharPage() {
               <div className="text-xs font-semibold text-accent uppercase tracking-widest mb-4">Co-developing industrial biochar</div>
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">Turn your biomass into durable carbon removal.</h1>
               <p className="text-lg text-white/70 leading-relaxed mb-8">
-                Biochar locks biomass carbon into a stable form with permanence measured in centuries. We co-develop industrial biochar projects in Brazil with agribusinesses and industrial partners who already hold substantial biomass residues — you bring the feedstock; we bring the development, financing, certification, and buyers.
+                Biochar locks biomass carbon into a stable form with permanence measured in centuries. We co-develop industrial biochar projects with agribusinesses and industrial partners who already hold substantial biomass residues — you bring the feedstock; we bring the development, financing, certification, and buyers.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 bg-accent text-forest-deeper text-sm font-bold rounded-xl hover:bg-accent-dark transition-colors">
@@ -169,7 +169,7 @@ export default function BiocharPage() {
             </div>
             <h2 className="text-3xl font-bold text-navy mb-4 max-w-3xl">We partner with the businesses that already hold the biomass.</h2>
             <p className="text-ink-soft leading-relaxed mb-12 max-w-3xl">
-              We are looking for agribusinesses, processors, mills, and industrial operators in Brazil with substantial, consistent streams of biomass residue. Together we turn material that is currently a cost or a waste into a durable carbon-removal asset — and, where applied, a soil amendment that lifts yields.
+              We are looking for agribusinesses, processors, mills, and industrial operators with substantial, consistent streams of biomass residue. Together we turn material that is currently a cost or a waste into a durable carbon-removal asset — and, where applied, a soil amendment that lifts yields.
             </p>
 
             <div className="grid md:grid-cols-2 gap-6">

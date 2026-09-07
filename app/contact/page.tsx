@@ -50,9 +50,9 @@ export default function ContactPage() {
               </div>
               <div className="p-6 rounded-2xl bg-white border border-border flex flex-col">
                 <div className="text-sm font-bold text-navy mb-2">For project developers</div>
-                <p className="text-sm text-ink-soft mb-4 flex-1">Submit your project for screening via TerraHub, our project intake and diligence platform.</p>
-                <a href="/terrahub" className="inline-flex items-center gap-1 text-xs font-semibold text-forest hover:text-forest-light transition-colors">
-                  Go to TerraHub <ArrowRight className="w-3 h-3" />
+                <p className="text-sm text-ink-soft mb-4 flex-1">Submit your project for screening via GreenBranch OS, our project intake and diligence platform.</p>
+                <a href="/greenbranch-os" className="inline-flex items-center gap-1 text-xs font-semibold text-forest hover:text-forest-light transition-colors">
+                  Go to GreenBranch OS <ArrowRight className="w-3 h-3" />
                 </a>
               </div>
             </div>
@@ -91,7 +91,7 @@ export default function ContactPage() {
               </div>
               <div className="space-y-3">
                 <div className="text-xs font-semibold text-ink uppercase tracking-wider">How can we help?</div>
-                {["Buyers: volumes and pricing", "Investors: fund documentation", "Developers: project screening via TerraHub"].map((t) => (
+                {["Buyers: volumes and pricing", "Investors: fund documentation", "Developers: project screening via GreenBranch OS"].map((t) => (
                   <div key={t} className="text-sm text-ink-soft flex items-center gap-2">
                     <div className="w-1 h-1 rounded-full bg-forest" />
                     {t}
@@ -148,7 +148,7 @@ export default function ContactPage() {
                       <option value="">Select a topic</option>
                       <option>Buyer: emission removal volumes and pricing</option>
                       <option>Investor: fund documentation (qualified/professional only)</option>
-                      <option>Project developer: submit a project via TerraHub</option>
+                      <option>Project developer: submit a project via GreenBranch OS</option>
                       <option>Other</option>
                     </select>
                   </div>

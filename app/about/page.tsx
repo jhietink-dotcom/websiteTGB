@@ -30,7 +30,7 @@ const partners = ["Futuro Florestal", "Rabobank", "Florestas Engenharia", "Impla
 
 const timeline = [
   { year: "2019", event: <>Founded to close the financing gap for nature-based climate solutions.</> },
-  { year: "2023", event: <>Built TerraHub, our proprietary development and MRV platform.</> },
+  { year: "2023", event: <>Built GreenBranch OS, our proprietary development and MRV platform.</> },
   {
     year: "2024",
     event: (

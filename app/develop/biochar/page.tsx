@@ -31,7 +31,7 @@ const steps = [
   {
     icon: Gauge,
     name: "Monitor",
-    desc: "Continuous production and chain-of-custody monitoring via TerraHub, through verification and issuance.",
+    desc: "Continuous production and chain-of-custody monitoring via GreenBranch OS, through verification and issuance.",
   },
 ];
 
@@ -44,7 +44,7 @@ const bring = {
   tgb: [
     "Development capital and proven pyrolysis technology, deployed against milestones",
     "Certification: methodology selection, registry, validation and verification",
-    "Continuous production monitoring and chain-of-custody via TerraHub",
+    "Continuous production monitoring and chain-of-custody via GreenBranch OS",
     "Commercialisation to our buyer network — spot, forward and long-term offtake",
     "Agronomic co-benefits where biochar is applied: soil health and water retention",
   ],
@@ -80,7 +80,7 @@ const faqs: { q: string; a: React.ReactNode }[] = [
     a: (
       <>
         <p className="mb-2">
-          We co-develop the project with you. You provide the biomass residue and a site; we bring development capital, proven technology, certification, MRV via TerraHub, and commercialisation to our buyer network. We invest alongside you and share the upside — a partnership, not a franchise.
+          We co-develop the project with you. You provide the biomass residue and a site; we bring development capital, proven technology, certification, MRV via GreenBranch OS, and commercialisation to our buyer network. We invest alongside you and share the upside — a partnership, not a franchise.
         </p>
         <p className="text-xs text-ink/50"><Tbc>commercial terms and revenue share are structured per project — confirm the model to describe here</Tbc></p>
       </>

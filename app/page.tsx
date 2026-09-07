@@ -234,7 +234,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── TerraHub feature ── */}
+        {/* ── GreenBranch OS feature ── */}
         <section className="py-24 bg-forest-deeper overflow-hidden">
           <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -242,10 +242,10 @@ export default function Home() {
                 Built in-house · proprietary
               </div>
               <h2 className="text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-5">
-                Powered by <span className="text-accent">TerraHub</span>
+                Powered by <span className="text-accent">GreenBranch OS</span>
               </h2>
               <p className="text-white/60 leading-relaxed mb-8 text-lg">
-                One platform from origination to issuance. TerraHub unifies project development, MRV, and commercialisation in a single environment — how we develop faster, monitor deeper, and give buyers and investors direct sight of the work.
+                One platform from origination to issuance. GreenBranch OS unifies project development, MRV, and commercialisation in a single environment — how we develop faster, monitor deeper, and give buyers and investors direct sight of the work.
               </p>
               <div className="space-y-3 mb-10">
                 {[
@@ -259,9 +259,9 @@ export default function Home() {
                   </div>
                 ))}
               </div>
-              <Link href="/terrahub"
+              <Link href="/greenbranch-os"
                 className="inline-flex items-center gap-2 px-5 py-3 bg-accent text-forest-deeper text-sm font-bold rounded-xl hover:bg-accent-dark transition-colors">
-                Explore TerraHub <ArrowRight className="w-4 h-4" />
+                Explore GreenBranch OS <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
 

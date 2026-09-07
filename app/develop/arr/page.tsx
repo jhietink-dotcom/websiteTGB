@@ -36,7 +36,7 @@ const phases = [
   {
     num: "05",
     name: "Monitoring & technical support",
-    desc: "Through TerraHub, our proprietary MRV platform, we combine satellite data with field measurement for continuous monitoring and adaptive management — and provide ongoing technical support to the project on the ground, for the full life of the project.",
+    desc: "Through GreenBranch OS, our proprietary MRV platform, we combine satellite data with field measurement for continuous monitoring and adaptive management — and provide ongoing technical support to the project on the ground, for the full life of the project.",
   },
   {
     num: "06",
@@ -71,7 +71,7 @@ const offer = [
   "Connecting you to the TGB buyer landscape",
   "Technical assistance, from feasibility to validation",
   "Structuring and fundraising support",
-  "Access to our development and MRV platform, TerraHub",
+  "Access to our development and MRV platform, GreenBranch OS",
   "Independent quality assessments and ratings",
 ];
 
@@ -197,7 +197,7 @@ export default function ArrPage() {
         <section className="py-20 bg-forest text-center">
           <div className="max-w-2xl mx-auto px-6">
             <h2 className="text-3xl font-bold text-white mb-4">Have a project with restoration potential?</h2>
-            <p className="text-white/80 mb-8">Submit your project through TerraHub for structured screening against our 14-criteria quality framework.</p>
+            <p className="text-white/80 mb-8">Submit your project through GreenBranch OS for structured screening against our 14-criteria quality framework.</p>
             <div className="flex flex-wrap gap-3 justify-center">
               <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 bg-accent text-forest-deeper text-sm font-bold rounded-xl hover:bg-accent-dark transition-colors">
                 Submit a project for screening <ArrowRight className="w-4 h-4" />

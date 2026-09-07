@@ -67,7 +67,7 @@ const modules = [
   },
 ];
 
-export default function TerraHubPage() {
+export default function GreenBranchOSPage() {
   return (
     <>
       <Navbar />

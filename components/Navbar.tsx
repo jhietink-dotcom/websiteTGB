@@ -22,7 +22,7 @@ const nav = [
   { label: "Buy Carbon Credits", href: "/buy-removals" },
   { label: "Invest", href: "/invest" },
   { label: "Projects", href: "/projects" },
-  { label: "Our Tech", href: "/terrahub" },
+  { label: "Our Tech", href: "/greenbranch-os" },
   { label: "Advisory", href: "/advisory" },
   { label: "About", children: about },
 ];

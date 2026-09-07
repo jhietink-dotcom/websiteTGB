@@ -12,7 +12,7 @@ const links = {
     { label: "Buy Removals", href: "/buy-removals" },
     { label: "Invest", href: "/invest" },
     { label: "Projects", href: "/projects" },
-    { label: "Our Tech", href: "/terrahub" },
+    { label: "Our Tech", href: "/greenbranch-os" },
     { label: "About", href: "/about" },
   ],
   Legal: [

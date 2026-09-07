@@ -85,7 +85,7 @@ const faqs: { q: string; a: string }[] = [
   },
   {
     q: "What happens after I place an order?",
-    a: "We agree volume, vintage, and price, then execute the contract. For spot purchases we retire the credits in your name in the relevant registry and deliver a full documentation package — project documents, verification, and retirement records. For future supply, credits are delivered and retired on the agreed schedule as the project issues them. You retain access to project data throughout via TerraHub.",
+    a: "We agree volume, vintage, and price, then execute the contract. For spot purchases we retire the credits in your name in the relevant registry and deliver a full documentation package — project documents, verification, and retirement records. For future supply, credits are delivered and retired on the agreed schedule as the project issues them. You retain access to project data throughout via GreenBranch OS.",
   },
 ];
 
@@ -268,7 +268,7 @@ export default function BuyCarbonCreditsPage() {
                   {[
                     "Price fixed now for future vintages — budget certainty",
                     "Volume secured against a named project",
-                    "Verified milestone updates as the project progresses, via TerraHub",
+                    "Verified milestone updates as the project progresses, via GreenBranch OS",
                     "Can be structured as a multi-year offtake agreement (ERPA — an Emission Removal Purchase Agreement, a long-term contract to buy future credits)",
                     "Best for multi-year removal portfolios",
                   ].map((b) => (
@@ -371,11 +371,11 @@ export default function BuyCarbonCreditsPage() {
           </div>
         </section>
 
-        {/* Platform showcase — TerraHub (audit/proof framing) */}
+        {/* Platform showcase — GreenBranch OS (audit/proof framing) */}
         <section className="bg-forest-deeper py-24">
           <div className="max-w-7xl mx-auto px-6">
             <div className="max-w-3xl">
-              <div className="text-xs font-semibold text-accent uppercase tracking-[0.2em] mb-4">Enabled by TerraHub</div>
+              <div className="text-xs font-semibold text-accent uppercase tracking-[0.2em] mb-4">Enabled by GreenBranch OS</div>
               <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-5 leading-[1.05]">Your audit trail, ready before anyone asks.</h2>
               <p className="text-lg text-white/65 leading-relaxed">
                 Every credit you buy lands in one account — what you funded, which projects, how much CO₂, and the retirement records that prove it. When finance, an auditor, or the board asks, the evidence is already there.
@@ -428,9 +428,9 @@ export default function BuyCarbonCreditsPage() {
         {/* Platform CTA link */}
         <section className="py-12 bg-cream border-t border-border/60">
           <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-ink-soft">Every purchase comes with TerraHub access, included.</p>
-            <Link href="/terrahub" className="inline-flex items-center gap-2 text-sm font-bold text-forest hover:text-forest-dark transition-colors">
-              Learn more about TerraHub <ArrowRight className="w-4 h-4" />
+            <p className="text-ink-soft">Every purchase comes with GreenBranch OS access, included.</p>
+            <Link href="/greenbranch-os" className="inline-flex items-center gap-2 text-sm font-bold text-forest hover:text-forest-dark transition-colors">
+              Learn more about GreenBranch OS <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </section>

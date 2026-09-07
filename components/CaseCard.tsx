@@ -37,7 +37,7 @@ export function CaseCard({ situation, did, outcome, partner }: CaseItem) {
         </div>
 
         {/* Outcome — highlighted */}
-        <div className="rounded-xl bg-forest-muted/60 p-4">
+        <div className="rounded-xl bg-forest-muted/60 p-4 min-h-[104px]">
           <div className="flex items-center gap-2 mb-1">
             <CheckCircle2 className="w-4 h-4 text-forest shrink-0" />
             <span className="text-[10px] font-bold text-forest uppercase tracking-[0.15em]">Outcome</span>

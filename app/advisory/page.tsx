@@ -184,7 +184,7 @@ export default function AdvisoryPage() {
             <div className="text-xs font-semibold text-forest uppercase tracking-[0.2em] mb-3">Recent engagements</div>
             <h2 className="text-4xl md:text-5xl font-extrabold text-navy mb-2 leading-[1.05]">Selected work.</h2>
             <p className="text-sm text-ink/50 mb-12">Details anonymised where requested.</p>
-            <div className="grid sm:grid-cols-2 gap-6 max-w-5xl">
+            <div className="grid sm:grid-cols-2 auto-rows-fr gap-6 max-w-5xl">
               {cases.map((c, i) => (
                 <CaseCard key={i} {...c} />
               ))}

@@ -1,8 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Tbc } from "@/components/Tbc";
-import { DashboardMockup, MRVMockup, InvestorDashboardMockup } from "@/components/OSTGBMockup";
 import { ArrowRight, CheckCircle2, Shield, Globe, BarChart3, Database, Layers, Lock } from "lucide-react";
 
 export const metadata = {
@@ -26,8 +26,9 @@ const modules = [
       "Standardised templates for each phase and deliverable",
       "Full audit trail with no information lost between phases",
     ],
-    MockupComponent: DashboardMockup,
-    accent: "border-forest/20",
+    image: "/img/os-development.png",
+    w: 752,
+    h: 321,
   },
   {
     id: "mrv",
@@ -44,8 +45,9 @@ const modules = [
       "Reliable verification and transparent reporting",
       "Forest growth converted into issued emission removals",
     ],
-    MockupComponent: MRVMockup,
-    accent: "border-forest/20",
+    image: "/img/os-mrv.png",
+    w: 752,
+    h: 377,
   },
   {
     id: "dashboard",
@@ -62,8 +64,9 @@ const modules = [
       "Standing access rather than a once-a-year report",
       "A single environment for buyers and investors",
     ],
-    MockupComponent: InvestorDashboardMockup,
-    accent: "border-forest/20",
+    image: "/img/os-dashboard.png",
+    w: 752,
+    h: 478,
   },
 ];
 
@@ -142,7 +145,9 @@ export default function GreenBranchOSPage() {
                 </ul>
               </div>
               <div className={idx % 2 === 1 ? "lg:order-1" : ""}>
-                <m.MockupComponent />
+                <div className="rounded-2xl border border-border shadow-xl overflow-hidden bg-white">
+                  <Image src={m.image} alt={`GreenBranch OS — ${m.title}`} width={m.w} height={m.h} className="w-full h-auto" sizes="(max-width: 1024px) 100vw, 50vw" />
+                </div>
               </div>
             </div>
           </section>

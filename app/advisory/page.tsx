@@ -7,9 +7,9 @@ import { CaseCard, type CaseItem } from "@/components/CaseCard";
 import { ArrowRight, Building2, Sprout, Wheat } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "Carbon Advisory Services | For Corporates, Developers, Finance & FLAG Companies | The Green Branch" },
+  title: { absolute: "Carbon Advisory Services | For Corporates, Developers & FLAG Companies | The Green Branch" },
   description:
-    "Carbon advisory for corporates, project developers and landowners, financial institutions, and FLAG companies — from a team that has built, certified, and sold its own nature-based removal projects.",
+    "Carbon advisory for corporates, project developers and landowners, and FLAG companies — from a team that has built, certified, and sold its own nature-based removal projects.",
 };
 
 const audiences = [

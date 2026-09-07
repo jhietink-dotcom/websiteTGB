@@ -171,12 +171,9 @@ export default function AdvisoryPage() {
             <div className="text-xs font-semibold text-accent uppercase tracking-[0.2em] mb-4">Why us</div>
             <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6 leading-[1.05]">Practitioners, not generalists.</h2>
             <div className="h-1 w-20 bg-accent rounded-full mb-8" />
-            <div className="space-y-5 text-lg text-white/70 leading-relaxed">
+            <div className="text-lg text-white/70 leading-relaxed max-w-3xl">
               <p>
-                Most carbon advisors work from frameworks. We work from experience. Every engagement draws on what we have learned building, certifying, and selling our own projects — from the forests of Bahia to buyer negotiations in Amsterdam.
-              </p>
-              <p>
-                When we advise on feasibility, we draw on real MRV data. When we advise on procurement, we draw on live market transactions. When we assess whether biochar can work across an agricultural supply chain, we draw on active project development with farming communities in Brazil.
+                Most carbon advisors work from frameworks, we work from experience. Every engagement draws on what we have learned building, certifying, and selling our own projects.
               </p>
             </div>
           </div>
@@ -219,8 +216,7 @@ export default function AdvisoryPage() {
           <Image src="/img/DSCF0278.JPG" alt="" fill sizes="100vw" className="object-cover object-center" />
           <div className="absolute inset-0 bg-forest-deeper/85" />
           <div className="relative z-10 max-w-2xl mx-auto px-6">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-5 leading-[1.05]">Not sure if we&apos;re the right fit?</h2>
-            <p className="text-white/75 text-lg mb-9 leading-relaxed">Start with a 30-minute scoping call. We will tell you honestly whether we can help and what that would look like.</p>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-9 leading-[1.05]">Let&apos;s find out how we can work together in a call</h2>
             <Link href="/contact" className="inline-flex items-center gap-2 px-7 py-4 bg-accent text-forest-deeper text-sm font-bold rounded-xl hover:bg-accent-dark transition-all hover:scale-[1.02]">
               Book a scoping call <ArrowRight className="w-4 h-4" />
             </Link>

@@ -8,7 +8,7 @@ import { ArrowRight, CheckCircle2, Shield, Globe, BarChart3, Database, Layers, L
 export const metadata = {
   title: "Our Tech",
   description:
-    "TerraHub is The Green Branch's proprietary platform, unifying project development, MRV, and commercialisation from origination to issuance in a single environment.",
+    "GreenBranch OS is The Green Branch's proprietary platform, unifying project development, MRV, and commercialisation from origination to issuance in a single environment.",
 };
 
 const modules = [
@@ -18,13 +18,12 @@ const modules = [
     title: "Development",
     tagline: "From first screening to bankable project.",
     description:
-      "Every project moves through TerraHub from first screening onward. Developers submit projects through a structured questionnaire, receive a quality score across 14 criteria, and — once accepted — are guided through our stage-gate process with standardised templates and legally reviewed contract frameworks. One environment, full audit trail, no information lost between phases.",
+      "Every project moves through GreenBranch OS from first screening onward. Developers submit projects through a structured questionnaire, receive a quality score across 14 criteria, and are guided through our stage-gate process with standardised templates. One environment, full audit trail, no information lost between phases.",
     features: [
       "Structured submission questionnaire for every incoming project",
       "Quality score assessed across 14 criteria",
       "Guided stage-gate process from screening to MRV",
       "Standardised templates for each phase and deliverable",
-      "Legally reviewed contract frameworks",
       "Full audit trail with no information lost between phases",
     ],
     MockupComponent: DashboardMockup,
@@ -82,11 +81,8 @@ export default function TerraHubPage() {
               <h1 className="text-5xl font-bold text-white mb-6 leading-tight">
                 One platform from origination to issuance.
               </h1>
-              <p className="text-lg text-white/60 leading-relaxed mb-6">
-                TerraHub is our proprietary platform unifying project development, MRV, and commercialisation in a single environment. It is how we develop faster, monitor deeper, and give buyers and investors direct sight of the work.
-              </p>
-              <p className="text-white/40 text-sm leading-relaxed mb-8">
-                Most carbon project developers rely on a patchwork of spreadsheets, shared drives, and third-party tools. We built TerraHub because we needed a single system of record that makes our projects traceable, auditable, and investable from first screening to final delivery.
+              <p className="text-lg text-white/60 leading-relaxed mb-8">
+                GreenBranch OS is our proprietary platform unifying project development, MRV, and commercialisation in a single environment. It is how we develop faster, monitor deeper, and give buyers and investors direct sight of the work.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 bg-accent text-forest-deeper text-sm font-bold rounded-xl hover:bg-accent-dark transition-colors">
@@ -131,7 +127,7 @@ export default function TerraHubPage() {
                 <div className="flex items-center gap-3 mb-5">
                   <div className="text-3xl font-extrabold text-forest/20">{m.number}</div>
                   <div className="w-px h-8 bg-border" />
-                  <div className="text-xs font-semibold text-forest uppercase tracking-widest">TerraHub Module</div>
+                  <div className="text-xs font-semibold text-forest uppercase tracking-widest">GreenBranch OS Module</div>
                 </div>
                 <h2 className="text-3xl font-bold text-ink mb-1">{m.title}</h2>
                 <p className="text-base font-semibold text-forest mb-5">{m.tagline}</p>
@@ -159,7 +155,7 @@ export default function TerraHubPage() {
               <div className="text-xs font-semibold text-accent uppercase tracking-widest mb-4">Why we built it</div>
               <h2 className="text-3xl font-bold text-white mb-4">Integrity at every layer</h2>
               <p className="text-white/60 leading-relaxed mb-6">
-                The credibility problem in the carbon market stems from opacity. Projects make claims; verification is expensive and infrequent; buyers cannot see what they are buying. TerraHub is our answer to that.
+                The credibility problem in the carbon market stems from opacity. Projects make claims; verification is expensive and infrequent; buyers cannot see what they are buying. GreenBranch OS is our answer to that.
               </p>
               <p className="text-white/60 leading-relaxed">
                 By managing the entire development lifecycle — and giving partners, buyers, and investors standing access to the data — we create a level of traceability that does not exist elsewhere. Across a portfolio of <Tbc>number of active projects</Tbc> projects, every action is logged, timestamped, and open to audit.
@@ -185,7 +181,7 @@ export default function TerraHubPage() {
         {/* CTA */}
         <section className="py-20 bg-white text-center">
           <div className="max-w-2xl mx-auto px-6">
-            <h2 className="text-3xl font-bold text-ink mb-4">See TerraHub in action</h2>
+            <h2 className="text-3xl font-bold text-ink mb-4">See GreenBranch OS in action</h2>
             <p className="text-ink-soft mb-8">We would be glad to walk you through the platform — whether you are a project developer, an investor, or a buyer of emission removals.</p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Link href="/contact" className="px-6 py-3.5 bg-forest text-white text-sm font-bold rounded-xl hover:bg-forest-light transition-colors">Request platform access</Link>

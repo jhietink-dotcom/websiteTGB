@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Tbc } from "@/components/Tbc";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -97,7 +96,7 @@ export default function ArrPage() {
               <div className="text-xs font-semibold text-accent uppercase tracking-[0.2em] mb-4">How we develop reforestation projects</div>
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">From degraded pasture to certified forest.</h1>
               <p className="text-lg text-white/70 leading-relaxed mb-8">
-                We develop afforestation, reforestation and revegetation (ARR) projects in Latin America through a structured, stage-gated process. Each stage reduces risk before capital scales.
+                We develop afforestation, reforestation and revegetation (ARR) projects through a structured, stage-gated process. Each stage reduces risk before capital scales.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 bg-accent text-forest-deeper text-sm font-bold rounded-xl hover:bg-accent-dark transition-colors">
@@ -117,7 +116,7 @@ export default function ArrPage() {
             <div className="text-xs font-semibold text-forest uppercase tracking-[0.2em] mb-3">Why our approach works</div>
             <h2 className="text-3xl md:text-4xl font-extrabold text-navy mb-6 leading-[1.1]">We eliminate the predictable failure modes before implementation begins.</h2>
             <p className="text-ink-soft leading-relaxed">
-              High-quality ARR projects fail for predictable reasons: unclear land tenure, weak carbon models, underfunded early stages, and communities engaged too late. Our process is built to eliminate these failure modes before implementation begins. The governance framework is inspired by recognised project-finance practice, including the IFC Operating Principles for Impact Management.
+              High-quality ARR projects fail for predictable reasons: unclear land tenure, weak carbon models, underfunded early stages, and communities engaged too late. Our process is built to eliminate these failure modes before implementation begins.
             </p>
           </div>
         </section>
@@ -150,8 +149,29 @@ export default function ArrPage() {
           </div>
         </section>
 
-        {/* What we offer — text + photo */}
+        {/* What we look for — photo + text */}
         <section className="py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-14 items-center">
+            <div className="relative h-[440px] rounded-3xl overflow-hidden lg:order-first order-last">
+              <Image src="/img/DSCF9647.JPG" alt="Field monitoring on a restoration project" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
+            </div>
+            <div>
+              <h2 className="text-4xl md:text-5xl font-extrabold text-navy mb-6 leading-[1.05]">What we look for.</h2>
+              <p className="text-ink-soft leading-relaxed mb-6">We invite organisations developing nature-restoration projects in Latin America that meet the following:</p>
+              <ul className="space-y-3">
+                {lookFor.map((l) => (
+                  <li key={l} className="flex items-start gap-3 text-ink-soft leading-relaxed">
+                    <CheckCircle2 className="w-5 h-5 text-forest shrink-0 mt-0.5" />
+                    {l}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* What we offer — text + photo */}
+        <section className="py-24 bg-cream">
           <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-14 items-center">
             <div>
               <h2 className="text-4xl md:text-5xl font-extrabold text-navy mb-6 leading-[1.05]">What we offer.</h2>
@@ -168,27 +188,6 @@ export default function ArrPage() {
             </div>
             <div className="relative h-[440px] rounded-3xl overflow-hidden">
               <Image src="/img/DSCF9873.JPG" alt="Early-stage reforestation project" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
-            </div>
-          </div>
-        </section>
-
-        {/* What we look for — photo + text */}
-        <section className="py-24 bg-cream">
-          <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-14 items-center">
-            <div className="relative h-[440px] rounded-3xl overflow-hidden lg:order-first order-last">
-              <Image src="/img/DSCF9647.JPG" alt="Field monitoring on a restoration project" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
-            </div>
-            <div>
-              <h2 className="text-4xl md:text-5xl font-extrabold text-navy mb-6 leading-[1.05]">What we look for.</h2>
-              <p className="text-ink-soft leading-relaxed mb-6">We invite organisations developing nature-restoration projects in Latin America that meet the following:</p>
-              <ul className="space-y-3">
-                {lookFor.map((l) => (
-                  <li key={l} className="flex items-start gap-3 text-ink-soft leading-relaxed">
-                    <CheckCircle2 className="w-5 h-5 text-forest shrink-0 mt-0.5" />
-                    {l}
-                  </li>
-                ))}
-              </ul>
             </div>
           </div>
         </section>
@@ -228,9 +227,6 @@ export default function ArrPage() {
                 </div>
               ))}
             </div>
-            <p className="mt-6 text-sm text-ink-soft">
-              Figures such as the Sapucaia rating range and Samauma issuance modelling are indicative. <Tbc>confirm final project metrics before launch</Tbc>
-            </p>
           </div>
         </section>
       </main>

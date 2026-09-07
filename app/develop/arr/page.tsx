@@ -8,7 +8,7 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 export const metadata: Metadata = {
   title: "Reforestation (ARR)",
   description:
-    "We develop afforestation, reforestation and revegetation projects in Latin America through a structured, stage-gated process — reducing risk before capital scales.",
+    "We develop afforestation, reforestation and revegetation projects through a structured, stage-gated process — reducing risk before capital scales.",
 };
 
 const phases = [
@@ -157,7 +157,7 @@ export default function ArrPage() {
             </div>
             <div>
               <h2 className="text-4xl md:text-5xl font-extrabold text-navy mb-6 leading-[1.05]">What we look for.</h2>
-              <p className="text-ink-soft leading-relaxed mb-6">We invite organisations developing nature-restoration projects in Latin America that meet the following:</p>
+              <p className="text-ink-soft leading-relaxed mb-6">We invite organisations developing nature-restoration projects that meet the following:</p>
               <ul className="space-y-3">
                 {lookFor.map((l) => (
                   <li key={l} className="flex items-start gap-3 text-ink-soft leading-relaxed">

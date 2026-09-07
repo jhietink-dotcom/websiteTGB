@@ -70,8 +70,8 @@ const audiences = [
 
 const steps = [
   { num: "1", title: "Scoping call", desc: "We spend 30 minutes understanding your situation. No obligation, no pitch." },
-  { num: "2", title: "Fixed-scope proposal", desc: "You receive a clear proposal: scope, deliverables, timeline, and fee. Most engagements run four to eight weeks." },
-  { num: "3", title: "Delivery", desc: "We deliver the agreed work. You leave with something usable — a model, a strategy, a certified framework, or a signed agreement." },
+  { num: "2", title: "Fixed-scope proposal", desc: "You receive a clear proposal: scope, deliverables and timeline." },
+  { num: "3", title: "Delivery", desc: "We deliver the agreed work, you receive something usable." },
 ];
 
 const cases: CaseItem[] = [

@@ -1,3 +1,5 @@
+import { CheckCircle2 } from "lucide-react";
+
 export type CaseItem = {
   partner?: string;
   situation: string;
@@ -11,23 +13,37 @@ export type CaseItem = {
  */
 export function CaseCard({ situation, did, outcome, partner }: CaseItem) {
   return (
-    <div className="flex flex-col rounded-2xl border border-border bg-white p-6 h-full transition-shadow hover:shadow-md">
-      {partner && (
-        <div className="text-[10px] font-bold text-forest uppercase tracking-widest mb-3">{partner}</div>
-      )}
-      <div className="space-y-4 flex-1">
-        <div>
-          <div className="text-xs font-semibold text-ink/40 uppercase tracking-wider mb-1">Situation</div>
-          <p className="text-sm text-ink-soft leading-relaxed">{situation}</p>
+    <div className="group flex flex-col h-full rounded-2xl border border-border bg-white overflow-hidden transition-all hover:border-forest/30 hover:shadow-lg">
+      {/* accent bar */}
+      <div className="h-1 bg-forest" />
+
+      <div className="flex flex-col flex-1 p-6 sm:p-7">
+        {partner && (
+          <span className="self-start mb-4 inline-flex items-center rounded-full bg-forest-muted px-3 py-1 text-[11px] font-bold text-forest">
+            {partner}
+          </span>
+        )}
+
+        {/* Situation — the lead */}
+        <div className="mb-5">
+          <div className="text-[10px] font-bold text-ink/35 uppercase tracking-[0.15em] mb-1.5">Situation</div>
+          <p className="text-base font-semibold text-navy leading-snug">{situation}</p>
         </div>
-        <div>
-          <div className="text-xs font-semibold text-ink/40 uppercase tracking-wider mb-1">What we did</div>
+
+        {/* What we did */}
+        <div className="mb-6 flex-1">
+          <div className="text-[10px] font-bold text-ink/35 uppercase tracking-[0.15em] mb-1.5">What we did</div>
           <p className="text-sm text-ink-soft leading-relaxed">{did}</p>
         </div>
-      </div>
-      <div className="mt-4 pt-4 border-t border-border">
-        <div className="text-xs font-semibold text-forest uppercase tracking-wider mb-1">Outcome</div>
-        <p className="text-sm font-medium text-ink leading-relaxed">{outcome}</p>
+
+        {/* Outcome — highlighted */}
+        <div className="rounded-xl bg-forest-muted/60 p-4">
+          <div className="flex items-center gap-2 mb-1">
+            <CheckCircle2 className="w-4 h-4 text-forest shrink-0" />
+            <span className="text-[10px] font-bold text-forest uppercase tracking-[0.15em]">Outcome</span>
+          </div>
+          <p className="text-sm font-semibold text-forest-dark leading-relaxed">{outcome}</p>
+        </div>
       </div>
     </div>
   );

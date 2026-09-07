@@ -125,7 +125,7 @@ export default function Home() {
                 for a <span className="text-accent">liveable future.</span>
               </h1>
               <p className="text-lg lg:text-xl text-white/70 leading-relaxed max-w-2xl mb-10">
-                The Green Branch develops certified nature-based removal projects in Brazil. We restore forests, produce durable removals, and structure the capital that makes both possible.
+                The Green Branch develops certified nature-based removal projects in the global south.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link href="/projects"

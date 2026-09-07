@@ -3,8 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { CaseCard, type CaseItem } from "@/components/CaseCard";
-import { ArrowRight, Building2, Sprout, Wheat } from "lucide-react";
+import { ArrowRight, Building2, CheckCircle2, Sprout, Wheat } from "lucide-react";
 
 export const metadata: Metadata = {
   title: { absolute: "Carbon Advisory Services | For Corporates, Developers & FLAG Companies | The Green Branch" },
@@ -16,40 +15,43 @@ const audiences = [
   {
     icon: Building2,
     title: "Corporates",
-    lead: "You need a carbon strategy that survives your board, your SBTi commitment, and the scrutiny that follows. We help you decide what to buy, at what quality, and on what terms.",
+    label: "Procurement & quality advisory",
+    lead: "You need a carbon strategy aligns with your sustainability strategy. We help you decide what to buy, at what quality, and on what terms.",
     bullets: [
       "Procurement framework aligned to your SBTi roadmap or net-zero claim",
-      "Credit quality assessment and interpretation of the rating agencies",
-      "Shortlist of verified projects with due-diligence findings on each",
       "Price benchmarking and a contracting approach, from spot through multi-year offtake",
+      "Credit quality assessment and interpretation of the rating agencies",
       "Board-ready documentation of what you chose and why it holds up",
+      "Shortlist of verified projects with due-diligence findings on each",
     ],
-    note: "We develop projects as well as advise on them, so we disclose our own pipeline and leave it out of any shortlist we build for you.",
+    note: "We develop projects as well as advise on them, so we disclose our own pipeline and leave it up to you what you choose for your portfolio",
     cta: "Discuss your strategy",
   },
   {
     icon: Sprout,
     title: "Project developers & landowners",
+    label: "Feasibility & certification advisory",
     lead: "You have land with restoration potential and want to know whether carbon certification makes sense before you spend real money finding out.",
     bullets: [
       "Carbon potential modelled on your actual parcels rather than sector averages",
-      "Methodology eligibility screening across VCS, VM0047 and CCB",
-      "Baseline and additionality assessment",
       "MRV architecture and monitoring plan, built on the same system we run our own projects on",
+      "Methodology eligibility screening across VCS, VM0047 and CCB",
       "Development budget and timeline through to first issuance",
+      "Baseline and additionality assessment",
     ],
     cta: "Scope your project",
   },
   {
     icon: Wheat,
     title: "FLAG companies",
+    label: "Supply-base & insetting advisory",
     lead: "Your emissions sit in land, which means the answer has to be built where you source rather than bought on the market. We assess what land-based mitigation can realistically deliver inside your own supply base.",
     bullets: [
       "Adoption feasibility across your suppliers and sourcing regions, region by region",
-      "Practice selection and agronomic fit across biochar, reforestation, agroforestry and silvopasture",
-      "Land-based mitigation potential modelled at supply-shed rather than project scale",
       "Insetting programme design, from MRV architecture through to claims that survive scrutiny",
+      "Practice selection and agronomic fit across biochar, reforestation, agroforestry and silvopasture",
       "Commercial structure: who funds it, who owns the outcome, and how farmers get paid",
+      "Land-based mitigation potential modelled at supply-shed rather than project scale",
     ],
     cta: "Assess your supply base",
   },
@@ -60,6 +62,8 @@ const steps = [
   { num: "2", title: "Fixed-scope proposal", desc: "You receive a clear proposal: scope, deliverables and timeline." },
   { num: "3", title: "Delivery", desc: "We deliver the agreed work, you receive something usable." },
 ];
+
+type CaseItem = { situation: string; did: string; outcome: string };
 
 const cases: CaseItem[] = [
   {
@@ -83,6 +87,8 @@ const cases: CaseItem[] = [
     outcome: "Project under development in the Verra Registry.",
   },
 ];
+
+const LEDGER_COLS = "md:grid-cols-[minmax(0,1.1fr)_minmax(0,1.2fr)_minmax(0,1fr)]";
 
 export default function AdvisoryPage() {
   return (
@@ -111,35 +117,81 @@ export default function AdvisoryPage() {
           </div>
         </section>
 
-        {/* Who we work with */}
-        <section className="py-24 bg-cream">
+        {/* Who we work with — indexed ledger rows */}
+        <section className="pt-24 bg-cream">
           <div className="max-w-6xl mx-auto px-6">
             <div className="text-xs font-semibold text-forest uppercase tracking-[0.2em] mb-3">Who we work with</div>
-            <h2 className="text-4xl md:text-5xl font-extrabold text-navy mb-14 leading-[1.05] max-w-2xl">Advisory shaped to who you are.</h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              {audiences.map((a) => (
-                <div key={a.title} className="flex flex-col h-full rounded-2xl border border-border bg-white p-7 sm:p-8">
-                  <div className="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center mb-5">
-                    <a.icon className="w-6 h-6 text-forest" />
+            <h2 className="text-4xl md:text-5xl font-extrabold text-navy mb-2 leading-[1.05] max-w-2xl">
+              Advisory shaped to who you are.
+            </h2>
+            <p className="text-base text-ink-soft mb-14 max-w-lg">Three engagements, one development discipline.</p>
+
+            {audiences.map((a, i) => (
+              <div
+                key={a.title}
+                className={`grid md:grid-cols-[96px_minmax(0,300px)_minmax(0,1fr)] gap-10 py-10 ${
+                  i === 0 ? "border-t-2 border-t-[#206042]" : "border-t border-border"
+                } ${i === audiences.length - 1 ? "border-b-2 border-b-[#206042]" : ""}`}
+              >
+                <div className="text-[44px] font-light text-forest leading-none tracking-tight">
+                  {String(i + 1).padStart(2, "0")}
+                </div>
+
+                <div>
+                  <div className="flex items-center gap-2.5 mb-3">
+                    <a.icon className="w-5 h-5 text-[#206042]" />
+                    <h3 className="text-[26px] font-bold text-navy leading-tight">{a.title}</h3>
                   </div>
-                  <h3 className="text-xl font-bold text-ink mb-3">{a.title}</h3>
-                  <p className="text-sm text-ink-soft leading-relaxed mb-5">{a.lead}</p>
-                  <ul className="space-y-2.5 mb-5">
-                    {a.bullets.map((b) => (
-                      <li key={b} className="flex gap-3 text-sm text-ink-soft leading-relaxed">
-                        <span className="w-1.5 h-1.5 rounded-full bg-forest shrink-0 mt-2" />
-                        {b}
-                      </li>
-                    ))}
-                  </ul>
-                  {a.note && (
-                    <p className="text-xs text-ink/50 leading-relaxed border-l-2 border-border pl-3 mb-5">{a.note}</p>
-                  )}
-                  <Link href="/contact" className="group mt-auto inline-flex items-center gap-1.5 text-sm font-bold text-forest hover:text-forest-dark transition-colors">
-                    {a.cta} <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                  <p className="text-[15px] text-ink-soft leading-[1.7] mb-5">{a.lead}</p>
+                  <Link
+                    href="/contact"
+                    className="group inline-flex items-center gap-2 px-5 py-3 rounded-full bg-forest text-white text-sm font-bold hover:bg-forest-dark transition-colors"
+                  >
+                    {a.cta}
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                   </Link>
                 </div>
-              ))}
+
+                <div>
+                  <div className="text-[11px] font-bold text-ink/40 uppercase tracking-[0.18em] mb-3.5">{a.label}</div>
+                  <div className="grid sm:grid-cols-2 gap-x-10">
+                    {a.bullets.map((b, bi) => (
+                      <div
+                        key={b}
+                        className={`text-sm text-ink leading-[1.55] py-3 border-t border-border ${
+                          bi >= a.bullets.length - 2 ? "sm:border-b sm:border-b-border" : ""
+                        }`}
+                      >
+                        {b}
+                      </div>
+                    ))}
+                  </div>
+                  {a.note && (
+                    <p className="mt-4 rounded-lg bg-forest-muted px-4 py-3 text-[13px] leading-relaxed text-[#206042]">
+                      {a.note}
+                    </p>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* photo band closing the section */}
+          <div className="relative h-[280px] mt-18 overflow-hidden">
+            <Image
+              src="/img/DSCF0493.JPG"
+              alt="Field team in a restoration site"
+              fill
+              sizes="100vw"
+              className="object-cover object-center"
+            />
+            <div className="absolute inset-0 bg-[#206042]/45" />
+            <div className="absolute inset-0 flex items-end">
+              <div className="max-w-6xl w-full mx-auto px-6 pb-8">
+                <span className="inline-flex items-center rounded-full bg-[#206042] px-4.5 py-2 text-[13px] font-semibold text-white">
+                  Advisory work runs on the same field and MRV system as our own projects
+                </span>
+              </div>
             </div>
           </div>
         </section>
@@ -178,17 +230,33 @@ export default function AdvisoryPage() {
           </div>
         </section>
 
-        {/* Recent engagements */}
+        {/* Recent engagements — ruled ledger */}
         <section className="py-24 bg-cream">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="text-xs font-semibold text-forest uppercase tracking-[0.2em] mb-3">Recent engagements</div>
-            <h2 className="text-4xl md:text-5xl font-extrabold text-navy mb-2 leading-[1.05]">Selected work.</h2>
-            <p className="text-sm text-ink/50 mb-12">Details anonymised where requested.</p>
-            <div className="grid sm:grid-cols-2 auto-rows-fr gap-6 max-w-5xl">
-              {cases.map((c, i) => (
-                <CaseCard key={i} {...c} />
-              ))}
+            <div className="flex flex-wrap items-end justify-between gap-6">
+              <div>
+                <div className="text-xs font-semibold text-forest uppercase tracking-[0.2em] mb-3">Recent engagements</div>
+                <h2 className="text-4xl md:text-5xl font-extrabold text-navy leading-[1.05]">Selected work.</h2>
+              </div>
+              <p className="text-[13px] text-ink/50">Details anonymised where requested.</p>
             </div>
+
+            <div className={`mt-10 hidden md:grid ${LEDGER_COLS} gap-10 pb-3 border-b-2 border-b-[#206042]`}>
+              <div className="text-[11px] font-bold text-ink/40 uppercase tracking-[0.18em]">Situation</div>
+              <div className="text-[11px] font-bold text-ink/40 uppercase tracking-[0.18em]">What we did</div>
+              <div className="text-[11px] font-bold text-forest uppercase tracking-[0.18em]">Outcome</div>
+            </div>
+
+            {cases.map((c, i) => (
+              <div key={i} className={`grid ${LEDGER_COLS} gap-x-10 gap-y-4 py-7 border-b border-border`}>
+                <p className="text-base font-semibold text-navy leading-[1.45]">{c.situation}</p>
+                <p className="text-sm text-ink-soft leading-[1.7]">{c.did}</p>
+                <div className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-[18px] h-[18px] text-forest shrink-0 mt-0.5" />
+                  <p className="text-[15px] font-semibold text-forest-dark leading-[1.55]">{c.outcome}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </section>
 

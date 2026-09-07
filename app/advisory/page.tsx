@@ -4,7 +4,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { CaseCard, type CaseItem } from "@/components/CaseCard";
-import { ArrowRight, Building2, Sprout, Landmark, Wheat } from "lucide-react";
+import { ArrowRight, Building2, Sprout, Wheat } from "lucide-react";
 
 export const metadata: Metadata = {
   title: { absolute: "Carbon Advisory Services | For Corporates, Developers, Finance & FLAG Companies | The Green Branch" },
@@ -39,19 +39,6 @@ const audiences = [
       "Development budget and timeline through to first issuance",
     ],
     cta: "Scope your project",
-  },
-  {
-    icon: Landmark,
-    title: "Financial institutions",
-    lead: "You are allocating to carbon removal for the first time, or structuring a carbon-linked product, and you need to know what stands up to scrutiny.",
-    bullets: [
-      "Market and pricing orientation written for an investment committee",
-      "Project and developer due diligence",
-      "Commercial review of ERPAs, offtake agreements and SPV structures, alongside your counsel",
-      "Risk assessment across delivery, reversal, methodology change and country exposure",
-      "Feasibility of a carbon programme across an agricultural lending portfolio",
-    ],
-    cta: "Talk to our team",
   },
   {
     icon: Wheat,
@@ -129,7 +116,7 @@ export default function AdvisoryPage() {
           <div className="max-w-6xl mx-auto px-6">
             <div className="text-xs font-semibold text-forest uppercase tracking-[0.2em] mb-3">Who we work with</div>
             <h2 className="text-4xl md:text-5xl font-extrabold text-navy mb-14 leading-[1.05] max-w-2xl">Advisory shaped to who you are.</h2>
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-3 gap-6">
               {audiences.map((a) => (
                 <div key={a.title} className="flex flex-col h-full rounded-2xl border border-border bg-white p-7 sm:p-8">
                   <div className="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center mb-5">

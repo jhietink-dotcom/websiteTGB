@@ -240,16 +240,11 @@ export default function Home() {
         {/* ── What we do — always-visible cards ── */}
         <section className="py-20 bg-muted">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="flex flex-wrap items-end justify-between gap-6 mb-10">
-              <div>
-                <p className="text-xs font-bold text-forest uppercase tracking-[0.15em] mb-2">What we do</p>
-                <h2 className="text-3xl md:text-4xl font-extrabold text-navy leading-tight max-w-3xl">
-                  Three lines of activity, one development capability.
-                </h2>
-              </div>
-              <p className="text-sm text-ink/50 max-w-[280px]">
-                Each line runs on the same stage-gate process and the same MRV system.
-              </p>
+            <div className="mb-10">
+              <p className="text-xs font-bold text-forest uppercase tracking-[0.15em] mb-2">What we do</p>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-navy leading-tight max-w-3xl">
+                Three lines of activity, one development capability.
+              </h2>
             </div>
 
             <div className="grid md:grid-cols-3 gap-6 items-stretch">

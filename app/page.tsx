@@ -21,27 +21,30 @@ const photoStripBase = [
 const photoStrip = [...photoStripBase, ...photoStripBase];
 
 // "What we do" — three lines of activity, one development capability
-const services = [
+const activities = [
   {
-    title: "Develop",
-    desc: "We originate and develop reforestation and biochar projects through a disciplined stage-gate process, certified to the highest carbon and forestry standards.",
-    href: "/develop/arr",
-    photo: "/img/DSCF9818.JPG",
     tag: "Reforestation & biochar",
+    title: "Develop",
+    href: "/develop",
+    img: "/img/DSCF9818.JPG",
+    alt: "Reforestation and biochar development",
+    body: "We originate and develop reforestation and biochar projects through a disciplined stage-gate process, certified to the highest carbon and forestry standards.",
   },
   {
-    title: "Transact",
-    desc: "We supply emission removals to corporate buyers — spot, forward, and long-term offtake — from our own portfolio and selected third-party projects in our origination pipeline.",
-    href: "/buy-removals",
-    photo: "/img/DSCF9797.JPG",
     tag: "For buyers",
+    title: "Transact",
+    href: "/buy-removals",
+    img: "/img/DSCF9797.JPG",
+    alt: "Emission removals for corporate buyers",
+    body: "We supply emission removals to corporate buyers — spot, forward, and long-term offtake — from our own portfolio and selected third-party projects in our origination pipeline.",
   },
   {
-    title: "Invest",
-    desc: "We structure investment opportunities in land acquisition for reforestation and in industrial biochar, bridging the early-stage financing gap that holds high-quality projects back.",
-    href: "/invest",
-    photo: "/img/DSCF9873.JPG",
     tag: "For investors",
+    title: "Invest",
+    href: "/invest",
+    img: "/img/DSCF9873.JPG",
+    alt: "Investment in land and industrial biochar",
+    body: "We structure investment opportunities in land acquisition for reforestation and in industrial biochar, bridging the early-stage financing gap that holds high-quality projects back.",
   },
 ];
 
@@ -89,7 +92,15 @@ const projects = [
   },
 ];
 
-const partners = ["Rabobank", "Futuro Florestal", "Florestas Engenharia", "Implantar", "Sylvera", "Verra", "NRC"];
+const stats = [
+  { value: "4", label: "Projects developed" },
+  { value: "~15", label: "In origination pipeline" },
+  { value: ">40M t", label: "CO₂ removals targeted" },
+];
+
+const certifications = ["Verra", "Isometric"];
+
+const partners = ["Rabobank", "Implantar", "Futuro Florestal", "NRC", "Florestas Engenharia"];
 
 export default function Home() {
   return (
@@ -159,32 +170,65 @@ export default function Home() {
           `}</style>
         </section>
 
-        {/* ── Partners + proof points ── */}
-        <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
+        {/* ── Credibility / proof band ── */}
+        <section className="py-22 bg-cream">
+          <div className="max-w-[1200px] mx-auto px-6">
+            <div className="grid md:grid-cols-2 gap-14 items-start">
               <div>
-                <p className="text-sm font-semibold text-ink/30 uppercase tracking-widest mb-6">Working with</p>
-                <div className="flex flex-wrap gap-x-8 gap-y-4">
-                  {partners.map((c) => (
-                    <span key={c} className="text-sm font-bold text-ink/25 hover:text-ink/50 transition-colors cursor-default">{c}</span>
-                  ))}
-                </div>
-                <p className="mt-6 text-xs text-ink/40">VCS &amp; CCB certified · VM0047 · ABACUS validated · independently rated by Sylvera · B Corp certified</p>
-              </div>
-              <div className="lg:pl-12 lg:border-l border-border">
-                <p className="text-2xl lg:text-3xl font-bold text-navy leading-tight mb-6">
+                <p className="text-xs font-bold text-forest uppercase tracking-[0.15em] mb-3">Credibility</p>
+                <p className="text-2xl md:text-[32px] font-bold text-navy leading-[1.25] tracking-tight mb-5 text-pretty">
                   Bridging the gap between nature restoration and the private capital that makes it real.
                 </p>
-                <div className="flex gap-10">
-                  {[
-                    { v: "4", l: "projects developed" },
-                    { v: "~15", l: "in origination pipeline" },
-                    { v: ">40M t", l: "CO₂ removals targeted" },
-                  ].map((s) => (
-                    <div key={s.l}>
-                      <div className="text-2xl font-extrabold text-forest">{s.v}</div>
-                      <div className="text-xs text-ink/50 mt-0.5">{s.l}</div>
+                <p className="text-[15px] text-ink-soft leading-[1.7]">
+                  Every project is certified to the highest carbon and forestry standards, independently rated, and
+                  developed alongside partners who operate on the ground.
+                </p>
+              </div>
+
+              <div className="grid sm:grid-cols-3 gap-4">
+                {stats.map((s) => (
+                  <div key={s.label} className="rounded-2xl bg-[#206042] p-6 min-w-0">
+                    <div className="text-[34px] font-bold text-white leading-none tracking-tight">{s.value}</div>
+                    <div className="mt-2.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#48FFBB]">
+                      {s.label}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-14 pt-7 border-t-2 border-t-[#206042] grid md:grid-cols-3 gap-10">
+              <div>
+                <div className="text-[11px] font-bold text-ink/40 uppercase tracking-[0.18em] mb-3.5">Certified to</div>
+                <div className="flex flex-wrap gap-2">
+                  {certifications.map((c) => (
+                    <span
+                      key={c}
+                      className="inline-flex items-center shrink-0 whitespace-nowrap rounded-full border border-border bg-white px-3.5 py-[7px] text-[13px] font-semibold text-navy"
+                    >
+                      {c}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <div className="text-[11px] font-bold text-ink/40 uppercase tracking-[0.18em] mb-3.5">
+                  Independently rated by
+                </div>
+                <div className="text-[15px] font-semibold text-navy py-1.5">
+                  Sylvera <span className="font-normal text-ink-soft">— BBB to AA</span>
+                </div>
+              </div>
+
+              <div>
+                <div className="text-[11px] font-bold text-ink/40 uppercase tracking-[0.18em] mb-3.5">
+                  Development partners
+                </div>
+                <div className="grid grid-cols-2 gap-x-6">
+                  {partners.map((p) => (
+                    <div key={p} className="text-[15px] font-semibold text-navy py-1.5">
+                      {p}
                     </div>
                   ))}
                 </div>
@@ -193,36 +237,42 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── What we do — 3 photo cards ── */}
-        <section className="pt-6 pb-4 px-4 lg:px-6 bg-muted">
-          <div className="max-w-7xl mx-auto">
-            <div className="mb-6 px-1">
-              <p className="text-xs font-bold text-forest uppercase tracking-widest mb-2">What we do</p>
-              <h2 className="text-3xl lg:text-4xl font-extrabold text-navy leading-tight">Three lines of activity, one development capability.</h2>
+        {/* ── What we do — always-visible cards ── */}
+        <section className="py-20 bg-muted">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="flex flex-wrap items-end justify-between gap-6 mb-10">
+              <div>
+                <p className="text-xs font-bold text-forest uppercase tracking-[0.15em] mb-2">What we do</p>
+                <h2 className="text-3xl md:text-4xl font-extrabold text-navy leading-tight max-w-3xl">
+                  Three lines of activity, one development capability.
+                </h2>
+              </div>
+              <p className="text-sm text-ink/50 max-w-[280px]">
+                Each line runs on the same stage-gate process and the same MRV system.
+              </p>
             </div>
-            <div className="grid lg:grid-cols-3 gap-4">
-              {services.map((s) => (
-                <Link key={s.title} href={s.href} className="group relative h-[540px] rounded-2xl overflow-hidden block">
-                  <Image
-                    src={s.photo}
-                    alt={s.title}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    sizes="(max-width: 1024px) 100vw, 33vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
-                  <div className="absolute top-5 left-5 px-2.5 py-1 rounded-full bg-white/15 backdrop-blur-sm border border-white/20 text-white text-[10px] font-semibold uppercase tracking-widest">
-                    {s.tag}
+
+            <div className="grid md:grid-cols-3 gap-6 items-stretch">
+              {activities.map((a) => (
+                <Link
+                  key={a.title}
+                  href={a.href}
+                  className="group flex flex-col bg-white border border-border rounded-2xl overflow-hidden hover:shadow-md hover:-translate-y-0.5 transition-all"
+                >
+                  <div className="relative h-[220px] shrink-0">
+                    <Image src={a.img} alt={a.alt} fill sizes="(max-width:768px) 100vw, 33vw" className="object-cover" />
+                    <div className="absolute inset-0 bg-[#206042]/[0.28]" />
+                    <span className="absolute top-4 left-4 inline-flex items-center rounded-full bg-[#206042] px-3.5 py-1.5 text-[11px] font-semibold text-white">
+                      {a.tag}
+                    </span>
                   </div>
-                  <div className="absolute bottom-0 left-0 right-0 p-7">
-                    <h3 className="text-2xl font-bold text-white mb-2">{s.title}</h3>
-                    <p className="text-sm text-white/70 leading-relaxed mb-4 max-h-0 overflow-hidden group-hover:max-h-40 transition-all duration-500">
-                      {s.desc}
-                    </p>
-                    <div className="flex items-center gap-1.5 text-accent text-sm font-semibold">
+                  <div className="flex flex-col flex-1 p-7">
+                    <h3 className="text-[26px] font-bold text-navy mb-3">{a.title}</h3>
+                    <p className="text-[15px] text-ink-soft leading-[1.7] mb-6">{a.body}</p>
+                    <span className="mt-auto inline-flex items-center gap-2 text-sm font-bold text-forest">
                       Learn more
-                      <ArrowUpRight className="w-4 h-4 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                    </div>
+                      <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    </span>
                   </div>
                 </Link>
               ))}
@@ -241,7 +291,7 @@ export default function Home() {
                 Powered by <span className="text-accent">GreenBranch OS</span>
               </h2>
               <p className="text-white/60 leading-relaxed mb-8 text-lg">
-                One platform from origination to issuance. GreenBranch OS unifies project development, MRV, and commercialisation in a single environment — how we develop faster, monitor deeper, and give buyers and investors direct sight of the work.
+                One platform from origination to issuance. GreenBranch OS unifies project development, MRV, and commercialisation in a single environment. This is how we develop faster, monitor deeper, and give buyers and investors direct sight of the work.
               </p>
               <div className="space-y-3 mb-10">
                 {[
@@ -262,19 +312,6 @@ export default function Home() {
             </div>
 
             <div className="relative">
-              <div className="relative h-64 rounded-2xl overflow-hidden mb-4">
-                <Image
-                  src="/img/DSCF9647.JPG"
-                  alt="Team reviewing biodiversity monitoring data"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-forest-deeper/60 to-transparent" />
-                <div className="absolute bottom-4 left-4 text-white/70 text-xs font-medium">
-                  Biodiversity monitoring — Sapucaia, Brazil
-                </div>
-              </div>
               <DashboardMockup />
             </div>
           </div>

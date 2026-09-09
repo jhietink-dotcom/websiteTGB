@@ -40,7 +40,7 @@ const projects = [
     ha: <Tbc>project area</Tbc>,
     tCO2: <Tbc>removal estimate</Tbc>,
     status: "Development",
-    photo: "/img/DSCF9807.JPG",
+    photo: "/img/tff-DSCF8276.JPG",
     description:
       "Native reforestation of degraded pasture in the Amazon biome, developed with Rabobank and implemented by Implantar alongside smallholder farmers. The project has been selected by the Amazon Green Pledge RfP for a 10,000-hectare offtake, restoring biodiverse and climate-resilient ecosystems.",
     partners: ["Rabobank", "Implantar", "Amazon Green Pledge"],

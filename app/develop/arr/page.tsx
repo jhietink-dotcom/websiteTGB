@@ -55,7 +55,7 @@ const references = [
     name: "Trees for Farmers",
     location: "Mato Grosso",
     detail: "Developed with Rabobank, implemented by Implantar. Selected by the Amazon Green Pledge RfP for a 10,000-hectare offtake agreement.",
-    photo: "/img/DSCF9864.JPG",
+    photo: "/img/tff-DSCF8276.JPG",
   },
   {
     name: "Samauma",

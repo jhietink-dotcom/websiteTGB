@@ -5,24 +5,20 @@ import Footer from "@/components/Footer";
 import { DashboardMockup } from "@/components/OSTGBMockup";
 import { ArrowRight, ArrowUpRight, CheckCircle2 } from "lucide-react";
 
-const photoStrip = [
+const photoStripBase = [
   "/img/DSCF0095.JPG",
-  "/img/DSCF9818.JPG",
+  "/img/tff-DSCF8194_1.JPG",
   "/img/DSCF9797.JPG",
-  "/img/DSCF9873.JPG",
+  "/img/tff-DSCF8276.JPG",
   "/img/DSCF0278.JPG",
-  "/img/DSCF9647.JPG",
+  "/img/tff-DSCF6771.JPG",
   "/img/DSCF0493.JPG",
-  "/img/DSCF9742.JPG",
-  "/img/DSCF0095.JPG",
-  "/img/DSCF9818.JPG",
-  "/img/DSCF9797.JPG",
   "/img/DSCF9873.JPG",
-  "/img/DSCF0278.JPG",
+  "/img/tff-DSCF6366.JPG",
   "/img/DSCF9647.JPG",
-  "/img/DSCF0493.JPG",
   "/img/DSCF9742.JPG",
 ];
+const photoStrip = [...photoStripBase, ...photoStripBase];
 
 // "What we do" — three lines of activity, one development capability
 const services = [
@@ -64,7 +60,7 @@ const projects = [
     country: "Brazil · Mato Grosso",
     ha: "10,000 ha offtake",
     status: "Development",
-    photo: "/img/DSCF9864.JPG",
+    photo: "/img/tff-DSCF8276.JPG",
     tag: "With Rabobank",
   },
   {
@@ -397,7 +393,7 @@ export default function Home() {
         {/* ── Field team photo ── */}
         <section className="relative h-[500px] overflow-hidden">
           <Image
-            src="/img/DSCF9818.JPG"
+            src="/img/tff-DSCF6366.JPG"
             alt="The Green Branch team in the field"
             fill
             className="object-cover object-center"

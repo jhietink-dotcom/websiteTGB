@@ -39,6 +39,36 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Leaflet project map — dark theme to match the biochar hero card */
+.leaflet-map-tgb .leaflet-control-zoom a,
+.leaflet-map-tgb .leaflet-control-layers {
+  background: #0A1F15;
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
+.leaflet-map-tgb .leaflet-control-zoom a:hover {
+  background: #16311f;
+}
+.leaflet-map-tgb .leaflet-control-layers-toggle {
+  filter: invert(1) brightness(1.4);
+}
+.leaflet-map-tgb .leaflet-control-layers-expanded {
+  color: #222222;
+}
+.leaflet-map-tgb .leaflet-bar {
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
+.leaflet-map-tgb .leaflet-popup-content-wrapper {
+  border-radius: 10px;
+}
+.leaflet-map-tgb .leaflet-control-attribution {
+  background: rgba(10, 31, 21, 0.7);
+  color: rgba(255, 255, 255, 0.6);
+}
+.leaflet-map-tgb .leaflet-control-attribution a {
+  color: rgba(255, 255, 255, 0.8);
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: #f1f1f1; }

@@ -22,11 +22,11 @@ function buildLocale(opts: {
   const { develop, about, navLabels } = opts;
   const nav: NavItem[] = [
     { id: "develop", label: navLabels.develop, children: develop },
+    { id: "advisory", label: navLabels.advisory, href: "/advisory" },
     { id: "buy", label: navLabels.buy, href: "/buy-removals" },
     { id: "invest", label: navLabels.invest, href: "/invest" },
     { id: "projects", label: navLabels.projects, href: "/projects" },
     { id: "tech", label: navLabels.tech, href: "/greenbranch-os" },
-    { id: "advisory", label: navLabels.advisory, href: "/advisory" },
     { id: "about", label: navLabels.about, children: about },
   ];
   return { develop, about, nav, contact: opts.contact, grievance: opts.grievance, getStarted: opts.getStarted };
@@ -44,7 +44,7 @@ const navContent: Record<"en" | "pt", ReturnType<typeof buildLocale>> = {
       { label: "Resources", href: "/about#resources", desc: "Information decks and guides" },
     ],
     navLabels: {
-      develop: "Develop",
+      develop: "What we do",
       buy: "Buy Carbon Credits",
       invest: "Invest",
       projects: "Projects",
@@ -67,7 +67,7 @@ const navContent: Record<"en" | "pt", ReturnType<typeof buildLocale>> = {
       { label: "Recursos", href: "/about#resources", desc: "Apresentações e guias informativos" },
     ],
     navLabels: {
-      develop: "Desenvolver",
+      develop: "O que fazemos",
       buy: "Comprar Créditos de Carbono",
       invest: "Investir",
       projects: "Projetos",

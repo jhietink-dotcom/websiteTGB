@@ -4,7 +4,6 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import { InvestorGate } from "@/components/InvestorGate";
-import { Tbc } from "@/components/Tbc";
 import { ArrowRight, CheckCircle2, TreePine, Factory, TrendingUp } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
@@ -26,7 +25,6 @@ const content = {
       ],
       structureLabel: "Structure",
       structureValue: "€100,000 minimum ticket; participation via a dedicated project vehicle (SPV) with defined governance and benefit sharing.",
-      structureTbc: "confirm final structure with counsel",
       whyNowEyebrow: "Why now",
       whyNowP1: "Brazil's carbon market is institutionalising: the national emissions trading system (SBCE, Law 15,042/2024) is being implemented, and COP30 in Belém has placed Brazilian restoration at the centre of the global removals conversation.",
       whyNowP2: "Land in eligible regions is appreciating as industrial actors compete for restoration-grade hectares.",
@@ -40,12 +38,8 @@ const content = {
       strategyValue: "Development and expansion capital for industrial biochar facilities in Brazil.",
       revenueLabel: "Revenue model",
       revenueValue: "Sale of certified biochar removals via spot, forward and offtake agreements; secondary revenue from biochar product sales.",
-      revenueTbc: "confirm revenue model",
-      thesisLabel: "Why the thesis holds",
-      thesisValue: "Durable removals command a structural price premium and supply is scarce; Brazil combines abundant sustainable biomass residues with industrial capability.",
       termsLabel: "Terms",
       termsValue: "Target size, minimum commitment and structure.",
-      termsTbc: "to be confirmed with counsel",
       note: "Our first industrial biochar project is being developed with Rabobank as partner.",
       cta: "Request Biochar Fund documentation",
     },
@@ -56,8 +50,7 @@ const content = {
       p2: "A pipeline of approximately 15 projects targeting more than 40 million tonnes of removals — every one screened, scored, and de-risked through the same stage-gate process.",
     },
     disclaimer: {
-      text: "The information on this website does not constitute an offer of securities or investment advice. Investment opportunities are available to qualified investors only and are subject to the documentation provided upon registration.",
-      bracket: "[Final wording to be confirmed by legal counsel.]",
+      text: "Nothing on this website constitutes an offer of securities, a solicitation, or investment advice. These opportunities are available only to qualified and professional investors, with full terms provided in the documentation issued after registration and verification.",
     },
   },
   pt: {
@@ -77,7 +70,6 @@ const content = {
       ],
       structureLabel: "Estrutura",
       structureValue: "Ticket mínimo de €100.000; participação por meio de um veículo de projeto dedicado (SPV) com governança definida e repartição de benefícios.",
-      structureTbc: "confirmar estrutura final com assessoria jurídica",
       whyNowEyebrow: "Por que agora",
       whyNowP1: "O mercado de carbono brasileiro está se institucionalizando: o sistema nacional de comércio de emissões (SBCE, Lei 15.042/2024) está sendo implementado, e a COP30 em Belém colocou a restauração brasileira no centro do debate global sobre remoções.",
       whyNowP2: "As terras em regiões elegíveis estão se valorizando à medida que atores industriais competem por hectares aptos à restauração.",
@@ -91,12 +83,8 @@ const content = {
       strategyValue: "Capital de desenvolvimento e expansão para instalações industriais de biochar no Brasil.",
       revenueLabel: "Modelo de receita",
       revenueValue: "Venda de remoções certificadas de biochar via contratos spot, forward e offtake; receita secundária com a venda de produtos de biochar.",
-      revenueTbc: "confirmar modelo de receita",
-      thesisLabel: "Por que a tese se sustenta",
-      thesisValue: "Remoções duráveis têm um prêmio de preço estrutural e a oferta é escassa; o Brasil combina abundantes resíduos de biomassa sustentável com capacidade industrial.",
       termsLabel: "Termos",
       termsValue: "Tamanho-alvo, compromisso mínimo e estrutura.",
-      termsTbc: "a confirmar com assessoria jurídica",
       note: "Nosso primeiro projeto industrial de biochar está sendo desenvolvido com o Rabobank como parceiro.",
       cta: "Solicitar documentação do Biochar Fund",
     },
@@ -107,8 +95,7 @@ const content = {
       p2: "Um pipeline de aproximadamente 15 projetos visando mais de 40 milhões de toneladas de remoções — todos triados, avaliados e com risco reduzido pelo mesmo processo stage-gate.",
     },
     disclaimer: {
-      text: "As informações neste site não constituem uma oferta de valores mobiliários ou aconselhamento de investimento. As oportunidades de investimento estão disponíveis apenas para investidores qualificados e estão sujeitas à documentação fornecida no momento do cadastro.",
-      bracket: "[Texto final a ser confirmado pela assessoria jurídica.]",
+      text: "Nada neste site constitui uma oferta de valores mobiliários, uma solicitação ou aconselhamento de investimento. Essas oportunidades estão disponíveis apenas para investidores qualificados e profissionais, com os termos completos fornecidos na documentação emitida após cadastro e verificação.",
     },
   },
 };
@@ -164,7 +151,7 @@ export default function InvestContent() {
                     <div>
                       <div className="text-sm font-bold text-ink">{t.landFund.structureLabel}</div>
                       <div className="text-sm text-ink-soft leading-relaxed">
-                        {t.landFund.structureValue} <Tbc>{t.landFund.structureTbc}</Tbc>
+                        {t.landFund.structureValue}
                       </div>
                     </div>
                   </li>
@@ -212,15 +199,8 @@ export default function InvestContent() {
                     <div>
                       <div className="text-sm font-bold text-ink">{t.biocharFund.revenueLabel}</div>
                       <div className="text-sm text-ink-soft leading-relaxed">
-                        {t.biocharFund.revenueValue} <Tbc>{t.biocharFund.revenueTbc}</Tbc>
+                        {t.biocharFund.revenueValue}
                       </div>
-                    </div>
-                  </li>
-                  <li className="flex gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-forest shrink-0 mt-0.5" />
-                    <div>
-                      <div className="text-sm font-bold text-ink">{t.biocharFund.thesisLabel}</div>
-                      <div className="text-sm text-ink-soft leading-relaxed">{t.biocharFund.thesisValue}</div>
                     </div>
                   </li>
                   <li className="flex gap-3">
@@ -228,7 +208,7 @@ export default function InvestContent() {
                     <div>
                       <div className="text-sm font-bold text-ink">{t.biocharFund.termsLabel}</div>
                       <div className="text-sm text-ink-soft leading-relaxed">
-                        {t.biocharFund.termsValue} <Tbc>{t.biocharFund.termsTbc}</Tbc>
+                        {t.biocharFund.termsValue}
                       </div>
                     </div>
                   </li>
@@ -266,7 +246,7 @@ export default function InvestContent() {
         <section className="py-10 bg-forest-deeper">
           <div className="max-w-3xl mx-auto px-6">
             <p className="text-xs text-white/50 leading-relaxed">
-              {t.disclaimer.text} <span className="text-accent/80">{t.disclaimer.bracket}</span>
+              {t.disclaimer.text}
             </p>
           </div>
         </section>

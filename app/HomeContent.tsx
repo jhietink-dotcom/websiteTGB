@@ -71,7 +71,7 @@ const statsBase = [{ value: "4" }, { value: "~15" }, { value: ">40M t" }];
 const certifications = [
   { name: "Verra", logo: "/img/logos/verra.png", width: 540, height: 198 },
   { name: "Isometric", logo: "/img/logos/isometric.png", width: 528, height: 95 },
-  { name: "Climate, Community & Biodiversity Standards", logo: "/img/logos/ccb.png", width: 984, height: 162 },
+  { name: "Climate, Community & Biodiversity Standards", logo: "/img/logos/ccb.png", width: 295, height: 82 },
   { name: "Puro.earth", logo: "/img/logos/puro-earth.png", width: 295, height: 160 },
 ];
 
@@ -101,9 +101,8 @@ const content = {
       heading: "Bridging the gap between nature restoration and the private capital that makes it real.",
       body: "Every project is certified to the highest carbon and forestry standards, independently rated, and developed alongside partners who operate on the ground.",
       statsLabels: ["Projects developed", "Projects in origination pipeline", "CO₂ removals targeted"],
-      certifiedToLabel: "Certified to",
+      certifiedToLabel: "Certified under",
       ratedByLabel: "Independently rated by",
-      ratedSuffix: "— BBB to AA",
       partnersLabel: "Development partners",
     },
     whatWeDo: {
@@ -118,7 +117,7 @@ const content = {
         },
         {
           tag: "For buyers",
-          title: "Transact",
+          title: "Buy",
           body: "We supply emission removals to corporate buyers — spot, forward, and long-term offtake — from our own portfolio and selected third-party projects in our origination pipeline.",
         },
         {
@@ -196,7 +195,6 @@ const content = {
       statsLabels: ["Projetos desenvolvidos", "Projetos em pipeline de originação", "Remoções de CO₂ almejadas"],
       certifiedToLabel: "Certificada pelos padrões",
       ratedByLabel: "Avaliação independente por",
-      ratedSuffix: "— BBB a AA",
       partnersLabel: "Parceiros de desenvolvimento",
     },
     whatWeDo: {
@@ -211,7 +209,7 @@ const content = {
         },
         {
           tag: "Para compradores",
-          title: "Transacionar",
+          title: "Comprar",
           body: "Fornecemos remoções de emissões para compradores corporativos — spot, forward e offtake de longo prazo — de nosso próprio portfólio e de projetos selecionados de terceiros em nosso pipeline de originação.",
         },
         {
@@ -403,7 +401,6 @@ export default function HomeContent() {
                     height={sylveraLogo.height}
                     className="h-7 w-auto object-contain"
                   />
-                  <span className="text-[15px] font-normal text-ink-soft">{t.credibility.ratedSuffix}</span>
                 </div>
               </div>
 

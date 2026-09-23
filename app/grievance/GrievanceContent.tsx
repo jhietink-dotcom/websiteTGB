@@ -13,6 +13,9 @@ const GRIEVANCE_FORM_PT = "https://docs.google.com/forms/d/e/1FAIpQLSeoU7McT4Nmg
 const FORM_LABEL_EN = "File a grievance (ENG)";
 const FORM_LABEL_PT = "Registrar uma reclamação (PT)";
 
+const GRIEVANCE_POLICY_PDF = "/docs/tgb-feedback-grievance-whistleblowing-policy-v1.1.pdf";
+const POLICY_LABEL = "Read our Feedback, Grievance, and Whistleblowing Policy";
+
 const content = {
   en: {
     eyebrow: "Accountability",
@@ -38,9 +41,17 @@ export default function GrievanceContent() {
           <div className="max-w-3xl mx-auto px-6">
             <div className="text-xs font-semibold text-forest uppercase tracking-widest mb-3">{t.eyebrow}</div>
             <h1 className="text-4xl font-bold text-navy mb-6">{t.heading}</h1>
-            <p className="text-ink-soft leading-relaxed mb-8">
+            <p className="text-ink-soft leading-relaxed mb-6">
               {t.body}
             </p>
+            <a
+              href={GRIEVANCE_POLICY_PDF}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-forest hover:text-forest-dark transition-colors mb-8"
+            >
+              {POLICY_LABEL} <ArrowUpRight className="w-3.5 h-3.5" />
+            </a>
             <div className="flex flex-col gap-3 mb-8 items-start">
               <a
                 href={GRIEVANCE_FORM_EN}

@@ -7,7 +7,7 @@ import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 const content = {
   en: {
-    tagline: "A project developer of certified nature-based removal projects in Brazil — restoring forests, producing durable removals, and structuring the capital that makes both possible.",
+    tagline: "A project developer of certified nature-based removal projects — restoring forests, producing durable removals, and structuring the capital that makes both possible.",
     address: "Plantage Middenlaan 2c, 1018 DD Amsterdam",
     groups: [
       {
@@ -35,7 +35,6 @@ const content = {
         label: "Legal",
         items: [
           { label: "Contact", href: "/contact" },
-          { label: "Privacy policy", href: "/privacy" },
           { label: "Grievance forms", href: "/grievance" },
         ],
       },
@@ -44,7 +43,7 @@ const content = {
     locations: "Amsterdam · Brazil · Tanzania",
   },
   pt: {
-    tagline: "Uma desenvolvedora de projetos certificados de remoção de base natural no Brasil — restaurando florestas, produzindo remoções duráveis e estruturando o capital que torna ambos possíveis.",
+    tagline: "Uma desenvolvedora de projetos certificados de remoção de base natural — restaurando florestas, produzindo remoções duráveis e estruturando o capital que torna ambos possíveis.",
     address: "Plantage Middenlaan 2c, 1018 DD Amsterdã",
     groups: [
       {
@@ -72,7 +71,6 @@ const content = {
         label: "Legal",
         items: [
           { label: "Contato", href: "/contact" },
-          { label: "Política de privacidade", href: "/privacy" },
           { label: "Formulários de reclamação", href: "/grievance" },
         ],
       },

@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, MapPin } from "lucide-react";
 import { Tbc } from "@/components/Tbc";
+import ProjectMap, { type ProjectMapMarker } from "@/components/ProjectMap";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 type StatusKey = "Active" | "Certified" | "Development" | "Concept";
@@ -16,15 +17,18 @@ type ProjectStatic = {
   photo: string;
   align: "left" | "right";
   statusKey: StatusKey;
+  kind: ProjectMapMarker["kind"];
+  lat: number;
+  lon: number;
 };
 
 const projectsStatic: ProjectStatic[] = [
-  { num: "01", flag: "🇧🇷", photo: "/img/DSCF9854.JPG", align: "left", statusKey: "Certified" },
-  { num: "02", flag: "🇧🇷", photo: "/img/tff-DSCF8276.JPG", align: "right", statusKey: "Development" },
-  { num: "03", flag: "🇧🇷", photo: "/img/DSCF9805.JPG", align: "left", statusKey: "Concept" },
-  { num: "04", flag: "🇧🇷", photo: "/img/DSCF9831.JPG", align: "right", statusKey: "Development" },
-  { num: "05", flag: "🇧🇷", photo: "/img/biochar.jpg", align: "left", statusKey: "Development" },
-  { num: "06", flag: "🇹🇿", photo: "/img/DSCF9797.JPG", align: "right", statusKey: "Development" },
+  { num: "01", flag: "🇧🇷", photo: "/img/DSCF9854.JPG", align: "left", statusKey: "Certified", kind: "arr", lat: -17.0, lon: -39.6 }, // Bahia
+  { num: "02", flag: "🇧🇷", photo: "/img/tff-DSCF8276.JPG", align: "right", statusKey: "Development", kind: "arr", lat: -11.5, lon: -55.8 }, // Mato Grosso
+  { num: "03", flag: "🇧🇷", photo: "/img/DSCF9805.JPG", align: "left", statusKey: "Concept", kind: "arr", lat: -3.8, lon: -52.0 }, // Pará
+  { num: "04", flag: "🇧🇷", photo: "/img/DSCF9831.JPG", align: "right", statusKey: "Development", kind: "arr", lat: -30.85, lon: -53.15 }, // Rio Grande do Sul
+  { num: "05", flag: "🇧🇷", photo: "/img/biochar.jpg", align: "left", statusKey: "Development", kind: "biochar", lat: -1.72, lon: -48.88 }, // Abaetetuba, Pará
+  { num: "06", flag: "🇹🇿", photo: "/img/DSCF9797.JPG", align: "right", statusKey: "Development", kind: "arr", lat: -5.3, lon: 36.98 }, // Kiteto, Tanzania
 ];
 
 const statusStyle: Record<StatusKey, string> = {
@@ -63,6 +67,13 @@ const content = {
         { valueTbc: "removal potential", label: "Emission removals" },
       ],
       scroll: "scroll",
+    },
+    map: {
+      eyebrow: "Where we work",
+      heading: "Our portfolio, on the ground.",
+      resetLabel: "Show all projects",
+      legendBiochar: "Biochar",
+      legendArr: "ARR",
     },
     projectAreaLabel: "Project area",
     emissionRemovalsLabel: "Emission removals",
@@ -175,6 +186,13 @@ const content = {
         { valueTbc: "potencial de remoção", label: "Remoções de emissão" },
       ],
       scroll: "rolar",
+    },
+    map: {
+      eyebrow: "Onde atuamos",
+      heading: "Nosso portfólio, no terreno.",
+      resetLabel: "Ver todos os projetos",
+      legendBiochar: "Biochar",
+      legendArr: "ARR",
     },
     projectAreaLabel: "Área do projeto",
     emissionRemovalsLabel: "Remoções de emissão",
@@ -330,6 +348,21 @@ export default function ProjectsContent() {
           <div className="absolute bottom-6 right-6 z-10 flex flex-col items-center gap-1.5 opacity-50">
             <div className="w-px h-10 bg-white/40" />
             <span className="text-[9px] text-white/60 uppercase tracking-[0.2em] rotate-90 origin-center translate-y-3">{t.hero.scroll}</span>
+          </div>
+        </section>
+
+        {/* ── PORTFOLIO MAP ──────────────────────────────────── */}
+        <section className="relative overflow-hidden bg-forest-deeper py-20">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="max-w-2xl mb-10">
+              <div className="text-xs font-semibold text-accent uppercase tracking-widest mb-3">{t.map.eyebrow}</div>
+              <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight">{t.map.heading}</h2>
+            </div>
+            <ProjectMap
+              markers={projects.map((p) => ({ name: p.name, place: p.region, lat: p.lat, lon: p.lon, kind: p.kind }))}
+              resetLabel={t.map.resetLabel}
+              legend={{ biochar: t.map.legendBiochar, arr: t.map.legendArr }}
+            />
           </div>
         </section>
 

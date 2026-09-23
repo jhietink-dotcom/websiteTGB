@@ -7,10 +7,12 @@ import Footer from "@/components/Footer";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
+const SUBMIT_PROJECT_URL = "https://os.thegreenbranch.nl/auth";
+
 const referencesBase = [
   { name: "Sapucaia Sustainable Forests", location: "Bahia", photo: "/img/DSCF9854.JPG" },
   { name: "Trees for Farmers", location: "Mato Grosso", photo: "/img/tff-DSCF8276.JPG" },
-  { name: "Samauma", location: "Pará", photo: "/img/DSCF9797.JPG" },
+  { name: "Suledo Community ARR Project", location: "Kiteto District, Tanzania", photo: "/img/DSCF9797.JPG" },
 ];
 
 const content = {
@@ -30,8 +32,9 @@ const content = {
     phases: {
       eyebrow: "Our process",
       heading: "Six stages, one disciplined process.",
+      intro: "If your project meets the conditions listed above:",
       items: [
-        { num: "01", name: "Screening", desc: "Every incoming project is assessed against our quality framework — eligibility, land tenure, additionality, and a first view of carbon potential. Only projects that clear the bar advance." },
+        { num: "01", name: "Screening", desc: "Every incoming project that meets the listed requirements is assessed against our quality framework — eligibility, land tenure, additionality, and a first view of carbon potential. Only projects that clear the bar advance." },
         { num: "02", name: "Feasibility", desc: "We confirm the project stands on solid ground: land tenure and regulatory position, carbon modelling against conservative benchmarks, and financial viability — with an independent pre-issuance rating and field validation on site." },
         { num: "03", name: "Design", desc: "We design the project around buyer, investor and certification requirements: VCS VM0047 and CCB methodology, credible baselines, benefit sharing with local communities, and FPIC done properly. The result is a project built to certify, issue and sell." },
         { num: "04", name: "Development", desc: "Registration, validation, nursery establishment, and planting with our local operational partners. Development capital is deployed against defined milestones." },
@@ -41,7 +44,7 @@ const content = {
     },
     lookFor: {
       heading: "What we look for.",
-      lead: "We invite organisations developing nature-restoration projects that meet the following:",
+      lead: "We invite organisations developing nature-restoration projects that meet the following requirements:",
       items: [
         "Reforestation projects that include restoration, agroforestry or sustainable timber",
         "Beyond concept stage, with activities already on the ground",
@@ -49,6 +52,10 @@ const content = {
         "Biodiversity and community co-benefits",
         "At least €100k invested or committed",
       ],
+      matchHeading: "Does this sound like your project?",
+      matchCta: "Sign in and submit a project",
+      mismatchHeading: "Is your project not meeting these conditions?",
+      mismatchCta: "Explore our advisory services",
     },
     offer: {
       heading: "What we offer.",
@@ -63,19 +70,13 @@ const content = {
       ],
       closing: "We aim to partner early and stay involved through scale.",
     },
-    cta: {
-      heading: "Have a project with restoration potential?",
-      lead: "Submit your project through GreenBranch OS for structured screening against our 14-criteria quality framework.",
-      cta1: "Submit a project for screening",
-      cta2: "Explore biochar",
-    },
     references: {
       eyebrow: "Reference projects",
       heading: "Projects developed to the highest standards.",
       items: [
         { detail: "VCS and CCB certified, VM0047, ABACUS validated. Sylvera Estimated Rating BBB–AA. Developed with Futuro Florestal." },
         { detail: "Developed with Rabobank, implemented by Implantar. Selected by the Amazon Green Pledge RfP for a 10,000-hectare offtake agreement." },
-        { detail: "Concept stage; minimum 5,000 hectares with a conservative modelled issuance of over 255 VCUs per hectare across the project lifetime." },
+        { detail: "Miombo woodland restoration co-designed with local Maasai communities. Delivered with the Nature Restoration Company (NRC)." },
       ],
     },
   },
@@ -95,8 +96,9 @@ const content = {
     phases: {
       eyebrow: "Nosso processo",
       heading: "Seis etapas, um processo disciplinado.",
+      intro: "Se o seu projeto atende às condições listadas acima:",
       items: [
-        { num: "01", name: "Triagem", desc: "Cada projeto recebido é avaliado segundo nosso framework de qualidade — elegibilidade, posse fundiária, adicionalidade e uma primeira leitura do potencial de carbono. Somente os projetos que atingem o padrão avançam." },
+        { num: "01", name: "Triagem", desc: "Cada projeto recebido que atenda aos requisitos listados é avaliado segundo nosso framework de qualidade — elegibilidade, posse fundiária, adicionalidade e uma primeira leitura do potencial de carbono. Somente os projetos que atingem o padrão avançam." },
         { num: "02", name: "Viabilidade", desc: "Confirmamos que o projeto está em bases sólidas: posse fundiária e situação regulatória, modelagem de carbono frente a parâmetros conservadores e viabilidade financeira — com uma classificação independente pré-emissão e validação de campo no local." },
         { num: "03", name: "Desenho", desc: "Desenhamos o projeto em torno das exigências de compradores, investidores e certificação: metodologia VCS VM0047 e CCB, linhas de base confiáveis, repartição de benefícios com as comunidades locais e um processo de CLPI (FPIC) conduzido corretamente. O resultado é um projeto construído para certificar, emitir e vender." },
         { num: "04", name: "Desenvolvimento", desc: "Registro, validação, implantação de viveiros e plantio com nossos parceiros operacionais locais. O capital de desenvolvimento é alocado contra marcos definidos." },
@@ -106,7 +108,7 @@ const content = {
     },
     lookFor: {
       heading: "O que buscamos.",
-      lead: "Convidamos organizações que desenvolvem projetos de restauração da natureza que atendam aos seguintes critérios:",
+      lead: "Convidamos organizações que desenvolvem projetos de restauração da natureza que atendam aos seguintes requisitos:",
       items: [
         "Projetos de reflorestamento que incluam restauração, agrofloresta ou manejo florestal sustentável",
         "Além do estágio conceitual, com atividades já em curso no terreno",
@@ -114,6 +116,10 @@ const content = {
         "Cobenefícios de biodiversidade e comunidade",
         "Pelo menos €100 mil investidos ou comprometidos",
       ],
+      matchHeading: "Isso soa como o seu projeto?",
+      matchCta: "Entre e envie um projeto",
+      mismatchHeading: "Seu projeto não atende a essas condições?",
+      mismatchCta: "Conheça nossos serviços de assessoria",
     },
     offer: {
       heading: "O que oferecemos.",
@@ -128,19 +134,13 @@ const content = {
       ],
       closing: "Buscamos formar parcerias desde o início e permanecer envolvidos até a escala.",
     },
-    cta: {
-      heading: "Tem um projeto com potencial de restauração?",
-      lead: "Envie seu projeto pela GreenBranch OS para uma triagem estruturada segundo nosso framework de qualidade de 14 critérios.",
-      cta1: "Envie um projeto para triagem",
-      cta2: "Conheça o biochar",
-    },
     references: {
       eyebrow: "Projetos de referência",
       heading: "Projetos desenvolvidos com os mais altos padrões.",
       items: [
         { detail: "Certificado pelos padrões VCS e CCB, VM0047, validado pelo ABACUS. Classificação Estimada Sylvera BBB–AA. Desenvolvido com a Futuro Florestal." },
         { detail: "Desenvolvido com o Rabobank, implementado pela Implantar. Selecionado pelo RfP do Amazon Green Pledge para um acordo de offtake de 10.000 hectares." },
-        { detail: "Estágio conceitual; mínimo de 5.000 hectares, com uma emissão modelada de forma conservadora de mais de 255 VCUs por hectare ao longo da vida do projeto." },
+        { detail: "Restauração de mata Miombo co-desenhada com comunidades Maasai locais. Realizada com a Nature Restoration Company (NRC)." },
       ],
     },
   },
@@ -190,11 +190,56 @@ export default function ArrContent() {
           </div>
         </section>
 
-        {/* Phases — vertical timeline */}
+        {/* What we look for — photo + text */}
         <section className="py-24 bg-cream">
+          <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-14 items-center">
+            <div className="relative h-[440px] rounded-3xl overflow-hidden lg:order-first order-last">
+              <Image src="/img/DSCF9647.JPG" alt="Field monitoring on a restoration project" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
+            </div>
+            <div>
+              <h2 className="text-4xl md:text-5xl font-extrabold text-navy mb-6 leading-[1.05]">{t.lookFor.heading}</h2>
+              <p className="text-ink-soft leading-relaxed mb-6">{t.lookFor.lead}</p>
+              <ul className="space-y-3">
+                {t.lookFor.items.map((l) => (
+                  <li key={l} className="flex items-start gap-3 text-ink-soft leading-relaxed">
+                    <CheckCircle2 className="w-5 h-5 text-forest shrink-0 mt-0.5" />
+                    {l}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div className="max-w-7xl mx-auto px-6 mt-14 pt-10 border-t border-border grid sm:grid-cols-2 gap-10">
+            <div>
+              <p className="text-lg font-semibold text-navy mb-4">{t.lookFor.matchHeading}</p>
+              <Link
+                href={SUBMIT_PROJECT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3.5 bg-forest text-white text-sm font-bold rounded-xl hover:bg-forest-dark transition-colors"
+              >
+                {t.lookFor.matchCta} <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+            <div>
+              <p className="text-lg font-semibold text-navy mb-4">{t.lookFor.mismatchHeading}</p>
+              <Link
+                href="/advisory"
+                className="inline-flex items-center gap-2 px-6 py-3.5 bg-white text-forest text-sm font-bold rounded-xl border border-forest/30 hover:bg-forest-muted transition-colors"
+              >
+                {t.lookFor.mismatchCta} <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Phases — vertical timeline */}
+        <section className="py-24 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-xs font-semibold text-forest uppercase tracking-[0.2em] mb-3">{t.phases.eyebrow}</div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-navy mb-14 leading-[1.05] max-w-2xl">{t.phases.heading}</h2>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-navy mb-6 leading-[1.05] max-w-2xl">{t.phases.heading}</h2>
+            <p className="font-bold text-ink leading-relaxed mb-14">{t.phases.intro}</p>
 
             <div className="max-w-3xl">
               {phases.map((p, i) => (
@@ -218,27 +263,6 @@ export default function ArrContent() {
           </div>
         </section>
 
-        {/* What we look for — photo + text */}
-        <section className="py-24 bg-white">
-          <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-14 items-center">
-            <div className="relative h-[440px] rounded-3xl overflow-hidden lg:order-first order-last">
-              <Image src="/img/DSCF9647.JPG" alt="Field monitoring on a restoration project" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
-            </div>
-            <div>
-              <h2 className="text-4xl md:text-5xl font-extrabold text-navy mb-6 leading-[1.05]">{t.lookFor.heading}</h2>
-              <p className="text-ink-soft leading-relaxed mb-6">{t.lookFor.lead}</p>
-              <ul className="space-y-3">
-                {t.lookFor.items.map((l) => (
-                  <li key={l} className="flex items-start gap-3 text-ink-soft leading-relaxed">
-                    <CheckCircle2 className="w-5 h-5 text-forest shrink-0 mt-0.5" />
-                    {l}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </section>
-
         {/* What we offer — text + photo */}
         <section className="py-24 bg-cream">
           <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-14 items-center">
@@ -257,22 +281,6 @@ export default function ArrContent() {
             </div>
             <div className="relative h-[440px] rounded-3xl overflow-hidden">
               <Image src="/img/DSCF9873.JPG" alt="Early-stage reforestation project" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
-            </div>
-          </div>
-        </section>
-
-        {/* CTA */}
-        <section className="py-20 bg-forest text-center">
-          <div className="max-w-2xl mx-auto px-6">
-            <h2 className="text-3xl font-bold text-white mb-4">{t.cta.heading}</h2>
-            <p className="text-white/80 mb-8">{t.cta.lead}</p>
-            <div className="flex flex-wrap gap-3 justify-center">
-              <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 bg-accent text-forest-deeper text-sm font-bold rounded-xl hover:bg-accent-dark transition-colors">
-                {t.cta.cta1} <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link href="/develop/biochar" className="inline-flex items-center gap-2 px-6 py-3.5 bg-white/10 text-white text-sm font-semibold rounded-xl hover:bg-white/15 transition-colors border border-white/15">
-                {t.cta.cta2}
-              </Link>
             </div>
           </div>
         </section>

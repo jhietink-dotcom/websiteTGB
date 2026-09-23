@@ -5,7 +5,6 @@ import Footer from "@/components/Footer";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, BookOpen, TreePine, Factory, Package, Landmark, MapPin } from "lucide-react";
-import { Tbc } from "@/components/Tbc";
 import { SectionNav } from "@/components/SectionNav";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
@@ -42,7 +41,7 @@ const content = {
       stats: [
         { value: "2019", label: "Founded" },
         { value: "4M ha", label: "Conservation goal by 2040" },
-        { value: "VCS + CCB", label: "Certified to" },
+        { value: "100%", label: "Third-party audited projects" },
       ],
     },
     navItems: [
@@ -127,7 +126,8 @@ const content = {
         { tag: "Project brief", title: "Sapucaia project brief", desc: "A deep-dive into our flagship certified reforestation project in Bahia." },
       ],
       requestCta: "Request the deck",
-      tbc: "upload final deck files and wire direct or gated (email-capture) downloads; confirm which resources are public",
+      mailtoSubject: "Deck request: {title}",
+      mailtoBody: "Hello, I would like to receive your deck on \"{title}\".",
     },
     cta: {
       heading: "Work with us",
@@ -144,7 +144,7 @@ const content = {
       stats: [
         { value: "2019", label: "Fundação" },
         { value: "4M ha", label: "Meta de conservação até 2040" },
-        { value: "VCS + CCB", label: "Certificada pelos padrões" },
+        { value: "100%", label: "Projetos auditados por terceiros" },
       ],
     },
     navItems: [
@@ -229,7 +229,8 @@ const content = {
         { tag: "Resumo do projeto", title: "Resumo do projeto Sapucaia", desc: "Um aprofundamento sobre nosso principal projeto de reflorestamento certificado na Bahia." },
       ],
       requestCta: "Solicitar apresentação",
-      tbc: "enviar os arquivos finais das apresentações e configurar downloads diretos ou com captura de e-mail; confirmar quais recursos são públicos",
+      mailtoSubject: "Solicitação de apresentação: {title}",
+      mailtoBody: "Olá, gostaria de receber a apresentação sobre \"{title}\".",
     },
     cta: {
       heading: "Trabalhe conosco",
@@ -428,6 +429,9 @@ export default function AboutContent() {
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {t.resources.items.map((r, i) => {
                 const Icon = resourceIcons[i];
+                const subject = t.resources.mailtoSubject.replace("{title}", r.title);
+                const body = t.resources.mailtoBody.replace("{title}", r.title);
+                const mailto = `mailto:hello@thegreenbranch.nl?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
                 return (
                   <div key={r.title} className="flex flex-col rounded-2xl border border-border bg-white p-6 hover:border-forest/30 transition-colors">
                     <div className="flex items-center justify-between mb-4">
@@ -438,16 +442,13 @@ export default function AboutContent() {
                     </div>
                     <h3 className="text-lg font-bold text-ink mb-2">{r.title}</h3>
                     <p className="text-sm text-ink-soft leading-relaxed mb-5 flex-1">{r.desc}</p>
-                    <Link href="/contact" className="inline-flex items-center gap-1.5 text-sm font-semibold text-forest hover:text-forest-dark transition-colors">
+                    <a href={mailto} className="inline-flex items-center gap-1.5 text-sm font-semibold text-forest hover:text-forest-dark transition-colors">
                       {t.resources.requestCta} <ArrowRight className="w-4 h-4" />
-                    </Link>
+                    </a>
                   </div>
                 );
               })}
             </div>
-            <p className="mt-8 text-xs text-ink/50">
-              <Tbc>{t.resources.tbc}</Tbc>
-            </p>
           </div>
         </section>
 

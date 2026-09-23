@@ -4,10 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import CertificationBar from "@/components/CertificationBar";
+import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
-
-const SUBMIT_PROJECT_URL = "https://os.thegreenbranch.nl/auth";
 
 const referencesBase = [
   { name: "Sapucaia Sustainable Forests", location: "Bahia", photo: "/img/DSCF9854.JPG" },
@@ -17,6 +16,7 @@ const referencesBase = [
 
 const content = {
   en: {
+    certLabel: "Certified under",
     hero: {
       eyebrow: "How we develop reforestation projects",
       title: "From degraded pasture to certified forest.",
@@ -32,43 +32,15 @@ const content = {
     phases: {
       eyebrow: "Our process",
       heading: "Six stages, one disciplined process.",
-      intro: "If your project meets the conditions listed above:",
+      intro: "We approach project opportunities through a structured, stage-gated process, from first screening to certification and MRV, to select feasible, high-quality projects to develop.",
       items: [
-        { num: "01", name: "Screening", desc: "Every incoming project that meets the listed requirements is assessed against our quality framework — eligibility, land tenure, additionality, and a first view of carbon potential. Only projects that clear the bar advance." },
+        { num: "01", name: "Screening", desc: "Every project opportunity is assessed against our quality framework — eligibility, land tenure, additionality, and a first view of carbon potential. Only opportunities that clear the bar advance." },
         { num: "02", name: "Feasibility", desc: "We confirm the project stands on solid ground: land tenure and regulatory position, carbon modelling against conservative benchmarks, and financial viability — with an independent pre-issuance rating and field validation on site." },
-        { num: "03", name: "Design", desc: "We design the project around buyer, investor and certification requirements: VCS VM0047 and CCB methodology, credible baselines, benefit sharing with local communities, and FPIC done properly. The result is a project built to certify, issue and sell." },
+        { num: "03", name: "Design", desc: "We design the project around buyer, investor and certification requirements: CCP-approved methodologies, credible baselines, benefit sharing codesigned with local communities, and stakeholder consultations and Free, Prior, and Informed Consent done properly. The result is a project built to certify, issue and sell." },
         { num: "04", name: "Development", desc: "Registration, validation, nursery establishment, and planting with our local operational partners. Development capital is deployed against defined milestones." },
-        { num: "05", name: "Monitoring & technical support", desc: "Through GreenBranch OS, our proprietary MRV platform, we combine satellite data with field measurement for continuous monitoring and adaptive management — and provide ongoing technical support to the project on the ground, for the full life of the project." },
+        { num: "05", name: "Monitoring & technical support", desc: "Through GreenBranch OS, our proprietary platform, we combine satellite data with field measurement for continuous monitoring and adaptive management — and provide ongoing technical support to the project on the ground, for the full life of the project." },
         { num: "06", name: "Finance & carbon sales", desc: "We structure the finance and commercialise the removals through our buyer network — spot, forward and long-term offtake — turning verified forest growth into issued, sold credits." },
       ],
-    },
-    lookFor: {
-      heading: "What we look for.",
-      lead: "We invite organisations developing nature-restoration projects that meet the following requirements:",
-      items: [
-        "Reforestation projects that include restoration, agroforestry or sustainable timber",
-        "Beyond concept stage, with activities already on the ground",
-        "A clear pathway to 2,000 hectares or more",
-        "Biodiversity and community co-benefits",
-        "At least €100k invested or committed",
-      ],
-      matchHeading: "Does this sound like your project?",
-      matchCta: "Sign in and submit a project",
-      mismatchHeading: "Is your project not meeting these conditions?",
-      mismatchCta: "Explore our advisory services",
-    },
-    offer: {
-      heading: "What we offer.",
-      lead: "We offer support to early-stage projects to accelerate them:",
-      items: [
-        "External cost support, including CAPEX / OPEX",
-        "Connecting you to the TGB buyer landscape",
-        "Technical assistance, from feasibility to validation",
-        "Structuring and fundraising support",
-        "Access to our development and MRV platform, GreenBranch OS",
-        "Independent quality assessments and ratings",
-      ],
-      closing: "We aim to partner early and stay involved through scale.",
     },
     references: {
       eyebrow: "Reference projects",
@@ -79,8 +51,13 @@ const content = {
         { detail: "Miombo woodland restoration co-designed with local Maasai communities. Delivered with the Nature Restoration Company (NRC)." },
       ],
     },
+    supportCta: {
+      heading: "Do you need support to get your project through development and certification?",
+      button: "Explore our advisory services",
+    },
   },
   pt: {
+    certLabel: "Certificado sob",
     hero: {
       eyebrow: "Como desenvolvemos projetos de reflorestamento",
       title: "De pastagem degradada a floresta certificada.",
@@ -96,43 +73,15 @@ const content = {
     phases: {
       eyebrow: "Nosso processo",
       heading: "Seis etapas, um processo disciplinado.",
-      intro: "Se o seu projeto atende às condições listadas acima:",
+      intro: "Abordamos as oportunidades de projeto por meio de um processo estruturado, com estágios (stage-gate), da triagem inicial até a certificação e o MRV, para selecionar projetos viáveis e de alta qualidade para desenvolver.",
       items: [
-        { num: "01", name: "Triagem", desc: "Cada projeto recebido que atenda aos requisitos listados é avaliado segundo nosso framework de qualidade — elegibilidade, posse fundiária, adicionalidade e uma primeira leitura do potencial de carbono. Somente os projetos que atingem o padrão avançam." },
+        { num: "01", name: "Triagem", desc: "Cada oportunidade de projeto é avaliada segundo nosso framework de qualidade — elegibilidade, posse fundiária, adicionalidade e uma primeira leitura do potencial de carbono. Somente as oportunidades que atingem o padrão avançam." },
         { num: "02", name: "Viabilidade", desc: "Confirmamos que o projeto está em bases sólidas: posse fundiária e situação regulatória, modelagem de carbono frente a parâmetros conservadores e viabilidade financeira — com uma classificação independente pré-emissão e validação de campo no local." },
-        { num: "03", name: "Desenho", desc: "Desenhamos o projeto em torno das exigências de compradores, investidores e certificação: metodologia VCS VM0047 e CCB, linhas de base confiáveis, repartição de benefícios com as comunidades locais e um processo de CLPI (FPIC) conduzido corretamente. O resultado é um projeto construído para certificar, emitir e vender." },
+        { num: "03", name: "Desenho", desc: "Desenhamos o projeto em torno das exigências de compradores, investidores e certificação: metodologias aprovadas pelo CCP, linhas de base confiáveis, repartição de benefícios codesenhada com as comunidades locais, e consultas às partes interessadas e Consentimento Livre, Prévio e Informado conduzidos corretamente. O resultado é um projeto construído para certificar, emitir e vender." },
         { num: "04", name: "Desenvolvimento", desc: "Registro, validação, implantação de viveiros e plantio com nossos parceiros operacionais locais. O capital de desenvolvimento é alocado contra marcos definidos." },
-        { num: "05", name: "Monitoramento e suporte técnico", desc: "Por meio da GreenBranch OS, nossa plataforma proprietária de MRV, combinamos dados de satélite com medições de campo para monitoramento contínuo e gestão adaptativa — e fornecemos suporte técnico contínuo ao projeto no terreno, durante toda a sua vida útil." },
+        { num: "05", name: "Monitoramento e suporte técnico", desc: "Por meio da GreenBranch OS, nossa plataforma proprietária, combinamos dados de satélite com medições de campo para monitoramento contínuo e gestão adaptativa — e fornecemos suporte técnico contínuo ao projeto no terreno, durante toda a sua vida útil." },
         { num: "06", name: "Financiamento e venda de carbono", desc: "Estruturamos o financiamento e comercializamos as remoções por meio da nossa rede de compradores — spot, forward e offtake de longo prazo — transformando o crescimento florestal verificado em créditos emitidos e vendidos." },
       ],
-    },
-    lookFor: {
-      heading: "O que buscamos.",
-      lead: "Convidamos organizações que desenvolvem projetos de restauração da natureza que atendam aos seguintes requisitos:",
-      items: [
-        "Projetos de reflorestamento que incluam restauração, agrofloresta ou manejo florestal sustentável",
-        "Além do estágio conceitual, com atividades já em curso no terreno",
-        "Um caminho claro para 2.000 hectares ou mais",
-        "Cobenefícios de biodiversidade e comunidade",
-        "Pelo menos €100 mil investidos ou comprometidos",
-      ],
-      matchHeading: "Isso soa como o seu projeto?",
-      matchCta: "Entre e envie um projeto",
-      mismatchHeading: "Seu projeto não atende a essas condições?",
-      mismatchCta: "Conheça nossos serviços de assessoria",
-    },
-    offer: {
-      heading: "O que oferecemos.",
-      lead: "Oferecemos apoio a projetos em estágio inicial para acelerá-los:",
-      items: [
-        "Suporte a custos externos, incluindo CAPEX / OPEX",
-        "Conexão com a rede de compradores da TGB",
-        "Assistência técnica, da viabilidade à validação",
-        "Apoio em estruturação e captação de recursos",
-        "Acesso à nossa plataforma de desenvolvimento e MRV, a GreenBranch OS",
-        "Avaliações de qualidade e classificações independentes",
-      ],
-      closing: "Buscamos formar parcerias desde o início e permanecer envolvidos até a escala.",
     },
     references: {
       eyebrow: "Projetos de referência",
@@ -142,6 +91,10 @@ const content = {
         { detail: "Desenvolvido com o Rabobank, implementado pela Implantar. Selecionado pelo RfP do Amazon Green Pledge para um acordo de offtake de 10.000 hectares." },
         { detail: "Restauração de mata Miombo co-desenhada com comunidades Maasai locais. Realizada com a Nature Restoration Company (NRC)." },
       ],
+    },
+    supportCta: {
+      heading: "Precisa de apoio para levar seu projeto pelo desenvolvimento e certificação?",
+      button: "Conheça nossos serviços de assessoria",
     },
   },
 };
@@ -179,6 +132,11 @@ export default function ArrContent() {
           </div>
         </section>
 
+        {/* Certifications */}
+        <section className="py-10 bg-white border-b border-border">
+          <CertificationBar label={t.certLabel} />
+        </section>
+
         {/* Why our approach works */}
         <section className="py-20 bg-white">
           <div className="max-w-3xl mx-auto px-6">
@@ -190,56 +148,12 @@ export default function ArrContent() {
           </div>
         </section>
 
-        {/* What we look for — photo + text */}
-        <section className="py-24 bg-cream">
-          <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-14 items-center">
-            <div className="relative h-[440px] rounded-3xl overflow-hidden lg:order-first order-last">
-              <Image src="/img/DSCF9647.JPG" alt="Field monitoring on a restoration project" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
-            </div>
-            <div>
-              <h2 className="text-4xl md:text-5xl font-extrabold text-navy mb-6 leading-[1.05]">{t.lookFor.heading}</h2>
-              <p className="text-ink-soft leading-relaxed mb-6">{t.lookFor.lead}</p>
-              <ul className="space-y-3">
-                {t.lookFor.items.map((l) => (
-                  <li key={l} className="flex items-start gap-3 text-ink-soft leading-relaxed">
-                    <CheckCircle2 className="w-5 h-5 text-forest shrink-0 mt-0.5" />
-                    {l}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          <div className="max-w-7xl mx-auto px-6 mt-14 pt-10 border-t border-border grid sm:grid-cols-2 gap-10">
-            <div>
-              <p className="text-lg font-semibold text-navy mb-4">{t.lookFor.matchHeading}</p>
-              <Link
-                href={SUBMIT_PROJECT_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3.5 bg-forest text-white text-sm font-bold rounded-xl hover:bg-forest-dark transition-colors"
-              >
-                {t.lookFor.matchCta} <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-            <div>
-              <p className="text-lg font-semibold text-navy mb-4">{t.lookFor.mismatchHeading}</p>
-              <Link
-                href="/advisory"
-                className="inline-flex items-center gap-2 px-6 py-3.5 bg-white text-forest text-sm font-bold rounded-xl border border-forest/30 hover:bg-forest-muted transition-colors"
-              >
-                {t.lookFor.mismatchCta} <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-          </div>
-        </section>
-
         {/* Phases — vertical timeline */}
-        <section className="py-24 bg-white">
+        <section className="py-24 bg-cream">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-xs font-semibold text-forest uppercase tracking-[0.2em] mb-3">{t.phases.eyebrow}</div>
             <h2 className="text-3xl md:text-4xl font-extrabold text-navy mb-6 leading-[1.05] max-w-2xl">{t.phases.heading}</h2>
-            <p className="font-bold text-ink leading-relaxed mb-14">{t.phases.intro}</p>
+            <p className="text-ink-soft leading-relaxed mb-14 max-w-2xl">{t.phases.intro}</p>
 
             <div className="max-w-3xl">
               {phases.map((p, i) => (
@@ -263,29 +177,7 @@ export default function ArrContent() {
           </div>
         </section>
 
-        {/* What we offer — text + photo */}
-        <section className="py-24 bg-cream">
-          <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-14 items-center">
-            <div>
-              <h2 className="text-4xl md:text-5xl font-extrabold text-navy mb-6 leading-[1.05]">{t.offer.heading}</h2>
-              <p className="text-ink-soft leading-relaxed mb-6">{t.offer.lead}</p>
-              <ul className="space-y-3 mb-6">
-                {t.offer.items.map((o) => (
-                  <li key={o} className="flex items-start gap-3 text-ink-soft leading-relaxed">
-                    <CheckCircle2 className="w-5 h-5 text-forest shrink-0 mt-0.5" />
-                    {o}
-                  </li>
-                ))}
-              </ul>
-              <p className="text-ink font-semibold">{t.offer.closing}</p>
-            </div>
-            <div className="relative h-[440px] rounded-3xl overflow-hidden">
-              <Image src="/img/DSCF9873.JPG" alt="Early-stage reforestation project" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
-            </div>
-          </div>
-        </section>
-
-        {/* Reference projects — final section */}
+        {/* Reference projects */}
         <section className="py-24 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-xs font-semibold text-forest uppercase tracking-[0.2em] mb-3">{t.references.eyebrow}</div>
@@ -304,6 +196,16 @@ export default function ArrContent() {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section className="py-20 bg-forest text-center">
+          <div className="max-w-2xl mx-auto px-6">
+            <h2 className="text-3xl font-bold text-white mb-8">{t.supportCta.heading}</h2>
+            <Link href="/advisory" className="inline-flex items-center gap-2 px-6 py-3.5 bg-accent text-forest-deeper text-sm font-bold rounded-xl hover:bg-accent-dark transition-colors">
+              {t.supportCta.button} <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </section>
       </main>

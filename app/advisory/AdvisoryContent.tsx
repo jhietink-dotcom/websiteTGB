@@ -94,7 +94,7 @@ const content = {
     engagements: {
       eyebrow: "Recent engagements",
       heading: "Selected work.",
-      note: "Details anonymised where requested.",
+      note: "Project and partner details are anonymised.",
       cols: { situation: "Situation", did: "What we did", outcome: "Outcome" },
       cases: [
         {
@@ -195,7 +195,7 @@ const content = {
     engagements: {
       eyebrow: "Projetos recentes",
       heading: "Trabalhos selecionados.",
-      note: "Detalhes anonimizados quando solicitado.",
+      note: "Detalhes do projeto e dos parceiros são anonimizados.",
       cols: { situation: "Situação", did: "O que fizemos", outcome: "Resultado" },
       cases: [
         {
@@ -244,7 +244,7 @@ export default function AdvisoryContent() {
           <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pb-20 pt-32">
             <div className="max-w-3xl">
               <div className="text-xs font-semibold text-accent uppercase tracking-[0.2em] mb-5">{t.hero.eyebrow}</div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-[1.02] tracking-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-[1.05] tracking-tight">
                 {t.hero.heading}
               </h1>
               <div className="h-1 w-20 bg-accent rounded-full mb-6" />

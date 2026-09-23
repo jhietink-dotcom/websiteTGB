@@ -57,7 +57,7 @@ export function LanguageSwitcher({ dark }: { dark: boolean }) {
         aria-label={`Language: ${flags[locale].label}`}
         aria-expanded={open}
         className={cn(
-          "flex items-center gap-1.5 px-2 py-1.5 rounded-lg transition-colors hover:bg-white/10",
+          "flex items-center gap-1.5 px-2 py-1.5 rounded-lg hover:bg-white/10",
           dark ? "text-ink/70 hover:text-ink" : "text-white/80 hover:text-white"
         )}
       >

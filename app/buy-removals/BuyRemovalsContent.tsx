@@ -74,8 +74,9 @@ const content = {
     },
     methodologies: {
       eyebrow: "Two methodologies",
-      heading: "One methodology, or a blend of both.",
-      lead: "Buyers can access a single methodology or draw across our full portfolio.",
+      heading: "Buy credits from a specific project type, or a blend of both.",
+      lead: "Buyers can access a single project type or draw across our full portfolio.",
+      partnerNote: "The Green Branch acts as your partner to select projects. TGB offers a portfolio of projects that are developed by TGB itself or selected by the technical team. If you have specific requirements, geography, volume, or timeline, we can source and select additional projects based on a specified inquiry. Every project, whether in the portfolio or sourced on request, has passed the same due diligence. What differs is our role in it.",
       items: [
         { tag: "Removal", title: "ARR", sub: "Afforestation, reforestation & revegetation", desc: "Growing new, biodiverse forest on degraded land — taking carbon out of the atmosphere." },
         { tag: "Removal", title: "Biochar", sub: "Durable carbon", desc: "Biomass converted into a stable carbon that stays locked away for centuries." },
@@ -216,8 +217,9 @@ const content = {
     },
     methodologies: {
       eyebrow: "Duas metodologias",
-      heading: "Uma metodologia, ou uma combinação das duas.",
-      lead: "Compradores podem acessar uma única metodologia ou recorrer a todo o nosso portfólio.",
+      heading: "Compre créditos de um tipo específico de projeto, ou uma combinação dos dois.",
+      lead: "Compradores podem acessar um único tipo de projeto ou recorrer a todo o nosso portfólio.",
+      partnerNote: "A Green Branch atua como sua parceira na seleção de projetos. A TGB oferece um portfólio de projetos desenvolvidos pela própria TGB ou selecionados pela equipe técnica. Se você tiver requisitos específicos de geografia, volume ou prazo, podemos buscar e selecionar projetos adicionais com base em uma solicitação específica. Todo projeto, esteja no portfólio ou obtido sob demanda, passa pela mesma due diligence. O que muda é o nosso papel nele.",
       items: [
         { tag: "Remoção", title: "ARR", sub: "Florestamento, reflorestamento e revegetação", desc: "Cultivo de nova floresta biodiversa em terras degradadas — retirando carbono da atmosfera." },
         { tag: "Remoção", title: "Biochar", sub: "Carbono durável", desc: "Biomassa convertida em um carbono estável que permanece retido por séculos." },
@@ -340,7 +342,7 @@ export default function BuyRemovalsContent() {
           <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pb-20 pt-32">
             <div className="max-w-3xl">
               <div className="text-xs font-semibold text-accent uppercase tracking-[0.2em] mb-5">{t.hero.eyebrow}</div>
-              <h1 className="text-6xl md:text-7xl lg:text-8xl font-extrabold text-white leading-[0.95] tracking-tight mb-5">
+              <h1 className="text-6xl md:text-7xl lg:text-8xl font-extrabold text-white leading-[1.05] tracking-tight mb-5">
                 {t.hero.titleLine1}<br />{t.hero.titleLine2}
               </h1>
               <div className="h-1 w-20 bg-accent rounded-full mb-6" />
@@ -449,8 +451,11 @@ export default function BuyRemovalsContent() {
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-xs font-semibold text-forest uppercase tracking-[0.2em] mb-3">{t.methodologies.eyebrow}</div>
             <h2 className="text-4xl md:text-5xl font-extrabold text-navy mb-4 leading-[1.05] max-w-2xl">{t.methodologies.heading}</h2>
-            <p className="text-ink-soft leading-relaxed mb-12 max-w-2xl">
+            <p className="text-ink-soft leading-relaxed mb-4 max-w-2xl">
               {t.methodologies.lead}
+            </p>
+            <p className="text-ink-soft leading-relaxed mb-12 max-w-2xl">
+              {t.methodologies.partnerNote}
             </p>
             <div className="grid md:grid-cols-2 gap-6">
               {t.methodologies.items.map((m, i) => (

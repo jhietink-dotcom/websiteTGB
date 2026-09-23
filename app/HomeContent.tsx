@@ -4,9 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { DashboardMockup } from "@/components/OSTGBMockup";
-import { ArrowRight, ArrowUpRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
+import { PROJECT_COUNT } from "@/lib/projects";
 
 const photoStripBase = [
   "/img/DSCF0095.JPG",
@@ -26,9 +26,9 @@ const photoStrip = [...photoStripBase, ...photoStripBase];
 // "What we do" — three lines of activity, one development capability
 const activitiesBase = [
   {
-    href: "/develop",
+    href: "/advisory",
     img: "/img/DSCF9818.JPG",
-    alt: "Reforestation and biochar development",
+    alt: "Carbon advisory for buyers, developers and investors",
   },
   {
     href: "/buy-removals",
@@ -53,20 +53,24 @@ const projectsBase = [
     photo: "/img/tff-DSCF8276.JPG",
   },
   {
-    name: "Samauma",
+    name: "Serra do Sudeste Landscape Restoration",
     photo: "/img/DSCF9831.JPG",
+  },
+  {
+    name: "Suledo Community ARR Project",
+    photo: "/img/DSCF9807.JPG",
   },
   {
     name: "Abaetetuba Distributed Biochar",
     photo: "/img/biochar.jpg",
   },
   {
-    name: "Suledo Community ARR Project",
-    photo: "/img/DSCF9807.JPG",
+    name: "Samauma",
+    photo: "/img/DSCF9805.JPG",
   },
 ];
 
-const statsBase = [{ value: "4" }, { value: "~15" }, { value: ">40M t" }];
+const statsBase = [{ value: String(PROJECT_COUNT) }, { value: "~15" }, { value: ">40M t" }];
 
 const certifications = [
   { name: "Verra", logo: "/img/logos/verra.png", width: 540, height: 198 },
@@ -111,9 +115,9 @@ const content = {
       learnMore: "Learn more",
       items: [
         {
-          tag: "Reforestation & biochar",
-          title: "Develop",
-          body: "We originate and develop reforestation and biochar projects through a disciplined stage-gate process, certified to the highest carbon and forestry standards.",
+          tag: "Carbon advisory",
+          title: "Advisory",
+          body: "We advise corporates on carbon strategy, procurement and SBTi/FLAG targets, and support landowners and developers through project development and certification — the same expertise behind our own portfolio, available for yours.",
         },
         {
           tag: "For buyers",
@@ -127,17 +131,6 @@ const content = {
         },
       ],
     },
-    os: {
-      badge: "Built in-house · proprietary",
-      poweredBy: "Powered by",
-      body: "One platform from origination to issuance. GreenBranch OS unifies project development, MRV, and commercialisation in a single environment. This is how we develop faster, monitor deeper, and give buyers and investors direct sight of the work.",
-      features: [
-        "Structured stage-gate development with 14-criteria quality scoring",
-        "Digital MRV combining satellite and field data",
-        "Live investor and buyer dashboard — a standing data room",
-      ],
-      cta: "Explore GreenBranch OS",
-    },
     projectsSection: {
       eyebrow: "Our portfolio",
       headingLine1: "Locally rooted,",
@@ -146,9 +139,10 @@ const content = {
       items: [
         { country: "Brazil · Bahia", ha: "VCS + CCB · Sylvera BBB–AA", status: "Certified", tag: "Large-scale reforestation" },
         { country: "Brazil · Mato Grosso", ha: "10,000 ha offtake", status: "Development", tag: "With Rabobank" },
-        { country: "Brazil · Pará", ha: "5,000+ ha", status: "Concept", tag: "ARR" },
-        { country: "Brazil", ha: "200 kilns", status: "Development", tag: "Biochar" },
+        { country: "Brazil · Rio Grande do Sul", ha: "Riparian restoration", status: "Development", tag: "Riparian Restoration" },
         { country: "Tanzania", ha: "Miombo restoration", status: "Development", tag: "ARR" },
+        { country: "Brazil", ha: "200 kilns", status: "Development", tag: "Biochar" },
+        { country: "Brazil · Pará", ha: "5,000+ ha", status: "Concept", tag: "ARR" },
       ],
     },
     impact: {
@@ -203,9 +197,9 @@ const content = {
       learnMore: "Saiba mais",
       items: [
         {
-          tag: "Reflorestamento e biochar",
-          title: "Desenvolver",
-          body: "Originamos e desenvolvemos projetos de reflorestamento e biochar por meio de um processo disciplinado de stage-gate, certificados pelos mais altos padrões de carbono e florestais.",
+          tag: "Assessoria de carbono",
+          title: "Assessoria",
+          body: "Assessoramos empresas em estratégia de carbono, aquisição e metas SBTi/FLAG, e apoiamos proprietários de terra e desenvolvedores no desenvolvimento e na certificação de projetos — a mesma expertise por trás do nosso próprio portfólio, disponível para o seu.",
         },
         {
           tag: "Para compradores",
@@ -219,17 +213,6 @@ const content = {
         },
       ],
     },
-    os: {
-      badge: "Desenvolvido internamente · proprietário",
-      poweredBy: "Impulsionado pela",
-      body: "Uma plataforma única, da originação à emissão. A GreenBranch OS unifica o desenvolvimento de projetos, o MRV e a comercialização em um único ambiente. É assim que desenvolvemos mais rápido, monitoramos mais a fundo e damos a compradores e investidores visão direta do trabalho.",
-      features: [
-        "Desenvolvimento estruturado por stage-gate, com pontuação de qualidade em 14 critérios",
-        "MRV digital combinando dados de satélite e de campo",
-        "Painel ao vivo para investidores e compradores — uma sala de dados permanente",
-      ],
-      cta: "Explorar a GreenBranch OS",
-    },
     projectsSection: {
       eyebrow: "Nosso portfólio",
       headingLine1: "Com raízes locais,",
@@ -238,9 +221,10 @@ const content = {
       items: [
         { country: "Brasil · Bahia", ha: "VCS + CCB · Sylvera BBB–AA", status: "Certificado", tag: "Reflorestamento em larga escala" },
         { country: "Brasil · Mato Grosso", ha: "Offtake de 10.000 ha", status: "Em desenvolvimento", tag: "Com o Rabobank" },
-        { country: "Brasil · Pará", ha: "5.000+ ha", status: "Conceito", tag: "ARR" },
-        { country: "Brasil", ha: "200 fornos", status: "Em desenvolvimento", tag: "Biochar" },
+        { country: "Brasil · Rio Grande do Sul", ha: "Restauração ciliar", status: "Em desenvolvimento", tag: "Restauração Ciliar" },
         { country: "Tanzânia", ha: "Restauração de miombo", status: "Em desenvolvimento", tag: "ARR" },
+        { country: "Brasil", ha: "200 fornos", status: "Em desenvolvimento", tag: "Biochar" },
+        { country: "Brasil · Pará", ha: "5.000+ ha", status: "Conceito", tag: "ARR" },
       ],
     },
     impact: {
@@ -303,7 +287,7 @@ export default function HomeContent() {
                 <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
                 {t.hero.badge}
               </div>
-              <h1 className="text-5xl lg:text-7xl font-extrabold text-white leading-[0.98] tracking-tight mb-6">
+              <h1 className="text-5xl lg:text-7xl font-extrabold text-white leading-[1.05] tracking-tight mb-6">
                 {t.hero.line1}<br />
                 {t.hero.line2Prefix} <span className="text-accent">{t.hero.line2Accent}</span>
               </h1>
@@ -463,39 +447,6 @@ export default function HomeContent() {
           </div>
         </section>
 
-        {/* ── GreenBranch OS feature ── */}
-        <section className="py-24 bg-forest-deeper overflow-hidden">
-          <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-accent text-xs font-semibold mb-6">
-                {t.os.badge}
-              </div>
-              <h2 className="text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-5">
-                {t.os.poweredBy} <span className="text-accent">GreenBranch OS</span>
-              </h2>
-              <p className="text-white/60 leading-relaxed mb-8 text-lg">
-                {t.os.body}
-              </p>
-              <div className="space-y-3 mb-10">
-                {t.os.features.map((f, i) => (
-                  <div key={i} className="flex items-center gap-3 text-sm text-white/70">
-                    <CheckCircle2 className="w-4 h-4 text-accent shrink-0" />
-                    {f}
-                  </div>
-                ))}
-              </div>
-              <Link href="/greenbranch-os"
-                className="inline-flex items-center gap-2 px-5 py-3 bg-accent text-forest-deeper text-sm font-bold rounded-xl hover:bg-accent-dark transition-colors">
-                {t.os.cta} <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-
-            <div className="relative">
-              <DashboardMockup />
-            </div>
-          </div>
-        </section>
-
         {/* ── Projects editorial grid ── */}
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-6">
@@ -552,7 +503,7 @@ export default function HomeContent() {
                 ))}
               </div>
 
-              {projects.slice(2, 5).map((p) => (
+              {projects.slice(3, 6).map((p) => (
                 <Link key={`bottom-${p.name}`} href="/projects" className="group relative h-56 rounded-2xl overflow-hidden">
                   <Image src={p.photo} alt={p.name} fill
                     className="object-cover transition-transform duration-700 group-hover:scale-105"

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import CertificationBar from "@/components/CertificationBar";
 import { ArrowRight, Handshake, Factory, Recycle, Sprout, Search, PencilRuler, Gauge, CheckCircle2, TrendingUp } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
@@ -12,6 +13,7 @@ const residueValueIcons = [TrendingUp, Handshake, Recycle];
 
 const content = {
   en: {
+    certLabel: "Certified under",
     hero: {
       eyebrow: "Co-developing industrial biochar",
       h1: "Turn your biomass into durable carbon removal.",
@@ -108,6 +110,7 @@ const content = {
     },
   },
   pt: {
+    certLabel: "Certificado sob",
     hero: {
       eyebrow: "Co-desenvolvendo biochar industrial",
       h1: "Transforme sua biomassa em remoção de carbono durável.",
@@ -237,6 +240,11 @@ export default function BiocharContent() {
               </div>
             </div>
           </div>
+        </section>
+
+        {/* Certifications */}
+        <section className="py-10 bg-white border-b border-border">
+          <CertificationBar label={t.certLabel} />
         </section>
 
         {/* Why biochar — 3 pressing challenges */}

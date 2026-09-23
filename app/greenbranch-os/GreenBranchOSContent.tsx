@@ -4,8 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Tbc } from "@/components/Tbc";
-import { ArrowRight, CheckCircle2, Shield, Globe, BarChart3, Database, Layers, Lock } from "lucide-react";
+import { DashboardMockup } from "@/components/OSTGBMockup";
+import { CheckCircle2, Shield, Globe, BarChart3, Database, Layers, Lock } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 const overviewIcons = [Layers, Database, Globe, Lock];
@@ -13,7 +13,7 @@ const whyIcons = [Shield, BarChart3, Globe, Lock];
 
 const moduleMeta = [
   { id: "development", number: "01", image: "/img/os-development.png", w: 752, h: 321 },
-  { id: "dashboard", number: "02", image: "/img/os-dashboard.png", w: 752, h: 478 },
+  { id: "dashboard", number: "02", image: "/img/os-dashboard-hd.png", w: 1885, h: 892 },
 ];
 
 const content = {
@@ -21,8 +21,7 @@ const content = {
     hero: {
       eyebrow: "Our Tech",
       heading: "One platform from origination to issuance.",
-      lead: "GreenBranch OS is our proprietary platform unifying project development and commercialisation in a single environment. It is how we develop faster, monitor deeper, and give buyers and investors direct sight of the work.",
-      ctaPrimary: "Request platform access",
+      lead: "GreenBranch OS is our proprietary platform, unifying project development and commercialisation in a single environment — so we move faster and give buyers and investors direct visibility into the work.",
       ctaSecondary: "Access as a buyer",
     },
     overview: [
@@ -37,12 +36,12 @@ const content = {
         title: "Development",
         tagline: "From first screening to bankable project.",
         description:
-          "Every project moves through GreenBranch OS from first screening onward. Developers submit projects through a structured questionnaire, receive a quality score across 14 criteria, and are guided through our stage-gate process with standardised templates. One environment, full audit trail, no information lost between phases.",
+          "Project opportunities go through GreenBranch OS from first screening onward and are assessed through a structured checklist, scored across 14 quality criteria, and developed through our stage-gate process with standardised templates. One environment, full audit trail, no information lost between phases.",
         features: [
-          "Structured submission questionnaire for every incoming project",
+          "Structured screening questionnaire for every incoming opportunity",
           "Quality score assessed across 14 criteria",
-          "Guided stage-gate process from screening to MRV",
-          "Standardised templates for each phase and deliverable",
+          "Standardised stage-gate process from screening to MRV",
+          "Carbon certification compliant templates for each phase and deliverable",
           "Full audit trail with no information lost between phases",
         ],
       },
@@ -65,9 +64,7 @@ const content = {
       eyebrow: "Why we built it",
       heading: "Integrity at every layer",
       p1: "The credibility problem in the carbon market stems from opacity. Projects make claims; verification is expensive and infrequent; buyers cannot see what they are buying. GreenBranch OS is our answer to that.",
-      p2a: "By managing the entire development lifecycle — and giving partners, buyers, and investors standing access to the data — we create a level of traceability that does not exist elsewhere. Across a portfolio of",
-      tbc: "number of active projects",
-      p2b: "projects, every action is logged, timestamped, and open to audit.",
+      p2: "By managing the entire development lifecycle — and giving partners, buyers, and investors standing access to the data — we create a level of traceability that doesn't exist elsewhere. Every project in our portfolio is logged, timestamped, and open to audit, end to end.",
       features: [
         { label: "Auditable by design", desc: "Every action logged and timestamped" },
         { label: "Data-driven decisions", desc: "Stage gates backed by verified data" },
@@ -77,8 +74,7 @@ const content = {
     },
     cta: {
       heading: "See GreenBranch OS in action",
-      lead: "We would be glad to walk you through the platform — whether you are a project developer, an investor, or a buyer of emission removals.",
-      primary: "Request platform access",
+      lead: "We are happy to walk you through the platform.",
       secondary: "Access as a buyer",
     },
   },
@@ -86,8 +82,7 @@ const content = {
     hero: {
       eyebrow: "Nossa Tecnologia",
       heading: "Uma única plataforma da originação à emissão.",
-      lead: "A GreenBranch OS é nossa plataforma proprietária que unifica o desenvolvimento de projetos e a comercialização em um único ambiente. É assim que desenvolvemos mais rápido, monitoramos com mais profundidade e damos a compradores e investidores visibilidade direta do trabalho.",
-      ctaPrimary: "Solicitar acesso à plataforma",
+      lead: "A GreenBranch OS é nossa plataforma proprietária, que unifica o desenvolvimento de projetos e a comercialização em um único ambiente — para avançarmos mais rápido e dar a compradores e investidores visibilidade direta do trabalho.",
       ctaSecondary: "Acessar como comprador",
     },
     overview: [
@@ -102,12 +97,12 @@ const content = {
         title: "Desenvolvimento",
         tagline: "Da triagem inicial ao projeto bancável.",
         description:
-          "Todo projeto passa pela GreenBranch OS desde a triagem inicial. Os desenvolvedores submetem projetos por meio de um questionário estruturado, recebem uma pontuação de qualidade em 14 critérios e são guiados pelo nosso processo stage-gate com modelos padronizados. Um único ambiente, trilha de auditoria completa, nenhuma informação perdida entre as fases.",
+          "As oportunidades de projeto passam pela GreenBranch OS desde a triagem inicial e são avaliadas por meio de um checklist estruturado, pontuadas em 14 critérios de qualidade e desenvolvidas pelo nosso processo stage-gate com modelos padronizados. Um único ambiente, trilha de auditoria completa, nenhuma informação perdida entre as fases.",
         features: [
-          "Questionário estruturado de submissão para cada novo projeto",
+          "Questionário estruturado de triagem para cada nova oportunidade",
           "Pontuação de qualidade avaliada em 14 critérios",
-          "Processo stage-gate guiado, da triagem ao MRV",
-          "Modelos padronizados para cada fase e entregável",
+          "Processo stage-gate padronizado, da triagem ao MRV",
+          "Modelos em conformidade com certificação de carbono para cada fase e entregável",
           "Trilha de auditoria completa, sem perda de informação entre as fases",
         ],
       },
@@ -130,9 +125,7 @@ const content = {
       eyebrow: "Por que a construímos",
       heading: "Integridade em cada camada",
       p1: "O problema de credibilidade no mercado de carbono vem da opacidade. Projetos fazem alegações; a verificação é cara e pouco frequente; os compradores não conseguem ver o que estão comprando. A GreenBranch OS é nossa resposta a isso.",
-      p2a: "Ao gerir todo o ciclo de vida do desenvolvimento — e dar a parceiros, compradores e investidores acesso permanente aos dados — criamos um nível de rastreabilidade que não existe em outro lugar. Em um portfólio de",
-      tbc: "número de projetos ativos",
-      p2b: "projetos, cada ação é registrada, com data e hora, e aberta à auditoria.",
+      p2: "Ao gerir todo o ciclo de vida do desenvolvimento — e dar a parceiros, compradores e investidores acesso permanente aos dados — criamos um nível de rastreabilidade que não existe em outro lugar. Cada projeto do nosso portfólio é registrado, com data e hora, e aberto à auditoria, do início ao fim.",
       features: [
         { label: "Auditável por padrão", desc: "Cada ação registrada com data e hora" },
         { label: "Decisões orientadas por dados", desc: "Etapas de decisão (stage gates) apoiadas por dados verificados" },
@@ -142,8 +135,7 @@ const content = {
     },
     cta: {
       heading: "Veja a GreenBranch OS em ação",
-      lead: "Teremos prazer em apresentar a plataforma a você — seja como desenvolvedor de projetos, investidor ou comprador de remoções de emissão.",
-      primary: "Solicitar acesso à plataforma",
+      lead: "Teremos prazer em apresentar a plataforma a você.",
       secondary: "Acessar como comprador",
     },
   },
@@ -171,10 +163,7 @@ export default function GreenBranchOSContent() {
                 {t.hero.lead}
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 bg-accent text-forest-deeper text-sm font-bold rounded-xl hover:bg-accent-dark transition-colors">
-                  {t.hero.ctaPrimary} <ArrowRight className="w-4 h-4" />
-                </Link>
-                <Link href="/buy-removals" className="inline-flex items-center gap-2 px-6 py-3.5 bg-white/10 text-white text-sm font-semibold rounded-xl hover:bg-white/15 transition-colors border border-white/10">
+                <Link href="/buy-removals" className="inline-flex items-center gap-2 px-6 py-3.5 bg-accent text-forest-deeper text-sm font-bold rounded-xl hover:bg-accent-dark transition-colors">
                   {t.hero.ctaSecondary}
                 </Link>
               </div>
@@ -227,7 +216,13 @@ export default function GreenBranchOSContent() {
               </div>
               <div className={idx % 2 === 1 ? "lg:order-1" : ""}>
                 <div className="rounded-2xl border border-border shadow-xl overflow-hidden bg-white">
-                  <Image src={m.image} alt={`GreenBranch OS — ${m.title}`} width={m.w} height={m.h} className="w-full h-auto" sizes="(max-width: 1024px) 100vw, 50vw" />
+                  {m.id === "development" ? (
+                    <div className="p-4">
+                      <DashboardMockup />
+                    </div>
+                  ) : (
+                    <Image src={m.image} alt={`GreenBranch OS — ${m.title}`} width={m.w} height={m.h} className="w-full h-auto" sizes="(max-width: 1024px) 100vw, 50vw" />
+                  )}
                 </div>
               </div>
             </div>
@@ -244,7 +239,7 @@ export default function GreenBranchOSContent() {
                 {t.why.p1}
               </p>
               <p className="text-white/60 leading-relaxed">
-                {t.why.p2a} <Tbc>{t.why.tbc}</Tbc> {t.why.p2b}
+                {t.why.p2}
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4">
@@ -268,8 +263,7 @@ export default function GreenBranchOSContent() {
             <h2 className="text-3xl font-bold text-ink mb-4">{t.cta.heading}</h2>
             <p className="text-ink-soft mb-8">{t.cta.lead}</p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Link href="/contact" className="px-6 py-3.5 bg-forest text-white text-sm font-bold rounded-xl hover:bg-forest-light transition-colors">{t.cta.primary}</Link>
-              <Link href="/buy-removals" className="px-6 py-3.5 border border-border text-ink text-sm font-semibold rounded-xl hover:border-forest hover:text-forest transition-colors">{t.cta.secondary}</Link>
+              <Link href="/buy-removals" className="px-6 py-3.5 bg-accent text-forest-deeper text-sm font-bold rounded-xl hover:bg-accent-dark transition-colors">{t.cta.secondary}</Link>
             </div>
           </div>
         </section>

@@ -12,29 +12,43 @@ const content = {
     groups: [
       {
         id: "develop",
-        label: "Develop",
+        label: "What we do",
         items: [
           { label: "Reforestation (ARR)", href: "/develop/arr" },
           { label: "Biochar", href: "/develop/biochar" },
-          { label: "Advisory", href: "/advisory" },
         ],
       },
       {
-        id: "company",
-        label: "Company",
+        id: "services",
+        label: "Our services",
         items: [
+          { label: "Advisory", href: "/advisory" },
           { label: "Buy Carbon Credits", href: "/buy-removals" },
           { label: "Invest", href: "/invest" },
-          { label: "Projects", href: "/projects" },
-          { label: "Our Tech", href: "/greenbranch-os" },
-          { label: "About", href: "/about" },
         ],
       },
       {
-        id: "legal",
-        label: "Legal",
+        id: "projects",
+        label: "Projects",
         items: [
-          { label: "Contact", href: "/contact" },
+          { label: "Projects", href: "/projects" },
+        ],
+      },
+      {
+        id: "about",
+        label: "About",
+        items: [
+          { label: "Our story", href: "/about#story" },
+          { label: "Team", href: "/about#team" },
+          { label: "Resources", href: "/about#resources" },
+          { label: "Our Tech", href: "/greenbranch-os" },
+        ],
+      },
+      {
+        id: "contact",
+        label: "Contact",
+        items: [
+          { label: "Get in touch", href: "/contact" },
           { label: "Grievance forms", href: "/grievance" },
         ],
       },
@@ -48,29 +62,43 @@ const content = {
     groups: [
       {
         id: "develop",
-        label: "Desenvolver",
+        label: "O que fazemos",
         items: [
           { label: "Reflorestamento (ARR)", href: "/develop/arr" },
           { label: "Biochar", href: "/develop/biochar" },
-          { label: "Assessoria", href: "/advisory" },
         ],
       },
       {
-        id: "company",
-        label: "Empresa",
+        id: "services",
+        label: "Nossos serviços",
         items: [
+          { label: "Assessoria", href: "/advisory" },
           { label: "Comprar Créditos de Carbono", href: "/buy-removals" },
           { label: "Investir", href: "/invest" },
-          { label: "Projetos", href: "/projects" },
-          { label: "Nossa Tecnologia", href: "/greenbranch-os" },
-          { label: "Sobre", href: "/about" },
         ],
       },
       {
-        id: "legal",
-        label: "Legal",
+        id: "projects",
+        label: "Projetos",
         items: [
-          { label: "Contato", href: "/contact" },
+          { label: "Projetos", href: "/projects" },
+        ],
+      },
+      {
+        id: "about",
+        label: "Sobre",
+        items: [
+          { label: "Nossa história", href: "/about#story" },
+          { label: "Equipe", href: "/about#team" },
+          { label: "Recursos", href: "/about#resources" },
+          { label: "Nossa Tecnologia", href: "/greenbranch-os" },
+        ],
+      },
+      {
+        id: "contact",
+        label: "Contato",
+        items: [
+          { label: "Fale conosco", href: "/contact" },
           { label: "Formulários de reclamação", href: "/grievance" },
         ],
       },
@@ -87,7 +115,7 @@ export default function Footer() {
   return (
     <footer className="bg-forest-deeper text-white">
       <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 gap-12">
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link href="/" className="inline-flex items-center mb-4" aria-label="The Green Branch — home">

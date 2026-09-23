@@ -6,30 +6,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, MapPin } from "lucide-react";
 import { Tbc } from "@/components/Tbc";
-import ProjectMap, { type ProjectMapMarker } from "@/components/ProjectMap";
-import { useLanguage } from "@/lib/i18n/LanguageContext";
-
-type StatusKey = "Active" | "Certified" | "Development" | "Concept";
-
-type ProjectStatic = {
-  num: string;
-  flag: string;
-  photo: string;
-  align: "left" | "right";
-  statusKey: StatusKey;
-  kind: ProjectMapMarker["kind"];
-  lat: number;
-  lon: number;
-};
-
-const projectsStatic: ProjectStatic[] = [
-  { num: "01", flag: "🇧🇷", photo: "/img/DSCF9854.JPG", align: "left", statusKey: "Certified", kind: "arr", lat: -17.0, lon: -39.6 }, // Bahia
-  { num: "02", flag: "🇧🇷", photo: "/img/tff-DSCF8276.JPG", align: "right", statusKey: "Development", kind: "arr", lat: -11.5, lon: -55.8 }, // Mato Grosso
-  { num: "03", flag: "🇧🇷", photo: "/img/DSCF9805.JPG", align: "left", statusKey: "Concept", kind: "arr", lat: -3.8, lon: -52.0 }, // Pará
-  { num: "04", flag: "🇧🇷", photo: "/img/DSCF9831.JPG", align: "right", statusKey: "Development", kind: "arr", lat: -30.85, lon: -53.15 }, // Rio Grande do Sul
-  { num: "05", flag: "🇧🇷", photo: "/img/biochar.jpg", align: "left", statusKey: "Development", kind: "biochar", lat: -1.72, lon: -48.88 }, // Abaetetuba, Pará
-  { num: "06", flag: "🇹🇿", photo: "/img/DSCF9797.JPG", align: "right", statusKey: "Development", kind: "arr", lat: -5.3, lon: 36.98 }, // Kiteto, Tanzania
-];
+import ProjectMap from "@/components/ProjectMap";
+import { useLanguage, type Locale } from "@/lib/i18n/LanguageContext";
+import { projectsStatic, PROJECT_COUNT, type StatusKey } from "@/lib/projects";
 
 const statusStyle: Record<StatusKey, string> = {
   Active: "bg-emerald-500/20 text-emerald-300 border-emerald-500/30",
@@ -48,10 +27,62 @@ type ProjectText = {
   haLabel: string;
   tCO2: string | null;
   tCO2Label: string;
+  certification: string | null;
   status: string;
   description: string;
   partners: string[];
 };
+
+// Derives the portfolio-wide hectare/removal totals straight from each
+// project's own displayed ha/tCO2 figures, so the hero stats stay correct
+// automatically whenever a per-project value is edited — no separate total
+// to remember to update.
+function parseLocaleNumber(raw: string, locale: Locale): number {
+  const cleaned = locale === "en" ? raw.replace(/,/g, "") : raw.replace(/\./g, "").replace(",", ".");
+  return parseFloat(cleaned);
+}
+
+function sumHectares(items: { ha: string | null; kind: "biochar" | "arr" }[], locale: Locale) {
+  let total = 0;
+  let approximate = false;
+  for (const p of items) {
+    if (p.kind === "biochar") continue; // measured in kilns, not hectares
+    const m = p.ha?.match(/^([\d.,]+)/);
+    if (!m) {
+      approximate = true;
+      continue;
+    }
+    total += parseLocaleNumber(m[1], locale);
+    if (p.ha?.includes("+")) approximate = true;
+  }
+  return { total, approximate };
+}
+
+function sumTco2(items: { tCO2: string | null }[], locale: Locale) {
+  let total = 0;
+  let approximate = false;
+  for (const p of items) {
+    const m = p.tCO2?.match(/^([\d.,]+)\s*M/i);
+    if (!m) {
+      approximate = true;
+      continue;
+    }
+    total += parseLocaleNumber(m[1], locale) * 1_000_000;
+    if (p.tCO2?.includes("+")) approximate = true;
+  }
+  return { total, approximate };
+}
+
+function formatHectaresTotal(total: number, approximate: boolean, locale: Locale) {
+  const formatted = total.toLocaleString(locale === "en" ? "en-US" : "pt-BR");
+  return `${formatted}${approximate ? "+" : ""} ha`;
+}
+
+function formatTco2Total(total: number, approximate: boolean, locale: Locale) {
+  let str = (total / 1_000_000).toFixed(2).replace(/\.?0+$/, "");
+  if (locale === "pt") str = str.replace(".", ",");
+  return `${str}M${approximate ? "+" : ""} tCO2e`;
+}
 
 const content = {
   en: {
@@ -61,10 +92,10 @@ const content = {
       titleLine2: "meets capital.",
       lead: "A portfolio of high-integrity, nature-based emission removal projects across multiple regions — verified, traceable, and built to last.",
       stats: [
-        { value: "6", label: "Projects" },
-        { value: "2", label: "Countries" },
-        { valueTbc: "total area", label: "Hectares under restoration" },
-        { valueTbc: "removal potential", label: "Emission removals" },
+        { value: "6" as string | null, label: "Projects" },
+        { value: "2" as string | null, label: "Countries" },
+        { value: null as string | null, label: "Hectares under restoration" },
+        { value: null as string | null, label: "Emission removals" },
       ],
       scroll: "scroll",
     },
@@ -77,6 +108,7 @@ const content = {
     },
     projectAreaLabel: "Project area",
     emissionRemovalsLabel: "Emission removals",
+    certificationLabel: "Certification standard",
     enquireCta: "Enquire about this project",
     projects: [
       {
@@ -88,6 +120,7 @@ const content = {
         haLabel: "project area",
         tCO2: "3.1M tCO2e",
         tCO2Label: "removal estimate",
+        certification: "Verra VCS&CCB",
         status: "Certified",
         description:
           "A large-scale reforestation programme developed with Futuro Florestal, certified to VCS and CCB under methodology VM0047 and ABACUS validated. The project carries a Sylvera Estimated Rating of BBB–AA, restoring degraded land while generating high-integrity emission removals for local communities.",
@@ -102,6 +135,7 @@ const content = {
         haLabel: "project area",
         tCO2: null,
         tCO2Label: "removal estimate",
+        certification: "Verra VCS&CCB",
         status: "Development",
         description:
           "Native reforestation of degraded pasture in the Amazon biome, developed with Rabobank and implemented by Implantar alongside smallholder farmers. The project has been selected by the Amazon Green Pledge RfP for a 10,000-hectare offtake, restoring biodiverse and climate-resilient ecosystems.",
@@ -114,8 +148,9 @@ const content = {
         type: "Restoration",
         ha: "5,000+ ha",
         haLabel: "project area",
-        tCO2: null,
+        tCO2: "2M+ tCO2e",
         tCO2Label: "removal estimate",
+        certification: "ISOMETRIC",
         status: "Concept",
         description:
           "An early-stage restoration concept covering a minimum of 5,000 hectares in the Amazon biome. Conservative modelling indicates issuance of over 255 emission removal units per hectare across the project lifetime, providing a durable foundation for high-integrity supply.",
@@ -130,6 +165,7 @@ const content = {
         haLabel: "project area",
         tCO2: null,
         tCO2Label: "removal estimate",
+        certification: null,
         status: "Development",
         description:
           "Restoration of riparian forests and erosion-prone areas in the transition zone between the Atlantic Forest and Pampa biome, respecting natural grasslands while delivering measurable emission removals.",
@@ -145,6 +181,7 @@ const content = {
         haLabel: "scale",
         tCO2: null,
         tCO2Label: "removal estimate",
+        certification: "ISOMETRIC",
         status: "Development",
         description:
           "A distributed biochar programme in Abaetetuba, converting local biomass residue into durable carbon removals across a network of small-scale kilns run with local farmers.",
@@ -155,10 +192,11 @@ const content = {
         tagline: "Miombo woodland restoration with local communities",
         region: "Kiteto District · Miombo Forest",
         type: "ARR",
-        ha: null,
+        ha: "10,000 ha",
         haLabel: "project area",
-        tCO2: null,
+        tCO2: "2.45M tCO2e",
         tCO2Label: "removal estimate",
+        certification: "Verra VCS&CCB",
         status: "Development",
         description:
           "Miombo forest restoration co-designed with local Maasai communities and delivered with the Nature Restoration Company (NRC). Alley cropping supports local income while the project restores woodland and generates durable emission removals.",
@@ -167,10 +205,10 @@ const content = {
     ] satisfies ProjectText[],
     develop: {
       eyebrow: "Develop with us",
-      heading: "Have land with restoration potential?",
+      heading: "Have land or feedstock and an ARR or biochar project idea?",
       lead: "We partner with landowners, communities and organisations to develop the next generation of high-integrity, nature-based emission removal projects.",
-      start: "Start development",
-      talk: "Talk to our team",
+      start: "Explore our Advisory services",
+      talk: "Contact us",
     },
   },
   pt: {
@@ -180,10 +218,10 @@ const content = {
       titleLine2: "encontra o capital.",
       lead: "Um portfólio de projetos de remoção de emissões de base natural e alta integridade em múltiplas regiões — verificados, rastreáveis e construídos para durar.",
       stats: [
-        { value: "6", label: "Projetos" },
-        { value: "2", label: "Países" },
-        { valueTbc: "área total", label: "Hectares em restauração" },
-        { valueTbc: "potencial de remoção", label: "Remoções de emissão" },
+        { value: "6" as string | null, label: "Projetos" },
+        { value: "2" as string | null, label: "Países" },
+        { value: null as string | null, label: "Hectares em restauração" },
+        { value: null as string | null, label: "Remoções de emissão" },
       ],
       scroll: "rolar",
     },
@@ -196,6 +234,7 @@ const content = {
     },
     projectAreaLabel: "Área do projeto",
     emissionRemovalsLabel: "Remoções de emissão",
+    certificationLabel: "Padrão de certificação",
     enquireCta: "Saiba mais sobre este projeto",
     projects: [
       {
@@ -207,6 +246,7 @@ const content = {
         haLabel: "área do projeto",
         tCO2: "3,1M tCO2e",
         tCO2Label: "estimativa de remoção",
+        certification: "Verra VCS&CCB",
         status: "Certificado",
         description:
           "Um programa de reflorestamento em grande escala desenvolvido com a Futuro Florestal, certificado pelos padrões VCS e CCB sob a metodologia VM0047 e validado pela ABACUS. O projeto tem uma Classificação Estimada Sylvera de BBB–AA, restaurando terras degradadas e gerando remoções de emissão de alta integridade para as comunidades locais.",
@@ -221,6 +261,7 @@ const content = {
         haLabel: "área do projeto",
         tCO2: null,
         tCO2Label: "estimativa de remoção",
+        certification: "Verra VCS&CCB",
         status: "Em desenvolvimento",
         description:
           "Reflorestamento nativo de pastagem degradada no bioma Amazônia, desenvolvido com o Rabobank e implementado pela Implantar junto a pequenos agricultores. O projeto foi selecionado pelo RfP do Amazon Green Pledge para um offtake de 10.000 hectares, restaurando ecossistemas biodiversos e resilientes ao clima.",
@@ -233,8 +274,9 @@ const content = {
         type: "Restauração",
         ha: "5.000+ ha",
         haLabel: "área do projeto",
-        tCO2: null,
+        tCO2: "2M+ tCO2e",
         tCO2Label: "estimativa de remoção",
+        certification: "ISOMETRIC",
         status: "Concepção",
         description:
           "Um conceito de restauração em estágio inicial cobrindo no mínimo 5.000 hectares no bioma Amazônia. Modelagem conservadora indica emissão de mais de 255 unidades de remoção de emissão por hectare ao longo do ciclo de vida do projeto, oferecendo uma base durável para fornecimento de alta integridade.",
@@ -249,6 +291,7 @@ const content = {
         haLabel: "área do projeto",
         tCO2: null,
         tCO2Label: "estimativa de remoção",
+        certification: null,
         status: "Em desenvolvimento",
         description:
           "Restauração de matas ciliares e áreas suscetíveis à erosão na zona de transição entre a Mata Atlântica e o bioma Pampa, respeitando os campos nativos e gerando remoções de emissão mensuráveis.",
@@ -264,6 +307,7 @@ const content = {
         haLabel: "escala",
         tCO2: null,
         tCO2Label: "estimativa de remoção",
+        certification: "ISOMETRIC",
         status: "Em desenvolvimento",
         description:
           "Um programa distribuído de biochar em Abaetetuba, convertendo resíduos de biomassa local em remoções de carbono duráveis por meio de uma rede de fornos de pequena escala operados com agricultores locais.",
@@ -274,10 +318,11 @@ const content = {
         tagline: "Restauração de mata Miombo com comunidades locais",
         region: "Distrito de Kiteto · Floresta Miombo",
         type: "ARR",
-        ha: null,
+        ha: "10.000 ha",
         haLabel: "área do projeto",
-        tCO2: null,
+        tCO2: "2,45M tCO2e",
         tCO2Label: "estimativa de remoção",
+        certification: "Verra VCS&CCB",
         status: "Em desenvolvimento",
         description:
           "Restauração de floresta Miombo co-desenhada com comunidades Maasai locais e realizada com a Nature Restoration Company (NRC). O cultivo em aleias apoia a renda local enquanto o projeto restaura a mata e gera remoções de emissão duráveis.",
@@ -286,10 +331,10 @@ const content = {
     ] satisfies ProjectText[],
     develop: {
       eyebrow: "Desenvolva conosco",
-      heading: "Tem terra com potencial de restauração?",
+      heading: "Tem terra ou biomassa e uma ideia de projeto de ARR ou biochar?",
       lead: "Trabalhamos com proprietários de terra, comunidades e organizações para desenvolver a próxima geração de projetos de remoção de emissão de base natural e alta integridade.",
-      start: "Iniciar desenvolvimento",
-      talk: "Fale com nossa equipe",
+      start: "Conheça nossos serviços de assessoria",
+      talk: "Fale conosco",
     },
   },
 };
@@ -298,6 +343,14 @@ export default function ProjectsContent() {
   const { locale } = useLanguage();
   const t = content[locale];
   const projects = projectsStatic.map((s, i) => ({ ...s, ...t.projects[i] }));
+  const haTotals = sumHectares(projects, locale);
+  const tco2Totals = sumTco2(projects, locale);
+  const heroStatValues = [
+    String(PROJECT_COUNT),
+    t.hero.stats[1].value,
+    formatHectaresTotal(haTotals.total, haTotals.approximate, locale),
+    formatTco2Total(tco2Totals.total, tco2Totals.approximate, locale),
+  ];
 
   return (
     <>
@@ -333,10 +386,10 @@ export default function ProjectsContent() {
 
             {/* Stats row */}
             <div className="flex flex-wrap gap-x-10 gap-y-4">
-              {t.hero.stats.map((s) => (
+              {t.hero.stats.map((s, i) => (
                 <div key={s.label}>
                   <div className="text-2xl font-bold text-white">
-                    {"value" in s ? s.value : <Tbc>{s.valueTbc}</Tbc>}
+                    {heroStatValues[i]}
                   </div>
                   <div className="text-xs text-white/50 mt-0.5">{s.label}</div>
                 </div>
@@ -383,29 +436,31 @@ export default function ProjectsContent() {
                 sizes="100vw"
               />
 
-              {/* Gradient: dark on the panel side */}
+              {/* Gradient: dark on the panel side. Text always sits on the
+                  left on mobile, so the scrim always darkens the left there
+                  too; it only moves to the right (for "right" projects) from
+                  sm and up, matching the alternating layout at that size. */}
               <div
-                className={`absolute inset-0 ${
-                  isLeft
-                    ? "bg-gradient-to-r from-black/80 via-black/40 to-transparent"
-                    : "bg-gradient-to-l from-black/80 via-black/40 to-transparent"
+                className={`absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent ${
+                  isLeft ? "" : "sm:bg-gradient-to-l"
                 }`}
               />
 
               {/* Project number — big faded design element */}
               <div
-                className={`absolute top-1/2 -translate-y-1/2 select-none pointer-events-none font-extrabold text-[160px] leading-none text-white/5 ${
-                  isLeft ? "left-4" : "right-4"
+                className={`absolute top-1/2 -translate-y-1/2 select-none pointer-events-none font-extrabold text-[160px] leading-none text-white/5 right-4 ${
+                  isLeft ? "sm:left-4 sm:right-auto" : ""
                 }`}
               >
                 {p.num}
               </div>
 
-              {/* Content panel */}
+              {/* Content panel — always left-aligned on mobile; alternates
+                  left/right from sm and up. */}
               <div className="absolute inset-0 flex items-center">
                 <div
-                  className={`w-full max-w-7xl mx-auto px-6 flex ${
-                    isLeft ? "justify-start" : "justify-end"
+                  className={`w-full max-w-7xl mx-auto px-6 flex justify-start ${
+                    isLeft ? "" : "sm:justify-end"
                   }`}
                 >
                   <div className="max-w-md w-full">
@@ -453,6 +508,12 @@ export default function ProjectsContent() {
                           {p.tCO2 ?? <Tbc>{p.tCO2Label}</Tbc>}
                         </div>
                         <div className="text-[10px] text-white/40 mt-0.5">{t.emissionRemovalsLabel}</div>
+                      </div>
+                      <div>
+                        <div className="text-xl font-bold text-white">
+                          {p.certification ?? <Tbc>{t.certificationLabel}</Tbc>}
+                        </div>
+                        <div className="text-[10px] text-white/40 mt-0.5">{t.certificationLabel}</div>
                       </div>
                     </div>
 
@@ -508,7 +569,7 @@ export default function ProjectsContent() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href="/develop/arr"
+                href="/advisory"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-accent text-forest-deeper text-sm font-bold rounded-xl hover:bg-accent-dark transition-colors"
               >
                 {t.develop.start} <ArrowRight className="w-4 h-4" />

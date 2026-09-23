@@ -20,7 +20,7 @@ const content = {
       cards: [
         { title: "For buyers", desc: "Enquire about available emission removal volumes and pricing.", cta: "Explore removals" },
         { title: "For investors", desc: "Request our fund documentation. Available to qualified and professional investors only.", cta: "Request documentation" },
-        { title: "For project developers", desc: "Submit your project for screening via GreenBranch OS, our project intake and diligence platform.", cta: "Go to GreenBranch OS" },
+        { title: "For other entities", desc: "Explore our advisory services and how we can support your project's development and certification, or your company's SBTi commitments.", cta: "Explore our advisory services" },
       ],
       grievanceCta: "File a grievance",
     },
@@ -35,7 +35,7 @@ const content = {
     },
     howCanWeHelp: {
       label: "How can we help?",
-      items: ["Buyers: volumes and pricing", "Investors: fund documentation", "Developers: project screening via GreenBranch OS"],
+      items: ["Buyers: volumes and pricing", "Investors: fund documentation", "Developers and landowners: support to project development, onboarding, and certification", "SBTi/FLAG company: support to meet your targets or manage your supply chain"],
     },
     success: {
       title: "Message sent!",
@@ -51,7 +51,8 @@ const content = {
       subjectOptions: [
         "Buyer: emission removal volumes and pricing",
         "Investor: fund documentation (qualified/professional only)",
-        "Project developer: submit a project via GreenBranch OS",
+        "Developer or landowner: project development, onboarding, and certification",
+        "SBTi/FLAG company: support to meet your targets or manage your supply chain",
         "Other",
       ],
       messageLabel: "Message *",
@@ -71,7 +72,7 @@ const content = {
       cards: [
         { title: "Para compradores", desc: "Consulte sobre volumes de remoções de emissão disponíveis e preços.", cta: "Explorar remoções" },
         { title: "Para investidores", desc: "Solicite nossa documentação de fundo. Disponível apenas para investidores qualificados e profissionais.", cta: "Solicitar documentação" },
-        { title: "Para desenvolvedores de projetos", desc: "Submeta seu projeto para triagem através da GreenBranch OS, nossa plataforma de captação e diligência de projetos.", cta: "Acessar a GreenBranch OS" },
+        { title: "Para outras entidades", desc: "Conheça nossos serviços de assessoria e como podemos apoiar o desenvolvimento e a certificação do seu projeto, ou os compromissos SBTi da sua empresa.", cta: "Conheça nossos serviços de assessoria" },
       ],
       grievanceCta: "Registrar uma reclamação",
     },
@@ -86,7 +87,7 @@ const content = {
     },
     howCanWeHelp: {
       label: "Como podemos ajudar?",
-      items: ["Compradores: volumes e preços", "Investidores: documentação de fundo", "Desenvolvedores: triagem de projetos via GreenBranch OS"],
+      items: ["Compradores: volumes e preços", "Investidores: documentação de fundo", "Desenvolvedores e proprietários de terra: apoio ao desenvolvimento, onboarding e certificação do projeto", "Empresas SBTi/FLAG: apoio para atingir suas metas ou gerenciar sua cadeia de suprimentos"],
     },
     success: {
       title: "Mensagem enviada!",
@@ -102,7 +103,8 @@ const content = {
       subjectOptions: [
         "Comprador: volumes de remoções de emissão e preços",
         "Investidor: documentação de fundo (somente qualificados/profissionais)",
-        "Desenvolvedor de projeto: submeter um projeto via GreenBranch OS",
+        "Desenvolvedor ou proprietário de terra: desenvolvimento, onboarding e certificação do projeto",
+        "Empresa SBTi/FLAG: apoio para atingir suas metas ou gerenciar sua cadeia de suprimentos",
         "Outro",
       ],
       messageLabel: "Mensagem *",
@@ -123,7 +125,7 @@ export default function ContactContent() {
     setSubmitted(true);
   };
 
-  const routeHrefs = ["/buy-removals", "mailto:hello@thegreenbranch.nl?subject=Fund%20documentation%20request", "/greenbranch-os"];
+  const routeHrefs = ["/buy-removals", "mailto:hello@thegreenbranch.nl?subject=Fund%20documentation%20request", "/advisory"];
 
   return (
     <>

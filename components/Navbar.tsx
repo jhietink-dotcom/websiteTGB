@@ -45,7 +45,7 @@ const navContent: Record<"en" | "pt", ReturnType<typeof buildLocale>> = {
       { label: "Our story", href: "/about#story", desc: "Who we are, our approach and milestones" },
       { label: "Team", href: "/about#team", desc: "The people behind The Green Branch" },
       { label: "Resources", href: "/about#resources", desc: "Information decks and guides" },
-      { label: "Our Tech", href: "/greenbranch-os", desc: "GreenBranch OS — our development and MRV platform" },
+      { label: "Our Tech", href: "/greenbranch-os", desc: "GreenBranch OS — our development and investor platforms" },
     ],
     navLabels: {
       develop: "What we do",
@@ -71,7 +71,7 @@ const navContent: Record<"en" | "pt", ReturnType<typeof buildLocale>> = {
       { label: "Nossa história", href: "/about#story", desc: "Quem somos, nossa abordagem e marcos" },
       { label: "Equipe", href: "/about#team", desc: "As pessoas por trás da Green Branch" },
       { label: "Recursos", href: "/about#resources", desc: "Apresentações e guias informativos" },
-      { label: "Nossa Tecnologia", href: "/greenbranch-os", desc: "GreenBranch OS — nossa plataforma de desenvolvimento e MRV" },
+      { label: "Nossa Tecnologia", href: "/greenbranch-os", desc: "GreenBranch OS — nossas plataformas de desenvolvimento e de investidores" },
     ],
     navLabels: {
       develop: "O que fazemos",

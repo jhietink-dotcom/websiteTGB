@@ -421,7 +421,6 @@ export default function ProjectsContent() {
 
         {/* ── PROJECT SECTIONS ────────────────────────────────── */}
         {projects.map((p) => {
-          const isLeft = p.align === "left";
           return (
             <section
               key={p.num}
@@ -436,33 +435,17 @@ export default function ProjectsContent() {
                 sizes="100vw"
               />
 
-              {/* Gradient: dark on the panel side. Text always sits on the
-                  left on mobile, so the scrim always darkens the left there
-                  too; it only moves to the right (for "right" projects) from
-                  sm and up, matching the alternating layout at that size. */}
-              <div
-                className={`absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent ${
-                  isLeft ? "" : "sm:bg-gradient-to-l"
-                }`}
-              />
+              {/* Gradient: dark on the left, where the text panel always sits */}
+              <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
 
               {/* Project number — big faded design element */}
-              <div
-                className={`absolute top-1/2 -translate-y-1/2 select-none pointer-events-none font-extrabold text-[160px] leading-none text-white/5 right-4 ${
-                  isLeft ? "sm:left-4 sm:right-auto" : ""
-                }`}
-              >
+              <div className="absolute top-1/2 -translate-y-1/2 select-none pointer-events-none font-extrabold text-[160px] leading-none text-white/5 right-4">
                 {p.num}
               </div>
 
-              {/* Content panel — always left-aligned on mobile; alternates
-                  left/right from sm and up. */}
+              {/* Content panel — always left-aligned */}
               <div className="absolute inset-0 flex items-center">
-                <div
-                  className={`w-full max-w-7xl mx-auto px-6 flex justify-start ${
-                    isLeft ? "" : "sm:justify-end"
-                  }`}
-                >
+                <div className="w-full max-w-7xl mx-auto px-6 flex justify-start">
                   <div className="max-w-md w-full">
                     {/* Top meta */}
                     <div className="flex items-center gap-3 mb-4">

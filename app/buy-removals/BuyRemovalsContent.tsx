@@ -4,18 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { LogoBar } from "@/components/LogoBar";
 import { ArrowRight, ArrowUpRight, CheckCircle2, Zap, Clock, Users, Target, Leaf, ChevronDown } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
-
-const partnerLogos = [
-  { name: "Rabobank" },
-  {},
-  {},
-  {},
-  {},
-  {},
-];
 
 const useCaseIcons = [Users, Target, Leaf];
 const methodologyPhotos = ["/img/DSCF9864.JPG", "/img/biochar.jpg"];
@@ -36,7 +26,6 @@ const content = {
       cta1: "Request pricing",
       cta2: "Schedule a call",
     },
-    logoBar: "Buyers & partners include",
     useCases: {
       eyebrow: "Built for your commitment",
       heading: "Whatever you are working towards.",
@@ -179,7 +168,6 @@ const content = {
       cta1: "Solicitar preços",
       cta2: "Agendar uma chamada",
     },
-    logoBar: "Compradores e parceiros incluem",
     useCases: {
       eyebrow: "Construído para o seu compromisso",
       heading: "Seja qual for o seu objetivo.",
@@ -361,9 +349,6 @@ export default function BuyRemovalsContent() {
             </div>
           </div>
         </section>
-
-        {/* Logo bar */}
-        <LogoBar label={t.logoBar} logos={partnerLogos} />
 
         {/* Use cases — borderless, airy */}
         <section className="py-24 bg-cream">

@@ -150,7 +150,7 @@ const content = {
         },
         {
           q: "What is a Sylvera rating and why does it matter?",
-          a: "Sylvera is an independent carbon-credit ratings agency that scores projects on quality, much as a credit rating scores a bond. A strong rating gives buyers third-party assurance — beyond certification — that a project will deliver what it claims. Our Sapucaia project holds an estimated Sylvera rating in the BBB–AA range.",
+          a: "Sylvera is an independent carbon-credit ratings agency that scores projects on quality, much as a credit rating scores a bond. A strong rating gives buyers third-party assurance — beyond certification — that a project will deliver what it claims.",
         },
         {
           q: "What is the difference between ARR and biochar?",
@@ -293,7 +293,7 @@ const content = {
         },
         {
           q: "O que é uma classificação Sylvera e por que ela importa?",
-          a: "A Sylvera é uma agência independente de rating de créditos de carbono que pontua projetos quanto à qualidade, da mesma forma que um rating de crédito avalia um título de dívida. Uma classificação forte dá aos compradores uma garantia de terceiros — além da certificação — de que um projeto entregará o que promete. Nosso projeto Sapucaia possui uma classificação Sylvera estimada na faixa BBB–AA.",
+          a: "A Sylvera é uma agência independente de rating de créditos de carbono que pontua projetos quanto à qualidade, da mesma forma que um rating de crédito avalia um título de dívida. Uma classificação forte dá aos compradores uma garantia de terceiros — além da certificação — de que um projeto entregará o que promete.",
         },
         {
           q: "Qual é a diferença entre ARR e biochar?",

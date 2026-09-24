@@ -123,7 +123,7 @@ const content = {
         certification: "Verra VCS&CCB",
         status: "Certified",
         description:
-          "A large-scale reforestation programme developed with Futuro Florestal, certified to VCS and CCB under methodology VM0047 and ABACUS validated. The project carries a Sylvera Estimated Rating of BBB–AA, restoring degraded land while generating high-integrity emission removals for local communities.",
+          "A large-scale reforestation programme developed with Futuro Florestal, certified to VCS and CCB under methodology VM0047 and ABACUS validated. The project restores degraded land while generating high-integrity emission removals for local communities.",
         partners: ["Futuro Florestal", "Verra (VCS + CCB)"],
       },
       {
@@ -199,7 +199,7 @@ const content = {
         certification: "Verra VCS&CCB",
         status: "Development",
         description:
-          "Miombo forest restoration co-designed with local Maasai communities and delivered with the Nature Restoration Company (NRC). Alley cropping supports local income while the project restores woodland and generates durable emission removals.",
+          "Miombo forest restoration co-designed with local Maasai communities and developed with the Nature Restoration Company (NRC). Alley cropping supports local income while the project restores woodland and generates durable emission removals.",
         partners: ["Nature Restoration Company (NRC)", "Local communities"],
       },
     ] satisfies ProjectText[],
@@ -249,7 +249,7 @@ const content = {
         certification: "Verra VCS&CCB",
         status: "Certificado",
         description:
-          "Um programa de reflorestamento em grande escala desenvolvido com a Futuro Florestal, certificado pelos padrões VCS e CCB sob a metodologia VM0047 e validado pela ABACUS. O projeto tem uma Classificação Estimada Sylvera de BBB–AA, restaurando terras degradadas e gerando remoções de emissão de alta integridade para as comunidades locais.",
+          "Um programa de reflorestamento em grande escala desenvolvido com a Futuro Florestal, certificado pelos padrões VCS e CCB sob a metodologia VM0047 e validado pela ABACUS. O projeto restaura terras degradadas e gera remoções de emissão de alta integridade para as comunidades locais.",
         partners: ["Futuro Florestal", "Verra (VCS + CCB)"],
       },
       {
@@ -325,7 +325,7 @@ const content = {
         certification: "Verra VCS&CCB",
         status: "Em desenvolvimento",
         description:
-          "Restauração de floresta Miombo co-desenhada com comunidades Maasai locais e realizada com a Nature Restoration Company (NRC). O cultivo em aleias apoia a renda local enquanto o projeto restaura a mata e gera remoções de emissão duráveis.",
+          "Restauração de floresta Miombo co-desenhada com comunidades Maasai locais e desenvolvida com a Nature Restoration Company (NRC). O cultivo em aleias apoia a renda local enquanto o projeto restaura a mata e gera remoções de emissão duráveis.",
         partners: ["Nature Restoration Company (NRC)", "Comunidades locais"],
       },
     ] satisfies ProjectText[],

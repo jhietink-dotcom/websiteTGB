@@ -137,7 +137,7 @@ const content = {
       headingLine2: "globally connected",
       allProjects: "All projects",
       items: [
-        { country: "Brazil · Bahia", ha: "VCS + CCB · Sylvera BBB–AA", status: "Certified", tag: "Large-scale reforestation" },
+        { country: "Brazil · Bahia", ha: "VCS + CCB", status: "Certified", tag: "Large-scale reforestation" },
         { country: "Brazil · Mato Grosso", ha: "10,000 ha offtake", status: "Development", tag: "With Rabobank" },
         { country: "Brazil · Rio Grande do Sul", ha: "Riparian restoration", status: "Development", tag: "Riparian Restoration" },
         { country: "Tanzania", ha: "Miombo restoration", status: "Development", tag: "ARR" },
@@ -219,7 +219,7 @@ const content = {
       headingLine2: "conectados globalmente",
       allProjects: "Todos os projetos",
       items: [
-        { country: "Brasil · Bahia", ha: "VCS + CCB · Sylvera BBB–AA", status: "Certificado", tag: "Reflorestamento em larga escala" },
+        { country: "Brasil · Bahia", ha: "VCS + CCB", status: "Certificado", tag: "Reflorestamento em larga escala" },
         { country: "Brasil · Mato Grosso", ha: "Offtake de 10.000 ha", status: "Em desenvolvimento", tag: "Com o Rabobank" },
         { country: "Brasil · Rio Grande do Sul", ha: "Restauração ciliar", status: "Em desenvolvimento", tag: "Restauração Ciliar" },
         { country: "Tanzânia", ha: "Restauração de miombo", status: "Em desenvolvimento", tag: "ARR" },

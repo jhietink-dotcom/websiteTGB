@@ -6,6 +6,14 @@ import Link from "next/link";
 import { InvestorGate } from "@/components/InvestorGate";
 import { ArrowRight, CheckCircle2, TreePine, Factory, TrendingUp } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
+import { PROJECT_COUNT } from "@/lib/projects";
+
+// Spelled-out project count, derived from the shared project list so this
+// page stays in sync with the Projects and Home pages.
+const countWord = {
+  en: ["Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten"][PROJECT_COUNT] ?? String(PROJECT_COUNT),
+  pt: ["Zero", "Um", "Dois", "Três", "Quatro", "Cinco", "Seis", "Sete", "Oito", "Nove", "Dez"][PROJECT_COUNT] ?? String(PROJECT_COUNT),
+};
 
 const content = {
   en: {
@@ -46,7 +54,7 @@ const content = {
     whyInvest: {
       eyebrow: "Why invest through The Green Branch",
       heading: "A track record, and a de-risked pipeline.",
-      p1: "Four projects developed, including Sapucaia (certified, independently rated by Sylvera) and Trees for Farmers (developed with Rabobank, selected by the Amazon Green Pledge RfP for a 10,000-hectare offtake).",
+      p1: `${countWord.en} projects developed, including Sapucaia (certified, independently rated by Sylvera) and Trees for Farmers (developed with Rabobank, selected by the Amazon Green Pledge RfP for a 10,000-hectare offtake).`,
       p2: "A pipeline of approximately 15 projects targeting more than 40 million tonnes of removals — every one screened, scored, and de-risked through the same stage-gate process.",
     },
     disclaimer: {
@@ -91,7 +99,7 @@ const content = {
     whyInvest: {
       eyebrow: "Por que investir com a Green Branch",
       heading: "Um histórico comprovado e um pipeline com risco reduzido.",
-      p1: "Quatro projetos desenvolvidos, incluindo Sapucaia (certificado, com classificação independente da Sylvera) e Trees for Farmers (desenvolvido com o Rabobank, selecionado pelo RfP do Amazon Green Pledge para um offtake de 10.000 hectares).",
+      p1: `${countWord.pt} projetos desenvolvidos, incluindo Sapucaia (certificado, com classificação independente da Sylvera) e Trees for Farmers (desenvolvido com o Rabobank, selecionado pelo RfP do Amazon Green Pledge para um offtake de 10.000 hectares).`,
       p2: "Um pipeline de aproximadamente 15 projetos visando mais de 40 milhões de toneladas de remoções — todos triados, avaliados e com risco reduzido pelo mesmo processo stage-gate.",
     },
     disclaimer: {

@@ -252,7 +252,7 @@ export function MRVMockup() {
             <div className="text-[9px] font-semibold text-white/60 mb-2">Project Health</div>
             {[
               { name: "Sapucaia", health: "green", pct: 96, ha: "4,800 ha" },
-              { name: "Serra do Sudeste", health: "green", pct: 91, ha: "2,200 ha" },
+              { name: "Trees for Farmers", health: "green", pct: 91, ha: "2,200 ha" },
               { name: "Suledo ARR", health: "amber", pct: 78, ha: "6,100 ha" },
             ].map((p) => (
               <div key={p.name} className="flex items-center gap-3 py-1.5 border-b border-white/5 last:border-0">
@@ -309,7 +309,7 @@ export function InvestorDashboardMockup() {
           </div>
           {[
             { proj: "Sapucaia", type: "Dev. Contribution", vol: "5,000 tCO₂", status: "Active", color: "text-[#4caf80]" },
-            { proj: "Serra do Sudeste", type: "Spot Credits", vol: "3,400 tCO₂", status: "Delivered", color: "text-white/50" },
+            { proj: "Trees for Farmers", type: "Forward Offtake", vol: "3,400 tCO₂", status: "Contracted", color: "text-[#FFB84D]" },
             { proj: "Suledo ARR", type: "ERPA 2026", vol: "4,000 tCO₂", status: "Contracted", color: "text-[#FFB84D]" },
           ].map((r) => (
             <div key={r.proj} className="grid grid-cols-4 gap-1 py-1.5 border-b border-white/5 last:border-0 text-[9px]">

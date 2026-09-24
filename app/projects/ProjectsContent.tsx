@@ -92,7 +92,7 @@ const content = {
       titleLine2: "meets capital.",
       lead: "A portfolio of high-integrity, nature-based emission removal projects across multiple regions — verified, traceable, and built to last.",
       stats: [
-        { value: "6" as string | null, label: "Projects" },
+        { value: "5" as string | null, label: "Projects" },
         { value: "2" as string | null, label: "Countries" },
         { value: null as string | null, label: "Hectares under restoration" },
         { value: null as string | null, label: "Emission removals" },
@@ -157,21 +157,6 @@ const content = {
         partners: [],
       },
       {
-        name: "Serra do Sudeste Landscape Restoration",
-        tagline: "Riparian & Atlantic Forest recovery",
-        region: "Rio Grande do Sul · Atlantic Forest / Pampa",
-        type: "Riparian Restoration",
-        ha: null,
-        haLabel: "project area",
-        tCO2: null,
-        tCO2Label: "removal estimate",
-        certification: null,
-        status: "Development",
-        description:
-          "Restoration of riparian forests and erosion-prone areas in the transition zone between the Atlantic Forest and Pampa biome, respecting natural grasslands while delivering measurable emission removals.",
-        partners: ["Local landowners", "Municipal partners"],
-      },
-      {
         name: "Abaetetuba Distributed Biochar",
         tagline: "Distributed biochar production with local farmers",
         region: "Abaetetuba · Pará",
@@ -205,9 +190,9 @@ const content = {
     ] satisfies ProjectText[],
     develop: {
       eyebrow: "Develop with us",
-      heading: "Have land or feedstock and an ARR or biochar project idea?",
+      heading: "Have an ARR or biochar project idea?",
       lead: "We partner with landowners, communities and organisations to develop the next generation of high-integrity, nature-based emission removal projects.",
-      start: "Explore our Advisory services",
+      start: "Explore our advisory services",
       talk: "Contact us",
     },
   },
@@ -218,7 +203,7 @@ const content = {
       titleLine2: "encontra o capital.",
       lead: "Um portfólio de projetos de remoção de emissões de base natural e alta integridade em múltiplas regiões — verificados, rastreáveis e construídos para durar.",
       stats: [
-        { value: "6" as string | null, label: "Projetos" },
+        { value: "5" as string | null, label: "Projetos" },
         { value: "2" as string | null, label: "Países" },
         { value: null as string | null, label: "Hectares em restauração" },
         { value: null as string | null, label: "Remoções de emissão" },
@@ -283,21 +268,6 @@ const content = {
         partners: [],
       },
       {
-        name: "Serra do Sudeste Landscape Restoration",
-        tagline: "Recuperação de matas ciliares e Mata Atlântica",
-        region: "Rio Grande do Sul · Mata Atlântica / Pampa",
-        type: "Restauração Ciliar",
-        ha: null,
-        haLabel: "área do projeto",
-        tCO2: null,
-        tCO2Label: "estimativa de remoção",
-        certification: null,
-        status: "Em desenvolvimento",
-        description:
-          "Restauração de matas ciliares e áreas suscetíveis à erosão na zona de transição entre a Mata Atlântica e o bioma Pampa, respeitando os campos nativos e gerando remoções de emissão mensuráveis.",
-        partners: ["Proprietários de terra locais", "Parceiros municipais"],
-      },
-      {
         name: "Abaetetuba Distributed Biochar",
         tagline: "Produção distribuída de biochar com agricultores locais",
         region: "Abaetetuba · Pará",
@@ -331,7 +301,7 @@ const content = {
     ] satisfies ProjectText[],
     develop: {
       eyebrow: "Desenvolva conosco",
-      heading: "Tem terra ou biomassa e uma ideia de projeto de ARR ou biochar?",
+      heading: "Tem uma ideia de projeto de ARR ou biochar?",
       lead: "Trabalhamos com proprietários de terra, comunidades e organizações para desenvolver a próxima geração de projetos de remoção de emissão de base natural e alta integridade.",
       start: "Conheça nossos serviços de assessoria",
       talk: "Fale conosco",

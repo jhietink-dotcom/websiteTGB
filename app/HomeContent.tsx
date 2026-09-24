@@ -53,10 +53,6 @@ const projectsBase = [
     photo: "/img/tff-DSCF8276.JPG",
   },
   {
-    name: "Serra do Sudeste Landscape Restoration",
-    photo: "/img/DSCF9831.JPG",
-  },
-  {
     name: "Suledo Community ARR Project",
     photo: "/img/DSCF9807.JPG",
   },
@@ -139,7 +135,6 @@ const content = {
       items: [
         { country: "Brazil · Bahia", ha: "VCS + CCB", status: "Certified", tag: "Large-scale reforestation" },
         { country: "Brazil · Mato Grosso", ha: "10,000 ha offtake", status: "Development", tag: "With Rabobank" },
-        { country: "Brazil · Rio Grande do Sul", ha: "Riparian restoration", status: "Development", tag: "Riparian Restoration" },
         { country: "Tanzania", ha: "Miombo restoration", status: "Development", tag: "ARR" },
         { country: "Brazil", ha: "200 kilns", status: "Development", tag: "Biochar" },
         { country: "Brazil · Pará", ha: "5,000+ ha", status: "Concept", tag: "ARR" },
@@ -221,7 +216,6 @@ const content = {
       items: [
         { country: "Brasil · Bahia", ha: "VCS + CCB", status: "Certificado", tag: "Reflorestamento em larga escala" },
         { country: "Brasil · Mato Grosso", ha: "Offtake de 10.000 ha", status: "Em desenvolvimento", tag: "Com o Rabobank" },
-        { country: "Brasil · Rio Grande do Sul", ha: "Restauração ciliar", status: "Em desenvolvimento", tag: "Restauração Ciliar" },
         { country: "Tanzânia", ha: "Restauração de miombo", status: "Em desenvolvimento", tag: "ARR" },
         { country: "Brasil", ha: "200 fornos", status: "Em desenvolvimento", tag: "Biochar" },
         { country: "Brasil · Pará", ha: "5.000+ ha", status: "Conceito", tag: "ARR" },
@@ -503,8 +497,8 @@ export default function HomeContent() {
                 ))}
               </div>
 
-              {projects.slice(3, 6).map((p) => (
-                <Link key={`bottom-${p.name}`} href="/projects" className="group relative h-56 rounded-2xl overflow-hidden">
+              {projects.slice(3, 6).map((p, i, bottom) => (
+                <Link key={`bottom-${p.name}`} href="/projects" className={`group relative h-56 rounded-2xl overflow-hidden ${bottom.length === 2 && i === 1 ? "col-span-2" : ""}`}>
                   <Image src={p.photo} alt={p.name} fill
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                     sizes="(max-width: 768px) 50vw, 33vw" />

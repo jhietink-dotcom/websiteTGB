@@ -27,6 +27,7 @@ type ProjectText = {
   haLabel: string;
   tCO2: string | null;
   tCO2Label: string;
+  tCO2Period?: string;
   certification: string | null;
   status: string;
   description: string;
@@ -62,12 +63,12 @@ function sumTco2(items: { tCO2: string | null }[], locale: Locale) {
   let total = 0;
   let approximate = false;
   for (const p of items) {
-    const m = p.tCO2?.match(/^([\d.,]+)\s*M/i);
+    const m = p.tCO2?.match(/^([\d.,]+)\s*([MK])/i);
     if (!m) {
       approximate = true;
       continue;
     }
-    total += parseLocaleNumber(m[1], locale) * 1_000_000;
+    total += parseLocaleNumber(m[1], locale) * (m[2].toUpperCase() === "M" ? 1_000_000 : 1_000);
     if (p.tCO2?.includes("+")) approximate = true;
   }
   return { total, approximate };
@@ -164,7 +165,8 @@ const content = {
         areaLabel: "Scale",
         ha: "200 kilns",
         haLabel: "scale",
-        tCO2: null,
+        tCO2: "130k+ tCO2e",
+        tCO2Period: "over the next 10 years",
         tCO2Label: "removal estimate",
         certification: "ISOMETRIC",
         status: "Development",
@@ -275,7 +277,8 @@ const content = {
         areaLabel: "Escala",
         ha: "200 fornos",
         haLabel: "escala",
-        tCO2: null,
+        tCO2: "130k+ tCO2e",
+        tCO2Period: "nos próximos 10 anos",
         tCO2Label: "estimativa de remoção",
         certification: "ISOMETRIC",
         status: "Em desenvolvimento",
@@ -461,6 +464,7 @@ export default function ProjectsContent() {
                           {p.tCO2 ?? <Tbc>{p.tCO2Label}</Tbc>}
                         </div>
                         <div className="text-[10px] text-white/40 mt-0.5">{t.emissionRemovalsLabel}</div>
+                        {p.tCO2Period && <div className="text-[10px] text-white/40">{p.tCO2Period}</div>}
                       </div>
                       <div>
                         <div className="text-xl font-bold text-white">

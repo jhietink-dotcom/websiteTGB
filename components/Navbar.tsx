@@ -38,14 +38,14 @@ const navContent: Record<"en" | "pt", ReturnType<typeof buildLocale>> = {
     ],
     services: [
       { label: "Advisory", href: "/advisory", desc: "Carbon strategy for buyers, developers and investors" },
-      { label: "Buy Carbon Credits", href: "/buy-removals", desc: "Spot, forward and offtake emission removals" },
+      { label: "Buy carbon credits", href: "/buy-removals", desc: "Spot, forward and offtake emission removals" },
       { label: "Invest", href: "/invest", desc: "Land Fund and Biochar Fund investment products" },
     ],
     about: [
       { label: "Our story", href: "/about#story", desc: "Who we are, our approach and milestones" },
       { label: "Team", href: "/about#team", desc: "The people behind The Green Branch" },
       { label: "Resources", href: "/about#resources", desc: "Information decks and guides" },
-      { label: "Our Tech", href: "/greenbranch-os", desc: "GreenBranch OS — our development and investor platforms" },
+      { label: "Our tech", href: "/greenbranch-os", desc: "GreenBranch OS — our development and investor platforms" },
     ],
     navLabels: {
       develop: "What we do",
@@ -64,14 +64,14 @@ const navContent: Record<"en" | "pt", ReturnType<typeof buildLocale>> = {
     ],
     services: [
       { label: "Assessoria", href: "/advisory", desc: "Estratégia de carbono para compradores, desenvolvedores e investidores" },
-      { label: "Comprar Créditos de Carbono", href: "/buy-removals", desc: "Remoções de emissão spot, forward e offtake" },
+      { label: "Comprar créditos de carbono", href: "/buy-removals", desc: "Remoções de emissão spot, forward e offtake" },
       { label: "Investir", href: "/invest", desc: "Produtos de investimento Land Fund e Biochar Fund" },
     ],
     about: [
       { label: "Nossa história", href: "/about#story", desc: "Quem somos, nossa abordagem e marcos" },
       { label: "Equipe", href: "/about#team", desc: "As pessoas por trás da Green Branch" },
       { label: "Recursos", href: "/about#resources", desc: "Apresentações e guias informativos" },
-      { label: "Nossa Tecnologia", href: "/greenbranch-os", desc: "GreenBranch OS — nossas plataformas de desenvolvimento e de investidores" },
+      { label: "Nossa tecnologia", href: "/greenbranch-os", desc: "GreenBranch OS — nossas plataformas de desenvolvimento e de investidores" },
     ],
     navLabels: {
       develop: "O que fazemos",

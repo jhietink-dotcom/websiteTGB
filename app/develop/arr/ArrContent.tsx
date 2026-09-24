@@ -62,7 +62,7 @@ const content = {
       eyebrow: "Como desenvolvemos projetos de reflorestamento",
       title: "De pastagem degradada a floresta certificada.",
       lead: "Desenvolvemos projetos de florestamento, reflorestamento e revegetação (ARR) por meio de um processo estruturado, com estágios (stage-gate). Cada etapa reduz o risco antes de o capital ser ampliado.",
-      cta1: "Obtenha serviços de consultoria para o seu projeto",
+      cta1: "Obtenha serviços de assessoria para o seu projeto",
       cta2: "Conheça as remoções do nosso portfólio de ARR",
     },
     why: {

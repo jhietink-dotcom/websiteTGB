@@ -23,7 +23,7 @@ const content = {
         label: "Our services",
         items: [
           { label: "Advisory", href: "/advisory" },
-          { label: "Buy Carbon Credits", href: "/buy-removals" },
+          { label: "Buy carbon credits", href: "/buy-removals" },
           { label: "Invest", href: "/invest" },
         ],
       },
@@ -41,7 +41,7 @@ const content = {
           { label: "Our story", href: "/about#story" },
           { label: "Team", href: "/about#team" },
           { label: "Resources", href: "/about#resources" },
-          { label: "Our Tech", href: "/greenbranch-os" },
+          { label: "Our tech", href: "/greenbranch-os" },
         ],
       },
       {
@@ -73,7 +73,7 @@ const content = {
         label: "Nossos serviços",
         items: [
           { label: "Assessoria", href: "/advisory" },
-          { label: "Comprar Créditos de Carbono", href: "/buy-removals" },
+          { label: "Comprar créditos de carbono", href: "/buy-removals" },
           { label: "Investir", href: "/invest" },
         ],
       },
@@ -91,7 +91,7 @@ const content = {
           { label: "Nossa história", href: "/about#story" },
           { label: "Equipe", href: "/about#team" },
           { label: "Recursos", href: "/about#resources" },
-          { label: "Nossa Tecnologia", href: "/greenbranch-os" },
+          { label: "Nossa tecnologia", href: "/greenbranch-os" },
         ],
       },
       {

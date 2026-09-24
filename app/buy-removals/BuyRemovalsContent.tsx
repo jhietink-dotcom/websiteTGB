@@ -60,7 +60,7 @@ const content = {
         ],
       },
       future: {
-        title: "Future Supply",
+        title: "Future supply",
         desc: "Forward delivery at a price locked in today, secured against projects already in development.",
         bullets: [
           "Price fixed now for future vintages — budget certainty",
@@ -203,7 +203,7 @@ const content = {
         ],
       },
       future: {
-        title: "Fornecimento Futuro",
+        title: "Fornecimento futuro",
         desc: "Entrega futura a um preço fixado hoje, garantida por projetos já em desenvolvimento.",
         bullets: [
           "Preço fixado agora para safras futuras — previsibilidade orçamentária",

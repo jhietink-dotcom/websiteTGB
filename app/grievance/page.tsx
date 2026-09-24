@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import GrievanceContent from "./GrievanceContent";
 
 export const metadata: Metadata = {
-  title: "Grievance Mechanism",
+  title: "Grievance mechanism",
   description: "The Green Branch grievance mechanism and forms.",
 };
 

@@ -19,12 +19,12 @@ const POLICY_LABEL = "Read our Feedback, Grievance, and Whistleblowing Policy";
 const content = {
   en: {
     eyebrow: "Accountability",
-    heading: "Grievance Mechanism",
+    heading: "Grievance mechanism",
     body: "We are committed to developing projects that respect the rights and interests of local communities. Our grievance mechanism provides a transparent, accessible channel for any stakeholder to raise concerns about our projects, and sets out how those concerns are received, investigated, and resolved.",
   },
   pt: {
     eyebrow: "Prestação de contas",
-    heading: "Mecanismo de Reclamação",
+    heading: "Mecanismo de reclamação",
     body: "Estamos comprometidos em desenvolver projetos que respeitem os direitos e interesses das comunidades locais. Nosso mecanismo de reclamação oferece um canal transparente e acessível para que qualquer parte interessada levante preocupações sobre nossos projetos, e estabelece como essas preocupações são recebidas, investigadas e resolvidas.",
   },
 };

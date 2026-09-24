@@ -2,8 +2,24 @@
 
 import { useEffect, useState } from "react";
 import { ShieldCheck, Lock } from "lucide-react";
+import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 const STORAGE_KEY = "tgb-investor-ack";
+
+const strings = {
+  en: {
+    heading: "For qualified investors only",
+    body: "This page describes opportunities available to qualified and professional investors only. Detailed terms are provided after registration and verification. Please confirm your status to continue.",
+    checkbox: "I confirm that I am a qualified or professional investor, and I understand that the information on the following page does not constitute an offer of securities or investment advice.",
+    button: "Confirm and continue",
+  },
+  pt: {
+    heading: "Somente para investidores qualificados",
+    body: "Esta página descreve oportunidades disponíveis apenas para investidores qualificados e profissionais. Os termos detalhados são fornecidos após cadastro e verificação. Confirme sua condição para continuar.",
+    checkbox: "Confirmo que sou um investidor qualificado ou profissional, e entendo que as informações na página a seguir não constituem uma oferta de valores mobiliários ou aconselhamento de investimento.",
+    button: "Confirmar e continuar",
+  },
+};
 
 /**
  * Soft, client-side qualified-investor gate. NOT access control — it gates the
@@ -12,11 +28,16 @@ const STORAGE_KEY = "tgb-investor-ack";
  * request stage (and must be reviewed by legal counsel before launch).
  */
 export function InvestorGate({ children }: { children: React.ReactNode }) {
+  const { locale } = useLanguage();
+  const t = strings[locale];
   const [acknowledged, setAcknowledged] = useState(false);
   const [checked, setChecked] = useState(false);
 
   useEffect(() => {
     try {
+      // Reading sessionStorage must wait until after mount to keep server and
+      // client markup identical on first paint (avoids a hydration mismatch).
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       if (sessionStorage.getItem(STORAGE_KEY) === "1") setAcknowledged(true);
     } catch {
       /* sessionStorage unavailable — remain gated */
@@ -42,9 +63,9 @@ export function InvestorGate({ children }: { children: React.ReactNode }) {
           <div className="w-12 h-12 rounded-xl bg-forest-muted flex items-center justify-center mb-6">
             <Lock className="w-5 h-5 text-forest" />
           </div>
-          <h2 className="text-2xl font-bold text-navy mb-3">For qualified investors only</h2>
+          <h2 className="text-2xl font-bold text-navy mb-3">{t.heading}</h2>
           <p className="text-ink-soft leading-relaxed mb-6">
-            This page describes opportunities available to qualified and professional investors only. Detailed terms are provided after registration and verification. Please confirm your status to continue.
+            {t.body}
           </p>
 
           <label className="flex items-start gap-3 rounded-xl border border-border bg-muted/60 p-4 cursor-pointer mb-6">
@@ -55,7 +76,7 @@ export function InvestorGate({ children }: { children: React.ReactNode }) {
               className="mt-0.5 h-4 w-4 accent-[#00965D] shrink-0"
             />
             <span className="text-sm text-ink-soft leading-relaxed">
-              I confirm that I am a qualified or professional investor, and I understand that the information on the following page does not constitute an offer of securities or investment advice.
+              {t.checkbox}
             </span>
           </label>
 
@@ -65,7 +86,7 @@ export function InvestorGate({ children }: { children: React.ReactNode }) {
             disabled={!checked}
             className="inline-flex items-center gap-2 px-6 py-3.5 bg-forest text-white text-sm font-bold rounded-xl hover:bg-forest-dark transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
           >
-            <ShieldCheck className="w-4 h-4" /> Confirm and continue
+            <ShieldCheck className="w-4 h-4" /> {t.button}
           </button>
         </div>
       </div>

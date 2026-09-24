@@ -1,44 +1,133 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { Mail, MapPin } from "lucide-react";
+import { useLanguage } from "@/lib/i18n/LanguageContext";
 
-const links = {
-  Develop: [
-    { label: "Reforestation (ARR)", href: "/develop/arr" },
-    { label: "Biochar", href: "/develop/biochar" },
-    { label: "Advisory", href: "/advisory" },
-  ],
-  Company: [
-    { label: "Buy Removals", href: "/buy-removals" },
-    { label: "Invest", href: "/invest" },
-    { label: "Projects", href: "/projects" },
-    { label: "Our Tech", href: "/greenbranch-os" },
-    { label: "About", href: "/about" },
-  ],
-  Legal: [
-    { label: "Contact", href: "/contact" },
-    { label: "Privacy policy", href: "/privacy" },
-    { label: "Grievance forms", href: "/grievance" },
-  ],
+const content = {
+  en: {
+    tagline: "A project developer of certified nature-based removal projects — restoring forests, producing durable removals, and structuring the capital that makes both possible.",
+    address: "Plantage Middenlaan 2c, 1018 DD Amsterdam",
+    groups: [
+      {
+        id: "develop",
+        label: "What we do",
+        items: [
+          { label: "Reforestation (ARR)", href: "/develop/arr" },
+          { label: "Biochar", href: "/develop/biochar" },
+        ],
+      },
+      {
+        id: "services",
+        label: "Our services",
+        items: [
+          { label: "Advisory", href: "/advisory" },
+          { label: "Buy carbon credits", href: "/buy-removals" },
+          { label: "Invest", href: "/invest" },
+        ],
+      },
+      {
+        id: "projects",
+        label: "Projects",
+        items: [
+          { label: "Projects", href: "/projects" },
+        ],
+      },
+      {
+        id: "about",
+        label: "About",
+        items: [
+          { label: "Our story", href: "/about#story" },
+          { label: "Team", href: "/about#team" },
+          { label: "Resources", href: "/about#resources" },
+          { label: "Our tech", href: "/greenbranch-os" },
+        ],
+      },
+      {
+        id: "contact",
+        label: "Contact",
+        items: [
+          { label: "Get in touch", href: "/contact" },
+          { label: "Grievance forms", href: "/grievance" },
+        ],
+      },
+    ],
+    rights: "© The Green Branch 2026. All Rights Reserved.",
+    locations: "Amsterdam · Brazil · Tanzania",
+  },
+  pt: {
+    tagline: "Uma desenvolvedora de projetos certificados de remoção de base natural — restaurando florestas, produzindo remoções duráveis e estruturando o capital que torna ambos possíveis.",
+    address: "Plantage Middenlaan 2c, 1018 DD Amsterdã",
+    groups: [
+      {
+        id: "develop",
+        label: "O que fazemos",
+        items: [
+          { label: "Reflorestamento (ARR)", href: "/develop/arr" },
+          { label: "Biochar", href: "/develop/biochar" },
+        ],
+      },
+      {
+        id: "services",
+        label: "Nossos serviços",
+        items: [
+          { label: "Assessoria", href: "/advisory" },
+          { label: "Comprar créditos de carbono", href: "/buy-removals" },
+          { label: "Investir", href: "/invest" },
+        ],
+      },
+      {
+        id: "projects",
+        label: "Projetos",
+        items: [
+          { label: "Projetos", href: "/projects" },
+        ],
+      },
+      {
+        id: "about",
+        label: "Sobre",
+        items: [
+          { label: "Nossa história", href: "/about#story" },
+          { label: "Equipe", href: "/about#team" },
+          { label: "Recursos", href: "/about#resources" },
+          { label: "Nossa tecnologia", href: "/greenbranch-os" },
+        ],
+      },
+      {
+        id: "contact",
+        label: "Contato",
+        items: [
+          { label: "Fale conosco", href: "/contact" },
+          { label: "Formulários de reclamação", href: "/grievance" },
+        ],
+      },
+    ],
+    rights: "© The Green Branch 2026. Todos os direitos reservados.",
+    locations: "Amsterdã · Brasil · Tanzânia",
+  },
 };
 
 export default function Footer() {
+  const { locale } = useLanguage();
+  const t = content[locale];
+
   return (
     <footer className="bg-forest-deeper text-white">
       <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 gap-12">
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link href="/" className="inline-flex items-center mb-4" aria-label="The Green Branch — home">
               <Image src="/logo-white.png" alt="The Green Branch" width={2895} height={640} className="h-8 w-auto" />
             </Link>
             <p className="text-sm text-white/60 leading-relaxed mb-6 max-w-xs">
-              A project developer of certified nature-based removal projects in Brazil — restoring forests, producing durable removals, and structuring the capital that makes both possible.
+              {t.tagline}
             </p>
             <div className="space-y-2 text-sm text-white/60">
               <div className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 mt-0.5 shrink-0 text-accent" />
-                <span>Plantage Middenlaan 2c, 1018 DD Amsterdam</span>
+                <span>{t.address}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 shrink-0 text-accent" />
@@ -56,12 +145,12 @@ export default function Footer() {
           </div>
 
           {/* Link columns */}
-          {Object.entries(links).map(([group, items]) => (
-            <div key={group}>
-              <div className="text-xs font-semibold uppercase tracking-widest text-white/40 mb-4">{group}</div>
+          {t.groups.map((group) => (
+            <div key={group.id}>
+              <div className="text-xs font-semibold uppercase tracking-widest text-white/40 mb-4">{group.label}</div>
               <ul className="space-y-2.5">
-                {items.map((item) => (
-                  <li key={item.label}>
+                {group.items.map((item) => (
+                  <li key={item.href}>
                     <Link href={item.href} className="text-sm text-white/60 hover:text-white transition-colors">
                       {item.label}
                     </Link>
@@ -73,8 +162,8 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-white/40">© The Green Branch 2026. All Rights Reserved.</p>
-          <p className="text-xs text-white/40">Amsterdam · Brazil · Tanzania · Ghana</p>
+          <p className="text-xs text-white/40">{t.rights}</p>
+          <p className="text-xs text-white/40">{t.locations}</p>
         </div>
       </div>
     </footer>

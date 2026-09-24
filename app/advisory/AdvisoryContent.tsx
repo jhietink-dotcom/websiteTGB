@@ -340,7 +340,7 @@ export default function AdvisoryContent() {
             <div className="text-xs font-semibold text-forest uppercase tracking-[0.2em] mb-3">{t.how.eyebrow}</div>
             <h2 className="text-4xl md:text-5xl font-extrabold text-navy mb-14 leading-[1.05]">{t.how.heading}</h2>
             <div className="relative grid md:grid-cols-3 gap-10">
-              <div className="hidden md:block absolute top-7 left-[16.66%] right-[16.66%] h-0.5 bg-forest/15" />
+              <div className="hidden md:block absolute top-[27px] left-7 right-[calc((100%_-_5rem)/3_-_1.75rem)] h-0.5 bg-forest/15" />
               {t.how.steps.map((s) => (
                 <div key={s.num} className="relative">
                   <div className="relative z-10 w-14 h-14 rounded-full bg-forest text-white flex items-center justify-center text-xl font-extrabold mb-5">{s.num}</div>

@@ -86,11 +86,10 @@ const content = {
       lead: "Agribusinesses, processors, mills and industrial operators with a steady stream of residue. We turn a cost into a durable carbon removal asset.",
       tgbTitle: "What we bring",
       tgbItems: [
-        { label: "Capital", desc: "Development funding deployed against milestones." },
         { label: "Technology", desc: "Proven pyrolysis, specified and built for your feedstock." },
         { label: "Certification", desc: "Methodology, registry, validation and verification." },
         { label: "MRV", desc: "Continuous production and chain of custody monitoring via GreenBranch OS." },
-        { label: "Buyers", desc: "Spot, forward and long term offtake through our buyer network." },
+        { label: "Capital", desc: "Access to our buyers and investors network." },
       ],
       partnerTitle: "What you bring",
       partnerItems: [
@@ -183,11 +182,10 @@ const content = {
       lead: "Agronegócios, processadoras, usinas e operadores industriais com um fluxo constante de resíduo. Transformamos um custo em um ativo durável de remoção de carbono.",
       tgbTitle: "O que nós trazemos",
       tgbItems: [
-        { label: "Capital", desc: "Financiamento de desenvolvimento alocado por marcos." },
         { label: "Tecnologia", desc: "Pirólise comprovada, especificada e construída para sua matéria-prima." },
         { label: "Certificação", desc: "Metodologia, registro, validação e verificação." },
         { label: "MRV", desc: "Monitoramento contínuo da produção e da cadeia de custódia via GreenBranch OS." },
-        { label: "Compradores", desc: "Spot, forward e offtake de longo prazo através da nossa rede de compradores." },
+        { label: "Capital", desc: "Acesso à nossa rede de compradores e investidores." },
       ],
       partnerTitle: "O que você traz",
       partnerItems: [

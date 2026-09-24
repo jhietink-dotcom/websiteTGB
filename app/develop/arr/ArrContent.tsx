@@ -21,7 +21,7 @@ const content = {
       eyebrow: "How we develop reforestation projects",
       title: "From degraded pasture to certified forest.",
       lead: "We develop afforestation, reforestation and revegetation (ARR) projects through a structured, stage-gated process. Each stage reduces risk before capital scales.",
-      cta1: "Submit a project for screening",
+      cta1: "Get advisory services for your project",
       cta2: "Explore removals from our ARR portfolio",
     },
     why: {
@@ -32,13 +32,13 @@ const content = {
     phases: {
       eyebrow: "Our process",
       heading: "Six stages, one disciplined process.",
-      intro: "We approach project opportunities through a structured, stage-gated process, from first screening to certification and MRV, to select feasible, high-quality projects to develop.",
+      intro: "We approach project opportunities through a structured, stage-gated process, from first screening to certification and MRV, to develop viable and high-quality projects.",
       items: [
         { num: "01", name: "Screening", desc: "Every project opportunity is assessed against our quality framework — eligibility, land tenure, additionality, and a first view of carbon potential. Only opportunities that clear the bar advance." },
         { num: "02", name: "Feasibility", desc: "We confirm the project stands on solid ground: land tenure and regulatory position, carbon modelling against conservative benchmarks, and financial viability — with an independent pre-issuance rating and field validation on site." },
-        { num: "03", name: "Design", desc: "We design the project around buyer, investor and certification requirements: CCP-approved methodologies, credible baselines, benefit sharing codesigned with local communities, and stakeholder consultations and Free, Prior, and Informed Consent done properly. The result is a project built to certify, issue and sell." },
+        { num: "03", name: "Design", desc: "We design the project around buyer, investor and certification requirements: CCP-approved methodologies, credible baselines, benefit sharing co-designed with local communities, and stakeholder consultations and Free, Prior, and Informed Consent done properly. The result is a project built to certify, issue and sell." },
         { num: "04", name: "Development", desc: "Registration, validation, nursery establishment, and planting with our local operational partners. Development capital is deployed against defined milestones." },
-        { num: "05", name: "Monitoring & technical support", desc: "Through GreenBranch OS, our proprietary platform, we combine satellite data with field measurement for continuous monitoring and adaptive management — and provide ongoing technical support to the project on the ground, for the full life of the project." },
+        { num: "05", name: "Monitoring & technical support", desc: "Through GreenBranch OS, our proprietary platform, we combine satellite data with field measurement for continuous monitoring and adaptive management — and provide ongoing technical support to the project on the ground, for the whole project lifetime." },
         { num: "06", name: "Finance & carbon sales", desc: "We structure the finance and commercialise the removals through our buyer network — spot, forward and long-term offtake — turning verified forest growth into issued, sold credits." },
       ],
     },
@@ -46,9 +46,9 @@ const content = {
       eyebrow: "Reference projects",
       heading: "Projects developed to the highest standards.",
       items: [
-        { detail: "VCS and CCB certified, VM0047, ABACUS validated. Sylvera Estimated Rating BBB–AA. Developed with Futuro Florestal." },
+        { detail: "VCS and CCB certified, VM0047, ABACUS validated. Developed with Futuro Florestal." },
         { detail: "Developed with Rabobank, implemented by Implantar. Selected by the Amazon Green Pledge RfP for a 10,000-hectare offtake agreement." },
-        { detail: "Miombo woodland restoration co-designed with local Maasai communities. Delivered with the Nature Restoration Company (NRC)." },
+        { detail: "Miombo woodland restoration co-designed with local Maasai communities. Developed with the Nature Restoration Company (NRC)." },
       ],
     },
     supportCta: {
@@ -62,7 +62,7 @@ const content = {
       eyebrow: "Como desenvolvemos projetos de reflorestamento",
       title: "De pastagem degradada a floresta certificada.",
       lead: "Desenvolvemos projetos de florestamento, reflorestamento e revegetação (ARR) por meio de um processo estruturado, com estágios (stage-gate). Cada etapa reduz o risco antes de o capital ser ampliado.",
-      cta1: "Envie um projeto para triagem",
+      cta1: "Obtenha serviços de consultoria para o seu projeto",
       cta2: "Conheça as remoções do nosso portfólio de ARR",
     },
     why: {
@@ -73,7 +73,7 @@ const content = {
     phases: {
       eyebrow: "Nosso processo",
       heading: "Seis etapas, um processo disciplinado.",
-      intro: "Abordamos as oportunidades de projeto por meio de um processo estruturado, com estágios (stage-gate), da triagem inicial até a certificação e o MRV, para selecionar projetos viáveis e de alta qualidade para desenvolver.",
+      intro: "Abordamos as oportunidades de projeto por meio de um processo estruturado, com estágios (stage-gate), da triagem inicial até a certificação e o MRV, para desenvolver projetos viáveis e de alta qualidade.",
       items: [
         { num: "01", name: "Triagem", desc: "Cada oportunidade de projeto é avaliada segundo nosso framework de qualidade — elegibilidade, posse fundiária, adicionalidade e uma primeira leitura do potencial de carbono. Somente as oportunidades que atingem o padrão avançam." },
         { num: "02", name: "Viabilidade", desc: "Confirmamos que o projeto está em bases sólidas: posse fundiária e situação regulatória, modelagem de carbono frente a parâmetros conservadores e viabilidade financeira — com uma classificação independente pré-emissão e validação de campo no local." },
@@ -87,9 +87,9 @@ const content = {
       eyebrow: "Projetos de referência",
       heading: "Projetos desenvolvidos com os mais altos padrões.",
       items: [
-        { detail: "Certificado pelos padrões VCS e CCB, VM0047, validado pelo ABACUS. Classificação Estimada Sylvera BBB–AA. Desenvolvido com a Futuro Florestal." },
+        { detail: "Certificado pelos padrões VCS e CCB, VM0047, validado pelo ABACUS. Desenvolvido com a Futuro Florestal." },
         { detail: "Desenvolvido com o Rabobank, implementado pela Implantar. Selecionado pelo RfP do Amazon Green Pledge para um acordo de offtake de 10.000 hectares." },
-        { detail: "Restauração de mata Miombo co-desenhada com comunidades Maasai locais. Realizada com a Nature Restoration Company (NRC)." },
+        { detail: "Restauração de mata Miombo co-desenhada com comunidades Maasai locais. Desenvolvida com a Nature Restoration Company (NRC)." },
       ],
     },
     supportCta: {
@@ -121,7 +121,7 @@ export default function ArrContent() {
                 {t.hero.lead}
               </p>
               <div className="flex flex-wrap gap-3">
-                <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 bg-accent text-forest-deeper text-sm font-bold rounded-xl hover:bg-accent-dark transition-colors">
+                <Link href="/advisory" className="inline-flex items-center gap-2 px-6 py-3.5 bg-accent text-forest-deeper text-sm font-bold rounded-xl hover:bg-accent-dark transition-colors">
                   {t.hero.cta1} <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link href="/buy-removals" className="inline-flex items-center gap-2 px-6 py-3.5 bg-white/10 text-white text-sm font-semibold rounded-xl hover:bg-white/15 transition-colors border border-white/15">

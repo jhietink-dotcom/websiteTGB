@@ -64,9 +64,9 @@ const content = {
       eyebrow: "Why we built it",
       heading: "Integrity at every layer",
       p1: "The credibility problem in the carbon market stems from opacity. Projects make claims; verification is expensive and infrequent; buyers cannot see what they are buying. GreenBranch OS is our answer to that.",
-      p2: "By managing the entire development lifecycle — and giving partners, buyers, and investors standing access to the data — we create a level of traceability that doesn't exist elsewhere. Every project in our portfolio is logged, timestamped, and open to audit, end to end.",
+      p2: "By managing the entire development lifecycle — and giving partners, buyers, and investors standing access to the data — we create a level of traceability that doesn't exist elsewhere. Every project in our portfolio is logged, time-stamped, and open to audit, end to end.",
       features: [
-        { label: "Auditable by design", desc: "Every action logged and timestamped" },
+        { label: "Auditable by design", desc: "Every action logged and time-stamped" },
         { label: "Data-driven decisions", desc: "Stage gates backed by verified data" },
         { label: "Scalable infrastructure", desc: "Built to manage a growing portfolio" },
         { label: "Investor grade", desc: "Documentation ready for institutional buyers" },

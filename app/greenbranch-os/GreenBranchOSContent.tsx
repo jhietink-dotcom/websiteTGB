@@ -181,8 +181,10 @@ export default function GreenBranchOSContent() {
       <main className="flex-1 pt-16">
 
         {/* Hero */}
-        <section className="bg-forest-deeper py-24 overflow-hidden">
-          <div className="max-w-7xl mx-auto px-6">
+        <section className="relative bg-forest-deeper py-24 overflow-hidden">
+          <Image src="/img/tech-map.jpg" alt="" fill priority sizes="100vw" className="object-cover opacity-55" />
+          <div className="absolute inset-0 bg-forest-deeper/40" />
+          <div className="relative max-w-7xl mx-auto px-6">
             <div className="max-w-3xl">
               <div className="text-xs font-semibold text-accent uppercase tracking-widest mb-4">{t.hero.eyebrow}</div>
               <h1 className="text-5xl font-bold text-white mb-6 leading-tight">

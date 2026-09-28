@@ -333,16 +333,16 @@ export default function ProjectsContent() {
         {/* ── HERO ───────────────────────────────────────────── */}
         <section className="relative h-screen min-h-[600px] flex flex-col justify-end overflow-hidden">
           <Image
-            src="/img/DSCF9818.JPG"
-            alt="Field team at a reforestation site"
+            src="/img/projects-hero.jpg"
+            alt="Aerial view of a reforestation landscape"
             fill
             className="object-cover"
             sizes="100vw"
             priority
           />
           {/* Gradient overlays */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/20" />
-          <div className="absolute inset-0 bg-gradient-to-r from-forest-deeper/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/10" />
+          <div className="absolute inset-0 bg-gradient-to-r from-forest-deeper/30 to-transparent" />
 
           {/* Content */}
           <div className="relative z-10 max-w-7xl mx-auto w-full px-6 pb-16">

@@ -9,9 +9,9 @@ import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 const referencesBase = [
-  { name: "Sapucaia Sustainable Forests", location: "Bahia", photo: "/img/DSCF9854.JPG" },
+  { name: "Sapucaia Sustainable Forests", location: "Bahia", photo: "/img/sapucaia-drone.jpg" },
   { name: "Trees for Farmers", location: "Mato Grosso", photo: "/img/tff-DSCF8276.JPG" },
-  { name: "Suledo Community ARR Project", location: "Kiteto District, Tanzania", photo: "/img/DSCF9797.JPG" },
+  { name: "Suledo Community ARR Project", location: "Kiteto District, Tanzania", photo: "/img/suledo-community.jpg" },
 ];
 
 const content = {
@@ -111,8 +111,8 @@ export default function ArrContent() {
       <main className="flex-1 pt-16">
         {/* Hero */}
         <section className="relative bg-forest-deeper py-28 overflow-hidden">
-          <Image src="/img/DSCF9818.JPG" alt="" fill priority className="object-cover opacity-25" />
-          <div className="absolute inset-0 bg-forest-deeper/60" />
+          <Image src="/img/arr-hero.jpg" alt="" fill priority className="object-cover opacity-55" />
+          <div className="absolute inset-0 bg-forest-deeper/40" />
           <div className="relative max-w-7xl mx-auto px-6">
             <div className="max-w-3xl">
               <div className="text-xs font-semibold text-accent uppercase tracking-[0.2em] mb-4">{t.hero.eyebrow}</div>

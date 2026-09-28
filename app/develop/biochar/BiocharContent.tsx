@@ -216,8 +216,8 @@ export default function BiocharContent() {
       <main className="flex-1 pt-16">
         {/* Hero */}
         <section className="relative bg-forest-deeper py-28 overflow-hidden">
-          <Image src="/img/DSCF0278.JPG" alt="" fill priority className="object-cover opacity-25" />
-          <div className="absolute inset-0 bg-forest-deeper/60" />
+          <Image src="/img/biochar-hero.jpg" alt="" fill priority className="object-cover opacity-55" />
+          <div className="absolute inset-0 bg-forest-deeper/40" />
           <div className="relative max-w-7xl mx-auto px-6">
             <div className="max-w-2xl">
               <div className="text-xs font-semibold text-accent uppercase tracking-widest mb-4">{t.hero.eyebrow}</div>

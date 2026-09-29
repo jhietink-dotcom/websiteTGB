@@ -13,7 +13,8 @@ const whyIcons = [Shield, BarChart3, Globe, Lock];
 
 const moduleMeta = [
   { id: "development", number: "01", image: "/img/os-development.png", w: 752, h: 321 },
-  { id: "dashboard", number: "02", image: "/img/os-dashboard-hd.png", w: 1885, h: 892 },
+  { id: "mrv", number: "02", image: "/img/os-mrv.png", w: 752, h: 377 },
+  { id: "dashboard", number: "03", image: "/img/os-dashboard-hd.png", w: 1885, h: 892 },
 ];
 
 const content = {
@@ -21,11 +22,11 @@ const content = {
     hero: {
       eyebrow: "Our Tech",
       heading: "One platform from origination to issuance.",
-      lead: "GreenBranch OS is our proprietary platform, unifying project development and commercialisation in a single environment — so we move faster and give buyers and investors direct visibility into the work.",
+      lead: "GreenBranch OS is our proprietary platform, unifying project development, MRV, and commercialisation in a single environment — so we move faster and give buyers and investors direct visibility into the work.",
       ctaSecondary: "Access as a buyer",
     },
     overview: [
-      { label: "2 integrated modules", desc: "Development and Investor & buyer dashboard" },
+      { label: "3 integrated modules", desc: "Development, MRV, and Investor & buyer dashboard" },
       { label: "Single source of truth", desc: "All project data in one environment" },
       { label: "Origination to issuance", desc: "One workflow across the full lifecycle" },
       { label: "Role-based access", desc: "Teams, partners, and buyers" },
@@ -43,6 +44,20 @@ const content = {
           "Standardised stage-gate process from screening to MRV",
           "Carbon certification compliant templates for each phase and deliverable",
           "Full audit trail with no information lost between phases",
+        ],
+      },
+      {
+        title: "MRV",
+        tagline: "Continuous monitoring. Verifiable results.",
+        description:
+          "We apply GIS, remote sensing, field measurements, and AI-supported analysis to track key project indicators — combining satellite data with on-the-ground assessments for continuous monitoring, reliable verification, and transparent reporting. This is what converts forest growth into issued removals that stand up to audit.",
+        features: [
+          "GIS and remote sensing across the project area",
+          "Field measurements combined with satellite data",
+          "AI-supported analysis of key project indicators",
+          "Continuous monitoring throughout the project lifecycle",
+          "Reliable verification and transparent reporting",
+          "Forest growth converted into issued emission removals",
         ],
       },
       {
@@ -82,11 +97,11 @@ const content = {
     hero: {
       eyebrow: "Nossa Tecnologia",
       heading: "Uma única plataforma da originação à emissão.",
-      lead: "A GreenBranch OS é nossa plataforma proprietária, que unifica o desenvolvimento de projetos e a comercialização em um único ambiente — para avançarmos mais rápido e dar a compradores e investidores visibilidade direta do trabalho.",
+      lead: "A GreenBranch OS é nossa plataforma proprietária, que unifica o desenvolvimento de projetos, o MRV e a comercialização em um único ambiente — para avançarmos mais rápido e dar a compradores e investidores visibilidade direta do trabalho.",
       ctaSecondary: "Acessar como comprador",
     },
     overview: [
-      { label: "2 módulos integrados", desc: "Desenvolvimento e Painel de investidores e compradores" },
+      { label: "3 módulos integrados", desc: "Desenvolvimento, MRV e Painel de investidores e compradores" },
       { label: "Fonte única de verdade", desc: "Todos os dados do projeto em um único ambiente" },
       { label: "Da originação à emissão", desc: "Um único fluxo de trabalho em todo o ciclo de vida" },
       { label: "Acesso baseado em função", desc: "Equipes, parceiros e compradores" },
@@ -104,6 +119,20 @@ const content = {
           "Processo stage-gate padronizado, da triagem ao MRV",
           "Modelos em conformidade com certificação de carbono para cada fase e entregável",
           "Trilha de auditoria completa, sem perda de informação entre as fases",
+        ],
+      },
+      {
+        title: "MRV",
+        tagline: "Monitoramento contínuo. Resultados verificáveis.",
+        description:
+          "Aplicamos SIG, sensoriamento remoto, medições de campo e análises com suporte de IA para acompanhar os principais indicadores do projeto — combinando dados de satélite com avaliações em campo para monitoramento contínuo, verificação confiável e relatórios transparentes. É isso que converte o crescimento florestal em remoções emitidas capazes de resistir a uma auditoria.",
+        features: [
+          "SIG e sensoriamento remoto em toda a área do projeto",
+          "Medições de campo combinadas com dados de satélite",
+          "Análise com suporte de IA dos principais indicadores do projeto",
+          "Monitoramento contínuo ao longo de todo o ciclo de vida do projeto",
+          "Verificação confiável e relatórios transparentes",
+          "Crescimento florestal convertido em remoções de emissão emitidas",
         ],
       },
       {

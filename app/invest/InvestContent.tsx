@@ -3,6 +3,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import Image from "next/image";
 import { InvestorGate } from "@/components/InvestorGate";
 import { ArrowRight, CheckCircle2, TreePine, Factory, TrendingUp } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
@@ -19,7 +20,8 @@ const content = {
   en: {
     hero: {
       eyebrow: "Invest",
-      h1: "Invest where removals begin.",
+      titleLine1: "Invest where",
+      titleLine2: "removals begin.",
       lead: "The Green Branch structures investment products at the foundation of the removals market: the land that grows the forests, and the facilities that produce durable carbon. Two products, one development discipline.",
     },
     landFund: {
@@ -64,7 +66,8 @@ const content = {
   pt: {
     hero: {
       eyebrow: "Investir",
-      h1: "Invista onde as remoções começam.",
+      titleLine1: "Invista onde as",
+      titleLine2: "remoções começam.",
       lead: "A Green Branch estrutura produtos de investimento na base do mercado de remoções: a terra que faz crescer as florestas, e as instalações que produzem carbono durável. Dois produtos, uma mesma disciplina de desenvolvimento.",
     },
     landFund: {
@@ -115,16 +118,23 @@ export default function InvestContent() {
   return (
     <>
       <Navbar />
-      <main className="flex-1 pt-16">
+      <main className="flex-1">
 
-        {/* Hero (ungated) */}
-        <section className="bg-forest-deeper py-24">
-          <div className="max-w-3xl mx-auto px-6">
-            <div className="text-xs font-semibold text-accent uppercase tracking-widest mb-4">{t.hero.eyebrow}</div>
-            <h1 className="text-5xl font-bold text-white mb-6 leading-tight">{t.hero.h1}</h1>
-            <p className="text-lg text-white/60 leading-relaxed">
-              {t.hero.lead}
-            </p>
+        {/* Hero (ungated) — full-bleed photo with dark-green overlay */}
+        <section className="relative min-h-[88vh] flex items-end overflow-hidden">
+          <Image src="/img/invest-hero.jpg" alt="Young reforestation trees at the forest edge" fill priority sizes="100vw" className="object-cover object-center" />
+          <div className="absolute inset-0 bg-gradient-to-t from-forest-deeper/80 via-forest-deeper/45 to-forest-deeper/20" />
+          <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pb-20 pt-32">
+            <div className="max-w-3xl">
+              <div className="text-xs font-semibold text-accent uppercase tracking-[0.2em] mb-5">{t.hero.eyebrow}</div>
+              <h1 className="text-6xl md:text-7xl lg:text-8xl font-extrabold text-white leading-[1.05] tracking-tight mb-5">
+                {t.hero.titleLine1}<br />{t.hero.titleLine2}
+              </h1>
+              <div className="h-1 w-20 bg-accent rounded-full mb-6" />
+              <p className="text-lg text-white/75 leading-relaxed max-w-2xl">
+                {t.hero.lead}
+              </p>
+            </div>
           </div>
         </section>
 

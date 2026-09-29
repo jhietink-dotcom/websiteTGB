@@ -27,6 +27,9 @@ const teamBase = [
   { name: "Cristina Marini" },
   { name: "Bruna Franchi" },
   { name: "Alexandre Kampel" },
+  { name: "Jairo Okret" },
+  { name: "Reinier Hietink" },
+  { name: "Rein Vehmeijer" },
 ];
 
 const resourceIcons = [BookOpen, TreePine, Factory, Package, Landmark, MapPin];
@@ -111,6 +114,9 @@ const content = {
         "ESG and NBS Analyst – Africa Lead",
         "GIS Analyst",
         "Investment Analyst",
+        "Senior Advisor",
+        "Senior Advisor",
+        "Senior Advisor",
       ],
     },
     resources: {
@@ -214,6 +220,9 @@ const content = {
         "Analista de ESG e SBN – Líder para África",
         "Analista de SIG",
         "Analista de Investimentos",
+        "Consultor Sênior",
+        "Consultor Sênior",
+        "Consultor Sênior",
       ],
     },
     resources: {
@@ -252,12 +261,12 @@ export default function AboutContent() {
 
         {/* ── HERO ───────────────────────────────────────────── */}
         <section className="relative h-screen min-h-[600px] flex flex-col justify-end overflow-hidden">
-          <Image src="/img/DSCF0278.JPG" alt="The Green Branch team" fill className="object-cover object-top" sizes="100vw" priority />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10" />
-          <div className="absolute inset-0 bg-gradient-to-r from-forest-deeper/50 to-transparent" />
+          <Image src="/img/about-hero.jpg" alt="The Green Branch team" fill className="object-cover object-top" sizes="100vw" priority />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/5" />
+          <div className="absolute inset-0 bg-gradient-to-r from-forest-deeper/40 to-transparent" />
           <div className="relative z-10 max-w-7xl mx-auto w-full px-6 pb-16">
             <div className="text-xs font-semibold text-accent uppercase tracking-widest mb-5">{t.hero.eyebrow}</div>
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-white leading-[1.05] mb-6 max-w-3xl">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-white leading-[1.15] tracking-tight mb-6 max-w-3xl">
               {t.hero.titleLine1}<br />
               <span className="text-accent">{t.hero.titleLine2}</span>
             </h1>
@@ -294,8 +303,8 @@ export default function AboutContent() {
                   ))}
                 </div>
               </div>
-              <div className="relative h-[480px] rounded-2xl overflow-hidden">
-                <Image src="/img/DSCF9864.JPG" alt="Field monitoring in project area" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
+              <div className="relative w-full max-w-[480px] mx-auto aspect-[15/16] rounded-2xl overflow-hidden">
+                <Image src="/img/about-who.jpg" alt="Walking through rows of young reforestation trees" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
                 <div className="absolute inset-0 bg-gradient-to-t from-forest-deeper/50 to-transparent" />
                 <div className="absolute bottom-5 left-5 right-5">
                   <p className="text-xs text-white/60 italic">{t.whoWeAre.caption}</p>
@@ -324,8 +333,8 @@ export default function AboutContent() {
           {/* Approach */}
           <section className="py-24 bg-white">
             <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
-              <div className="relative h-[420px] rounded-2xl overflow-hidden lg:order-first order-last">
-                <Image src="/img/DSCF9807.JPG" alt="Team walking through restoration site at golden hour" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
+              <div className="relative w-full max-w-[480px] mx-auto aspect-[15/16] rounded-2xl overflow-hidden lg:order-first order-last">
+                <Image src="/img/about-approach.jpg" alt="Hands on the bark of a mature tree" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
                 <div className="absolute inset-0 bg-gradient-to-t from-forest-deeper/40 to-transparent" />
               </div>
               <div>

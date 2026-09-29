@@ -8,7 +8,7 @@ import { ArrowRight, ArrowUpRight, CheckCircle2, Zap, Clock, Users, Target, Leaf
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 const useCaseIcons = [Users, Target, Leaf];
-const methodologyPhotos = ["/img/DSCF9864.JPG", "/img/biochar.jpg"];
+const methodologyPhotos = ["/img/arr-aerial.jpg", "/img/biochar.jpg"];
 
 const platformMeta: { image?: string; w?: number; h?: number }[] = [
   { image: "/img/terrahub-portfolio.png", w: 1600, h: 592 },
@@ -324,9 +324,8 @@ export default function BuyRemovalsContent() {
 
         {/* Hero — full-bleed photo with dark-green overlay */}
         <section className="relative min-h-[88vh] flex items-end overflow-hidden">
-          <Image src="/img/DSCF9797.JPG" alt="Restored forest landscape" fill priority sizes="100vw" className="object-cover object-center" />
-          <div className="absolute inset-0 bg-gradient-to-t from-forest-deeper via-forest-deeper/75 to-forest-deeper/40" />
-          <div className="absolute inset-0 bg-forest-deeper/20" />
+          <Image src="/img/buy-removals-hero.jpg" alt="Restored forest landscape" fill priority sizes="100vw" className="object-cover object-center" />
+          <div className="absolute inset-0 bg-gradient-to-t from-forest-deeper/80 via-forest-deeper/45 to-forest-deeper/20" />
           <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pb-20 pt-32">
             <div className="max-w-3xl">
               <div className="text-xs font-semibold text-accent uppercase tracking-[0.2em] mb-5">{t.hero.eyebrow}</div>

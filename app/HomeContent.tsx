@@ -32,12 +32,12 @@ const activitiesBase = [
   },
   {
     href: "/buy-removals",
-    img: "/img/DSCF9797.JPG",
+    img: "/img/buy-removals-forest.jpg",
     alt: "Emission removals for corporate buyers",
   },
   {
     href: "/invest",
-    img: "/img/DSCF9873.JPG",
+    img: "/img/invest-seedling.jpg",
     alt: "Investment in land and industrial biochar",
   },
 ];
@@ -45,7 +45,7 @@ const activitiesBase = [
 const projectsBase = [
   {
     name: "Sapucaia Sustainable Forests",
-    photo: "/img/DSCF9854.JPG",
+    photo: "/img/sapucaia-drone.jpg",
     featured: true,
   },
   {
@@ -54,7 +54,7 @@ const projectsBase = [
   },
   {
     name: "Suledo Community ARR Project",
-    photo: "/img/DSCF9807.JPG",
+    photo: "/img/suledo-community.jpg",
   },
   {
     name: "Abaetetuba Distributed Biochar",
@@ -272,8 +272,8 @@ export default function HomeContent() {
             priority
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-black/80" />
-          <div className="absolute inset-0 bg-forest-deeper/30" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/5 to-black/70" />
+          <div className="absolute inset-0 bg-forest-deeper/20" />
 
           <div className="relative z-10 max-w-7xl mx-auto px-6 pb-20 w-full">
             <div className="max-w-4xl">
@@ -422,7 +422,7 @@ export default function HomeContent() {
                 >
                   <div className="relative h-[220px] shrink-0">
                     <Image src={a.img} alt={a.alt} fill sizes="(max-width:768px) 100vw, 33vw" className="object-cover" />
-                    <div className="absolute inset-0 bg-[#206042]/[0.28]" />
+                    <div className="absolute inset-0 bg-[#206042]/[0.05]" />
                     <span className="absolute top-4 left-4 inline-flex items-center rounded-full bg-[#206042] px-3.5 py-1.5 text-[11px] font-semibold text-white">
                       {a.tag}
                     </span>
@@ -550,13 +550,13 @@ export default function HomeContent() {
         {/* ── Field team photo ── */}
         <section className="relative h-[500px] overflow-hidden">
           <Image
-            src="/img/tff-DSCF6366.JPG"
+            src="/img/field-team.jpg"
             alt="The Green Branch team in the field"
             fill
             className="object-cover object-center"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-forest-deeper/80 via-forest-deeper/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-forest-deeper/60 via-forest-deeper/25 to-transparent" />
           <div className="absolute inset-0 flex items-center">
             <div className="max-w-7xl mx-auto px-6">
               <div className="max-w-lg">

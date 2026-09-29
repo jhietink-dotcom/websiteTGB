@@ -239,8 +239,7 @@ export default function AdvisoryContent() {
         {/* Hero — full-bleed photo */}
         <section className="relative min-h-[82vh] flex items-end overflow-hidden">
           <Image src="/img/DSCF9818.JPG" alt="The Green Branch team in the field" fill priority sizes="100vw" className="object-cover object-center" />
-          <div className="absolute inset-0 bg-gradient-to-t from-forest-deeper via-forest-deeper/75 to-forest-deeper/40" />
-          <div className="absolute inset-0 bg-forest-deeper/20" />
+          <div className="absolute inset-0 bg-gradient-to-t from-forest-deeper/80 via-forest-deeper/45 to-forest-deeper/20" />
           <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pb-20 pt-32">
             <div className="max-w-3xl">
               <div className="text-xs font-semibold text-accent uppercase tracking-[0.2em] mb-5">{t.hero.eyebrow}</div>

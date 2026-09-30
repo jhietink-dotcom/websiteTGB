@@ -440,15 +440,15 @@ export default function HomeContent() {
                         <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                       </Link>
                     ) : (
-                      <div className="mt-auto flex flex-wrap gap-3">
+                      <div className="mt-auto flex flex-wrap gap-x-8 gap-y-3">
                         {a.hrefs.map((href, j) => (
                           <Link
                             key={href}
                             href={href}
-                            className="inline-flex items-center gap-2 px-5 py-2.5 bg-forest text-white text-sm font-bold rounded-xl hover:bg-forest-dark transition-colors"
+                            className="group/link inline-flex items-center gap-2 text-sm font-bold text-forest"
                           >
                             {a.links[j]}
-                            <ArrowUpRight className="w-4 h-4" />
+                            <ArrowUpRight className="w-4 h-4 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
                           </Link>
                         ))}
                       </div>

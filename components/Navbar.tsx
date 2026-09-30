@@ -60,18 +60,18 @@ const navContent: Record<"en" | "pt", ReturnType<typeof buildLocale>> = {
   pt: buildLocale({
     develop: [
       { label: "Reflorestamento (ARR)", href: "/develop/arr", desc: "De pastagem degradada a floresta certificada" },
-      { label: "Biochar", href: "/develop/biochar", desc: "Remoção durável, medida em séculos" },
+      { label: "Biochar", href: "/develop/biochar", desc: "Remoção de carbono que dura séculos" },
     ],
     services: [
       { label: "Assessoria", href: "/advisory", desc: "Estratégia de carbono para compradores, desenvolvedores e investidores" },
-      { label: "Comprar créditos de carbono", href: "/buy-removals", desc: "Remoções de emissão spot, forward e offtake" },
-      { label: "Investir", href: "/invest", desc: "Produtos de investimento Land Fund e Biochar Fund" },
+      { label: "Comprar créditos de carbono", href: "/buy-removals", desc: "Créditos de remoção: spot, forward e offtake" },
+      { label: "Investir", href: "/invest", desc: "Nossos fundos de investimento: Land Fund e Biochar Fund" },
     ],
     about: [
-      { label: "Nossa história", href: "/about#story", desc: "Quem somos, nossa abordagem e marcos" },
+      { label: "Nossa história", href: "/about#story", desc: "Quem somos, nossa abordagem e nossa trajetória" },
       { label: "Equipe", href: "/about#team", desc: "As pessoas por trás da Green Branch" },
-      { label: "Recursos", href: "/about#resources", desc: "Apresentações e guias informativos" },
-      { label: "Nossa tecnologia", href: "/greenbranch-os", desc: "GreenBranch OS — nossas plataformas de desenvolvimento e de investidores" },
+      { label: "Recursos", href: "/about#resources", desc: "Apresentações e guias" },
+      { label: "Nossa tecnologia", href: "/greenbranch-os", desc: "GreenBranch OS — nossa plataforma de desenvolvimento e para investidores" },
     ],
     navLabels: {
       develop: "O que fazemos",
@@ -81,7 +81,7 @@ const navContent: Record<"en" | "pt", ReturnType<typeof buildLocale>> = {
     },
     contact: "Fale conosco",
     contactUs: "Entre em contato",
-    grievance: "Registrar uma reclamação",
+    grievance: "Registrar uma queixa",
   }),
 };
 

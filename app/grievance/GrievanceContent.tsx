@@ -11,7 +11,7 @@ const GRIEVANCE_FORM_PT = "https://docs.google.com/forms/d/e/1FAIpQLSeoU7McT4Nmg
 // These two labels name the FORM's language, not the site's current UI language,
 // so they stay fixed in both scripts regardless of the locale toggle.
 const FORM_LABEL_EN = "File a grievance (ENG)";
-const FORM_LABEL_PT = "Registrar uma reclamação (PT)";
+const FORM_LABEL_PT = "Registrar uma queixa (PT)";
 
 const GRIEVANCE_POLICY_PDF = "/docs/tgb-feedback-grievance-whistleblowing-policy-v1.1.pdf";
 const POLICY_LABEL = "Read our Feedback, Grievance, and Whistleblowing Policy";
@@ -24,8 +24,8 @@ const content = {
   },
   pt: {
     eyebrow: "Prestação de contas",
-    heading: "Mecanismo de reclamação",
-    body: "Estamos comprometidos em desenvolver projetos que respeitem os direitos e interesses das comunidades locais. Nosso mecanismo de reclamação oferece um canal transparente e acessível para que qualquer parte interessada levante preocupações sobre nossos projetos, e estabelece como essas preocupações são recebidas, investigadas e resolvidas.",
+    heading: "Mecanismo de queixas",
+    body: "Estamos comprometidos em desenvolver projetos que respeitem os direitos e interesses das comunidades locais. Nosso mecanismo de queixas é um canal transparente e acessível para que qualquer pessoa ou organização interessada possa relatar preocupações sobre nossos projetos. Ele também define como essas preocupações são recebidas, investigadas e resolvidas.",
   },
 };
 

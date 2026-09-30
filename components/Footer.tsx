@@ -57,7 +57,7 @@ const content = {
     locations: "Amsterdam · Brazil · Tanzania",
   },
   pt: {
-    tagline: "Uma desenvolvedora de projetos certificados de remoção de base natural — restaurando florestas, produzindo remoções duráveis e estruturando o capital que torna ambos possíveis.",
+    tagline: "Desenvolvedora de projetos certificados de remoção de carbono baseados na natureza — restauramos florestas, geramos remoções duradouras e estruturamos o capital que torna tudo isso possível.",
     address: "Plantage Middenlaan 2c, 1018 DD Amsterdã",
     groups: [
       {
@@ -99,7 +99,7 @@ const content = {
         label: "Contato",
         items: [
           { label: "Fale conosco", href: "/contact" },
-          { label: "Formulários de reclamação", href: "/grievance" },
+          { label: "Mecanismo de queixas", href: "/grievance" },
         ],
       },
     ],

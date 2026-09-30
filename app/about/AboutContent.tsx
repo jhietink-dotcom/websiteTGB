@@ -56,9 +56,9 @@ const content = {
       eyebrow: "Who we are",
       heading: "Founded to close the financing gap for nature-based climate solutions.",
       paragraphs: [
-        "The Green Branch is a carbon project developer founded in 2019 to close the financing gap for nature-based climate solutions. Restoration and conservation projects too often fail to reach maturity because they remain underfunded and lack technical capacity. We exist to change that.",
-        "Today, The Green Branch is a social impact company and an impact-first carbon asset developer and manager. We operate at the intersection of technical development, financial structuring, and commercial strategy, working with local operational partners to originate and scale high-quality projects.",
-        "Our vision is to increase biodiverse forest cover worldwide, conserving 4 million hectares of forest before 2040.",
+        "The Green Branch was founded in 2019 to close the financing gap for nature-based climate solutions. Restoration projects often fail to flourish because they remain underfunded and lack technical capacity. We exist to change that.",
+        "Today, we are an impact-first carbon removal platform. We operate at the intersection of technical development, financial structuring, and commercial strategy, working with local partners to originate and scale high-quality projects.",
+        "Our vision is to use carbon finance as a transitional tool to increase permanent and productive forest. We aim to restore and protect 100,000 hectares before 2035.",
       ],
       caption: "Field monitoring — Sapucaia, Brazil",
     },

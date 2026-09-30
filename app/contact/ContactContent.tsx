@@ -22,7 +22,7 @@ const content = {
       cards: [
         { title: "For buyers", desc: "Enquire about available emission removal volumes and pricing.", cta: "Explore removals" },
         { title: "For investors", desc: "Request our fund documentation. Available to qualified and professional investors only.", cta: "Request documentation" },
-        { title: "For other entities", desc: "Explore our advisory services and how we can support your project's development and certification, or your company's SBTi commitments.", cta: "Explore our advisory services" },
+        { title: "For companies, developers & landowners", desc: "Explore our advisory services and how we can support your project's development and certification, or your company's SBTi commitments.", cta: "Explore our advisory services" },
       ],
       grievanceCta: "File a grievance",
     },

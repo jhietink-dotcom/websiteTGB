@@ -238,7 +238,7 @@ export default function AdvisoryContent() {
       <main className="flex-1">
         {/* Hero — full-bleed photo */}
         <section className="relative min-h-[82vh] flex items-end overflow-hidden">
-          <Image src="/img/DSCF9818.JPG" alt="The Green Branch team in the field" fill priority sizes="100vw" className="object-cover object-center" />
+          <Image src="/img/advisory-hero.png" alt="The Green Branch team in the field" fill priority quality={90} sizes="100vw" className="object-cover object-center" />
           <div className="absolute inset-0 bg-gradient-to-t from-forest-deeper/80 via-forest-deeper/45 to-forest-deeper/20" />
           <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pb-20 pt-32">
             <div className="max-w-3xl">

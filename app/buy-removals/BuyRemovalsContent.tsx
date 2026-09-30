@@ -8,7 +8,7 @@ import { ArrowRight, ArrowUpRight, CheckCircle2, Zap, Clock, Users, Target, Leaf
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 const useCaseIcons = [Users, Target, Leaf];
-const methodologyPhotos = ["/img/arr-aerial.jpg", "/img/biochar.jpg"];
+const methodologyPhotos = ["/img/arr-aerial.jpg", "/img/biochar.jpg", "/img/redd-forest.jpg"];
 
 const platformMeta: { image?: string; w?: number; h?: number }[] = [
   { image: "/img/terrahub-portfolio.png", w: 1600, h: 592 },
@@ -62,14 +62,42 @@ const content = {
       note: "All credits are certified to VCS (the Verified Carbon Standard, the world's most widely used carbon crediting programme) and CCB (the Climate, Community & Biodiversity Standards, which certify social and biodiversity co-benefits), and independently rated by Sylvera (a carbon-credit ratings agency).",
     },
     methodologies: {
-      eyebrow: "Two methodologies",
-      heading: "Buy credits from a specific project type, or a blend of both.",
+      eyebrow: "Three methodologies",
+      heading: "Buy credits from a specific project type, or a blend across all three.",
       lead: "Buyers can access a single project type or draw across our full portfolio.",
       partnerNote: "The Green Branch acts as your partner to select projects. TGB offers a portfolio of projects that are developed by TGB itself or selected by the technical team. If you have specific requirements, geography, volume, or timeline, we can source and select additional projects based on a specified inquiry. Every project, whether in the portfolio or sourced on request, has passed the same due diligence. What differs is our role in it.",
       items: [
         { tag: "Removal", title: "ARR", sub: "Afforestation, reforestation & revegetation", desc: "Growing new, biodiverse forest on degraded land — taking carbon out of the atmosphere." },
         { tag: "Removal", title: "Biochar", sub: "Durable carbon", desc: "Biomass converted into a stable carbon that stays locked away for centuries." },
+        { tag: "Avoidance", title: "REDD+", sub: "Reducing emissions from deforestation and forest degradation", desc: "Preserving existing carbon stocks by focusing on conservation of existing forests and biodiversity." },
       ],
+      sourcing: {
+        heading: "Where our projects come from:",
+        items: [
+          {
+            eyebrow: "In-house origination",
+            title: "Developed by The Green Branch",
+            desc: "Projects our technical team originates and develops in-house, from feasibility through implementation and issuance, overseeing every stage against rigorous certification requirements.",
+            bullets: [
+              "Direct relationship with land and communities",
+              "Influence on project design and co-benefits",
+              "Long-term volume security and site visits",
+              "Exclusive access, not available elsewhere",
+            ],
+          },
+          {
+            eyebrow: "Partner projects",
+            title: "Selected by The Green Branch",
+            desc: "Third-party projects our technical team reviews and selects against our quality and integrity criteria and certification requirements.",
+            bullets: [
+              "Broader choice of geographies and project types",
+              "Faster availability, often already issued",
+              "Same due diligence standard as our own projects",
+              "Independently rated and registry-verified",
+            ],
+          },
+        ],
+      },
     },
     steps: {
       eyebrow: "How it works",
@@ -82,7 +110,7 @@ const content = {
     },
     platform: {
       eyebrow: "TGB Dashboard",
-      dashboardUrl: "https://www.dashboard.thegreenbranch.nl",
+      dashboardUrl: "https://dashboard.thegreenbranch.nl/",
       heading: "Everything in one dashboard.",
       lead: "Browse our project catalog of due-diligenced projects, track your portfolio, and keep proof of every deal in one place.",
       callouts: [
@@ -115,7 +143,6 @@ const content = {
         },
       ],
       ctaLine: "Every purchase comes with GreenBranch Dashboard access, included.",
-      ctaLink: "Learn more about GreenBranch OS",
     },
     faq: {
       eyebrow: "Frequently asked",
@@ -204,14 +231,42 @@ const content = {
       note: "Todos os créditos são certificados pelo VCS (o Verified Carbon Standard, o programa de certificação de carbono mais utilizado do mundo) e pelo CCB (o Climate, Community & Biodiversity Standards, que certifica cobenefícios sociais e de biodiversidade), e avaliados de forma independente pela Sylvera (uma agência de rating de créditos de carbono).",
     },
     methodologies: {
-      eyebrow: "Duas metodologias",
-      heading: "Compre créditos de um tipo específico de projeto, ou uma combinação dos dois.",
+      eyebrow: "Três metodologias",
+      heading: "Compre créditos de um tipo específico de projeto, ou uma combinação dos três.",
       lead: "Compradores podem acessar um único tipo de projeto ou recorrer a todo o nosso portfólio.",
       partnerNote: "A Green Branch atua como sua parceira na seleção de projetos. A TGB oferece um portfólio de projetos desenvolvidos pela própria TGB ou selecionados pela equipe técnica. Se você tiver requisitos específicos de geografia, volume ou prazo, podemos buscar e selecionar projetos adicionais com base em uma solicitação específica. Todo projeto, esteja no portfólio ou obtido sob demanda, passa pela mesma due diligence. O que muda é o nosso papel nele.",
       items: [
         { tag: "Remoção", title: "ARR", sub: "Florestamento, reflorestamento e revegetação", desc: "Cultivo de nova floresta biodiversa em terras degradadas — retirando carbono da atmosfera." },
         { tag: "Remoção", title: "Biochar", sub: "Carbono durável", desc: "Biomassa convertida em um carbono estável que permanece retido por séculos." },
+        { tag: "Evitação", title: "REDD+", sub: "Redução de emissões por desmatamento e degradação florestal", desc: "Preservação dos estoques de carbono existentes, com foco na conservação das florestas e da biodiversidade existentes." },
       ],
+      sourcing: {
+        heading: "De onde vêm nossos projetos:",
+        items: [
+          {
+            eyebrow: "Originação própria",
+            title: "Desenvolvidos pela The Green Branch",
+            desc: "Projetos que nossa equipe técnica origina e desenvolve internamente, da viabilidade à implementação e emissão, supervisionando cada etapa com base em rigorosos requisitos de certificação.",
+            bullets: [
+              "Relação direta com a terra e as comunidades",
+              "Influência no desenho do projeto e nos cobenefícios",
+              "Segurança de volume no longo prazo e visitas de campo",
+              "Acesso exclusivo, indisponível em outros lugares",
+            ],
+          },
+          {
+            eyebrow: "Projetos parceiros",
+            title: "Selecionados pela The Green Branch",
+            desc: "Projetos de terceiros que nossa equipe técnica avalia e seleciona com base em nossos critérios de qualidade e integridade e nos requisitos de certificação.",
+            bullets: [
+              "Maior variedade de geografias e tipos de projeto",
+              "Disponibilidade mais rápida, muitas vezes já emitidos",
+              "Mesmo padrão de due diligence dos nossos próprios projetos",
+              "Com rating independente e verificados em registro",
+            ],
+          },
+        ],
+      },
     },
     steps: {
       eyebrow: "Como funciona",
@@ -224,7 +279,7 @@ const content = {
     },
     platform: {
       eyebrow: "TGB Dashboard",
-      dashboardUrl: "https://www.dashboard.thegreenbranch.nl",
+      dashboardUrl: "https://dashboard.thegreenbranch.nl/",
       heading: "Tudo em um único painel.",
       lead: "Explore nosso catálogo de projetos com diligência prévia realizada, acompanhe seu portfólio e mantenha a comprovação de cada negócio em um só lugar.",
       callouts: [
@@ -257,7 +312,6 @@ const content = {
         },
       ],
       ctaLine: "Toda compra já vem com acesso incluído ao GreenBranch Dashboard.",
-      ctaLink: "Saiba mais sobre a GreenBranch OS",
     },
     faq: {
       eyebrow: "Perguntas frequentes",
@@ -441,7 +495,7 @@ export default function BuyRemovalsContent() {
             <p className="text-ink-soft leading-relaxed mb-12 max-w-2xl">
               {t.methodologies.partnerNote}
             </p>
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-3 gap-6">
               {t.methodologies.items.map((m, i) => (
                 <div key={m.title} className="group relative h-96 rounded-3xl overflow-hidden">
                   <Image src={methodologyPhotos[i]} alt={m.sub} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover transition-transform duration-700 group-hover:scale-105" />
@@ -449,9 +503,28 @@ export default function BuyRemovalsContent() {
                   <div className="absolute bottom-0 left-0 right-0 p-6">
                     <div className="text-[10px] font-bold text-accent uppercase tracking-widest mb-2">{m.tag}</div>
                     <h3 className="text-2xl font-extrabold text-white mb-1">{m.title}</h3>
-                    <div className="text-sm font-semibold text-white/80 mb-2">{m.sub}</div>
-                    <p className="text-sm text-white/65 leading-relaxed">{m.desc}</p>
+                    <div className="text-sm font-semibold text-white/80 mb-2 md:min-h-[2.5rem]">{m.sub}</div>
+                    <p className="text-sm text-white/65 leading-relaxed md:min-h-[4.5rem]">{m.desc}</p>
                   </div>
+                </div>
+              ))}
+            </div>
+
+            <h3 className="text-2xl md:text-3xl font-extrabold text-navy mt-20 mb-8">{t.methodologies.sourcing.heading}</h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              {t.methodologies.sourcing.items.map((s) => (
+                <div key={s.title} className="bg-white rounded-3xl border border-border/60 p-8">
+                  <div className="text-xs font-bold text-forest uppercase tracking-[0.15em] mb-3">{s.eyebrow}</div>
+                  <h4 className="text-2xl font-bold text-ink mb-4">{s.title}</h4>
+                  <p className="text-ink-soft leading-relaxed mb-6">{s.desc}</p>
+                  <ul className="space-y-3">
+                    {s.bullets.map((b) => (
+                      <li key={b} className="flex gap-3 text-sm text-ink-soft leading-relaxed">
+                        <CheckCircle2 className="w-4 h-4 text-forest shrink-0 mt-0.5" />
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               ))}
             </div>
@@ -547,11 +620,8 @@ export default function BuyRemovalsContent() {
 
         {/* Platform CTA link */}
         <section className="py-12 bg-cream border-t border-border/60">
-          <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="max-w-7xl mx-auto px-6 text-center">
             <p className="text-ink-soft">{t.platform.ctaLine}</p>
-            <Link href="/greenbranch-os" className="inline-flex items-center gap-2 text-sm font-bold text-forest hover:text-forest-dark transition-colors">
-              {t.platform.ctaLink} <ArrowRight className="w-4 h-4" />
-            </Link>
           </div>
         </section>
 

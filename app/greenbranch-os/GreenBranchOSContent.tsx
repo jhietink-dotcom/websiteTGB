@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { DashboardMockup } from "@/components/OSTGBMockup";
@@ -23,7 +22,7 @@ const content = {
       eyebrow: "Our Tech",
       heading: "One platform from origination to issuance.",
       lead: "GreenBranch OS is our proprietary platform, unifying project development, MRV, and commercialisation in a single environment — so we move faster and give buyers and investors direct visibility into the work.",
-      ctaSecondary: "Access as a buyer",
+      ctaSecondary: "Access as a buyer/investor",
     },
     overview: [
       { label: "3 integrated modules", desc: "Development, MRV, and Investor & buyer dashboard" },
@@ -90,7 +89,7 @@ const content = {
     cta: {
       heading: "See GreenBranch OS in action",
       lead: "We are happy to walk you through the platform.",
-      secondary: "Access as a buyer",
+      secondary: "Access as a buyer/investor",
     },
   },
   pt: {
@@ -98,7 +97,7 @@ const content = {
       eyebrow: "Nossa Tecnologia",
       heading: "Uma única plataforma da originação à emissão.",
       lead: "A GreenBranch OS é nossa plataforma proprietária, que unifica o desenvolvimento de projetos, o MRV e a comercialização em um único ambiente — para avançarmos mais rápido e dar a compradores e investidores visibilidade direta do trabalho.",
-      ctaSecondary: "Acessar como comprador",
+      ctaSecondary: "Acessar como comprador/investidor",
     },
     overview: [
       { label: "3 módulos integrados", desc: "Desenvolvimento, MRV e Painel de investidores e compradores" },
@@ -165,7 +164,7 @@ const content = {
     cta: {
       heading: "Veja a GreenBranch OS em ação",
       lead: "Teremos prazer em apresentar a plataforma a você.",
-      secondary: "Acessar como comprador",
+      secondary: "Acessar como comprador/investidor",
     },
   },
 };
@@ -194,9 +193,9 @@ export default function GreenBranchOSContent() {
                 {t.hero.lead}
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link href="/buy-removals" className="inline-flex items-center gap-2 px-6 py-3.5 bg-accent text-forest-deeper text-sm font-bold rounded-xl hover:bg-accent-dark transition-colors">
+                <a href="https://dashboard.thegreenbranch.nl/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3.5 bg-accent text-forest-deeper text-sm font-bold rounded-xl hover:bg-accent-dark transition-colors">
                   {t.hero.ctaSecondary}
-                </Link>
+                </a>
               </div>
             </div>
           </div>
@@ -294,7 +293,7 @@ export default function GreenBranchOSContent() {
             <h2 className="text-3xl font-bold text-ink mb-4">{t.cta.heading}</h2>
             <p className="text-ink-soft mb-8">{t.cta.lead}</p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Link href="/buy-removals" className="px-6 py-3.5 bg-accent text-forest-deeper text-sm font-bold rounded-xl hover:bg-accent-dark transition-colors">{t.cta.secondary}</Link>
+              <a href="https://dashboard.thegreenbranch.nl/" target="_blank" rel="noopener noreferrer" className="px-6 py-3.5 bg-accent text-forest-deeper text-sm font-bold rounded-xl hover:bg-accent-dark transition-colors">{t.cta.secondary}</a>
             </div>
           </div>
         </section>

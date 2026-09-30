@@ -26,19 +26,19 @@ const photoStrip = [...photoStripBase, ...photoStripBase];
 // "What we do" — three lines of activity, one development capability
 const activitiesBase = [
   {
-    href: "/advisory",
-    img: "/img/DSCF9818.JPG",
-    alt: "Carbon advisory for buyers, developers and investors",
-  },
-  {
-    href: "/buy-removals",
+    hrefs: ["/develop/arr"],
     img: "/img/buy-removals-forest.jpg",
-    alt: "Emission removals for corporate buyers",
+    alt: "Co-developing projects with NGOs and project developers",
   },
   {
-    href: "/invest",
+    hrefs: ["/buy-removals", "/invest"],
     img: "/img/invest-seedling.jpg",
-    alt: "Investment in land and industrial biochar",
+    alt: "Emission removals for corporate buyers and investment in land and biochar",
+  },
+  {
+    hrefs: ["/advisory"],
+    img: "/img/advisory-hero.png",
+    alt: "Carbon advisory for buyers, developers and investors",
   },
 ];
 
@@ -108,22 +108,24 @@ const content = {
     whatWeDo: {
       eyebrow: "What we do",
       heading: "Three lines of activity, one development capability.",
-      learnMore: "Learn more",
       items: [
+        {
+          tag: "For developers",
+          title: "Co-develop",
+          body: "We co-develop and support projects designed by NGOs and project developers that are advancing past feasibility stage and approaching carbon certification and expansion.",
+          links: ["Learn more"],
+        },
+        {
+          tag: "For buyers & investors",
+          title: "Buy and Invest",
+          body: "We supply emission removals to corporate buyers (spot, forward, and long-term offtake) from our own portfolio and selected third-party projects, or we structure investment opportunities in land acquisition for reforestation and in biochar.",
+          links: ["Buy", "Invest"],
+        },
         {
           tag: "Carbon advisory",
           title: "Advisory",
           body: "We advise corporates on carbon strategy, procurement and SBTi/FLAG targets, and support landowners and developers through project development and certification — the same expertise behind our own portfolio, available for yours.",
-        },
-        {
-          tag: "For buyers",
-          title: "Buy",
-          body: "We supply emission removals to corporate buyers — spot, forward, and long-term offtake — from our own portfolio and selected third-party projects in our origination pipeline.",
-        },
-        {
-          tag: "For investors",
-          title: "Invest",
-          body: "We structure investment opportunities in land acquisition for reforestation and in industrial biochar, bridging the early-stage financing gap that holds high-quality projects back.",
+          links: ["Learn more"],
         },
       ],
     },
@@ -145,7 +147,7 @@ const content = {
       headingLine1: "Driven by impact.",
       headingLine2: "Supported by return.",
       stats: [
-        { v: "4M ha", l: "Forest conservation goal", s: "our vision, before 2040" },
+        { v: "1M ha", l: "Under sustainable management", s: "our vision, before 2040" },
         { v: ">40M t", l: "CO₂ removals targeted", s: "across the portfolio" },
         { v: "~15", l: "Projects in pipeline", s: "each screened and de-risked" },
       ],
@@ -189,22 +191,24 @@ const content = {
     whatWeDo: {
       eyebrow: "O que fazemos",
       heading: "Três linhas de atuação, uma capacidade de desenvolvimento.",
-      learnMore: "Saiba mais",
       items: [
+        {
+          tag: "Para desenvolvedores",
+          title: "Codesenvolver",
+          body: "Codesenvolvemos e apoiamos projetos concebidos por ONGs e desenvolvedores de projetos que estão avançando além da fase de viabilidade e se aproximando da certificação de carbono e da expansão.",
+          links: ["Saiba mais"],
+        },
+        {
+          tag: "Para compradores e investidores",
+          title: "Comprar e Investir",
+          body: "Fornecemos remoções de emissões para compradores corporativos (spot, forward e offtake de longo prazo) de nosso próprio portfólio e de projetos selecionados de terceiros, ou estruturamos oportunidades de investimento em aquisição de terras para reflorestamento e em biochar.",
+          links: ["Comprar", "Investir"],
+        },
         {
           tag: "Assessoria de carbono",
           title: "Assessoria",
           body: "Assessoramos empresas em estratégia de carbono, aquisição e metas SBTi/FLAG, e apoiamos proprietários de terra e desenvolvedores no desenvolvimento e na certificação de projetos — a mesma expertise por trás do nosso próprio portfólio, disponível para o seu.",
-        },
-        {
-          tag: "Para compradores",
-          title: "Comprar",
-          body: "Fornecemos remoções de emissões para compradores corporativos — spot, forward e offtake de longo prazo — de nosso próprio portfólio e de projetos selecionados de terceiros em nosso pipeline de originação.",
-        },
-        {
-          tag: "Para investidores",
-          title: "Investir",
-          body: "Estruturamos oportunidades de investimento em aquisição de terras para reflorestamento e em biochar industrial, suprindo a lacuna de financiamento em estágio inicial que trava projetos de alta qualidade.",
+          links: ["Saiba mais"],
         },
       ],
     },
@@ -226,7 +230,7 @@ const content = {
       headingLine1: "Impulsionados pelo impacto.",
       headingLine2: "Sustentados pelo retorno.",
       stats: [
-        { v: "4M ha", l: "Meta de conservação florestal", s: "nossa visão, até 2040" },
+        { v: "1M ha", l: "Sob manejo sustentável", s: "nossa visão, até 2040" },
         { v: ">40M t", l: "Remoções de CO₂ almejadas", s: "em todo o portfólio" },
         { v: "~15", l: "Projetos em pipeline", s: "cada um triado e com risco mitigado" },
       ],
@@ -415,10 +419,9 @@ export default function HomeContent() {
 
             <div className="grid md:grid-cols-3 gap-6 items-stretch">
               {activities.map((a) => (
-                <Link
+                <div
                   key={a.title}
-                  href={a.href}
-                  className="group flex flex-col bg-white border border-border rounded-2xl overflow-hidden hover:shadow-md hover:-translate-y-0.5 transition-all"
+                  className="group relative flex flex-col bg-white border border-border rounded-2xl overflow-hidden hover:shadow-md hover:-translate-y-0.5 transition-all"
                 >
                   <div className="relative h-[220px] shrink-0">
                     <Image src={a.img} alt={a.alt} fill sizes="(max-width:768px) 100vw, 33vw" className="object-cover" />
@@ -430,12 +433,28 @@ export default function HomeContent() {
                   <div className="flex flex-col flex-1 p-7">
                     <h3 className="text-[26px] font-bold text-navy mb-3">{a.title}</h3>
                     <p className="text-[15px] text-ink-soft leading-[1.7] mb-6">{a.body}</p>
-                    <span className="mt-auto inline-flex items-center gap-2 text-sm font-bold text-forest">
-                      {t.whatWeDo.learnMore}
-                      <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                    </span>
+                    {a.hrefs.length === 1 ? (
+                      // Single destination: the whole card is the link
+                      <Link href={a.hrefs[0]} className="mt-auto inline-flex items-center gap-2 text-sm font-bold text-forest after:absolute after:inset-0">
+                        {a.links[0]}
+                        <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                      </Link>
+                    ) : (
+                      <div className="mt-auto flex flex-wrap gap-3">
+                        {a.hrefs.map((href, j) => (
+                          <Link
+                            key={href}
+                            href={href}
+                            className="inline-flex items-center gap-2 px-5 py-2.5 bg-forest text-white text-sm font-bold rounded-xl hover:bg-forest-dark transition-colors"
+                          >
+                            {a.links[j]}
+                            <ArrowUpRight className="w-4 h-4" />
+                          </Link>
+                        ))}
+                      </div>
+                    )}
                   </div>
-                </Link>
+                </div>
               ))}
             </div>
           </div>

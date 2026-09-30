@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
@@ -17,8 +17,8 @@ function buildLocale(opts: {
   about: SubLink[];
   navLabels: { develop: string; services: string; projects: string; about: string };
   contact: string;
+  contactUs: string;
   grievance: string;
-  getStarted: string;
 }) {
   const { develop, services, about, navLabels } = opts;
   const nav: NavItem[] = [
@@ -27,7 +27,7 @@ function buildLocale(opts: {
     { id: "projects", label: navLabels.projects, href: "/projects" },
     { id: "about", label: navLabels.about, children: about },
   ];
-  return { develop, services, about, nav, contact: opts.contact, grievance: opts.grievance, getStarted: opts.getStarted };
+  return { develop, services, about, nav, contact: opts.contact, contactUs: opts.contactUs, grievance: opts.grievance };
 }
 
 const navContent: Record<"en" | "pt", ReturnType<typeof buildLocale>> = {
@@ -54,8 +54,8 @@ const navContent: Record<"en" | "pt", ReturnType<typeof buildLocale>> = {
       about: "About",
     },
     contact: "Get in touch",
+    contactUs: "Contact us",
     grievance: "File a grievance",
-    getStarted: "Get started",
   }),
   pt: buildLocale({
     develop: [
@@ -80,8 +80,8 @@ const navContent: Record<"en" | "pt", ReturnType<typeof buildLocale>> = {
       about: "Sobre",
     },
     contact: "Fale conosco",
+    contactUs: "Entre em contato",
     grievance: "Registrar uma reclamação",
-    getStarted: "Comece agora",
   }),
 };
 
@@ -197,7 +197,7 @@ export default function Navbar() {
           <div className="relative" ref={contactRef}>
             <button
               onClick={() => setContactOpen((o) => !o)}
-              className={cn("flex items-center gap-1 text-sm font-medium", mutedClass)}
+              className="flex items-center gap-1.5 px-4 py-2 bg-accent text-forest-deeper text-sm font-bold rounded-xl hover:bg-accent-dark transition-colors"
             >
               {t.contact}
               <ChevronDown className={cn("w-3.5 h-3.5 transition-transform", contactOpen && "rotate-180")} />
@@ -210,15 +210,11 @@ export default function Navbar() {
                 </Link>
                 <Link href="/contact" onClick={() => setContactOpen(false)}
                   className="block px-3 py-2.5 rounded-xl text-sm font-semibold text-ink hover:bg-forest-muted hover:text-forest transition-colors">
-                  {t.contact}
+                  {t.contactUs}
                 </Link>
               </div>
             )}
           </div>
-          <Link href="/buy-removals"
-            className="flex items-center gap-1.5 px-4 py-2 bg-accent text-forest-deeper text-sm font-bold rounded-xl hover:bg-accent-dark transition-colors">
-            {t.getStarted} <ArrowRight className="w-3.5 h-3.5" />
-          </Link>
           <LanguageSwitcher dark={scrolled} />
         </div>
 
@@ -257,11 +253,10 @@ export default function Navbar() {
             </div>
           ))}
           <div className="pt-4 border-t border-black/5 flex flex-col gap-2">
-            <Link href="/contact" onClick={() => setOpen(false)} className="px-3 py-2 text-sm font-medium text-ink/60 text-center">{t.contact}</Link>
             <Link href="/grievance" onClick={() => setOpen(false)} className="px-3 py-2 text-sm font-medium text-ink/60 text-center">{t.grievance}</Link>
-            <Link href="/buy-removals" onClick={() => setOpen(false)}
-              className="px-4 py-3 bg-forest text-white text-sm font-bold rounded-xl text-center">
-              {t.getStarted}
+            <Link href="/contact" onClick={() => setOpen(false)}
+              className="px-4 py-3 bg-accent text-forest-deeper text-sm font-bold rounded-xl text-center hover:bg-accent-dark transition-colors">
+              {t.contact}
             </Link>
           </div>
         </div>

@@ -17,6 +17,7 @@ function buildLocale(opts: {
   about: SubLink[];
   navLabels: { develop: string; services: string; projects: string; about: string };
   contact: string;
+  contactUs: string;
   grievance: string;
 }) {
   const { develop, services, about, navLabels } = opts;
@@ -26,7 +27,7 @@ function buildLocale(opts: {
     { id: "projects", label: navLabels.projects, href: "/projects" },
     { id: "about", label: navLabels.about, children: about },
   ];
-  return { develop, services, about, nav, contact: opts.contact, grievance: opts.grievance };
+  return { develop, services, about, nav, contact: opts.contact, contactUs: opts.contactUs, grievance: opts.grievance };
 }
 
 const navContent: Record<"en" | "pt", ReturnType<typeof buildLocale>> = {
@@ -53,6 +54,7 @@ const navContent: Record<"en" | "pt", ReturnType<typeof buildLocale>> = {
       about: "About",
     },
     contact: "Get in touch",
+    contactUs: "Contact us",
     grievance: "File a grievance",
   }),
   pt: buildLocale({
@@ -78,6 +80,7 @@ const navContent: Record<"en" | "pt", ReturnType<typeof buildLocale>> = {
       about: "Sobre",
     },
     contact: "Fale conosco",
+    contactUs: "Entre em contato",
     grievance: "Registrar uma reclamação",
   }),
 };
@@ -207,7 +210,7 @@ export default function Navbar() {
                 </Link>
                 <Link href="/contact" onClick={() => setContactOpen(false)}
                   className="block px-3 py-2.5 rounded-xl text-sm font-semibold text-ink hover:bg-forest-muted hover:text-forest transition-colors">
-                  {t.contact}
+                  {t.contactUs}
                 </Link>
               </div>
             )}

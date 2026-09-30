@@ -15,8 +15,8 @@ const strings = {
   },
   pt: {
     heading: "Somente para investidores qualificados",
-    body: "Esta página descreve oportunidades disponíveis apenas para investidores qualificados e profissionais. Os termos detalhados são fornecidos após cadastro e verificação. Confirme sua condição para continuar.",
-    checkbox: "Confirmo que sou um investidor qualificado ou profissional, e entendo que as informações na página a seguir não constituem uma oferta de valores mobiliários ou aconselhamento de investimento.",
+    body: "Esta página descreve oportunidades disponíveis apenas para investidores qualificados e profissionais. As condições detalhadas são enviadas após cadastro e verificação. Confirme seu perfil de investidor para continuar.",
+    checkbox: "Confirmo que sou investidor qualificado ou profissional e entendo que as informações da próxima página não constituem oferta de valores mobiliários nem recomendação de investimento.",
     button: "Confirmar e continuar",
   },
 };

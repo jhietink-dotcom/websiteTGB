@@ -203,24 +203,24 @@ const content = {
       eyebrow: "Nosso portfólio",
       titleLine1: "Onde a natureza",
       titleLine2: "encontra o capital.",
-      lead: "Um portfólio de projetos de remoção de emissões de base natural e alta integridade em múltiplas regiões — verificados, rastreáveis e construídos para durar.",
+      lead: "Um portfólio de projetos de remoção de carbono baseados na natureza e de alta integridade, em várias regiões — verificados, rastreáveis e feitos para durar.",
       stats: [
         { value: "5" as string | null, label: "Projetos" },
         { value: "2" as string | null, label: "Países" },
         { value: null as string | null, label: "Hectares em restauração" },
-        { value: null as string | null, label: "Remoções de emissão" },
+        { value: null as string | null, label: "Remoções de carbono" },
       ],
-      scroll: "rolar",
+      scroll: "role",
     },
     map: {
       eyebrow: "Onde atuamos",
-      heading: "Nosso portfólio, no terreno.",
+      heading: "Nosso portfólio, em campo.",
       resetLabel: "Ver todos os projetos",
       legendBiochar: "Biochar",
       legendArr: "ARR",
     },
     projectAreaLabel: "Área do projeto",
-    emissionRemovalsLabel: "Remoções de emissão",
+    emissionRemovalsLabel: "Remoções de carbono",
     certificationLabel: "Padrão de certificação",
     enquireCta: "Saiba mais sobre este projeto",
     projects: [
@@ -236,7 +236,7 @@ const content = {
         certification: "Verra VCS&CCB",
         status: "Certificado",
         description:
-          "Um programa de reflorestamento em grande escala desenvolvido com a Futuro Florestal, certificado pelos padrões VCS e CCB sob a metodologia VM0047 e validado pela ABACUS. O projeto restaura terras degradadas e gera remoções de emissão de alta integridade para as comunidades locais.",
+          "Um programa de reflorestamento em grande escala desenvolvido com a Futuro Florestal, certificado pelos padrões VCS e CCB sob a metodologia VM0047 e validado pela ABACUS. O projeto restaura terras degradadas e gera créditos de remoção de alta integridade, com benefícios para as comunidades locais.",
         partners: ["Futuro Florestal", "Verra (VCS + CCB)"],
       },
       {
@@ -251,12 +251,12 @@ const content = {
         certification: "Verra VCS&CCB",
         status: "Em desenvolvimento",
         description:
-          "Reflorestamento nativo de pastagem degradada no bioma Amazônia, desenvolvido com o Rabobank e implementado pela Implantar junto a pequenos agricultores. O projeto foi selecionado pelo RfP do Amazon Green Pledge para um offtake de 10.000 hectares, restaurando ecossistemas biodiversos e resilientes ao clima.",
+          "Reflorestamento nativo de pastagem degradada no bioma Amazônia, desenvolvido com o Rabobank e implementado pela Implantar junto a pequenos agricultores. O projeto foi selecionado na chamada (RfP) do Amazon Green Pledge para um offtake de 10.000 hectares e restaura ecossistemas biodiversos e resilientes ao clima.",
         partners: ["Rabobank", "Implantar", "Amazon Green Pledge"],
       },
       {
         name: "Samauma",
-        tagline: "Restauração na Amazônia em estágio de concepção",
+        tagline: "Restauração na Amazônia em fase de concepção",
         region: "Pará · Bioma Amazônia",
         type: "Restauração",
         ha: "5.000+ ha",
@@ -266,7 +266,7 @@ const content = {
         certification: "ISOMETRIC",
         status: "Concepção",
         description:
-          "Um conceito de restauração em estágio inicial cobrindo no mínimo 5.000 hectares no bioma Amazônia. Modelagem conservadora indica emissão de mais de 255 unidades de remoção de emissão por hectare ao longo do ciclo de vida do projeto, oferecendo uma base durável para fornecimento de alta integridade.",
+          "Um projeto de restauração em fase inicial, com pelo menos 5.000 hectares no bioma Amazônia. Uma modelagem conservadora indica a emissão de mais de 255 créditos de remoção por hectare ao longo da vida do projeto, uma base sólida para o fornecimento de créditos de alta integridade.",
         partners: [],
       },
       {
@@ -283,13 +283,13 @@ const content = {
         certification: "ISOMETRIC",
         status: "Em desenvolvimento",
         description:
-          "Um programa distribuído de biochar em Abaetetuba, convertendo resíduos de biomassa local em remoções de carbono duráveis por meio de uma rede de fornos de pequena escala operados com agricultores locais.",
+          "Um programa de produção descentralizada de biochar em Abaetetuba, que transforma resíduos de biomassa local em remoções de carbono duradouras, por meio de uma rede de pequenos fornos operados com agricultores locais.",
         partners: [],
       },
       {
         name: "Suledo Community ARR Project",
-        tagline: "Restauração de mata Miombo com comunidades locais",
-        region: "Distrito de Kiteto · Floresta Miombo",
+        tagline: "Restauração da floresta de miombo com comunidades locais",
+        region: "Distrito de Kiteto · Floresta de miombo",
         type: "ARR",
         ha: "10.000 ha",
         haLabel: "área do projeto",
@@ -298,14 +298,14 @@ const content = {
         certification: "Verra VCS&CCB",
         status: "Em desenvolvimento",
         description:
-          "Restauração de floresta Miombo co-desenhada com comunidades Maasai locais e desenvolvida com a Nature Restoration Company (NRC). O cultivo em aleias apoia a renda local enquanto o projeto restaura a mata e gera remoções de emissão duráveis.",
+          "Restauração da floresta de miombo, planejada em conjunto com comunidades maasai locais e desenvolvida com a Nature Restoration Company (NRC). O cultivo em aleias gera renda para a população local, enquanto o projeto restaura a floresta e gera remoções de carbono duradouras.",
         partners: ["Nature Restoration Company (NRC)", "Comunidades locais"],
       },
     ] satisfies ProjectText[],
     develop: {
       eyebrow: "Desenvolva conosco",
       heading: "Tem uma ideia de projeto de ARR ou biochar?",
-      lead: "Trabalhamos com proprietários de terra, comunidades e organizações para desenvolver a próxima geração de projetos de remoção de emissão de base natural e alta integridade.",
+      lead: "Trabalhamos com proprietários de terras, comunidades e organizações para desenvolver a próxima geração de projetos de remoção de carbono baseados na natureza e de alta integridade.",
       start: "Conheça nossos serviços de assessoria",
       talk: "Fale conosco",
     },

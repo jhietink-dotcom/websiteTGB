@@ -207,7 +207,7 @@ export default function ContactContent() {
                   </div>
                   <div className="flex items-center gap-3 text-sm text-ink-soft">
                     <ArrowRight className="w-4 h-4 text-forest shrink-0" />
-                    <a href="https://www.thegreenbranch.nl" className="hover:text-forest transition-colors">www.thegreenbranch.nl</a>
+                    <a href="https://thegreenbranch.nl" className="hover:text-forest transition-colors">thegreenbranch.nl</a>
                   </div>
                 </div>
               </div>

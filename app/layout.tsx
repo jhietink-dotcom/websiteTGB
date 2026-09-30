@@ -10,7 +10,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.thegreenbranch.nl"),
+  metadataBase: new URL("https://thegreenbranch.nl"),
   title: {
     default: "The Green Branch | Activating nature for a liveable future",
     template: "%s | The Green Branch",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title: "The Green Branch | Activating nature for a liveable future",
     description:
       "Certified nature-based removal projects. We restore forests, produce durable removals, and structure the capital that makes both possible.",
-    url: "https://www.thegreenbranch.nl",
+    url: "https://thegreenbranch.nl",
     siteName: "The Green Branch",
     locale: "en_GB",
     type: "website",

@@ -8,6 +8,13 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // One canonical host: send www to the bare domain
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.thegreenbranch.nl" }],
+        destination: "https://thegreenbranch.nl/:path*",
+        permanent: true,
+      },
       // Renamed routes
       { source: "/secure-credits", destination: "/buy-removals", permanent: true },
       { source: "/os-tgb", destination: "/greenbranch-os", permanent: true },

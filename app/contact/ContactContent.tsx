@@ -76,7 +76,7 @@ const content = {
       cards: [
         { title: "Para compradores", desc: "Consulte sobre volumes de remoções de emissão disponíveis e preços.", cta: "Explorar remoções" },
         { title: "Para investidores", desc: "Solicite nossa documentação de fundo. Disponível apenas para investidores qualificados e profissionais.", cta: "Solicitar documentação" },
-        { title: "Para outras entidades", desc: "Conheça nossos serviços de assessoria e como podemos apoiar o desenvolvimento e a certificação do seu projeto, ou os compromissos SBTi da sua empresa.", cta: "Conheça nossos serviços de assessoria" },
+        { title: "Para empresas, desenvolvedores e proprietários de terras", desc: "Conheça nossos serviços de assessoria e como podemos apoiar o desenvolvimento e a certificação do seu projeto, ou os compromissos SBTi da sua empresa.", cta: "Conheça nossos serviços de assessoria" },
       ],
       grievanceCta: "Registrar uma reclamação",
     },

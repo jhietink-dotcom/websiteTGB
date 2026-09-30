@@ -9,17 +9,17 @@ import { useLanguage } from "@/lib/i18n/LanguageContext";
 import { PROJECT_COUNT } from "@/lib/projects";
 
 const photoStripBase = [
-  "/img/DSCF0095.JPG",
-  "/img/tff-DSCF8194_1.JPG",
-  "/img/DSCF9797.JPG",
-  "/img/tff-DSCF8276.JPG",
-  "/img/DSCF0278.JPG",
-  "/img/tff-DSCF6771.JPG",
-  "/img/DSCF0493.JPG",
-  "/img/DSCF9873.JPG",
-  "/img/tff-DSCF6366.JPG",
-  "/img/DSCF9647.JPG",
-  "/img/DSCF9742.JPG",
+  "/img/strip/DSCF0095.jpg",
+  "/img/strip/tff-DSCF8194_1.jpg",
+  "/img/strip/DSCF9797.jpg",
+  "/img/strip/tff-DSCF8276.jpg",
+  "/img/strip/DSCF0278.jpg",
+  "/img/strip/tff-DSCF6771.jpg",
+  "/img/strip/DSCF0493.jpg",
+  "/img/strip/DSCF9873.jpg",
+  "/img/strip/tff-DSCF6366.jpg",
+  "/img/strip/DSCF9647.jpg",
+  "/img/strip/DSCF9742.jpg",
 ];
 const photoStrip = [...photoStripBase, ...photoStripBase];
 

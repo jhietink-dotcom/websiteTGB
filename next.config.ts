@@ -2,7 +2,9 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    qualities: [75, 90],
+    // Hostinger's CDN rate-limits /_next/image responses (uncached), which left images broken;
+    // serve files from public/ as-is so the CDN caches them.
+    unoptimized: true,
   },
   async redirects() {
     return [

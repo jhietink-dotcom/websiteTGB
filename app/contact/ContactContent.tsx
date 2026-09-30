@@ -22,7 +22,7 @@ const content = {
       cards: [
         { title: "For buyers", desc: "Enquire about available emission removal volumes and pricing.", cta: "Explore removals" },
         { title: "For investors", desc: "Request our fund documentation. Available to qualified and professional investors only.", cta: "Request documentation" },
-        { title: "For other entities", desc: "Explore our advisory services and how we can support your project's development and certification, or your company's SBTi commitments.", cta: "Explore our advisory services" },
+        { title: "For companies, developers & landowners", desc: "Explore our advisory services and how we can support your project's development and certification, or your company's SBTi commitments.", cta: "Explore our advisory services" },
       ],
       grievanceCta: "File a grievance",
     },
@@ -76,7 +76,7 @@ const content = {
       cards: [
         { title: "Para compradores", desc: "Consulte sobre volumes de remoções de emissão disponíveis e preços.", cta: "Explorar remoções" },
         { title: "Para investidores", desc: "Solicite nossa documentação de fundo. Disponível apenas para investidores qualificados e profissionais.", cta: "Solicitar documentação" },
-        { title: "Para outras entidades", desc: "Conheça nossos serviços de assessoria e como podemos apoiar o desenvolvimento e a certificação do seu projeto, ou os compromissos SBTi da sua empresa.", cta: "Conheça nossos serviços de assessoria" },
+        { title: "Para empresas, desenvolvedores e proprietários de terras", desc: "Conheça nossos serviços de assessoria e como podemos apoiar o desenvolvimento e a certificação do seu projeto, ou os compromissos SBTi da sua empresa.", cta: "Conheça nossos serviços de assessoria" },
       ],
       grievanceCta: "Registrar uma reclamação",
     },

@@ -43,7 +43,7 @@ const content = {
       lead: "The Green Branch is a social impact company and an impact-first carbon asset developer and manager, building high-quality nature-based projects.",
       stats: [
         { value: "2019", label: "Founded" },
-        { value: "4M ha", label: "Conservation goal by 2040" },
+        { value: "100,000 ha", label: "Restoration & protection goal by 2035" },
         { value: "100%", label: "Third-party audited projects" },
       ],
     },
@@ -56,9 +56,9 @@ const content = {
       eyebrow: "Who we are",
       heading: "Founded to close the financing gap for nature-based climate solutions.",
       paragraphs: [
-        "The Green Branch is a carbon project developer founded in 2019 to close the financing gap for nature-based climate solutions. Restoration and conservation projects too often fail to reach maturity because they remain underfunded and lack technical capacity. We exist to change that.",
-        "Today, The Green Branch is a social impact company and an impact-first carbon asset developer and manager. We operate at the intersection of technical development, financial structuring, and commercial strategy, working with local operational partners to originate and scale high-quality projects.",
-        "Our vision is to increase biodiverse forest cover worldwide, conserving 4 million hectares of forest before 2040.",
+        "The Green Branch was founded in 2019 to close the financing gap for nature-based climate solutions. Restoration projects often fail to flourish because they remain underfunded and lack technical capacity. We exist to change that.",
+        "Today, we are an impact-first carbon removal platform. We operate at the intersection of technical development, financial structuring, and commercial strategy, working with local partners to originate and scale high-quality projects.",
+        "Our vision is to use carbon finance as a transitional tool to increase permanent and productive forest. We aim to restore and protect 100,000 hectares before 2035.",
       ],
       caption: "Field monitoring — Sapucaia, Brazil",
     },
@@ -79,7 +79,7 @@ const content = {
         { num: "01", title: "Originate", desc: "With local operational partners, we identify restoration and conservation projects with strong ecological and social foundations." },
         { num: "02", title: "Develop", desc: "We provide the technical development and financial structuring needed to bring projects to certification readiness under standards such as VCS and CCB." },
         { num: "03", title: "Manage", desc: "We manage each project as a long-term asset — MRV, compliance, and reporting — across its full lifetime." },
-        { num: "04", title: "Scale", desc: "We replicate proven models to grow biodiverse forest cover, working towards our goal of conserving 4 million hectares before 2040." },
+        { num: "04", title: "Scale", desc: "We replicate proven models to grow biodiverse forest cover, working towards our goal of restoring and protecting 100,000 hectares before 2035." },
       ],
     },
     timeline: {
@@ -149,7 +149,7 @@ const content = {
       lead: "A Green Branch é uma empresa de impacto social e uma desenvolvedora e gestora de ativos de carbono com foco em impacto, construindo projetos de base natural de alta qualidade.",
       stats: [
         { value: "2019", label: "Fundação" },
-        { value: "4M ha", label: "Meta de conservação até 2040" },
+        { value: "100.000 ha", label: "Meta de restauração e proteção até 2035" },
         { value: "100%", label: "Projetos auditados por terceiros" },
       ],
     },
@@ -162,9 +162,9 @@ const content = {
       eyebrow: "Quem somos",
       heading: "Fundada para fechar a lacuna de financiamento das soluções climáticas baseadas na natureza.",
       paragraphs: [
-        "A Green Branch é uma desenvolvedora de projetos de carbono fundada em 2019 para fechar a lacuna de financiamento das soluções climáticas baseadas na natureza. Projetos de restauração e conservação frequentemente não atingem a maturidade porque permanecem subfinanciados e carecem de capacidade técnica. Existimos para mudar isso.",
-        "Hoje, a Green Branch é uma empresa de impacto social e uma desenvolvedora e gestora de ativos de carbono com foco em impacto. Atuamos na interseção entre desenvolvimento técnico, estruturação financeira e estratégia comercial, trabalhando com parceiros operacionais locais para originar e escalar projetos de alta qualidade.",
-        "Nossa visão é aumentar a cobertura florestal biodiversa em todo o mundo, conservando 4 milhões de hectares de floresta até 2040.",
+        "A Green Branch foi fundada em 2019 para fechar a lacuna de financiamento das soluções climáticas baseadas na natureza. Projetos de restauração frequentemente não prosperam porque permanecem subfinanciados e carecem de capacidade técnica. Existimos para mudar isso.",
+        "Hoje, somos uma plataforma de remoção de carbono com foco em impacto. Atuamos na interseção entre desenvolvimento técnico, estruturação financeira e estratégia comercial, trabalhando com parceiros locais para originar e escalar projetos de alta qualidade.",
+        "Nossa visão é usar o financiamento de carbono como uma ferramenta de transição para ampliar florestas permanentes e produtivas. Nosso objetivo é restaurar e proteger 100.000 hectares até 2035.",
       ],
       caption: "Monitoramento de campo — Sapucaia, Brasil",
     },
@@ -185,7 +185,7 @@ const content = {
         { num: "01", title: "Originar", desc: "Com parceiros operacionais locais, identificamos projetos de restauração e conservação com bases ecológicas e sociais sólidas." },
         { num: "02", title: "Desenvolver", desc: "Fornecemos o desenvolvimento técnico e a estruturação financeira necessários para levar os projetos à prontidão de certificação sob padrões como VCS e CCB." },
         { num: "03", title: "Gerir", desc: "Gerimos cada projeto como um ativo de longo prazo — MRV, conformidade e relatórios — ao longo de todo o seu ciclo de vida." },
-        { num: "04", title: "Escalar", desc: "Replicamos modelos comprovados para ampliar a cobertura florestal biodiversa, trabalhando rumo à nossa meta de conservar 4 milhões de hectares até 2040." },
+        { num: "04", title: "Escalar", desc: "Replicamos modelos comprovados para ampliar a cobertura florestal biodiversa, trabalhando rumo à nossa meta de restaurar e proteger 100.000 hectares até 2035." },
       ],
     },
     timeline: {

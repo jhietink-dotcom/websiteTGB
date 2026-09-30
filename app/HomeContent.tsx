@@ -147,7 +147,7 @@ const content = {
       headingLine1: "Driven by impact.",
       headingLine2: "Supported by return.",
       stats: [
-        { v: "1M ha", l: "Under sustainable management", s: "our vision, before 2040" },
+        { v: "100,000 ha", l: "Restored & protected", s: "our goal, before 2035" },
         { v: ">40M t", l: "CO₂ removals targeted", s: "across the portfolio" },
         { v: "~15", l: "Projects in pipeline", s: "each screened and de-risked" },
       ],
@@ -230,7 +230,7 @@ const content = {
       headingLine1: "Impulsionados pelo impacto.",
       headingLine2: "Sustentados pelo retorno.",
       stats: [
-        { v: "1M ha", l: "Sob manejo sustentável", s: "nossa visão, até 2040" },
+        { v: "100.000 ha", l: "Restaurados e protegidos", s: "nossa meta, até 2035" },
         { v: ">40M t", l: "Remoções de CO₂ almejadas", s: "em todo o portfólio" },
         { v: "~15", l: "Projetos em pipeline", s: "cada um triado e com risco mitigado" },
       ],

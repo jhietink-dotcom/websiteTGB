@@ -39,7 +39,7 @@ const content = {
       {
         title: "Corporates",
         label: "Procurement & quality advisory",
-        lead: "You need a carbon strategy aligns with your sustainability strategy. We help you decide what to buy, at what quality, and on what terms.",
+        lead: "You need a carbon strategy that aligns with your sustainability strategy. We help you decide what to buy, at what quality, and on what terms.",
         bullets: [
           "Procurement framework aligned to your SBTi roadmap or net-zero claim",
           "Price benchmarking and a contracting approach, from spot through multi-year offtake",

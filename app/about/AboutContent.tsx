@@ -9,7 +9,7 @@ import { SectionNav } from "@/components/SectionNav";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 const partners = [
-  { name: "Futuro Florestal", logo: "/img/logos/futuro-florestal.png", width: 335, height: 278 },
+  { name: "Futuro Florestal", logo: "/img/logos/futuro-florestal.png", width: 335, height: 278, className: "h-16" },
   { name: "Rabobank", logo: "/img/logos/rabobank.png", width: 1063, height: 192 },
   { name: "Implantar", logo: "/img/logos/implantar.png", width: 1969, height: 794 },
   { name: "NRC", logo: "/img/logos/nrc.png", width: 931, height: 391 },
@@ -395,7 +395,7 @@ export default function AboutContent() {
                     alt={p.name}
                     width={p.width}
                     height={p.height}
-                    className="h-10 w-auto object-contain"
+                    className={`${"className" in p ? p.className : "h-10"} w-auto object-contain`}
                   />
                 ))}
               </div>

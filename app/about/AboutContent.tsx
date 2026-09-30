@@ -43,7 +43,7 @@ const content = {
       lead: "The Green Branch is a social impact company and an impact-first carbon asset developer and manager, building high-quality nature-based projects.",
       stats: [
         { value: "2019", label: "Founded" },
-        { value: "4M ha", label: "Conservation goal by 2040" },
+        { value: "100,000 ha", label: "Restoration & protection goal by 2035" },
         { value: "100%", label: "Third-party audited projects" },
       ],
     },

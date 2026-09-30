@@ -9,7 +9,7 @@ import { SectionNav } from "@/components/SectionNav";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 const partners = [
-  { name: "Futuro Florestal", logo: "/img/logos/futuro-florestal.png", width: 335, height: 278 },
+  { name: "Futuro Florestal", logo: "/img/logos/futuro-florestal.png", width: 335, height: 278, className: "h-16" },
   { name: "Rabobank", logo: "/img/logos/rabobank.png", width: 1063, height: 192 },
   { name: "Implantar", logo: "/img/logos/implantar.png", width: 1969, height: 794 },
   { name: "NRC", logo: "/img/logos/nrc.png", width: 931, height: 391 },
@@ -56,7 +56,7 @@ const content = {
       eyebrow: "Who we are",
       heading: "Founded to close the financing gap for nature-based climate solutions.",
       paragraphs: [
-        "The Green Branch was founded in 2019 to close the financing gap for nature-based climate solutions. Restoration and conservation projects too often fail to reach maturity because they remain underfunded and lack technical capacity. We exist to change that.",
+        "The Green Branch is a carbon project developer founded in 2019 to close the financing gap for nature-based climate solutions. Restoration and conservation projects too often fail to reach maturity because they remain underfunded and lack technical capacity. We exist to change that.",
         "Today, The Green Branch is a social impact company and an impact-first carbon asset developer and manager. We operate at the intersection of technical development, financial structuring, and commercial strategy, working with local operational partners to originate and scale high-quality projects.",
         "Our vision is to increase biodiverse forest cover worldwide, conserving 4 million hectares of forest before 2040.",
       ],
@@ -162,7 +162,7 @@ const content = {
       eyebrow: "Quem somos",
       heading: "Fundada para fechar a lacuna de financiamento das soluções climáticas baseadas na natureza.",
       paragraphs: [
-        "A Green Branch foi fundada em 2019 para fechar a lacuna de financiamento das soluções climáticas baseadas na natureza. Projetos de restauração e conservação frequentemente não atingem a maturidade porque permanecem subfinanciados e carecem de capacidade técnica. Existimos para mudar isso.",
+        "A Green Branch é uma desenvolvedora de projetos de carbono fundada em 2019 para fechar a lacuna de financiamento das soluções climáticas baseadas na natureza. Projetos de restauração e conservação frequentemente não atingem a maturidade porque permanecem subfinanciados e carecem de capacidade técnica. Existimos para mudar isso.",
         "Hoje, a Green Branch é uma empresa de impacto social e uma desenvolvedora e gestora de ativos de carbono com foco em impacto. Atuamos na interseção entre desenvolvimento técnico, estruturação financeira e estratégia comercial, trabalhando com parceiros operacionais locais para originar e escalar projetos de alta qualidade.",
         "Nossa visão é aumentar a cobertura florestal biodiversa em todo o mundo, conservando 4 milhões de hectares de floresta até 2040.",
       ],
@@ -307,7 +307,7 @@ export default function AboutContent() {
                 <Image src="/img/about-who.jpg" alt="Walking through rows of young reforestation trees" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
                 <div className="absolute inset-0 bg-gradient-to-t from-forest-deeper/50 to-transparent" />
                 <div className="absolute bottom-5 left-5 right-5">
-                  <p className="text-xs text-white/60 italic">{t.whoWeAre.caption}</p>
+                  <p className="text-[10px] text-white/60 italic">{t.whoWeAre.caption}</p>
                 </div>
               </div>
             </div>
@@ -395,7 +395,7 @@ export default function AboutContent() {
                     alt={p.name}
                     width={p.width}
                     height={p.height}
-                    className="h-10 w-auto object-contain"
+                    className={`${"className" in p ? p.className : "h-10"} w-auto object-contain`}
                   />
                 ))}
               </div>

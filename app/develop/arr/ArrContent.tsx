@@ -54,6 +54,7 @@ const content = {
     supportCta: {
       heading: "Do you need support to get your project through development and certification?",
       button: "Explore our advisory services",
+      contactButton: "Contact us to co-develop a project",
     },
   },
   pt: {
@@ -95,6 +96,7 @@ const content = {
     supportCta: {
       heading: "Precisa de apoio para levar seu projeto pelo desenvolvimento e certificação?",
       button: "Conheça nossos serviços de assessoria",
+      contactButton: "Fale conosco para codesenvolver um projeto",
     },
   },
 };
@@ -203,9 +205,14 @@ export default function ArrContent() {
         <section className="py-20 bg-forest text-center">
           <div className="max-w-2xl mx-auto px-6">
             <h2 className="text-3xl font-bold text-white mb-8">{t.supportCta.heading}</h2>
-            <Link href="/advisory" className="inline-flex items-center gap-2 px-6 py-3.5 bg-accent text-forest-deeper text-sm font-bold rounded-xl hover:bg-accent-dark transition-colors">
-              {t.supportCta.button} <ArrowRight className="w-4 h-4" />
-            </Link>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link href="/advisory" className="inline-flex items-center gap-2 px-6 py-3.5 bg-accent text-forest-deeper text-sm font-bold rounded-xl hover:bg-accent-dark transition-colors">
+                {t.supportCta.button} <ArrowRight className="w-4 h-4" />
+              </Link>
+              <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 bg-accent text-forest-deeper text-sm font-bold rounded-xl hover:bg-accent-dark transition-colors">
+                {t.supportCta.contactButton} <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
           </div>
         </section>
       </main>

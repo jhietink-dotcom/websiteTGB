@@ -7,6 +7,8 @@ import Footer from "@/components/Footer";
 import { MapPin, Mail, Calendar, ArrowRight } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xbglwbkj";
+
 const content = {
   en: {
     hero: {
@@ -58,6 +60,8 @@ const content = {
       messageLabel: "Message *",
       messagePlaceholder: "Tell us about your project, investment interest, or the emission removals you are looking for...",
       submit: "Send message",
+      sending: "Sending...",
+      error: "Something went wrong and your message was not sent. Please try again, or email us at hello@thegreenbranch.nl.",
     },
   },
   pt: {
@@ -110,6 +114,8 @@ const content = {
       messageLabel: "Mensagem *",
       messagePlaceholder: "Conte-nos sobre seu projeto, interesse de investimento, ou as remoções de emissão que você procura...",
       submit: "Enviar mensagem",
+      sending: "Enviando...",
+      error: "Algo deu errado e sua mensagem não foi enviada. Tente novamente ou envie um e-mail para hello@thegreenbranch.nl.",
     },
   },
 };
@@ -118,11 +124,28 @@ export default function ContactContent() {
   const { locale } = useLanguage();
   const t = content[locale];
   const [formData, setFormData] = useState({ name: "", email: "", phone: "", subject: "", message: "" });
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setStatus("sending");
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          // Always send the English topic label so the inbox reads the same whichever language the visitor used
+          topic: formData.subject === "" ? "" : content.en.form.subjectOptions[Number(formData.subject)],
+          message: formData.message,
+          language: locale,
+        }),
+      });
+      setStatus(res.ok ? "sent" : "error");
+    } catch {
+      setStatus("error");
+    }
   };
 
   const routeHrefs = ["/buy-removals", "mailto:hello@thegreenbranch.nl?subject=Fund%20documentation%20request", "/advisory"];
@@ -209,7 +232,7 @@ export default function ContactContent() {
 
             {/* Form */}
             <div className="lg:col-span-2">
-              {submitted ? (
+              {status === "sent" ? (
                 <div className="flex flex-col items-center justify-center h-full min-h-64 text-center p-8 bg-forest-muted rounded-2xl border border-forest/10">
                   <div className="w-12 h-12 rounded-full bg-forest flex items-center justify-center mb-4">
                     <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -271,11 +294,15 @@ export default function ContactContent() {
                       placeholder={t.form.messagePlaceholder}
                     />
                   </div>
+                  {status === "error" && (
+                    <p role="alert" className="text-sm text-red-700">{t.form.error}</p>
+                  )}
                   <button
                     type="submit"
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-forest text-white text-sm font-bold rounded-xl hover:bg-forest-light transition-colors"
+                    disabled={status === "sending"}
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-forest text-white text-sm font-bold rounded-xl hover:bg-forest-light transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
                   >
-                    {t.form.submit} <ArrowRight className="w-4 h-4" />
+                    {status === "sending" ? t.form.sending : t.form.submit} <ArrowRight className="w-4 h-4" />
                   </button>
                 </form>
               )}

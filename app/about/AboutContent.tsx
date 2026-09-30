@@ -307,7 +307,7 @@ export default function AboutContent() {
                 <Image src="/img/about-who.jpg" alt="Walking through rows of young reforestation trees" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
                 <div className="absolute inset-0 bg-gradient-to-t from-forest-deeper/50 to-transparent" />
                 <div className="absolute bottom-5 left-5 right-5">
-                  <p className="text-xs text-white/60 italic">{t.whoWeAre.caption}</p>
+                  <p className="text-[10px] text-white/60 italic">{t.whoWeAre.caption}</p>
                 </div>
               </div>
             </div>

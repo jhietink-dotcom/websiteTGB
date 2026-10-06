@@ -10,6 +10,9 @@ import { useLanguage } from "@/lib/i18n/LanguageContext";
 const useCaseIcons = [Users, Target, Leaf];
 const methodologyPhotos = ["/img/arr-aerial.jpg", "/img/biochar.jpg", "/img/redd-forest.jpg"];
 
+// HubSpot meeting scheduler (Stijn Ticheloven) — the "Schedule a call" CTA target
+const MEETING_URL = "https://meetings-eu1.hubspot.com/stijn-ticheloven";
+
 const platformMeta: { image?: string; w?: number; h?: number }[] = [
   { image: "/img/terrahub-portfolio.png", w: 1600, h: 592 },
   { image: "/img/terrahub-certificates.png", w: 1532, h: 763 },
@@ -392,11 +395,11 @@ export default function BuyRemovalsContent() {
                 {t.hero.lead}
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link href="/contact" className="inline-flex items-center gap-2 px-7 py-4 bg-accent text-forest-deeper text-sm font-bold rounded-xl hover:bg-accent-dark transition-all hover:scale-[1.02]">
-                  {t.hero.cta1} <ArrowRight className="w-4 h-4" />
-                </Link>
+                <a href={MEETING_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-7 py-4 bg-accent text-forest-deeper text-sm font-bold rounded-xl hover:bg-accent-dark transition-all hover:scale-[1.02]">
+                  {t.hero.cta2} <ArrowRight className="w-4 h-4" />
+                </a>
                 <Link href="/contact" className="inline-flex items-center gap-2 px-7 py-4 bg-white/10 backdrop-blur-sm text-white text-sm font-semibold rounded-xl hover:bg-white/20 transition-colors border border-white/25">
-                  {t.hero.cta2}
+                  {t.hero.cta1}
                 </Link>
               </div>
             </div>
@@ -418,9 +421,15 @@ export default function BuyRemovalsContent() {
                     </div>
                     <h3 className="text-xl font-bold text-ink mb-2.5">{u.title}</h3>
                     <p className="text-ink-soft leading-relaxed mb-5">{u.desc}</p>
-                    <Link href="/contact" className="group inline-flex items-center gap-1.5 text-sm font-bold text-forest hover:text-forest-dark transition-colors mt-auto">
-                      {u.cta} <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                    </Link>
+                    {i === 2 ? (
+                      <a href={MEETING_URL} target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-1.5 text-sm font-bold text-forest hover:text-forest-dark transition-colors mt-auto">
+                        {u.cta} <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                      </a>
+                    ) : (
+                      <Link href="/contact" className="group inline-flex items-center gap-1.5 text-sm font-bold text-forest hover:text-forest-dark transition-colors mt-auto">
+                        {u.cta} <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                      </Link>
+                    )}
                   </div>
                 );
               })}
@@ -657,8 +666,8 @@ export default function BuyRemovalsContent() {
             <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-5 leading-[1.05]">{t.cta.heading}</h2>
             <p className="text-white/70 text-lg mb-9 leading-relaxed">{t.cta.lead}</p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Link href="/contact" className="px-7 py-4 bg-accent text-forest-deeper text-sm font-bold rounded-xl hover:bg-accent-dark transition-all hover:scale-[1.02]">{t.cta.cta1}</Link>
-              <Link href="/contact" className="px-7 py-4 border border-white/30 text-white text-sm font-semibold rounded-xl hover:bg-white/10 transition-colors">{t.cta.cta2}</Link>
+              <a href={MEETING_URL} target="_blank" rel="noopener noreferrer" className="px-7 py-4 bg-accent text-forest-deeper text-sm font-bold rounded-xl hover:bg-accent-dark transition-all hover:scale-[1.02]">{t.cta.cta2}</a>
+              <Link href="/contact" className="px-7 py-4 border border-white/30 text-white text-sm font-semibold rounded-xl hover:bg-white/10 transition-colors">{t.cta.cta1}</Link>
             </div>
           </div>
         </section>

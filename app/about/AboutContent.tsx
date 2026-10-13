@@ -16,20 +16,20 @@ const partners = [
 ];
 
 const teamBase = [
-  { name: "Jacob Hietink" },
-  { name: "Kasper Kupperman" },
-  { name: "Miriam Bellink" },
-  { name: "Rafael Frade", credential: "CFA" },
-  { name: "Stijn Ticheloven" },
-  { name: "Alex Sousa", credential: "PhD" },
-  { name: "Tom Nijman", credential: "PhD" },
-  { name: "João Diniz" },
-  { name: "Cristina Marini" },
-  { name: "Bruna Franchi" },
-  { name: "Alexandre Kampel" },
-  { name: "Jairo Okret" },
-  { name: "Reinier Hietink" },
-  { name: "Rein Vehmeijer" },
+  { name: "Jacob Hietink", photo: "/team/jacob.jpg" },
+  { name: "Kasper Kupperman", photo: "/team/kasper.jpg" },
+  { name: "Miriam Bellink", photo: "/team/miriam.jpg" },
+  { name: "Rafael Frade", credential: "CFA", photo: "/team/rafael.jpg" },
+  { name: "Stijn Ticheloven", photo: "/team/stijn.jpg" },
+  { name: "Alex Sousa", credential: "PhD", photo: "/team/alex.jpg" },
+  { name: "Tom Nijman", credential: "PhD", photo: "/team/tom.jpg" },
+  { name: "João Diniz", photo: "/team/joao.jpg" },
+  { name: "Cristina Marini", photo: "/team/cristina.jpg" },
+  { name: "Bruna Franchi", photo: "/team/bruna.jpg" },
+  { name: "Alexandre Kampel", photo: "/team/alexandre.jpg" },
+  { name: "Jairo Okret", photo: "/team/jairo.jpg" },
+  { name: "Reinier Hietink", photo: "/team/reinier.jpg" },
+  { name: "Rein Vehmeijer", photo: "/team/rein.jpg" },
 ];
 
 const resourceIcons = [BookOpen, TreePine, Factory, Package, Landmark, MapPin];
@@ -416,9 +416,21 @@ export default function AboutContent() {
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {team.map((m) => (
                 <div key={m.name} className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/8 transition-colors">
-                  <div className="w-12 h-12 rounded-full bg-forest/50 flex items-center justify-center mb-4 text-sm font-extrabold text-white">
-                    {m.name.split(" ").map((n) => n[0]).join("")}
-                  </div>
+                  {m.photo ? (
+                    <div className="w-16 h-16 rounded-full overflow-hidden mb-4 ring-1 ring-white/15">
+                      <Image
+                        src={m.photo}
+                        alt={m.name}
+                        width={480}
+                        height={480}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  ) : (
+                    <div className="w-16 h-16 rounded-full bg-forest/50 flex items-center justify-center mb-4 text-sm font-extrabold text-white">
+                      {m.name.split(" ").map((n) => n[0]).join("")}
+                    </div>
+                  )}
                   <div className="font-bold text-white mb-0.5">{m.name}{m.credential ? `, ${m.credential}` : ""}</div>
                   <div className="text-xs font-semibold text-accent">{m.role}</div>
                 </div>
